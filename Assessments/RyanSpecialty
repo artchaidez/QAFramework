@@ -1,0 +1,37 @@
+Please demonstrate Page Object Model and complete tests for each of the following scenarios and send me your completed test code by Monday. I noticed you have a github account, so if you prefer to put the code up there, just send me a link and I can view it there.
+
+Scenarios and instructions:
+
+Scenario 1: Create New Card in To Do
+Given I have a Trello Board with 3 Lists (To Do, Working, and Done)
+When I need to add a new card to the To Do list with the title of "new card"
+And a description of "this is a new card"
+Then I am able to see it in the To Do column
+
+Scenario 2: Move Card to Working
+Given I have a card titled "new card" in the "To Do" column
+When I want to work on it
+Then I am able to move it into the "working" column
+And see that it stays there
+
+Scenario 3:  Add Checklist with items
+Given I have a card titled "new card" in the "Working" column
+When I would like to add a check list to the card
+Then I am able to add a checklist called "check list"
+And it has an item called "Item 1"
+And it has an item called "Item 2"
+
+Scenario 4: Complete to do Items
+Given I have a card titled "new card" in the "Working" column
+And a check list in that card called "Check list"
+And has an item called "Item 1"
+And has an item called "Item 2"
+Then I am able click on the check box of each item
+They are marked as complete.
+
+Scenario 5: Move to done
+Given I have a card titled "new card" in the "Working" column
+When I open the card
+And I click on the current list with the text “in list Working”
+Then I am able to move the card to the Done List
+And see that it is in the done list.
