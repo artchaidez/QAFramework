@@ -126,9 +126,9 @@ public class SeleniumControl extends UIBase {
                 String elemType = this.GetAttribute("type");
 
                 if(elemType == null || !elemType.equals("password"))
-                    Info("   [SetText] " + this.FormatControlName() + " ---> '" + text.replace("\n", "<Enter>" + "'"));
+                    Info("[SetText] " + this.FormatControlName() + " ---> '" + text.replace("\n", "<Enter>") + "'");
                 else
-                    Info("   [SetText] " + this.FormatControlName() + " ---> '*****'");
+                    Info("[SetText] " + this.FormatControlName() + " ---> '*****'");
 
                 try
                 {
@@ -166,7 +166,7 @@ public class SeleniumControl extends UIBase {
 
     public void SendKeys(String keysToSend)
     {
-        Info(MessageFormat.format("   [SendKeys] {0} ---> {1}", this.FormatControlName(), keysToSend.toString()));
+        Info(MessageFormat.format("[SendKeys] {0} ---> {1}", this.FormatControlName(), keysToSend.toString()));
 
         this.WebElement.sendKeys(keysToSend);
     }
@@ -183,7 +183,7 @@ public class SeleniumControl extends UIBase {
         {
             Max_Retries--;
 
-            Info("   [Click] " + this.FormatControlName());
+            Info("[Click] " + this.FormatControlName());
 
             WebElement element = FindElement(5);
 
@@ -215,12 +215,12 @@ public class SeleniumControl extends UIBase {
 
     public void Clear()
     {
-        Info("   [Clear] " + this.FormatControlName());
+        Info("[Clear] " + this.FormatControlName());
     }
 
     public void Submit()
     {
-        Info("   [Submit] " + this.FormatControlName());
+        Info("[Submit] " + this.FormatControlName());
         this.WebElement.submit();
     }
 

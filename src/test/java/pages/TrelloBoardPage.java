@@ -35,6 +35,7 @@ public class TrelloBoardPage extends UIBase {
         inputCardTitleText.SetText(cardTitle, 5, false);
 
         addCardBtn.Click(5);
+        Info(String.format("Added '%s' to '%s'", cardTitle, listName));
     }
 
     public void OpenCard(String cardTitle, String listName) throws Exception
@@ -42,6 +43,7 @@ public class TrelloBoardPage extends UIBase {
         String xpath = String.format("//*[text()='%s']/parent::div/following-sibling::div[1]//*[text()='%s']", listName, cardTitle);
         SeleniumControl newCard = new SeleniumControl(By.xpath(xpath));
         newCard.Click(5);
+        Info(String.format("Opened '%s' in '%s'", cardTitle, listName));
     }
 
     public void DeleteCard(String cardTitle, String listName) throws Exception
@@ -99,6 +101,7 @@ public class TrelloBoardPage extends UIBase {
         inputCardTitleText.SetText(cardTitle, 5, false);
 
         addCardBtn.Click(5);
+        Info(String.format("Added '%s' to '%s'", cardTitle, listName));
     }
 
     public SeleniumControl ReturnSDETBoardPage()

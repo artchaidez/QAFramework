@@ -43,7 +43,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify RT SDET board is open");
             pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
-            Info("   On SDET Board");
+            Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
             pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameTodo, cardTitle);
@@ -56,7 +56,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify the description is correct");
             pages.trelloSignInPage.trelloBoardPage.trelloCardPage.FindDescription(cardDescription).IsVisible(5);
-            Info("   Description matches");
+            Info("Description matches");
 
         Step("Delete card in modal");
             pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
@@ -78,7 +78,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify RT SDET board is open");
             pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
-            Info("   On SDET Board");
+            Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listNameTodo));
             pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameTodo, cardTitle);
@@ -92,7 +92,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         Step(String.format("Verify card was moved to list '%s'", listNameWorking));
             SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInColumn(cardTitle, listNameWorking);
             card.IsVisible(5);
-            Info(String.format("   Card '%s' is in list '%s'", cardTitle, listNameWorking));
+            Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameWorking));
 
         Step("Delete card in modal");
             pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
@@ -117,7 +117,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify RT SDET board is open");
             pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
-            Info("   On SDET Board");
+            Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listName));
             pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listName, cardTitle);
@@ -134,7 +134,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
                 SeleniumControl checkList = new SeleniumControl(By.xpath(xpath));
                 Assert.assertTrue(checkList.IsVisible(5));
             }
-            Info("   Checklist verified");
+            Info("Checklist verified");
 
         Step("Delete card in modal");
             pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
@@ -159,7 +159,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify RT SDET board is open");
             pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
-            Info("   On SDET Board");
+            Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listName));
             pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listName, cardTitle);
@@ -176,7 +176,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         Step("Verify checklist is complete");
             String percentage = pages.trelloSignInPage.trelloBoardPage.trelloCardPage.ReturnChecklistCompletionPercentage();
             Assert.assertEquals(percentage, "100%");
-            Info("   Checklist complete");
+            Info("Checklist complete");
 
         Step("Delete card in modal");
             pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
@@ -197,7 +197,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify RT SDET board is open");
             pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
-            Info("   On SDET Board");
+            Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listNameWorking));
             pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameWorking, cardTitle);
@@ -211,7 +211,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         Step(String.format("Verify card is in list '%s'", listNameDone));
             SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInColumn(cardTitle, listNameDone);
             card.IsVisible(5);
-            Info(String.format("   Card '%s' is in list '%s'", cardTitle, listNameDone));
+            Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameDone));
 
         Step("Delete card in modal");
             pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
@@ -231,7 +231,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify RT SDET board is open");
             pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
-            Info("   On SDET Board");
+            Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
             pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameTodo, cardTitle);
@@ -253,10 +253,10 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             }
 
             if (noCards) {
-                Info(String.format("   '%s' has no cards", listNameTodo));
+                Info(String.format("'%s' has no cards", listNameTodo));
             } else {
                 // If code hits here, the list has children and the card was not properly deleted
-                Info(String.format("   FAILED: There is a card in '%s'", listNameTodo));
+                Info(String.format("FAILED: There is a card in '%s'", listNameTodo));
                 Assert.fail();
             }
 
@@ -275,7 +275,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             pages.trelloSignInPage.trelloBoardPage.MoreInMenuOption().Click(5);
             pages.trelloSignInPage.trelloBoardPage.ArchivedItemsOption().Click(5);
             pages.trelloSignInPage.trelloBoardPage.NoArchivedCards().IsVisible(5);
-            Info("   No cards archived");
+            Info("No cards archived");
     }
 
     @Test(description = "Verify card can be deleted on board")
@@ -292,7 +292,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify RT SDET board is open");
             pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
-            Info("   On SDET Board");
+            Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
             pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameTodo, cardTitle);
@@ -315,10 +315,10 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             }
 
             if (noCards) {
-                Info(String.format("   '%s' has no cards", listNameTodo));
+                Info(String.format("'%s' has no cards", listNameTodo));
             } else {
                 // If code hits here, the list has children and the card was not properly deleted
-                Info(String.format("   FAILED: There is a card in '%s'", listNameTodo));
+                Info(String.format("FAILED: There is a card in '%s'", listNameTodo));
                 Assert.fail();
             }
 
@@ -330,14 +330,14 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
                 pages.trelloSignInPage.trelloBoardPage.MoreInMenuOption().IsVisible(5);
 
             } catch(Exception e) {
-                Info("   Open Menu");
+                Info("Open Menu");
                 pages.trelloSignInPage.trelloBoardPage.MenuButton().Click(5);
             }
 
             pages.trelloSignInPage.trelloBoardPage.MoreInMenuOption().Click(5);
             pages.trelloSignInPage.trelloBoardPage.ArchivedItemsOption().Click(5);
             pages.trelloSignInPage.trelloBoardPage.NoArchivedCards().IsVisible(5);
-            Info("   No cards archived");
+            Info("No cards archived");
     }
 
     @Test(description = "Provide a second way to add a card to a list")
@@ -354,7 +354,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
         Step("Verify RT SDET board is open");
             pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
-            Info("   On SDET Board");
+            Info("On SDET Board");
 
         Step("Add card using List actions dropdown");
             pages.trelloSignInPage.trelloBoardPage.DropDownActionsAddCard(cardTitle, listNameTodo);
@@ -362,7 +362,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         Step("Verify card was made");
             SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInColumn(cardTitle, listNameTodo);
             card.IsVisible(5);
-            Info(String.format("   Card '%s' is in list '%s'", cardTitle, listNameTodo));
+            Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameTodo));
 
         Step("Verify card was made by deleting");
             pages.trelloSignInPage.trelloBoardPage.DeleteCard(cardTitle, listNameTodo);

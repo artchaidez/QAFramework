@@ -17,7 +17,7 @@ public class TestContextLogger  {
 
     public void Info(String message)
     {
-        System.out.println(FormatTimeStampMessage("INFO", message));
+        System.out.println(FormatTimeStampMessage("INFO", "   " + message));
     }
 
     public void Error(String message)

@@ -45,12 +45,13 @@ public class TrelloCardPage extends UIBase {
         deleteBtn.Click(5);
         confirmDeleteBtn.Click(5);
         sdetBoard.IsVisible(5);
-        Info("   Card deleted");
+        Info("Card deleted");
     }
 
     public void CloseCard() throws Exception
     {
         closeCard.Click(5);
+        Info("Closed card");
     }
 
     private void MoveCardToColumn(String listName) throws Exception
@@ -60,6 +61,7 @@ public class TrelloCardPage extends UIBase {
         workingOnMoveCardList.Click(5);
 
         moveCardToNewList.Click(5);
+        Info(String.format("Moved card into '%s'", listName));
     }
 
     /** Same functionality as MoveCardToColumnUsingInList*/
@@ -89,6 +91,7 @@ public class TrelloCardPage extends UIBase {
             addItemToChecklistText.SetText(checkListItems.get(i), 5, false);
             addItemToCheckListText.Click(5);
         }
+        Info(String.format("Checklist '%s' created", checklistTitle));
     }
 
     public void CompleteCheckList(ArrayList<String> checkListItems) throws Exception
@@ -99,17 +102,21 @@ public class TrelloCardPage extends UIBase {
             checkList.Click(5);
             Sleep(1);
         }
+        Info("Checklist complete");
+
     }
 
     public void SetDescriptionText(String cardDescription) throws Exception
     {
         cardModalDescription.SetText(cardDescription, 5, false);
+        Info("Card description set");
         SaveDescription();
     }
 
     private void SaveDescription() throws Exception
     {
         saveDescriptionBtn.Click(5);
+        Info("Card description saved");
     }
 
     public SeleniumControl FindDescription(String cardDescription)
