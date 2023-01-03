@@ -1,24 +1,28 @@
 package webTestSuites;
 
 import autoFramework.AutoTestBase;
+import autoFramework.TestInfo;
+import listeners.MyInvokedMethodListener;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import webTestFramework.SeleniumControl;
 
 import java.util.ArrayList;
 
+@Listeners(MyInvokedMethodListener.class)
 public class RyanSpecialtyTestSuite extends AutoTestBase {
     private String email = null;
     private String password = null;
     @BeforeMethod
     public void TestSetUp()
     {
-        pages.InitWebDriver();
         email = System.getenv("trelloEmail");
         password = System.getenv("trelloPassword");
+        pages.InitWebDriver();
     }
 
     @AfterMethod
@@ -29,6 +33,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
     }
 
     @Test(description = "Scenario 1: Create a card in the To Do list")
+    @TestInfo(description = "Scenario 1: Create a card in the To Do list")
     public void TestCreateNewCardInTodo() throws Exception
     {
         String cardTitle = "new card";

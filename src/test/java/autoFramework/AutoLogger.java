@@ -1,8 +1,10 @@
 package autoFramework;
 
 import jdk.jfr.Timespan;
+import org.testng.annotations.Test;
 
 import java.net.http.HttpResponse;
+import java.text.Annotation;
 import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -138,7 +140,7 @@ public class AutoLogger {
         Info(message);
     }
 
-    // TODO: This needs to be reworked
+    // TODO: needs to be reworked. Does not work in MyListener, MyInvokedMethodListener, or StartTest()
     public void ResetSteps()
     {
         stepNumber = 1;
@@ -153,7 +155,23 @@ public class AutoLogger {
     public void StartTest(String testName)
     {
         //ToDo Test execution context class, to get all test data
-        TestInfo context = null;
+        /*Test wtf = Test.class.getAnnotation(Test.class);
+        TestInfo context = TestInfo.class.getAnnotation(TestInfo.class);
+        Annotation context2 = (Annotation) Test.class.getAnnotation(TestInfo.class);*/
+
+        List<String> messages = new ArrayList<>();
+        messages.add("");
+        messages.add("==========================================================================");
+        messages.add("     Starting test  :  " + testName);
+        //messages.add("     Description    :  " + context.description());
+        messages.add("==========================================================================");
+
+
+        for(String message : messages)
+        {
+            Info(message);
+        }
+
 
         /*
          * var description = something

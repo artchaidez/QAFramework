@@ -1,14 +1,17 @@
 package apiTestSuites;
 
 import apiModals.*;
-import apis.Apis;
 import autoFramework.AutoTestBase;
+import autoFramework.TestInfo;
 import jdk.jfr.Description;
+import listeners.MyInvokedMethodListener;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(MyInvokedMethodListener.class)
 public class OppFiTestSuite extends AutoTestBase {
 
     private String resource = null;
@@ -29,6 +32,7 @@ public class OppFiTestSuite extends AutoTestBase {
 
     @Test()
     @Description("OffersApiAcceptedTest is testing to return an approved loan.")
+    @TestInfo(description = "OffersApiAcceptedTest is testing to return an approved loan.")
     public void OffersApiAcceptedTest() throws Exception {
 
         Step("Set up API classes for the request body");

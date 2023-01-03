@@ -2,13 +2,14 @@ package webTestSuites;
 
 import autoFramework.AutoTestBase;
 import jdk.jfr.Description;
+import listeners.MyInvokedMethodListener;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import pages.Pages;
 import webTestFramework.SeleniumControl;
-
+@Listeners(MyInvokedMethodListener.class)
 public class PodiumTestSuite extends AutoTestBase {
 
     @BeforeMethod
