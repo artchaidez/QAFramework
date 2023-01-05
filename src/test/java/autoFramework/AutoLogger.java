@@ -1,12 +1,8 @@
 package autoFramework;
 
-import apiTestSuites.OppFiTestSuite;
 import jdk.jfr.Timespan;
-import org.testng.annotations.Test;
 
-import java.lang.reflect.Method;
 import java.net.http.HttpResponse;
-import java.text.Annotation;
 import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -14,6 +10,7 @@ import java.util.*;
 public class AutoLogger {
 
     private final TestContextLogger testContextLogger = new TestContextLogger();
+    private final TestExecutionContext testExecutionContext = new TestExecutionContext();
 
     private int stepNumber = 1;
 
@@ -156,27 +153,15 @@ public class AutoLogger {
 
     public void StartTest(String testName, String moduleName) throws ClassNotFoundException {
 
-        Class myClass = Class.forName(moduleName);
-
-        //ToDo Test execution context class, to get all test data
-        Method[] methods = myClass.getMethods();
-        Method testMethod = null;
-        for (Method m : methods) {
-            if (m.getName().equals(testName))
-            {
-                testMethod = m;
-                // TODO: break out of loop
-            }
-        }
-
-        TestInfo context =  testMethod.getDeclaredAnnotation(TestInfo.class);
+        testExecutionContext.getTestInfoContext(testName, moduleName);
 
         List<String> messages = new ArrayList<>();
         messages.add("");
         messages.add("==========================================================================");
-        messages.add("     Starting test  :  " + testMethod.getName());
-        messages.add("     Description    :  " + context.description());
-        messages.add("     Test level     :  " + context.level());
+        messages.add("     Starting test  :  " + testName);
+        messages.add("     Description    :  " + testExecutionContext.getDescription());
+        messages.add("     Test level     :  " + testExecutionContext.getLevel());
+        messages.add("     Test categories:  " + testExecutionContext.getCategories());
         messages.add("==========================================================================");
 
 
@@ -184,7 +169,7 @@ public class AutoLogger {
         {
             Info(message);
         }
-
+ 
 
         /*
          * var description = something

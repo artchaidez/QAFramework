@@ -3,7 +3,6 @@ package listeners;
 import autoFramework.AutoTestBase;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
-import org.testng.ITestClass;
 import org.testng.ITestResult;
 
 /** This one runs before and after EVERY method you have in the class (Before and After class, suite, test - everything)
@@ -13,7 +12,7 @@ import org.testng.ITestResult;
 public class MyInvokedMethodListener extends AutoTestBase implements IInvokedMethodListener {
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
-        if (method.isTestMethod()) {
+        /*if (method.isTestMethod()) {
             String testName = method.getTestMethod().getMethodName();
             String moduleName = method.getTestMethod().getRealClass().getCanonicalName();
 
@@ -23,7 +22,7 @@ public class MyInvokedMethodListener extends AutoTestBase implements IInvokedMet
                 throw new RuntimeException(e);
             }
 
-        }
+        }*/
     }
 
     @Override

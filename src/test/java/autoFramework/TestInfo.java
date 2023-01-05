@@ -11,5 +11,4 @@ public @interface TestInfo {
     String description() default "";
     String level() default "Regression";
     String categories() default "";
-    String testJira() default "";
 }

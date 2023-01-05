@@ -4,12 +4,19 @@ import autoFramework.AutoTestBase;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-/** Using MyInvokedMethodListener for AutoLogger StartTest.
- * Keep this Listener for now */
 
 public class MyListener extends AutoTestBase implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
+
+        String testName = result.getMethod().getMethodName();
+        String moduleName = result.getMethod().getRealClass().getCanonicalName();
+
+        try {
+            StartTest(testName, moduleName);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 

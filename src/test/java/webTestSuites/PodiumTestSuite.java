@@ -1,15 +1,16 @@
 package webTestSuites;
 
 import autoFramework.AutoTestBase;
+import autoFramework.TestInfo;
 import jdk.jfr.Description;
-import listeners.MyInvokedMethodListener;
+import listeners.MyListener;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import webTestFramework.SeleniumControl;
-@Listeners(MyInvokedMethodListener.class)
+@Listeners(MyListener.class)
 public class PodiumTestSuite extends AutoTestBase {
 
     @BeforeMethod
@@ -22,11 +23,12 @@ public class PodiumTestSuite extends AutoTestBase {
     public void TestTearDown()
     {
         pages.Quit();
-        ResetSteps();
+        //ResetSteps();
     }
 
-    @Test (groups = {"smokeTest"})
-    @Description("Test to switch to correct iframes and click on Podium icon.")
+    @Test ()
+    @TestInfo(description = "Test to switch to correct iframes and click on Podium icon.",
+        level = "Smoke")
     public void TestClickPodiumButton() throws Exception
     {
         Step("Go to Podium Demo Website");
@@ -52,8 +54,8 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("Podium modal is visible");
     }
 
-    @Test (groups = {"regressionTest"})
-    @Description("Test to click on first location found in Location modal.")
+    @Test ()
+    @TestInfo(description = "Test to click on first location found in Location modal.")
     public void TestSelectFirstLocation() throws Exception
     {
         Step("Go to Podium Website");
@@ -75,8 +77,8 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("Within message modal as name text input was found.");
     }
 
-    @Test (groups = {"regressionTest"})
-    @Description("Test to confirm correct location is being clicked in the modal")
+    @Test ()
+    @TestInfo(description = "Test to confirm correct location is being clicked in the modal")
     public void TestScoreboardOremLocationExists() throws Exception
     {
         String location = "Scoreboard Sports - Orem";
@@ -102,8 +104,9 @@ public class PodiumTestSuite extends AutoTestBase {
             Info(String.format("%s opened up", location));
     }
 
-    @Test (groups = {"smokeTest"})
-    @Description("Test to input data in all 3 fields of message modal")
+    @Test ()
+    @TestInfo(description = "Test to input data in all 3 fields of message modal",
+            level = "Smoke")
     public void TestInputMessageData() throws Exception
     {
         String name = "Art";
@@ -152,8 +155,8 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("All inputs filled out and send button is valid");
     }
 
-    @Test (groups = {"regressionTest"})
-    @Description("Test to confirm subject and terms are opened in a new tab.")
+    @Test ()
+    @TestInfo(description = "Test to confirm subject and terms are opened in a new tab.")
     public void TestClickSubjectTerms() throws Exception
     {
         Step("Go to Podium Website");
@@ -178,44 +181,44 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("Clicked on 'Terms of Service'");
     }
 
-    @Test (groups = {"regressionTest"})
-    @Description("Test to prove there is a bug with the return arrow in the message modal.")
+    @Test ()
+    @TestInfo(description = "Test to prove there is a bug with the return arrow in the message modal.")
     public void TestReturnButtonDoesNotWork() throws Exception
     {
         String message = "There is a bug with the return arrow on the message widget!";
 
         Step("Go to Podium Website");
-        pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
 
         Step("Go immediately to Podium modal");
-        pages.Sleep(1);
-        pages.podiumBubble.JumpToPodiumModal();
+            pages.Sleep(1);
+            pages.podiumBubble.JumpToPodiumModal();
 
         Step("Verify on Podium modal");
-        pages.podiumModal.VerifyLocationSearchBar();
-        Info("Podium modal open");
+            pages.podiumModal.VerifyLocationSearchBar();
+            Info("Podium modal open");
 
         Step("Click on first location in location list");
-        pages.podiumModal.SelectFirstLocation();
+            pages.podiumModal.SelectFirstLocation();
 
         Step("Verify on message modal");
-        pages.podiumModal.VerifyNameTextInputExists();
-        Info("Within message modal as name text input was found.");
+            pages.podiumModal.VerifyNameTextInputExists();
+            Info("Within message modal as name text input was found.");
 
         Step("Click on return arrow");
-        pages.podiumModal.ClickOnReturnArrowBtn();
+            pages.podiumModal.ClickOnReturnArrowBtn();
 
         Step("Verify message modal is still open by inputting text into message input");
-        pages.podiumModal.SetMessageInput(message, 5, null);
-        pages.Sleep(1);
+            pages.podiumModal.SetMessageInput(message, 5, null);
+            pages.Sleep(1);
 
         Step("Verify text was inputted into message input");
-        pages.podiumModal.VerifyMessageHasInput();
-        Info("Message has text input");
+            pages.podiumModal.VerifyMessageHasInput();
+            Info("Message has text input");
     }
 
-    @Test (groups = {"smokeTest"})
-    @Description("Test to prove location searchbar works.")
+    @Test ()
+    @TestInfo(description = "Test to prove location searchbar works.", level = "Smoke")
     public void TestLocationSearchBar() throws Exception
     {
         String bountifulZIP = "84043";
@@ -225,54 +228,54 @@ public class PodiumTestSuite extends AutoTestBase {
         String bountifulName = "Bountiful";
 
         Step("Go to Podium Website");
-        pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
 
         Step("Go immediately to Podium modal");
-        pages.Sleep(1);
-        pages.podiumBubble.JumpToPodiumModal();
+            pages.Sleep(1);
+            pages.podiumBubble.JumpToPodiumModal();
 
         Step("Verify on Podium modal");
-        pages.podiumModal.VerifyLocationSearchBar();
-        Info("Podium modal open");
+            pages.podiumModal.VerifyLocationSearchBar();
+            Info("Podium modal open");
 
         Step("Input Bountiful ZIP code into searchbar");
-        pages.podiumModal.SetLocationSearchBarText(bountifulZIP);
-        pages.Sleep(1);
+            pages.podiumModal.SetLocationSearchBarText(bountifulZIP);
+            pages.Sleep(1);
 
         Step("Verify first location in list is Bountiful");
-        pages.podiumModal.VerifySearchBarInputCorrect(bountifulZIP);
-        Info("Correctly searched for Bountiful ZIP");
+            pages.podiumModal.VerifySearchBarInputCorrect(bountifulZIP);
+            Info("Correctly searched for Bountiful ZIP");
 
         Step("Input Bountiful name into searchbar");
-        pages.podiumModal.SetLocationSearchBarText(bountifulName);
-        pages.Sleep(1);
+            pages.podiumModal.SetLocationSearchBarText(bountifulName);
+            pages.Sleep(1);
 
         Step("Verify first location in list is Bountiful");
-        pages.podiumModal.VerifySearchBarInputCorrect(bountifulName);
-        Info("Correctly searched for Bountiful name");
+            pages.podiumModal.VerifySearchBarInputCorrect(bountifulName);
+            Info("Correctly searched for Bountiful name");
 
         Step("Input Bountiful building number into searchbar");
-        pages.podiumModal.SetLocationSearchBarText(bountifulBuildingNum);
-        pages.Sleep(1);
+            pages.podiumModal.SetLocationSearchBarText(bountifulBuildingNum);
+            pages.Sleep(1);
 
         Step("Verify first location in list is Bountiful");
-        pages.podiumModal.VerifySearchBarInputCorrect(bountifulBuildingNum);
-        Info("Correctly searched for Bountiful building name");
+            pages.podiumModal.VerifySearchBarInputCorrect(bountifulBuildingNum);
+            Info("Correctly searched for Bountiful building name");
 
         Step("Input Bountiful street name into searchbar");
-        pages.podiumModal.SetLocationSearchBarText(bountifulStreet);
-        pages.Sleep(1);
+            pages.podiumModal.SetLocationSearchBarText(bountifulStreet);
+            pages.Sleep(1);
 
         Step("Verify first location in list is Bountiful");
-        pages.podiumModal.VerifySearchBarInputCorrect(bountifulStreet);
-        Info("Correctly searched for Bountiful street name");
+            pages.podiumModal.VerifySearchBarInputCorrect(bountifulStreet);
+            Info("Correctly searched for Bountiful street name");
 
         Step("Input Bountiful city into searchbar");
-        pages.podiumModal.SetLocationSearchBarText(bountifulCity);
-        pages.Sleep(1);
+            pages.podiumModal.SetLocationSearchBarText(bountifulCity);
+            pages.Sleep(1);
 
         Step("Verify first location in list in Bountiful");
-        pages.podiumModal.VerifySearchBarInputCorrect(bountifulCity);
-        Info("Correctly searched for Bountiful city");
+            pages.podiumModal.VerifySearchBarInputCorrect(bountifulCity);
+            Info("Correctly searched for Bountiful city");
     }
 }
