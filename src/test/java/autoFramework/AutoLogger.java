@@ -1,8 +1,10 @@
 package autoFramework;
 
+import apiTestSuites.OppFiTestSuite;
 import jdk.jfr.Timespan;
 import org.testng.annotations.Test;
 
+import java.lang.reflect.Method;
 import java.net.http.HttpResponse;
 import java.text.Annotation;
 import java.text.MessageFormat;
@@ -152,18 +154,29 @@ public class AutoLogger {
         //ToDo figure out how to ignore test
     }
 
-    public void StartTest(String testName)
-    {
+    public void StartTest(String testName, String moduleName) throws ClassNotFoundException {
+
+        Class myClass = Class.forName(moduleName);
+
         //ToDo Test execution context class, to get all test data
-        /*Test wtf = Test.class.getAnnotation(Test.class);
-        TestInfo context = TestInfo.class.getAnnotation(TestInfo.class);
-        Annotation context2 = (Annotation) Test.class.getAnnotation(TestInfo.class);*/
+        Method[] methods = myClass.getMethods();
+        Method testMethod = null;
+        for (Method m : methods) {
+            if (m.getName().equals(testName))
+            {
+                testMethod = m;
+                // TODO: break out of loop
+            }
+        }
+
+        TestInfo context =  testMethod.getDeclaredAnnotation(TestInfo.class);
 
         List<String> messages = new ArrayList<>();
         messages.add("");
         messages.add("==========================================================================");
-        messages.add("     Starting test  :  " + testName);
-        //messages.add("     Description    :  " + context.description());
+        messages.add("     Starting test  :  " + testMethod.getName());
+        messages.add("     Description    :  " + context.description());
+        messages.add("     Test level     :  " + context.level());
         messages.add("==========================================================================");
 
 

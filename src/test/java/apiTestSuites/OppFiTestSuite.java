@@ -27,11 +27,10 @@ public class OppFiTestSuite extends AutoTestBase {
     @AfterMethod
     public void TestTearDown()
     {
-        ResetSteps();
+        //ResetSteps();
     }
 
     @Test()
-    @Description("OffersApiAcceptedTest is testing to return an approved loan.")
     @TestInfo(description = "OffersApiAcceptedTest is testing to return an approved loan.")
     public void OffersApiAcceptedTest() throws Exception {
 
@@ -103,7 +102,7 @@ public class OppFiTestSuite extends AutoTestBase {
     }
 
     @Test()
-    @Description("OffersApiDeclinedTest is testing to return a declined loan.")
+    @TestInfo(description = "OffersApiDeclinedTest is testing to return a declined loan.")
     public void OffersApiGetsDeclinedTest() throws Exception
     {
         Step("Set up API classes for the request body");
@@ -174,7 +173,7 @@ public class OppFiTestSuite extends AutoTestBase {
     }
 
     @Test()
-    @Description("OffersApiCallGetsBadDataTest is testing to return an a bad API call.")
+    @TestInfo(description = "OffersApiCallGetsBadDataTest is testing to return an a bad API call.")
     public void OffersApiCallGetsBadDataTest() throws Exception
     {
         Step("Set up bad API Request Body.");
