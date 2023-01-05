@@ -24,7 +24,8 @@ public class OffersApi extends ApiBase {
         return gson.fromJson(response.body(), Offer.class);
     }
 
-    /** Wrapper method for the post call that returns the int of a status code*/
+    /** Wrapper method for the post call that returns the int of a status code.
+     * NOTE: Created for OppFi assessment*/
     public int PostOffersInt(String offerRequest, String resource, String apiKey) throws Exception {
 
         int response;

@@ -1,11 +1,11 @@
 package autoFramework;
 
 import jdk.jfr.Timespan;
-
 import java.net.http.HttpResponse;
 import java.text.MessageFormat;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AutoLogger {
 
@@ -127,16 +127,13 @@ public class AutoLogger {
         stepNumber++;
     }
 
-    // TODO: rework
     /** Used in Post to Log API info */
     public void apiLog(HttpResponse<String> response, String requestBody)
     {
-        String message = response.request().method() + ": " + response.uri() + "\n" +
-                "REQUEST BODY: " + requestBody + "\n" +
-                "STATUS CODE: " + response.statusCode() + "\n" +
-                "RESPONSE BODY: " + response.body();
-
-        Info(message);
+        Info(response.request().method() + ": " + response.uri());
+        Info("REQUEST BODY: " +  requestBody);
+        Info("STATUS CODE: " + response.statusCode());
+        Info("RESPONSE BODY: " + response.body());
     }
 
     // TODO: needs to be reworked. Does not work in MyListener, MyInvokedMethodListener, or StartTest()
@@ -169,7 +166,6 @@ public class AutoLogger {
         {
             Info(message);
         }
- 
 
         /*
          * var description = something

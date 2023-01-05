@@ -26,7 +26,7 @@ public class OppFiTestSuite extends AutoTestBase {
     @AfterMethod
     public void TestTearDown()
     {
-        //ResetSteps();
+        ResetSteps();
     }
 
     @Test()
@@ -59,7 +59,6 @@ public class OppFiTestSuite extends AutoTestBase {
             address.setCity("Miami");
             address.setZip("33125");
             address.setCountryCode("US");
-
             personalInfo.setAddress(address);
             personalInfo.setMobilePhone("3224340098");
             personalInfo.setHomePhone("4523452232");
@@ -82,6 +81,8 @@ public class OppFiTestSuite extends AutoTestBase {
             employmentInfo.setHireDate("20110516");
             offer.setEmploymentInfo(employmentInfo);
             offer.setRequestedLoanAmount(1500);
+
+            Info("Offer for " + offer.getPersonalInfo().getFullName() + " created");
 
         Step("Make a post call.");
             Offer response;
@@ -154,6 +155,8 @@ public class OppFiTestSuite extends AutoTestBase {
             employmentInfo.setHireDate("20110516");
             offer.setEmploymentInfo(employmentInfo);
             offer.setRequestedLoanAmount(1500);
+
+            Info("Offer for " + offer.getPersonalInfo().getFullName() + " created");
 
         Step("Make a post call.");
             Offer response;

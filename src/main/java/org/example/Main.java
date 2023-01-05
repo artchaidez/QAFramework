@@ -1,6 +1,7 @@
 package org.example;
 
-// TODO: Figure out if StartTest() should be in MyListener or MyInvokedListener
+// TODO: Wrapper on Asserts that logs what happens
+// TODO: Reset stepNumber when running TestSuites
 // TODO: Run tests in parallel- works with xml
 // TODO: Test should print out all test data at the start of every test
 // TODO: FileLogger

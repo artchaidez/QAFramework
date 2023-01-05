@@ -11,7 +11,6 @@ public class PodiumBubble extends UIBase {
 
     private final SeleniumControl podiumBtn = new SeleniumControl(By.className("ContactBubble__Bubble"));
 
-    private final SeleniumControl modal = new SeleniumControl(By.xpath("//*[contains(@class, 'SearchInput')]"));
 
     // Methods are public
     /** Switch to podium-bubble iframe.*/
@@ -22,21 +21,15 @@ public class PodiumBubble extends UIBase {
     }
 
     /** Verify in main iframe by checking if podium-bubble exists. Podium button should not visible.*/
-    public void VerifyPodiumBubbleExists()
+    public SeleniumControl PodiumBubble()
     {
-        podiumBubble.IsVisible(5);
+        return podiumBubble;
     }
 
     /** Must be within podium-bubble*/
     public void ClickOnPodiumButton() throws Exception
     {
         podiumBtn.Click(5);
-    }
-
-    /** Verify within podium-bubble iframe and Podium button exists.*/
-    public void VerifyPodiumBtnExists() throws Exception
-    {
-        podiumBtn.IsVisible(5);
     }
 
     /** Switch to podium-modal iframe.*/
@@ -46,18 +39,12 @@ public class PodiumBubble extends UIBase {
         switchToiFrame("podium-modal");
     }
 
-    /** Looks for searchbar to verify within iframe podium-modal.  */
-    public void VerifyOnModal()
-    {
-        modal.IsVisible(5);
-    }
-
     /** Jumps to podium-modal iframe regardless of where currently at.*/
     public void JumpToPodiumModal() throws Exception
     {
         switchToMainFrame();
         switchToiFrame("podium-bubble");
-        podiumBtn.Click(5);
+        podiumBtn.Click(15);
         switchToMainFrame();
         switchToiFrame("podium-modal");
     }

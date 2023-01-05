@@ -8,6 +8,8 @@ import webTestFramework.SeleniumControl;
 public class PodiumModal extends UIBase {
 
     // Objects are private final
+    private final SeleniumControl modal = new SeleniumControl(By.xpath("//*[contains(@class, 'SearchInput')]"));
+
     private final SeleniumControl firstLocation = new SeleniumControl(By.xpath("//*[@class = 'LocationContainer StaggerFadeIn3 LocationContainer--desktop']"));
 
     private final SeleniumControl nameTextInput = new SeleniumControl(By.xpath("//*[@id= 'Name']"));
@@ -23,8 +25,6 @@ public class PodiumModal extends UIBase {
     private final SeleniumControl sendButtonValid = new SeleniumControl(By.xpath("//*[@class= 'SendButton SendButton--valid']"));
 
     private final SeleniumControl subjectTermsLink = new SeleniumControl(By.className("terms"));
-
-    private final SeleniumControl termsLink = new SeleniumControl(By.xpath("//*[text()='Terms of Service']"));
 
     private final SeleniumControl returnArrowBtn = new SeleniumControl((By.xpath("//*[@class='SendSmsPage__ArrowIcon']")));
 
@@ -46,14 +46,13 @@ public class PodiumModal extends UIBase {
         return firstLocation.getText();
     }
 
-    public void VerifySearchBarInputCorrect(String data) throws Exception
-    {
+    public void SearchBarInput(String data) {
         Assert.assertTrue(GetFirstLocationText().contains(data));
     }
 
-    public void VerifyNameTextInputExists()
+    public SeleniumControl NameTextInput()
     {
-        nameTextInput.IsVisible(5);
+        return nameTextInput;
     }
 
     public void SetTextInNameInput(String data, int Max_Retries, Boolean escape) throws Exception
@@ -61,9 +60,9 @@ public class PodiumModal extends UIBase {
         nameTextInput.SetText(data, Max_Retries, escape);
     }
 
-    public void VerifyNameCheckmarkExists()
+    public SeleniumControl NameCheckmark()
     {
-        nameCheckMark.IsVisible(5);
+        return nameCheckMark;
     }
 
     public void SetMobileNumberInput(String data, int Max_Retries, Boolean escape) throws Exception
@@ -71,9 +70,9 @@ public class PodiumModal extends UIBase {
         mobileNumberTextInput.SetText(data, Max_Retries, escape);
     }
 
-    public void VerifyMobileNumberCheckmarkExists()
+    public SeleniumControl MobileNumberCheckmark()
     {
-        mobileNumberCheckmark.IsVisible(5);
+        return mobileNumberCheckmark;
     }
 
     public void SetMessageInput(String data, int Max_Retries, Boolean escape) throws Exception
@@ -81,26 +80,19 @@ public class PodiumModal extends UIBase {
         messageTextInput.SetText(data, Max_Retries, escape);
     }
 
-    public void VerifyMessageHasInput()
+    public String MessageInputIndicator()
     {
-        String emptyMessageLocator = "M 50 0 A 50 50 0 0 1 50 0";
-        String messageAttribute = messageCharCount.getAttribute("d");
-        Assert.assertNotEquals(messageAttribute, emptyMessageLocator);
+        return messageCharCount.getAttribute("d");
     }
 
-    public void VerifyAllInputsComplete()
+    public SeleniumControl SendButton()
     {
-        sendButtonValid.IsVisible(5);
+        return sendButtonValid;
     }
 
     public void ClickOnTermsButton() throws Exception
     {
         subjectTermsLink.Click(5);
-    }
-
-    public void VerifyOnSubjectTermsPage()
-    {
-        termsLink.IsVisible(5);
     }
 
     /** Click on arrow on message modal to return to location list modal */
@@ -114,25 +106,32 @@ public class PodiumModal extends UIBase {
         return locationText.getText();
     }
 
-    public void VerifyLocationSearchBar()
+    public SeleniumControl LocationSearchBar()
     {
-        locationSearchBar.IsVisible(5);
+        return locationSearchBar;
     }
 
     public void SetLocationSearchBarText(String zipAddress) throws Exception
     {
-        if (clearLocationSearchBar.IsVisible(5))
+        if (clearLocationSearchBar.IsVisible(10))
             ClickClearSearchBar();
-        locationSearchBar.SetText(zipAddress, 5, null);
-    }
-
-    public void VerifyCorrectLocationOpened(String data) {
-        Assert.assertEquals(GetLocationInMessageModal(), data);
+        locationSearchBar.SetText(zipAddress, 10, null);
     }
 
     public void ClickClearSearchBar() throws Exception
     {
         clearLocationSearchBar.Click(5);
+    }
+
+    public SeleniumControl FindByLocation(String location)
+    {
+        return new SeleniumControl(By.xpath(String.format("//*[text()= \"%s\"]", location)));
+    }
+
+    /** Looks for searchbar within iframe podium-modal.  */
+    public SeleniumControl Modal()
+    {
+        return modal;
     }
 
 }

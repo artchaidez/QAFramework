@@ -29,7 +29,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
     public void TestTearDown()
     {
         pages.Quit();
-        //ResetSteps();
+        ResetSteps();
     }
 
     @Test()
