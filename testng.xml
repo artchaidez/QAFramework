@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suites">
-    <!-- Find a way to dynamically check for CPU Threads-->
-    <!-- https://stackoverflow.com/questions/46106378/how-to-use-existing-testng-suite-xml-file-and-set-thread-counts-programmatically -->
-    <test name="C:/Users/artch/IdeaProjects/QAFramework" parallel="classes" thread-count="4">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="false" name="All QAFramework Tests" parallel="classes" thread-count="8">
         <classes>
-            <!-- Being split into two testSuites
-             Not logging steps-->
             <class name="apiTestSuites.OppFiTestSuite">
             </class>
             <class name="webTestSuites.PodiumTestSuite">
+            </class>
+            <class name="webTestSuites.RyanSpecialtyTestSuite">
             </class>
         </classes>
     </test>

@@ -13,7 +13,6 @@ import org.testng.ITestResult;
 public class MyInvokedMethodListener extends AutoTestBase implements IInvokedMethodListener {
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
-
     }
 
     @Override

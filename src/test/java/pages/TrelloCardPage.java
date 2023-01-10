@@ -33,8 +33,9 @@ public class TrelloCardPage extends UIBase {
 
     private final SeleniumControl checkListCompletionPercentage = new SeleniumControl(By.xpath("//*[@class='checklist-progress-percentage js-checklist-progress-percent']"));
 
-    private final SeleniumControl cardModalDescription = new SeleniumControl(By.xpath("//*[@class='field field-autosave js-description-draft description card-description']"));
+    private final SeleniumControl openCardDescription = new SeleniumControl(By.xpath("//*[@class='description-fake-text-area js-description-fake-text-area hide-on-edit js-edit-desc js-hide-with-draft']"));
 
+    private final SeleniumControl editCardDescription = new SeleniumControl(By.xpath("//*[@role='textbox']"));
     private final SeleniumControl saveDescriptionBtn = new SeleniumControl(By.xpath("//*[@class= 'nch-button nch-button--primary confirm mod-submit-edit js-save-edit']"));
 
     private final SeleniumControl sdetBoard = new SeleniumControl(By.xpath("//*[@class='js-board-editing-target board-header-btn-text']"));
@@ -108,7 +109,15 @@ public class TrelloCardPage extends UIBase {
 
     public void SetDescriptionText(String cardDescription) throws Exception
     {
-        cardModalDescription.SetText(cardDescription, 5, false);
+
+        try {
+            editCardDescription.SetText(cardDescription, 5, false);
+        } catch (Exception e)
+        {
+            openCardDescription.Click(5);
+            editCardDescription.SetText(cardDescription,5,false);
+        }
+
         Info("Card description set");
         SaveDescription();
     }

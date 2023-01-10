@@ -45,6 +45,5 @@ public class MyListener extends AutoTestBase implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-
     }
 }
