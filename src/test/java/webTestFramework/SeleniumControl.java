@@ -1,7 +1,6 @@
 package webTestFramework;
 
 import autoFramework.UIBase;
-import com.thoughtworks.selenium.SeleniumException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoSuchElementException;
@@ -9,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.text.MessageFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,19 +83,21 @@ public class SeleniumControl extends UIBase {
         if(timeOut == 0)
             timeOut = 10;
 
+        Duration duration = Duration.ofSeconds(timeOut);
+
         if (cacheElement != null)
             element = cacheElement;
         else
         {
             try
             {
-                WebDriverWait wait = new WebDriverWait(getWebDriver(), timeOut);
+                WebDriverWait wait = new WebDriverWait(getWebDriver(), duration);
                 element = wait.until(ExpectedConditions.elementToBeClickable(this.Locator));
                 setWebElement(element);
 
                 if(!IsVisible(element))
                     element = null;
-            } catch (SeleniumException e)
+            } catch (SecurityException e)
             {
                 Error(e.toString());
             }
@@ -132,7 +134,7 @@ public class SeleniumControl extends UIBase {
                 try
                 {
                     element.sendKeys(Keys.CONTROL + "a");
-                } catch (SeleniumException e)
+                } catch (SecurityException e)
                 {
                     element.clear();
                 }
@@ -243,7 +245,7 @@ public class SeleniumControl extends UIBase {
             {
                 return false;
             } else return element.getAttribute("class") == null || !element.getAttribute("class").contains("ng-hide");
-        } catch (SeleniumException e)
+        } catch (SecurityException e)
         {
             Error(e.toString());
         }
@@ -261,7 +263,7 @@ public class SeleniumControl extends UIBase {
             try
             {
                 return this.WebElement.getAttribute(attribute);
-            } catch (SeleniumException e)
+            } catch (SecurityException e)
             {
                 Error(e.toString());
             }

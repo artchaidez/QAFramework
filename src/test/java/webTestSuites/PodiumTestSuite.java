@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class PodiumTestSuite extends AutoTestBase {
 
+    private String podiumURL = "https://demo.podium.tools/qa-webchat-lorw/";
     @BeforeMethod
     public void TestSetUp()
     {
@@ -21,8 +22,8 @@ public class PodiumTestSuite extends AutoTestBase {
     @AfterMethod
     public void TestTearDown()
     {
-        pages.Quit();
         ResetSteps();
+        pages.Quit();
     }
 
     @Test ()
@@ -30,7 +31,7 @@ public class PodiumTestSuite extends AutoTestBase {
     public void TestClickPodiumButton() throws Exception
     {
         Step("Go to Podium Demo Website");
-            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL(podiumURL);
 
         Step("Verify on site by finding podium bubble");
             pages.podiumBubble.PodiumBubble().IsVisible(5);
@@ -56,7 +57,7 @@ public class PodiumTestSuite extends AutoTestBase {
     public void TestSelectFirstLocation() throws Exception
     {
         Step("Go to Podium Website");
-            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL(podiumURL);
 
         Step("Go immediately to Podium modal");
             pages.podiumBubble.JumpToPodiumModal();
@@ -80,7 +81,7 @@ public class PodiumTestSuite extends AutoTestBase {
         String location = "Scoreboard Sports - Orem";
 
         Step("Go to Podium Website");
-            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL(podiumURL);
 
         Step("Go immediately to Podium modal");
             pages.podiumBubble.JumpToPodiumModal();
@@ -107,7 +108,7 @@ public class PodiumTestSuite extends AutoTestBase {
             String message = "Hello QA Tester";
 
         Step("Go to Podium Website");
-            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL(podiumURL);
 
         Step("Go immediately to Podium modal");
             pages.podiumBubble.JumpToPodiumModal();
@@ -147,12 +148,13 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("All inputs filled out and send button is valid");
     }
 
+    // TODO: Always fails in parallel- JumpToPodiumModal()
     @Test ()
     @TestInfo(description = "Test confirming subject and terms are opened in a new tab.")
     public void TestClickSubjectTerms() throws Exception
     {
         Step("Go to Podium Website");
-            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL(podiumURL);
 
         Step("Go immediately to Podium modal");
             pages.podiumBubble.JumpToPodiumModal();
@@ -179,7 +181,7 @@ public class PodiumTestSuite extends AutoTestBase {
         String message = "There is a bug with the return arrow on the message widget!";
 
         Step("Go to Podium Website");
-            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL(podiumURL);
 
         Step("Go immediately to Podium modal");
             pages.podiumBubble.JumpToPodiumModal();
@@ -221,7 +223,7 @@ public class PodiumTestSuite extends AutoTestBase {
         String returnedLocation;
 
         Step("Go to Podium Website");
-            pages.GoToURL("https://demo.podium.tools/qa-webchat-lorw/");
+            pages.GoToURL(podiumURL);
 
         Step("Go immediately to Podium modal");
             pages.podiumBubble.JumpToPodiumModal();

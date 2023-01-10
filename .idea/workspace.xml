@@ -5,13 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/autoFramework/FileLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/listeners/MyAlterSuiteListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/MyInvokedMethodListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/MyInvokedMethodListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/MyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/MyListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +100,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestClickPodiumButton" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -112,7 +113,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestClickPodiumButton&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -122,7 +123,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestInputMessageData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestAddCheckListWithItems" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -135,7 +136,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestInputMessageData&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestAddCheckListWithItems&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -190,18 +191,18 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestAddCheckListWithItems" />
       <item itemvalue="Gradle.PodiumTestSuite" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
       <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/testng.xml" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/testng.xml" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
         <item itemvalue="Gradle.PodiumTestSuite" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestAddCheckListWithItems" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
       </list>
     </recent_temporary>

@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverFactory extends AutoLogger{
 
+    // TODO: private or protected? Static?
+    protected static WebDriver _WebDriver;
     public WebDriverFactory()
     {
 
@@ -13,7 +15,6 @@ public class WebDriverFactory extends AutoLogger{
 
     public WebDriver CreateSeleniumDriver()
     {
-        WebDriver _WebDriver;
         Info("Creating WebDriver.....");
 
         _WebDriver = CreateWebDriver();

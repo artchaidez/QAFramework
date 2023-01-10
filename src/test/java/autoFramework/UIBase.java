@@ -1,13 +1,19 @@
 package autoFramework;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import webTestFramework.SeleniumControl;
 
 import java.text.MessageFormat;
+import java.time.Duration;
 import java.util.ArrayList;
 
 public class UIBase extends AutoLogger {
 
+    // WebDriver must be protected static
     protected static WebDriver webDriver;
     public SeleniumControl seleniumControl;
 
@@ -50,12 +56,15 @@ public class UIBase extends AutoLogger {
 
     public void switchToiFrame(String iFrameID)
     {
-        webDriver = webDriver.switchTo().frame(iFrameID);
+        Duration duration = Duration.ofSeconds(5);
+        new WebDriverWait(webDriver, duration).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(iFrameID)));
+        Info(String.format("Switched to iFrame: %s", iFrameID));
     }
 
     public void switchToMainFrame()
     {
         webDriver = webDriver.switchTo().defaultContent();
+        Info("Switched to main iFrame");
     }
 
     public void switchToNewlyOpenTab()

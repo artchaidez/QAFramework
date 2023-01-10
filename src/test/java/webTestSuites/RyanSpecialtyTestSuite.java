@@ -17,6 +17,8 @@ import java.util.ArrayList;
 public class RyanSpecialtyTestSuite extends AutoTestBase {
     private String email = null;
     private String password = null;
+
+    private String trelloURL = "https://trello.com/b/0QEdvItb/rt-sdet";
     @BeforeMethod
     public void TestSetUp()
     {
@@ -28,8 +30,8 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
     @AfterMethod
     public void TestTearDown()
     {
-        pages.Quit();
         ResetSteps();
+        pages.Quit();
     }
 
     @Test()
@@ -41,7 +43,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String cardDescription = "this is a new card";
 
         Step("Go to Trello Page");
-            pages.GoToURL("https://trello.com/b/0QEdvItb/rt-sdet");
+            pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
             pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
@@ -77,7 +79,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameWorking = "Working";
 
         Step("Go to Trello Page");
-            pages.GoToURL("https://trello.com/b/0QEdvItb/rt-sdet");
+            pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
             pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
@@ -117,7 +119,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         checkListItems.add("Item 2");
 
         Step("Go to Trello Page");
-            pages.GoToURL("https://trello.com/b/0QEdvItb/rt-sdet");
+            pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
             pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
@@ -160,7 +162,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         checkListItems.add("Item 2");
 
         Step("Go to Trello Page");
-            pages.GoToURL("https://trello.com/b/0QEdvItb/rt-sdet");
+            pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
             pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
@@ -199,7 +201,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameDone = "Done";
 
         Step("Go to Trello Page");
-            pages.GoToURL("https://trello.com/b/0QEdvItb/rt-sdet");
+            pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
             pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
@@ -234,7 +236,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameTodo = "To Do";
 
         Step("Go to Trello Page");
-            pages.GoToURL("https://trello.com/b/0QEdvItb/rt-sdet");
+            pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
             pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
@@ -296,7 +298,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameTodo = "To Do";
 
         Step("Go to Trello Page");
-            pages.GoToURL("https://trello.com/b/0QEdvItb/rt-sdet");
+            pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
             pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
@@ -359,7 +361,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameTodo = "To Do";
 
         Step("Go to Trello Page");
-            pages.GoToURL("https://trello.com/b/0QEdvItb/rt-sdet");
+            pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
             pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
