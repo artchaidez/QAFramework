@@ -4,33 +4,36 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
+import java.util.Objects;
 
 public class WebDriverFactory extends AutoLogger{
 
-    // TODO: private or protected? Static?
-    protected static WebDriver _WebDriver;
+    protected static ThreadLocal<WebDriver> _WebDriver = new ThreadLocal<>();
+    protected static RemoteWebDriver rwd;
     public WebDriverFactory()
     {
 
     }
 
-    public WebDriver CreateSeleniumDriver()
+    public ThreadLocal<WebDriver> CreateSeleniumDriver()
     {
         Info("Creating WebDriver.....");
 
-        _WebDriver = CreateWebDriver();
-        _WebDriver.manage().window().maximize();
-        _WebDriver.manage().deleteAllCookies();
+        CreateWebDriver();
+        _WebDriver.set(Objects.requireNonNull(rwd));
+        _WebDriver.get().manage().window().maximize();
+        _WebDriver.get().manage().deleteAllCookies();
 
         return _WebDriver;
     }
 
-    public WebDriver CreateWebDriver()
+    public void CreateWebDriver()
     {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
-        return new ChromeDriver(options);
+        rwd = new ChromeDriver(options);
     }
 
 

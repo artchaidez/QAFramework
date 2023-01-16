@@ -2,7 +2,6 @@ package autoFramework;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import webTestFramework.SeleniumControl;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 public class UIBase extends AutoLogger {
 
     // WebDriver must be protected static
-    protected static WebDriver webDriver;
+    protected static ThreadLocal<WebDriver> webDriver = new ThreadLocal<>();
     public SeleniumControl seleniumControl;
 
     private final WebDriverFactory webDriverFactory = new WebDriverFactory();
@@ -34,44 +33,44 @@ public class UIBase extends AutoLogger {
 
     public void GoToURL(String url)
     {
-        webDriver.navigate().to(url);
+        getWebDriver().navigate().to(url);
         Info("Navigating to " + url);
     }
 
     public void Quit()
     {
-        webDriver.quit();
+        getWebDriver().quit();
         Info("*** Quit WebDriver ***");
     }
 
-    public void setWebDriver(WebDriver webDriver)
+    public void setWebDriver(ThreadLocal<WebDriver> webDriver)
     {
         UIBase.webDriver = webDriver;
     }
 
     public WebDriver getWebDriver()
     {
-        return webDriver;
+        return webDriver.get();
     }
 
     public void switchToiFrame(String iFrameID)
     {
         Duration duration = Duration.ofSeconds(5);
-        new WebDriverWait(webDriver, duration).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(iFrameID)));
+        new WebDriverWait(getWebDriver(), duration).until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(By.id(iFrameID)));
         Info(String.format("Switched to iFrame: %s", iFrameID));
     }
 
     public void switchToMainFrame()
     {
-        webDriver = webDriver.switchTo().defaultContent();
+        webDriver.set(getWebDriver().switchTo().defaultContent());
         Info("Switched to main iFrame");
     }
 
     public void switchToNewlyOpenTab()
     {
-        ArrayList<String> allTabs = new ArrayList<>(webDriver.getWindowHandles());
+        ArrayList<String> allTabs = new ArrayList<>(getWebDriver().getWindowHandles());
         int lastTabIndex = allTabs.size() - 1;
-        webDriver = webDriver.switchTo().window(allTabs.get(lastTabIndex));
-        Info(String.format("Switched to newest tab: %s", this.webDriver.getTitle()));
+        webDriver.set(getWebDriver().switchTo().window(allTabs.get(lastTabIndex)));
+        Info(String.format("Switched to newest tab: %s", getWebDriver().getTitle()));
     }
 }

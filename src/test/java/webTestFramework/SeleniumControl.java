@@ -323,7 +323,7 @@ public class SeleniumControl extends UIBase {
 
             try
             {
-                elements = webDriver.findElements(this.Locator);
+                elements = webDriver.get().findElements(this.Locator);
 
                 if (elements == null || elements.size() == 0)
                 {

@@ -7,6 +7,9 @@
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +73,7 @@
       <recent name="C:\Users\artch\IdeaProjects\QAFramework\Assessments" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite.TestMoveCardIntoWorkingColumn">
+  <component name="RunManager" selected="TestNG.C:/Users/artch/IdeaProjects/QAFramework/testng.xml">
     <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -94,7 +97,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestClickPodiumButton" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PodiumTestSuite.TestScoreboardOremLocationExists" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -107,7 +110,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestClickPodiumButton&quot;" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestScoreboardOremLocationExists&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -140,7 +143,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestMoveCardIntoWorkingColumn" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -153,7 +156,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestMoveCardIntoWorkingColumn&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -185,17 +188,17 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestMoveCardIntoWorkingColumn" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" />
       <item itemvalue="Gradle.PodiumTestSuite" />
       <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/testng.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestMoveCardIntoWorkingColumn" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
         <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/testng.xml" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" />
         <item itemvalue="Gradle.PodiumTestSuite" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
       </list>
@@ -230,11 +233,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java</url>
           <line>113</line>
           <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="47" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
