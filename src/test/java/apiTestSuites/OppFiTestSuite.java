@@ -26,7 +26,6 @@ public class OppFiTestSuite extends AutoTestBase {
     @AfterMethod
     public void TestTearDown()
     {
-        ResetSteps();
     }
 
     @Test()

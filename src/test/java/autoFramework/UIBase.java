@@ -9,6 +9,7 @@ import webTestFramework.SeleniumControl;
 import java.text.MessageFormat;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class UIBase extends AutoLogger {
 
@@ -50,7 +51,7 @@ public class UIBase extends AutoLogger {
 
     public WebDriver getWebDriver()
     {
-        return webDriver.get();
+        return Objects.requireNonNull(webDriver.get());
     }
 
     public void switchToiFrame(String iFrameID)

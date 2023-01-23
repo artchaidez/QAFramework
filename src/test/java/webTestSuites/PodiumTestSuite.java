@@ -22,7 +22,6 @@ public class PodiumTestSuite extends AutoTestBase {
     @AfterMethod
     public void TestTearDown()
     {
-        ResetSteps();
         pages.Quit();
     }
 

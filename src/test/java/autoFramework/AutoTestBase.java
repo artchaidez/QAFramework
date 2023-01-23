@@ -1,12 +1,9 @@
 package autoFramework;
 
 import apis.Apis;
-import apis.OffersApi;
+import org.testng.annotations.AfterMethod;
 import pages.Pages;
-import pages.PodiumBubble;
-import pages.PodiumModal;
 
-// TODO: Need a class that has both API and Pages
 public class AutoTestBase extends AutoLogger {
 
     protected Apis apis;
@@ -17,5 +14,14 @@ public class AutoTestBase extends AutoLogger {
         apis = new Apis();
         pages = new Pages();
 
+    }
+
+    /* Using a listener does not reset steps; listener points to different memory space.
+     * Public would allow FinalTestTearDown to be overridden; private does not work. Protected final
+     * prevents the method from being overridden. */
+    @AfterMethod
+    protected final void FinalTestTearDown()
+    {
+        ResetSteps();
     }
 }

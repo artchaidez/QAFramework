@@ -1,7 +1,6 @@
 package org.example;
 
 // TODO: Wrapper on Asserts that logs what happens
-// TODO: Reset stepNumber when running TestSuites
 // TODO: Logger needs to be thread safe
 // TODO: FileLogger
 // TODO: Docker Image (needs to be done on mac)

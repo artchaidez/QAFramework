@@ -30,7 +30,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
     @AfterMethod
     public void TestTearDown()
     {
-        ResetSteps();
         pages.Quit();
     }
 
