@@ -41,7 +41,6 @@ public class PodiumTestSuite extends AutoTestBase {
 
         Step("Click on Podium Bubble");
             pages.podiumBubble.ClickOnPodiumButton();
-            Info("Currently within Podium bubble");
 
         Step("Switch to Podium modal iframe");
             pages.podiumBubble.GoToPodiumModalFrame();
@@ -63,7 +62,7 @@ public class PodiumTestSuite extends AutoTestBase {
 
         Step("Verify on Podium modal");
             pages.podiumModal.LocationSearchBar().IsVisible(5);
-            Info("Podium modal open");
+            Info("Podium modal is open");
 
         Step("Click on first location in location list");
             pages.podiumModal.SelectFirstLocation();
@@ -87,7 +86,7 @@ public class PodiumTestSuite extends AutoTestBase {
 
         Step(String.format("Verify %s is in location list", location));
             pages.podiumModal.FindByLocation(location).IsVisible(5);
-            Info(String.format("%s is in the modal", location));
+            Info(String.format("'%s' is in the modal", location));
 
         Step(String.format("Click on %s", location));
             pages.podiumModal.FindByLocation(location).Click(5);
@@ -95,7 +94,7 @@ public class PodiumTestSuite extends AutoTestBase {
         Step(String.format("Verify %s opened up", location));
             String returnedLocation = pages.podiumModal.GetLocationInMessageModal();
             Assert.assertEquals(returnedLocation, location);
-            Info(String.format("%s opened up", location));
+            Info(String.format("'%s' opened up", location));
     }
 
     @Test ()
@@ -147,7 +146,6 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("All inputs filled out and send button is valid");
     }
 
-    // TODO: Always fails in parallel- JumpToPodiumModal()
     @Test ()
     @TestInfo(description = "Test confirming subject and terms are opened in a new tab.")
     public void TestClickSubjectTerms() throws Exception
@@ -207,7 +205,6 @@ public class PodiumTestSuite extends AutoTestBase {
             String messageIndicator = pages.podiumModal.MessageInputIndicator();
             Assert.assertNotEquals(messageIndicator, emptyMessageIndicator);
             Info("Message has text input");
-            Info("Message has text input");
     }
 
     @Test ()
@@ -231,49 +228,49 @@ public class PodiumTestSuite extends AutoTestBase {
             pages.podiumModal.LocationSearchBar().IsVisible(5);
             Info("Podium modal open");
 
-        Step("Input Bountiful ZIP code into searchbar");
+        Step(String.format("Input ZIP code '%s' into searchbar", bountifulZIP));
             pages.podiumModal.SetLocationSearchBarText(bountifulZIP);
             pages.Sleep(1);
 
-        Step("Verify first location in list is Bountiful ZIP");
+        Step(String.format("Verify first location in list is '%s' ZIP code", bountifulName));
             returnedLocation = pages.podiumModal.GetFirstLocationText();
             Assert.assertTrue(returnedLocation.contains(bountifulZIP));
-            Info("Correctly searched for Bountiful ZIP");
+            Info(String.format("Correctly searched for %s ZIP code", bountifulZIP));
 
-        Step("Input Bountiful name into searchbar");
+        Step(String.format("Input '%s' into searchbar", bountifulName));
             pages.podiumModal.SetLocationSearchBarText(bountifulName);
             pages.Sleep(1);
 
-        Step("Verify first location in list is Bountiful name");
+        Step(String.format("Verify first location in list is '%s'", bountifulName));
             returnedLocation = pages.podiumModal.GetFirstLocationText();
             Assert.assertTrue(returnedLocation.contains(bountifulName));
-            Info("Correctly searched for Bountiful name");
+            Info(String.format("Correctly searched for %s", bountifulName));
 
-        Step("Input Bountiful building number into searchbar");
+        Step(String.format("Input building number '%s' into searchbar", bountifulBuildingNum));
             pages.podiumModal.SetLocationSearchBarText(bountifulBuildingNum);
             pages.Sleep(1);
 
-        Step("Verify first location in list is Bountiful building number");
+        Step(String.format("Verify first location in list is building number '%s'", bountifulName));
             returnedLocation = pages.podiumModal.GetFirstLocationText();
             Assert.assertTrue(returnedLocation.contains(bountifulBuildingNum));
-            Info("Correctly searched for Bountiful building number");
+            Info(String.format("Correctly searched for %s", bountifulBuildingNum));
 
-        Step("Input Bountiful street name into searchbar");
+        Step(String.format("Input street name '%s' into searchbar", bountifulStreet));
             pages.podiumModal.SetLocationSearchBarText(bountifulStreet);
             pages.Sleep(1);
 
-        Step("Verify first location in list is Bountiful street name");
+        Step(String.format("Verify first location in list is street name '%s'", bountifulName));
             returnedLocation = pages.podiumModal.GetFirstLocationText();
             Assert.assertTrue(returnedLocation.contains(bountifulStreet));
-            Info("Correctly searched for Bountiful street name");
+            Info(String.format("Correctly searched for %s", bountifulStreet));
 
-        Step("Input Bountiful city into searchbar");
+        Step(String.format("Input city '%s' into searchbar", bountifulCity));
             pages.podiumModal.SetLocationSearchBarText(bountifulCity);
             pages.Sleep(1);
 
-        Step("Verify first location in list in Bountiful");
+        Step(String.format("Verify first location in list is city name '%s'", bountifulName));
             returnedLocation = pages.podiumModal.GetFirstLocationText();
             Assert.assertTrue(returnedLocation.contains(bountifulCity));
-            Info("Correctly searched for Bountiful city");
+            Info(String.format("Correctly searched for %s", bountifulCity));
     }
 }

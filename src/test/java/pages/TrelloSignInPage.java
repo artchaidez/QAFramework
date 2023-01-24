@@ -27,31 +27,26 @@ public class TrelloSignInPage extends UIBase {
     public void ClickOnMainPageLogIn() throws Exception
     {
         logInMainPageBtn.Click(15);
-        Info("Clicked on 'Log In'");
     }
 
     public void SetEmailText(String email) throws Exception
     {
         emailText.SetText(email, 15, false);
-        Info("Set email");
     }
 
     public void ClickOnMainPageContinue() throws Exception
     {
         continueBtn.Click(15);
-        Info("Clicked on 'continue'");
     }
 
     public void SetPasswordText(String password) throws Exception
     {
         passwordText.SetText(password, 15, false);
-        Info("Set password");
     }
 
     public void ClickOnLogInButton() throws Exception
     {
         finalLogInBtn.Click(15);
-        Info("Signed into account");
     }
 
     public void LogIntoAccountOnMainPage(String email, String password) throws Exception

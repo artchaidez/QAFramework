@@ -20,12 +20,15 @@ public class WebDriverFactory extends AutoLogger{
 
     public ThreadLocal<WebDriver> CreateSeleniumDriver()
     {
-        Info("Creating WebDriver.....");
-
         CreateWebDriver();
         _WebDriver.set(ThreadGuard.protect(Objects.requireNonNull(rwd)));
         _WebDriver.get().manage().window().maximize();
         _WebDriver.get().manage().deleteAllCookies();
+
+        Info("");
+        Info("*****************************************************");
+        Info("*** Created WebDriver ***");
+        Info("*****************************************************");
 
         return _WebDriver;
     }

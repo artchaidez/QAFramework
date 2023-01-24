@@ -280,18 +280,7 @@ public class SeleniumControl extends UIBase {
         {
             if(Locator != null)
             {
-                String byType = Locator.toString().split(":")[0];
-                String byValue = (Locator.toString().split(":")[0]).trim();
-
-                if((byType.toLowerCase().contains("xpath") || byType.toLowerCase().contains("css")) && (byValue.contains("'")))
-                {
-                    String[] split = byValue.split("'");
-                    return split[split.length - 2];
-                }
-                else
-                {
-                    return byValue;
-                }
+                return SplitLocatorString();
             }
             else
             {
@@ -302,6 +291,28 @@ public class SeleniumControl extends UIBase {
         {
             return this.controlName;
         }
+    }
+
+    private String SplitLocatorString()
+    {
+        String byType = Locator.toString().split(":")[0];
+        String byValue = (Locator.toString().split(":")[0]).trim();
+
+        String afterColonString = Locator.toString().split(":")[1];
+
+        if (afterColonString.contains("'") )
+        {
+            String[] split = afterColonString.split("'");
+            return byType + " ---> " + split[split.length - 2];
+        }
+
+        if (afterColonString.contains("\""))
+        {
+            String[] split = afterColonString.split("\"");
+            return byType + " ---> " + split[split.length - 2];
+        }
+        return byValue + " ---> " + afterColonString;
+
     }
 
     protected Exception FormatException(Exception ex)

@@ -377,7 +377,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             card.IsVisible(5);
             Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameTodo));
 
-        Step("Verify card was made by deleting");
+        Step("Delete card");
             pages.trelloSignInPage.trelloBoardPage.DeleteCard(cardTitle, listNameTodo);
     }
 }

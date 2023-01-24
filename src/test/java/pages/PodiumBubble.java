@@ -18,6 +18,7 @@ public class PodiumBubble extends UIBase {
     {
         switchToMainFrame();
         switchToiFrame("podium-bubble");
+        Info("Currently within Podium bubble");
     }
 
     /** Verify in main iframe by checking if podium-bubble exists. Podium button should not visible.*/
@@ -30,6 +31,7 @@ public class PodiumBubble extends UIBase {
     public void ClickOnPodiumButton() throws Exception
     {
         podiumBtn.Click(5);
+        Info("Clicked on Podium button");
     }
 
     /** Switch to podium-modal iframe.*/
@@ -37,15 +39,14 @@ public class PodiumBubble extends UIBase {
     {
         switchToMainFrame();
         switchToiFrame("podium-modal");
+        Info("Currently within Podium modal");
     }
 
     /** Jumps to podium-modal iframe regardless of where currently at.*/
     public void JumpToPodiumModal() throws Exception
     {
-        switchToMainFrame();
-        switchToiFrame("podium-bubble");
+        GoToPodiumBubbleFrame();
         podiumBtn.Click(15);
-        switchToMainFrame();
-        switchToiFrame("podium-modal");
+        GoToPodiumModalFrame();
     }
 }

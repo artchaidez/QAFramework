@@ -6,12 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiTestSuites/OppFiTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiTestSuites/OppFiTestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/FileLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumBubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumBubble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
     </list>
@@ -77,30 +78,7 @@
       <recent name="C:\Users\artch\IdeaProjects\QAFramework\Assessments" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.OppFiTestSuite">
-    <configuration name="OppFiTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;apiTestSuites.OppFiTestSuite&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption">
     <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -115,6 +93,52 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite.TestClickSubjectTerms" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestClickSubjectTerms&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite.TestScoreboardOremLocationExists" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestScoreboardOremLocationExists&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -147,7 +171,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestAddCheckListWithItems" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestDropDownAddCardOption" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -160,7 +184,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestAddCheckListWithItems&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDropDownAddCardOption&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -170,41 +194,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="C:/Users/artch/IdeaProjects/QAFramework/testng.xml" type="TestNG" temporary="true" nameIsGenerated="true">
-      <shortenClasspath name="NONE" />
-      <useClassPathOnly />
-      <option name="SUITE_NAME" value="$PROJECT_DIR$/testng.xml" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="GROUP_NAME" value="" />
-      <option name="TEST_OBJECT" value="SUITE" />
-      <option name="PARAMETERS" value="" />
-      <option name="OUTPUT_DIRECTORY" value="" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="PROPERTIES_FILE" value="" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="Gradle.OppFiTestSuite" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestAddCheckListWithItems" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
       <item itemvalue="Gradle.PodiumTestSuite" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
       <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
-      <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/testng.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.OppFiTestSuite" />
-        <item itemvalue="Gradle.PodiumTestSuite" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
-        <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/testng.xml" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestAddCheckListWithItems" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
+        <item itemvalue="Gradle.PodiumTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
       </list>
     </recent_temporary>
   </component>
@@ -234,14 +237,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java</url>
-          <line>113</line>
-          <option name="timeStamp" value="43" />
+          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="54" />
+          <url>file://$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java</url>
+          <line>302</line>
+          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

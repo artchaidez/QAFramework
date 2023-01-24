@@ -40,6 +40,7 @@ public class PodiumModal extends UIBase {
     public void SelectFirstLocation() throws Exception
     {
         firstLocation.Click(5);
+        Info("Selected first location in modal");
     }
 
     public String GetFirstLocationText() {
@@ -93,12 +94,14 @@ public class PodiumModal extends UIBase {
     public void ClickOnTermsButton() throws Exception
     {
         subjectTermsLink.Click(5);
+        Info("Clicked on 'use is subject to terms'");
     }
 
     /** Click on arrow on message modal to return to location list modal */
     public void ClickOnReturnArrowBtn() throws Exception
     {
         returnArrowBtn.Click(5);
+        Info("Clicked on return arrow button");
     }
 
     public String GetLocationInMessageModal()
