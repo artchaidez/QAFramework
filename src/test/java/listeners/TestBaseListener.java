@@ -5,15 +5,15 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-public class MyListener extends AutoTestBase implements ITestListener {
+public class TestBaseListener extends AutoTestBase implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
 
         String testName = result.getMethod().getMethodName();
-        String moduleName = result.getMethod().getRealClass().getCanonicalName();
+        String packageClassName = result.getMethod().getRealClass().getCanonicalName();
 
         try {
-            StartTest(testName, moduleName);
+            StartTest(testName, packageClassName);
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

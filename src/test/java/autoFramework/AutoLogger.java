@@ -157,17 +157,19 @@ public class AutoLogger {
         //ToDo figure out how to ignore test
     }
 
-    public void StartTest(String testName, String moduleName) throws ClassNotFoundException {
+    public void StartTest(String testName, String packageClassName) throws ClassNotFoundException {
 
-        testExecutionContext.getTestInfoContext(testName, moduleName);
+        testExecutionContext.getTestInfoContext(testName, packageClassName);
 
         List<String> messages = new ArrayList<>();
         messages.add("");
         messages.add("==========================================================================");
-        messages.add("     Starting test  :  " + testName);
-        messages.add("     Description    :  " + testExecutionContext.getDescription());
-        messages.add("     Test level     :  " + testExecutionContext.getLevel());
-        messages.add("     Test categories:  " + testExecutionContext.getCategories());
+        messages.add("     Starting test  : " + testName);
+        messages.add("     Test package   : " + testExecutionContext.getPackageName());
+        messages.add("     Test class     : " + testExecutionContext.getClassName());
+        messages.add("     Description    : " + testExecutionContext.getDescription());
+        messages.add("     Test level     : " + testExecutionContext.getLevel());
+        //messages.add("     Test categories:  " + testExecutionContext.getCategories());
         messages.add("==========================================================================");
 
 
@@ -175,27 +177,6 @@ public class AutoLogger {
         {
             Info(message);
         }
-
-        /*
-         * var description = something
-         *
-         * List<String> messages = new ArrayList<String>(){
-         * "==========================================================================",
-         * "     Starting test  :  " + context.CurrentTest.Name,
-         * "     Description    :  " + description,
-         * "=========================================================================="
-         * }
-         *
-         *
-         * for(String message : messages)
-         * {
-         * info(message);
-         * }
-         *
-         * setTestStatusToPass()
-         * stepNumber = 1;
-         * this.testName = context.Current.MethodName;
-         * */
     }
 
 }

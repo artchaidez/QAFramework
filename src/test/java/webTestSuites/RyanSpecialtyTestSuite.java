@@ -2,7 +2,7 @@ package webTestSuites;
 
 import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
-import listeners.MyListener;
+import listeners.TestBaseListener;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -13,7 +13,7 @@ import webTestFramework.SeleniumControl;
 
 import java.util.ArrayList;
 
-@Listeners(MyListener.class)
+@Listeners(TestBaseListener.class)
 public class RyanSpecialtyTestSuite extends AutoTestBase {
     private String email = null;
     private String password = null;

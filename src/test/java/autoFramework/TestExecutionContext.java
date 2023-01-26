@@ -6,9 +6,13 @@ public class TestExecutionContext {
 
     private TestInfo context;
 
-    public void getTestInfoContext(String testName, String moduleName) throws ClassNotFoundException {
+    private String className;
 
-        Class testClass = Class.forName(moduleName);
+    private String packageName;
+
+    public void getTestInfoContext(String testName, String packageClassName) throws ClassNotFoundException {
+
+        Class testClass = Class.forName(packageClassName);
         Method[] methods = testClass.getMethods();
         Method testMethod = null;
 
@@ -20,7 +24,17 @@ public class TestExecutionContext {
             }
         }
 
+        SplitPackageClassName(packageClassName);
+
         context =  testMethod.getDeclaredAnnotation(TestInfo.class);
+    }
+
+    private void SplitPackageClassName(String packageClassName)
+    {
+        String[] split = packageClassName.split("\\.");
+
+        packageName = split[0];
+        className = split[1];
     }
 
     public String getDescription()
@@ -37,6 +51,10 @@ public class TestExecutionContext {
     {
         return context.categories();
     }
+
+    public String getClassName() { return className;}
+
+    public String getPackageName() { return  packageName;}
 
 
 }

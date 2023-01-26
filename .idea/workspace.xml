@@ -6,13 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/FileLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumBubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumBubble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiTestSuites/OppFiTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiTestSuites/OppFiTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/TestExecutionContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/TestExecutionContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/TestInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/TestInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/MyListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/TestBaseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
     </list>
@@ -61,24 +59,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/artch/IdeaProjects/testframework",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/artch/IdeaProjects/testframework&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.jarRepository.settings.RemoteRepositoriesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\artch\IdeaProjects\QAFramework\Assessments" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption">
+  <component name="RunManager" selected="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists">
     <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -203,9 +201,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
         <item itemvalue="Gradle.PodiumTestSuite" />
         <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
       </list>
@@ -240,11 +238,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java</url>
           <line>28</line>
           <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/webTestFramework/SeleniumControl.java</url>
-          <line>302</line>
-          <option name="timeStamp" value="81" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

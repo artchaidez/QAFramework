@@ -2,14 +2,14 @@ package webTestSuites;
 
 import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
-import listeners.MyListener;
+import listeners.TestBaseListener;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(MyListener.class)
+@Listeners(TestBaseListener.class)
 public class PodiumTestSuite extends AutoTestBase {
 
     private String podiumURL = "https://demo.podium.tools/qa-webchat-lorw/";
