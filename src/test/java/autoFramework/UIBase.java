@@ -11,6 +11,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Objects;
 
+// TODO: rename this class
 public class UIBase extends AutoLogger {
 
     // WebDriver must be protected static
@@ -56,6 +57,11 @@ public class UIBase extends AutoLogger {
     public WebDriver getWebDriver()
     {
         return Objects.requireNonNull(webDriver.get());
+    }
+
+    public boolean webDriverExists()
+    {
+        return !getWebDriver().toString().contains("(null)");
     }
 
     public void switchToiFrame(String iFrameID)

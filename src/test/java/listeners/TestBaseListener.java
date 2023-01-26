@@ -1,16 +1,26 @@
 package listeners;
 
 import autoFramework.AutoTestBase;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import java.io.File;
+import java.io.IOException;
+
 public class TestBaseListener extends AutoTestBase implements ITestListener {
+
+    String testName;
+    String packageClassName;
+
     @Override
     public void onTestStart(ITestResult result) {
 
-        String testName = result.getMethod().getMethodName();
-        String packageClassName = result.getMethod().getRealClass().getCanonicalName();
+        testName = result.getMethod().getMethodName();
+        packageClassName = result.getMethod().getRealClass().getCanonicalName();
 
         try {
             StartTest(testName, packageClassName);
@@ -25,7 +35,9 @@ public class TestBaseListener extends AutoTestBase implements ITestListener {
     }
 
     @Override
-    public void onTestFailure(ITestResult result) {
+    public void onTestFailure(ITestResult result)
+    {
+        if (pages.webDriverExists()) { TakeScreenshot();}
     }
 
     @Override
@@ -45,5 +57,21 @@ public class TestBaseListener extends AutoTestBase implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
+    }
+
+    private void TakeScreenshot()
+    {
+        TakesScreenshot screenshot = (TakesScreenshot) pages.getWebDriver();
+        File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
+
+        String destFileString = "./failedTests/" + packageClassName + "/" + getTestEndDate() + testName + ".png";
+        File destFile = new File(destFileString);
+
+        try {
+            FileUtils.copyFile(srcFile, destFile);
+            Error(testName + " failed and a screenshot was taken");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

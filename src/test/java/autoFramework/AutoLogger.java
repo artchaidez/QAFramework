@@ -179,4 +179,17 @@ public class AutoLogger {
         }
     }
 
+    /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format */
+    public String getTestEndDate()
+    {
+        // toLocaleDate.toString() --> yyyy-mm-dd
+        String formattedDate = testEndDate.toLocalDate().toString();
+        // toLocaleTime.toString() --> hh:mm:ss.ms
+        // split(":", 3) converts LocaleTime into [hh, mm, ss.ms]
+        String[] formattedTime = testEndDate.toLocalTime().toString().split(":", 3);
+        formattedDate = formattedDate.concat("_" + formattedTime[0] + "-" + formattedTime[1]);
+
+        return formattedDate;
+    }
+
 }

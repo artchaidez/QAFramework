@@ -1,6 +1,6 @@
 package org.example;
 
-// TODO: implement Extent Report; screenshots of failed tests
+// TODO: set up git to not push screenshots
 // TODO: Wrapper on Asserts that logs what happens
 // TODO: Logger needs to be thread safe
 // TODO: FileLogger
