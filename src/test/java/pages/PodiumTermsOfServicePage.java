@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import webTestFramework.SeleniumControl;
 
-public class PodiumTermsOfService {
+public class PodiumTermsOfServicePage {
 
     private final SeleniumControl termsOfService = new SeleniumControl(By.xpath("//*[text()='Terms of Service']"));
 

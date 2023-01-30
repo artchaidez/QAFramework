@@ -37,7 +37,7 @@ public class TestBaseListener extends AutoTestBase implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result)
     {
-        if (pages.webDriverExists()) { TakeScreenshot();}
+        if (packageClassName.contains("webTestSuites")) { TakeScreenshot();}
     }
 
     @Override

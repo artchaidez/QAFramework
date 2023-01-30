@@ -7,7 +7,7 @@ public class Pages extends UIBase {
     public PodiumBubble podiumBubble;
     public PodiumModal podiumModal;
 
-    public PodiumTermsOfService podiumTermsOfService;
+    public PodiumTermsOfServicePage podiumTermsOfService;
 
     public TrelloSignInPage trelloSignInPage;
 
@@ -16,7 +16,7 @@ public class Pages extends UIBase {
     {
         podiumBubble = new PodiumBubble();
         podiumModal = new PodiumModal();
-        podiumTermsOfService = new PodiumTermsOfService();
+        podiumTermsOfService = new PodiumTermsOfServicePage();
         trelloSignInPage = new TrelloSignInPage();
     }
 }
