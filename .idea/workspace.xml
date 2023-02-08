@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/ElementalSeleniumPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/pages/InvoiceCloudPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/TestBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/TestBaseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/Pages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/Pages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumTermsOfService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumTermsOfServicePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +73,21 @@
       <recent name="C:\Users\artch\IdeaProjects\QAFramework\Assessments" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists">
-    <configuration name="OppFiTestSuite.OffersApiAcceptedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.InvoiceCloudTestSuite">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="QAFramework.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -89,7 +100,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;apiTestSuites.OppFiTestSuite.OffersApiAcceptedTest&quot;" />
+            <option value="&quot;webTestSuites.InvoiceCloudTestSuite&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -99,7 +110,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="OppFiTestSuite.OffersApiGetsDeclinedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InvoiceCloudTestSuite.TestAddElements" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -112,7 +123,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;apiTestSuites.OppFiTestSuite.OffersApiGetsDeclinedTest&quot;" />
+            <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestAddElements&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -122,7 +133,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestScoreboardOremLocationExists" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InvoiceCloudTestSuite.TestClickElementalSelenium" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -135,7 +146,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestScoreboardOremLocationExists&quot;" />
+            <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestClickElementalSelenium&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -145,7 +156,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="InvoiceCloudTestSuite.TestDeleteElement" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,30 +169,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestDropDownAddCardOption" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDropDownAddCardOption&quot;" />
+            <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestDeleteElement&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -192,19 +180,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.OppFiTestSuite.OffersApiAcceptedTest" />
-      <item itemvalue="Gradle.OppFiTestSuite.OffersApiGetsDeclinedTest" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+      <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
+      <item itemvalue="Gradle.InvoiceCloudTestSuite.TestClickElementalSelenium" />
+      <item itemvalue="Gradle.InvoiceCloudTestSuite.TestDeleteElement" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
-        <item itemvalue="Gradle.OppFiTestSuite.OffersApiGetsDeclinedTest" />
-        <item itemvalue="Gradle.OppFiTestSuite.OffersApiAcceptedTest" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+        <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+        <item itemvalue="Gradle.InvoiceCloudTestSuite.TestClickElementalSelenium" />
+        <item itemvalue="Gradle.InvoiceCloudTestSuite.TestDeleteElement" />
+        <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>

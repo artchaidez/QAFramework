@@ -11,6 +11,10 @@ public class Pages extends UIBase {
 
     public TrelloSignInPage trelloSignInPage;
 
+    public InvoiceCloudPage invoiceCloudPage;
+
+    public ElementalSeleniumPage elementalSeleniumPage;
+
 
     public Pages()
     {
@@ -18,5 +22,7 @@ public class Pages extends UIBase {
         podiumModal = new PodiumModal();
         podiumTermsOfService = new PodiumTermsOfServicePage();
         trelloSignInPage = new TrelloSignInPage();
+        invoiceCloudPage = new InvoiceCloudPage();
+        elementalSeleniumPage = new ElementalSeleniumPage();
     }
 }
