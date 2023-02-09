@@ -2,6 +2,7 @@ package pages;
 
 import autoFramework.UIBase;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 import webTestFramework.SeleniumControl;
 
 public class TrelloBoardPage extends UIBase {
@@ -42,6 +43,18 @@ public class TrelloBoardPage extends UIBase {
     {
         String xpath = String.format("//*[text()='%s']/parent::div/following-sibling::div[1]//*[text()='%s']", listName, cardTitle);
         SeleniumControl newCard = new SeleniumControl(By.xpath(xpath));
+
+        for (int attempt = 0; attempt < 10; attempt++)
+        {
+            try {
+                newCard.IsVisible(5);
+                break;
+            } catch (WebDriverException e)
+            {
+
+            }
+        }
+
         newCard.Click(5);
         Info(String.format("Opened '%s' in '%s'", cardTitle, listName));
     }
@@ -106,6 +119,16 @@ public class TrelloBoardPage extends UIBase {
 
     public SeleniumControl ReturnSDETBoardPage()
     {
+        for (int attempt = 0; attempt < 10; attempt++)
+        {
+            try {
+                sdetBoard.IsVisible(5);
+                break;
+            } catch (WebDriverException e)
+            {
+
+            }
+        }
         return sdetBoard;
     }
 

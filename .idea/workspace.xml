@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="" />
+    <list default="true" id="1ff16f33-ba90-4af0-8212-7076a2f844e9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,8 +71,8 @@
       <recent name="C:\Users\artch\IdeaProjects\QAFramework\Assessments" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.InvoiceCloudTestSuite">
-    <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption">
+    <configuration name="RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -81,7 +85,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.InvoiceCloudTestSuite&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -91,7 +95,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="InvoiceCloudTestSuite.TestAddElements" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestDeleteCardInCard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -104,7 +108,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestAddElements&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDeleteCardInCard&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -114,7 +118,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="InvoiceCloudTestSuite.TestClickElementalSelenium" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestDeleteCardOnBoard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -127,7 +131,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestClickElementalSelenium&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDeleteCardOnBoard&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -137,7 +141,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="InvoiceCloudTestSuite.TestDeleteElement" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestDropDownAddCardOption" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -150,7 +154,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestDeleteElement&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDropDownAddCardOption&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -160,7 +164,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestCreateNewCardInTodo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestMoveCardIntoDoneColumn" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -173,7 +177,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestCreateNewCardInTodo&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestMoveCardIntoDoneColumn&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -184,19 +188,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
-      <item itemvalue="Gradle.InvoiceCloudTestSuite" />
-      <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
-      <item itemvalue="Gradle.InvoiceCloudTestSuite.TestClickElementalSelenium" />
-      <item itemvalue="Gradle.InvoiceCloudTestSuite.TestDeleteElement" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardInCard" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardOnBoard" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestMoveCardIntoDoneColumn" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.InvoiceCloudTestSuite" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
-        <item itemvalue="Gradle.InvoiceCloudTestSuite.TestClickElementalSelenium" />
-        <item itemvalue="Gradle.InvoiceCloudTestSuite.TestDeleteElement" />
-        <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardOnBoard" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardInCard" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestMoveCardIntoDoneColumn" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" />
       </list>
     </recent_temporary>
   </component>
