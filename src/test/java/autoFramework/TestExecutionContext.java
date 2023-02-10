@@ -10,6 +10,7 @@ public class TestExecutionContext {
 
     private String packageName;
 
+    /** Uses annotation TestInfo to gather info to be logged at the start of every test method. */
     public void getTestInfoContext(String testName, String packageClassName) throws ClassNotFoundException {
 
         Class testClass = Class.forName(packageClassName);

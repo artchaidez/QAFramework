@@ -54,17 +54,20 @@ public class AutoLogger {
         testContextLogger.Debug(message);
     }
 
+    /** Log info */
     public void Info(String message)
     {
         testContextLogger.Info(message);
     }
 
+    /** Log error */
     public void Error(String message)
     {
         //ToDo learn and create GetMessageWithTestName
         testContextLogger.Error(message);
     }
 
+    /** Log warning */
     public void Warning(String message)
     {
         //ToDo learn and create GetMessageWithTestName
@@ -130,6 +133,7 @@ public class AutoLogger {
         }
     }
 
+    /** Log what is currently being done by the code. Increments int stepNumber.*/
     public void Step(String message)
     {
         testContextLogger.Step(message,stepNumber);
@@ -146,6 +150,7 @@ public class AutoLogger {
         Info("RESPONSE BODY: " + response.body());
     }
 
+    /** Resets int stepNumber after test method finishes. */
     public void ResetSteps()
     {
         stepNumber = 1;
@@ -157,6 +162,7 @@ public class AutoLogger {
         //ToDo figure out how to ignore test
     }
 
+    /** Logs testExecutionContext to provide information at the tart of the test. */
     public void StartTest(String testName, String packageClassName) throws ClassNotFoundException {
 
         testExecutionContext.getTestInfoContext(testName, packageClassName);
@@ -179,7 +185,7 @@ public class AutoLogger {
         }
     }
 
-    /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format */
+    /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format. */
     public String getTestEndDate()
     {
         // toLocaleDate.toString() --> yyyy-mm-dd

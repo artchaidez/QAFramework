@@ -59,6 +59,7 @@ public class TestBaseListener extends AutoTestBase implements ITestListener {
     public void onFinish(ITestContext context) {
     }
 
+    /** Called within TestFailure(). Will only be called for web tests, not API tests. */
     private void TakeScreenshot()
     {
         TakesScreenshot screenshot = (TakesScreenshot) pages.getWebDriver();

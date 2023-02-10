@@ -4,10 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ff16f33-ba90-4af0-8212-7076a2f844e9" name="Changes" comment="">
+    <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/TestContextLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/TestContextLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/TestExecutionContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/TestExecutionContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/TestBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/TestBaseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ElementalSeleniumPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ElementalSeleniumPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/InvoiceCloudPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/InvoiceCloudPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumBubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumBubble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumTermsOfServicePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumTermsOfServicePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +81,8 @@
       <recent name="C:\Users\artch\IdeaProjects\QAFramework\Assessments" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption">
-    <configuration name="RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.PodiumTestSuite">
+    <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -85,7 +95,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist&quot;" />
+            <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -95,7 +105,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestDeleteCardInCard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PodiumTestSuite.TestClickPodiumButton" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -108,7 +118,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDeleteCardInCard&quot;" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestClickPodiumButton&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite.TestClickSubjectTerms" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestClickSubjectTerms&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -164,43 +197,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestMoveCardIntoDoneColumn" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestMoveCardIntoDoneColumn&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <list>
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardInCard" />
+      <item itemvalue="Gradle.PodiumTestSuite" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
       <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardOnBoard" />
       <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestMoveCardIntoDoneColumn" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PodiumTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardOnBoard" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardInCard" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestMoveCardIntoDoneColumn" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCompleteToDoItemsChecklist" />
       </list>
     </recent_temporary>
   </component>

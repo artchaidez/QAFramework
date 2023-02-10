@@ -45,8 +45,8 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Switch to Podium modal iframe");
             pages.podiumBubble.GoToPodiumModalFrame();
 
-        Step("Verify on Podium Modal");
-            pages.podiumModal.Modal().Click(5);
+        Step("Verify on Podium Modal by locating search bar");
+            pages.podiumModal.LocationSearchBar().Click(5);
             Info("Podium modal is visible");
     }
 
@@ -159,6 +159,9 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Verify on Podium modal");
             pages.podiumModal.LocationSearchBar().IsVisible(5);
             Info("Podium modal open");
+
+        Step("Click on first location to open the message modal");
+            pages.podiumModal.SelectFirstLocation();
 
         Step("Click on 'use is subject to terms'");
             pages.podiumModal.ClickOnTermsButton();

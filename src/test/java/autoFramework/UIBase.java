@@ -20,6 +20,7 @@ public class UIBase extends AutoLogger {
 
     private final WebDriverFactory webDriverFactory = new WebDriverFactory();
 
+    /** Sleep webDriver for a specified amount of seconds. */
     public void Sleep(int seconds) throws InterruptedException{
         if(seconds > 5)
             Info(MessageFormat.format("  Sleeping for {0} seconds....", seconds));
@@ -27,18 +28,21 @@ public class UIBase extends AutoLogger {
         Thread.sleep(seconds * 1000L);
     }
 
+    /** Initiate selenium webDriver. */
     public void InitWebDriver()
     {
         webDriver = webDriverFactory.CreateSeleniumDriver();
         setWebDriver(webDriver);
     }
 
+    /** Go to specified URL. */
     public void GoToURL(String url)
     {
         getWebDriver().navigate().to(url);
         Info("Navigating to " + url);
     }
 
+    /** Ends selenium webDriver by calling quit().*/
     public void Quit()
     {
         getWebDriver().quit();
@@ -64,6 +68,7 @@ public class UIBase extends AutoLogger {
         return !getWebDriver().toString().contains("(null)");
     }
 
+    /** Switches to specified iFrameID, if available. */
     public void switchToiFrame(String iFrameID)
     {
         Duration duration = Duration.ofSeconds(5);
@@ -71,12 +76,14 @@ public class UIBase extends AutoLogger {
         Info(String.format("Switched to iFrame: %s", iFrameID));
     }
 
+    /** Switches to either the first frame on the page, or the main document when a page contains iframes. */
     public void switchToMainFrame()
     {
         webDriver.set(getWebDriver().switchTo().defaultContent());
         Info("Switched to main iFrame");
     }
 
+    /** Switches to newly open tab, which will be the last tab in browser window. */
     public void switchToNewlyOpenTab()
     {
         ArrayList<String> allTabs = new ArrayList<>(getWebDriver().getWindowHandles());

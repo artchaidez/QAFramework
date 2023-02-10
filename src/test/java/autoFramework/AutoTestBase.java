@@ -19,6 +19,7 @@ public class AutoTestBase extends AutoLogger {
     /* Using a listener does not reset steps; listener points to different memory space.
      * Public would allow FinalTestTearDown to be overridden; private does not work. Protected final
      * prevents the method from being overridden. */
+    /** SHOULD ONLY BE CALLED WITHIN AUTOTESTBASE. DO NOT OVERWRITE.*/
     @AfterMethod
     protected final void FinalTestTearDown()
     {

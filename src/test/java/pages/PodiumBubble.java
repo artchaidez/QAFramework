@@ -21,7 +21,7 @@ public class PodiumBubble extends UIBase {
         Info("Currently within Podium bubble");
     }
 
-    /** Verify in main iframe by checking if podium-bubble exists. Podium button should not visible.*/
+    /** Returns podium-bubble, if it exists. */
     public SeleniumControl PodiumBubble()
     {
         return podiumBubble;
