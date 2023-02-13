@@ -52,7 +52,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameTodo, cardTitle);
+            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
 
         Step("Verify card was made by opening it");
             pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameTodo);
@@ -88,16 +88,16 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listNameTodo));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameTodo, cardTitle);
+            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
 
         Step(String.format("Verify '%s' was created by opening the card", cardTitle));
             pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameTodo);
 
         Step(String.format("Under Actions, click on Move and move the card to list '%s'", listNameWorking));
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.MoveCardToColumnUnderAction(listNameWorking);
+            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.MoveCardToListUnderAction(listNameWorking);
 
         Step(String.format("Verify card was moved to list '%s'", listNameWorking));
-            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInColumn(cardTitle, listNameWorking);
+            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameWorking);
             card.IsVisible(5);
             Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameWorking));
 
@@ -128,7 +128,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listName));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listName, cardTitle);
+            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listName, cardTitle);
 
         Step("Verify the card was created by opening it");
             pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listName);
@@ -171,7 +171,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listName));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listName, cardTitle);
+            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listName, cardTitle);
 
         Step("Verify the card was created by opening it");
             pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listName);
@@ -210,16 +210,16 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listNameWorking));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameWorking, cardTitle);
+            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameWorking, cardTitle);
 
         Step("Verify the card was created by opening it");
             pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameWorking);
 
         Step(String.format("Click on 'in list Working' at the header and move to list '%s'", listNameDone));
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.MoveCardToColumnUsingInList(listNameDone);
+            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.MoveCardToListUsingInList(listNameDone);
 
         Step(String.format("Verify card is in list '%s'", listNameDone));
-            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInColumn(cardTitle, listNameDone);
+            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameDone);
             card.IsVisible(5);
             Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameDone));
 
@@ -245,7 +245,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameTodo, cardTitle);
+            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
 
         Step("Verify card was made by deleting it");
             pages.trelloSignInPage.trelloBoardPage.DeleteCard(cardTitle, listNameTodo);
@@ -307,7 +307,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToColumn(listNameTodo, cardTitle);
+            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
 
         Step("Verify card was made by deleting it");
             pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle,listNameTodo);
@@ -373,7 +373,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             pages.trelloSignInPage.trelloBoardPage.DropDownActionsAddCard(cardTitle, listNameTodo);
 
         Step("Verify card was made");
-            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInColumn(cardTitle, listNameTodo);
+            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameTodo);
             card.IsVisible(5);
             Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameTodo));
 

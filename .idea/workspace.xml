@@ -5,19 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assessments/InvoiceCloud" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/TestContextLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/TestContextLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/TestExecutionContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/TestExecutionContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/TestBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/TestBaseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/ElementalSeleniumPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/ElementalSeleniumPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/InvoiceCloudPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/InvoiceCloudPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumBubble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumBubble.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumTermsOfServicePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumTermsOfServicePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +74,7 @@
       <recent name="C:\Users\artch\IdeaProjects\QAFramework\Assessments" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PodiumTestSuite">
+  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo">
     <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -151,7 +144,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestDeleteCardOnBoard" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestCreateNewCardInTodo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -164,7 +157,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDeleteCardOnBoard&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestCreateNewCardInTodo&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -201,16 +194,16 @@
       <item itemvalue="Gradle.PodiumTestSuite" />
       <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
       <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardOnBoard" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
       <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
         <item itemvalue="Gradle.PodiumTestSuite" />
         <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
         <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDeleteCardOnBoard" />
       </list>
     </recent_temporary>
   </component>
@@ -243,6 +236,11 @@
           <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java</url>
           <line>28</line>
           <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

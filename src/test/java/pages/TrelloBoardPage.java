@@ -27,7 +27,9 @@ public class TrelloBoardPage extends UIBase {
         trelloCardPage = new TrelloCardPage();
     }
 
-    public void AddCardToColumn(String listName, String cardTitle) throws Exception
+    /** Add card to list. Args 'listName' should be a list that exists on the page, args
+     * 'cardTitle' will be card title. */
+    public void AddCardToList(String listName, String cardTitle) throws Exception
     {
         String xpath = String.format("//*[text()='%s']/parent::div/following-sibling::div[2]//*[text()='Add a card']", listName);
         SeleniumControl list = new SeleniumControl(By.xpath(xpath));
@@ -39,6 +41,7 @@ public class TrelloBoardPage extends UIBase {
         Info(String.format("Added '%s' to '%s'", cardTitle, listName));
     }
 
+    /** Open specific card 'cardTitle' in list 'listName.' */
     public void OpenCard(String cardTitle, String listName) throws Exception
     {
         String xpath = String.format("//*[text()='%s']/parent::div/following-sibling::div[1]//*[text()='%s']", listName, cardTitle);
@@ -59,6 +62,7 @@ public class TrelloBoardPage extends UIBase {
         Info(String.format("Opened '%s' in '%s'", cardTitle, listName));
     }
 
+    /** Delete specific card 'cardTitle' in list 'listName.' */
     public void DeleteCard(String cardTitle, String listName) throws Exception
     {
         String xpath = String.format("//*[text()='%s']/parent::div/following-sibling::div[1]//*[text()='%s']", listName, cardTitle);
@@ -68,33 +72,38 @@ public class TrelloBoardPage extends UIBase {
         trelloCardPage.DeleteCard();
     }
 
-
-    public SeleniumControl ReturnCardInColumn(String cardTitle, String listName)
+    /** Return card, if found in list. */
+    public SeleniumControl ReturnCardInList(String cardTitle, String listName)
     {
         String xpath = String.format("//*[text()='%s']/parent::div/following-sibling::div[1]//*[text()='%s']", listName, cardTitle);
         return new SeleniumControl(By.xpath(xpath));
     }
 
+    /** Return menu button found on top right of page. */
     public SeleniumControl MenuButton()
     {
         return menuBtn;
     }
 
+    /** Returns more in menu option; must be used after clicking on menu button- MenuButton() */
     public SeleniumControl MoreInMenuOption()
     {
         return moreInMenuBtn;
     }
 
+    /** Returns archived items option; must be used after clicking on more in menu option- MoreInMenuOption() */
     public SeleniumControl ArchivedItemsOption()
     {
         return archiveInMoreBtn;
     }
 
+    /** Returns no archived cards xpath; must be used after archived items option- ArchivedItemsOption() */
     public SeleniumControl NoArchivedCards()
     {
         return noCardsArchived;
     }
 
+    /** Click on dropdown actions button on the top right of the list if the list exists. */
     private void DropDownActions(String listName) throws Exception
     {
         String xpath = String.format("//*[text()='%s']/parent::div//*[@class='list-header-extras-menu dark-hover js-open-list-menu icon-sm icon-overflow-menu-horizontal']", listName);
@@ -102,6 +111,7 @@ public class TrelloBoardPage extends UIBase {
         dropDownListBtn.Click(5);
     }
 
+    /** Click on dropdown actions button on the top right of the list (if list exists) and add card. */
     public void DropDownActionsAddCard(String cardTitle, String listName) throws Exception
     {
         String xpath = String.format("//*[text()='%s']/parent::div//*[@class='list-header-extras-menu dark-hover js-open-list-menu icon-sm icon-overflow-menu-horizontal']", listName);
@@ -117,6 +127,7 @@ public class TrelloBoardPage extends UIBase {
         Info(String.format("Added '%s' to '%s'", cardTitle, listName));
     }
 
+    /** Return Selenium Control from board, if xpath is found. */
     public SeleniumControl ReturnSDETBoardPage()
     {
         for (int attempt = 0; attempt < 10; attempt++)
@@ -132,6 +143,7 @@ public class TrelloBoardPage extends UIBase {
         return sdetBoard;
     }
 
+    /** Returns Selenium Control of all cards found in list. */
     public SeleniumControl ReturnCardsInList(String listName)
     {
         String xpathChild = String.format("//*[text()='%s']/parent::div/parent::div//*[@class='list-cards u-fancy-scrollbar u-clearfix js-list-cards js-sortable ui-sortable']//child::*", listName);

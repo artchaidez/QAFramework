@@ -102,6 +102,7 @@ public class TrelloSignInPage extends UIBase {
         finalLogInBtn.Click(15);
     }
 
+    /** Log into Trello account from main page. */
     public void LogIntoAccountOnMainPage(String email, String password) throws Exception
     {
         ClickOnMainPageLogIn();

@@ -40,6 +40,7 @@ public class TrelloCardPage extends UIBase {
 
     private final SeleniumControl sdetBoard = new SeleniumControl(By.xpath("//*[@class='js-board-editing-target board-header-btn-text']"));
 
+    /** Within a card, delete card. */
     public void DeleteCard() throws Exception
     {
         archiveBtn.Click(5);
@@ -49,13 +50,16 @@ public class TrelloCardPage extends UIBase {
         Info("Card deleted");
     }
 
+    /** Within a card, close card. */
     public void CloseCard() throws Exception
     {
         closeCard.Click(5);
         Info("Closed card");
     }
 
-    private void MoveCardToColumn(String listName) throws Exception
+    /** Within a card, move the card to a different list. Used in MoveCardToListUnderAction() and
+     * MoveCardListUnderAction. */
+    private void MoveCardToList(String listName) throws Exception
     {
         String xpath = String.format("//*[@class='button-link setting form-grid-child form-grid-child-threequarters']//option[contains(.,'%s')]", listName);
         SeleniumControl workingOnMoveCardList = new SeleniumControl(By.xpath(xpath));
@@ -65,20 +69,22 @@ public class TrelloCardPage extends UIBase {
         Info(String.format("Moved card into '%s'", listName));
     }
 
-    /** Same functionality as MoveCardToColumnUsingInList*/
-    public void MoveCardToColumnUnderAction(String listName) throws Exception
+    /** Within a card, move card to a new list using an Action. Same functionality as MoveCardToListUsingInList*/
+    public void MoveCardToListUnderAction(String listName) throws Exception
     {
         underActionsMoveBtn.Click(5);
-        MoveCardToColumn(listName);
+        MoveCardToList(listName);
     }
 
-    /** Same functionality as MoveCardToColumnUnderAction*/
-    public void MoveCardToColumnUsingInList(String listName) throws Exception
+    /** Within a card, move card to a new list by clicking on current list name in the header (list
+     * name will be underlined). Same functionality as MoveCardToListUnderAction*/
+    public void MoveCardToListUsingInList(String listName) throws Exception
     {
         inHeaderMoveBtn.Click(5);
-        MoveCardToColumn(listName);
+        MoveCardToList(listName);
     }
 
+    /** Within a card, create a new checklist. */
     public void CreateNewCheckList(String checklistTitle, ArrayList<String> checkListItems) throws Exception
     {
         checkListBtn.Click(5);
@@ -95,6 +101,7 @@ public class TrelloCardPage extends UIBase {
         Info(String.format("Checklist '%s' created", checklistTitle));
     }
 
+    /** Within a card, complete the checklist found in the card. */
     public void CompleteCheckList(ArrayList<String> checkListItems) throws Exception
     {
         for (int i = 0; i < checkListItems.size(); i++) {
@@ -107,6 +114,7 @@ public class TrelloCardPage extends UIBase {
 
     }
 
+    /** Within a card, set the description text. */
     public void SetDescriptionText(String cardDescription) throws Exception
     {
 
@@ -122,17 +130,21 @@ public class TrelloCardPage extends UIBase {
         SaveDescription();
     }
 
+    /** Within a card, save the description text. This function is private and used
+     *  within SetDescriptionText() */
     private void SaveDescription() throws Exception
     {
         saveDescriptionBtn.Click(5);
         Info("Card description saved");
     }
 
+    /** Within a card, return Selenium Control of description of the card. */
     public SeleniumControl FindDescription(String cardDescription)
     {
         return new SeleniumControl(By.xpath(String.format("//*[text()='%s']", cardDescription)));
     }
 
+    /** Within a card, return the completion percentage of the card's checklist. */
     public String ReturnChecklistCompletionPercentage()
     {
         return checkListCompletionPercentage.getText();
