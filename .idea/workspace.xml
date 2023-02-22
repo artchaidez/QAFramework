@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assessments/InvoiceCloud" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/autoFramework/NewAssert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/autoFramework/Verify.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloSignInPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,9 +73,12 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\artch\IdeaProjects\QAFramework\Assessments" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="UnitTests" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo">
-    <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.VerifyAsserts">
+    <configuration name="VerifyAsserts" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -88,7 +91,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
+            <option value="&quot;unitTests.VerifyAsserts&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -98,7 +101,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestClickPodiumButton" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="VerifyAsserts.TestVerifyShouldPass (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -111,7 +114,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestClickPodiumButton&quot;" />
+            <option value="&quot;unitTests.VerifyAsserts.TestVerifyShouldPass&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -121,7 +124,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestClickSubjectTerms" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="VerifyAsserts.TestVerifyShouldPass" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -134,7 +137,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestClickSubjectTerms&quot;" />
+            <option value="&quot;UnitTests.VerifyAsserts.TestVerifyShouldPass&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -144,7 +147,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestCreateNewCardInTodo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="VerifyTest.TestVerifyShouldPass (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -157,7 +160,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestCreateNewCardInTodo&quot;" />
+            <option value="&quot;UnitTests.VerifyTest.TestVerifyShouldPass&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -167,7 +170,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestDropDownAddCardOption" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="VerifyTest.TestVerifyShouldPass" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -180,7 +183,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDropDownAddCardOption&quot;" />
+            <option value="&quot;webTestSuites.VerifyTest.TestVerifyShouldPass&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -191,19 +194,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Gradle.PodiumTestSuite" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
+      <item itemvalue="Gradle.VerifyAsserts" />
+      <item itemvalue="Gradle.VerifyAsserts.TestVerifyShouldPass" />
+      <item itemvalue="Gradle.VerifyAsserts.TestVerifyShouldPass (1)" />
+      <item itemvalue="Gradle.VerifyTest.TestVerifyShouldPass" />
+      <item itemvalue="Gradle.VerifyTest.TestVerifyShouldPass (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
-        <item itemvalue="Gradle.PodiumTestSuite" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestClickPodiumButton" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
+        <item itemvalue="Gradle.VerifyAsserts" />
+        <item itemvalue="Gradle.VerifyAsserts.TestVerifyShouldPass (1)" />
+        <item itemvalue="Gradle.VerifyAsserts.TestVerifyShouldPass" />
+        <item itemvalue="Gradle.VerifyTest.TestVerifyShouldPass" />
+        <item itemvalue="Gradle.VerifyTest.TestVerifyShouldPass (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -241,6 +244,21 @@
           <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java</url>
           <line>51</line>
           <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

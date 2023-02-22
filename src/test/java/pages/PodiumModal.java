@@ -90,7 +90,7 @@ public class PodiumModal extends UIBase {
      * characters are inputted into 'Message' text box. Must be on 'Send message' modal.*/
     public String MessageInputIndicator()
     {
-        return messageCharCount.getAttribute("d");
+        return messageCharCount.getAttribute("d").replaceAll("[path()\"]", "");
     }
 
     /** Returns web element 'Send' button. Will only be clickable when 'Name', 'Mobile Number',
