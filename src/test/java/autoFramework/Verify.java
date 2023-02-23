@@ -80,9 +80,15 @@ public class Verify extends AutoLogger {
     protected void assertAll(){
         newAssert.assertAll();
     }
-
-    protected void clearAsserts() {
+    // TODO: should not be public; currently debugging
+    public void clearAsserts() {
         newAssert.clearAsserts();
+    }
+
+    // TODO: should not be public; currently debugging
+    public int getErrors()
+    {
+        return newAssert.getErrors();
     }
 
 }

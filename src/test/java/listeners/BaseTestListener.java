@@ -11,7 +11,7 @@ import org.testng.ITestResult;
 import java.io.File;
 import java.io.IOException;
 
-public class TestBaseListener extends AutoTestBase implements ITestListener {
+public class BaseTestListener extends AutoTestBase implements ITestListener {
 
     String testName;
     String packageClassName;

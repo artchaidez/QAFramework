@@ -5,12 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/autoFramework/NewAssert.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/autoFramework/Verify.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiTestSuites/OppFiTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiTestSuites/OppFiTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/NewAssert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/NewAssert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/Verify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/Verify.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/MyInvokedMethodListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/TestBaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseTestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +83,99 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.VerifyAsserts">
+  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite">
+    <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.InvoiceCloudTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite.TestSelectFirstLocation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestSelectFirstLocation&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="RyanSpecialtyTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="VerifyAsserts" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -101,112 +199,20 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="VerifyAsserts.TestVerifyShouldPass (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;unitTests.VerifyAsserts.TestVerifyShouldPass&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="VerifyAsserts.TestVerifyShouldPass" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;UnitTests.VerifyAsserts.TestVerifyShouldPass&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="VerifyTest.TestVerifyShouldPass (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;UnitTests.VerifyTest.TestVerifyShouldPass&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="VerifyTest.TestVerifyShouldPass" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.VerifyTest.TestVerifyShouldPass&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <list>
+      <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestSelectFirstLocation" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
       <item itemvalue="Gradle.VerifyAsserts" />
-      <item itemvalue="Gradle.VerifyAsserts.TestVerifyShouldPass" />
-      <item itemvalue="Gradle.VerifyAsserts.TestVerifyShouldPass (1)" />
-      <item itemvalue="Gradle.VerifyTest.TestVerifyShouldPass" />
-      <item itemvalue="Gradle.VerifyTest.TestVerifyShouldPass (1)" />
+      <item itemvalue="Gradle.PodiumTestSuite" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestSelectFirstLocation" />
+        <item itemvalue="Gradle.InvoiceCloudTestSuite" />
         <item itemvalue="Gradle.VerifyAsserts" />
-        <item itemvalue="Gradle.VerifyAsserts.TestVerifyShouldPass (1)" />
-        <item itemvalue="Gradle.VerifyAsserts.TestVerifyShouldPass" />
-        <item itemvalue="Gradle.VerifyTest.TestVerifyShouldPass" />
-        <item itemvalue="Gradle.VerifyTest.TestVerifyShouldPass (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -237,28 +243,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java</url>
-          <line>28</line>
+          <line>29</line>
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java</url>
-          <line>51</line>
+          <line>52</line>
           <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java</url>
-          <line>140</line>
-          <option name="timeStamp" value="68" />
+          <url>file://$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="90" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="71" />
+          <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.testng/testng/6.14.3/d24515dc253e77e54b73df97e1fb2eb7faf34fdd/testng-6.14.3.jar!/org/testng/TestNG.class</url>
+          <line>902</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoTestBase.java</url>
-          <line>40</line>
-          <option name="timeStamp" value="72" />
+          <url>file://$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="92" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

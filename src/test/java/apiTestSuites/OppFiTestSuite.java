@@ -3,14 +3,15 @@ package apiTestSuites;
 import apiModals.*;
 import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
-import listeners.TestBaseListener;
+import listeners.BaseInvokedMethodListener;
+import listeners.BaseTestListener;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(TestBaseListener.class)
+@Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class OppFiTestSuite extends AutoTestBase {
 
     private String resource = null;

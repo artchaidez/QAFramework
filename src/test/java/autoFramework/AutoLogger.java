@@ -12,7 +12,8 @@ public class AutoLogger {
     private final TestContextLogger testContextLogger = new TestContextLogger();
     private final TestExecutionContext testExecutionContext = new TestExecutionContext();
 
-    private int stepNumber = 1;
+    // Needs to be static for Listeners
+    private static int stepNumber = 1;
 
     private LocalDateTime testStartDate = LocalDateTime.now();
     private LocalDateTime testEndDate = LocalDateTime.now();

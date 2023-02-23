@@ -12,12 +12,18 @@ import java.util.Set;
 // TODO: rename this class
 public class NewAssert implements IAssertLifecycle {
 
-    private final Map<AssertionError, IAssert<?>> m_errors = Maps.newLinkedHashMap();
+    // Needs to be static for Listeners
+    private static Map<AssertionError, IAssert<?>> m_errors = Maps.newLinkedHashMap();
 
     /** Clear all asserts after each test and to be used in TestSuite Teardown */
     public void clearAsserts()
     {
         m_errors.clear();
+    }
+
+    public int getErrors()
+    {
+        return m_errors.size();
     }
 
     protected void doAssert(IAssert<?> var1) {

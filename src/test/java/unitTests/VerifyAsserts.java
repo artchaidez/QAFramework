@@ -2,13 +2,14 @@ package unitTests;
 
 import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
-import listeners.TestBaseListener;
+import listeners.BaseInvokedMethodListener;
+import listeners.BaseTestListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners(TestBaseListener.class)
+@Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class VerifyAsserts extends AutoTestBase{
 
     @BeforeMethod
@@ -45,7 +46,21 @@ public class VerifyAsserts extends AutoTestBase{
         Step("Verify.That(string).NotEquals(string) runs and passes");
         Verify.That(checkString).NotEquals("Arturo");
 
+    }
 
+    // TODO: Still fixing Verify to fail correctly
+    @Test
+    @TestInfo(description = "Verify assert fails but test still completes.")
+    public void TestFailsStillFinishes() {
+
+        boolean checkFalse = false;
+        String checkString = "Art";
+
+        Step("Verify.That(false).Equals(false) runs and passes");
+        Verify.That(checkFalse).Equals(false);
+
+        Step("Verify.That(string).Equals(string) runs and fails");
+        Verify.That(checkString).Equals("Arturo");
     }
 
 
