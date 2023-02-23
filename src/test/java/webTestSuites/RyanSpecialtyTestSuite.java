@@ -5,7 +5,6 @@ import autoFramework.TestInfo;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -25,13 +24,13 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
     {
         email = System.getenv("trelloEmail");
         password = System.getenv("trelloPassword");
-        pages.InitWebDriver();
+        Pages.InitWebDriver();
     }
 
     @AfterMethod
     public void TestTearDown()
     {
-        pages.Quit();
+        Pages.Quit();
     }
 
     @Test()
@@ -43,30 +42,30 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String cardDescription = "this is a new card";
 
         Step("Go to Trello Page");
-            pages.GoToURL(trelloURL);
+            Pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
-            pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
+            Pages.TrelloSignInPage.LogIntoAccountOnMainPage(email, password);
 
         Step("Verify RT SDET board is open");
-            pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
             Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
+            Pages.TrelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
 
         Step("Verify card was made by opening it");
-            pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameTodo);
+            Pages.TrelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameTodo);
 
         Step(String.format("In the card modal, add the description: %s", cardDescription));
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.SetDescriptionText(cardDescription);
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.SetDescriptionText(cardDescription);
 
         Step("Verify the description is correct");
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.FindDescription(cardDescription).IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.FindDescription(cardDescription).IsVisible(5);
             Info("Description matches");
 
         Step("Delete card in modal");
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
 
     }
 
@@ -79,31 +78,31 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameWorking = "Working";
 
         Step("Go to Trello Page");
-            pages.GoToURL(trelloURL);
+            Pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
-            pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
+            Pages.TrelloSignInPage.LogIntoAccountOnMainPage(email, password);
 
         Step("Verify RT SDET board is open");
-            pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
             Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listNameTodo));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
+            Pages.TrelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
 
         Step(String.format("Verify '%s' was created by opening the card", cardTitle));
-            pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameTodo);
+            Pages.TrelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameTodo);
 
         Step(String.format("Under Actions, click on Move and move the card to list '%s'", listNameWorking));
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.MoveCardToListUnderAction(listNameWorking);
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.MoveCardToListUnderAction(listNameWorking);
 
         Step(String.format("Verify card was moved to list '%s'", listNameWorking));
-            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameWorking);
+            SeleniumControl card = Pages.TrelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameWorking);
             card.IsVisible(5);
             Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameWorking));
 
         Step("Delete card in modal");
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
 
     }
 
@@ -119,34 +118,34 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         checkListItems.add("Item 2");
 
         Step("Go to Trello Page");
-            pages.GoToURL(trelloURL);
+            Pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
-            pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
+            Pages.TrelloSignInPage.LogIntoAccountOnMainPage(email, password);
 
         Step("Verify RT SDET board is open");
-            pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
             Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listName));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listName, cardTitle);
+            Pages.TrelloSignInPage.trelloBoardPage.AddCardToList(listName, cardTitle);
 
         Step("Verify the card was created by opening it");
-            pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listName);
+            Pages.TrelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listName);
 
         Step(String.format("Create a checklist named: '%s' and its items", checklistTitle));
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.CreateNewCheckList(checklistTitle, checkListItems);
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.CreateNewCheckList(checklistTitle, checkListItems);
 
         Step("Verify checklist is correct");
             for (int i = 0; i < checkListItems.size(); i++) {
                 String xpath = String.format("//*[@class='checklist-items-list js-checklist-items-list js-no-higher-edits ui-sortable']//*[text()='%s']", checkListItems.get(i));
                 SeleniumControl checkList = new SeleniumControl(By.xpath(xpath));
-                Assert.assertTrue(checkList.IsVisible(5));
+                Verify.That(checkList.IsVisible(5)).IsTrue();
             }
             Info("Checklist verified");
 
         Step("Delete card in modal");
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
     }
 
     @Test
@@ -162,34 +161,34 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         checkListItems.add("Item 2");
 
         Step("Go to Trello Page");
-            pages.GoToURL(trelloURL);
+            Pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
-            pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
+            Pages.TrelloSignInPage.LogIntoAccountOnMainPage(email, password);
 
         Step("Verify RT SDET board is open");
-            pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
             Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listName));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listName, cardTitle);
+            Pages.TrelloSignInPage.trelloBoardPage.AddCardToList(listName, cardTitle);
 
         Step("Verify the card was created by opening it");
-            pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listName);
+            Pages.TrelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listName);
 
         Step(String.format("Create a checklist named: '%s' and its items", checklistTitle));
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.CreateNewCheckList(checklistTitle, checkListItems);
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.CreateNewCheckList(checklistTitle, checkListItems);
 
         Step("Complete the checklist by clicking on the checkboxes");
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.CompleteCheckList(checkListItems);
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.CompleteCheckList(checkListItems);
 
         Step("Verify checklist is complete");
-            String percentage = pages.trelloSignInPage.trelloBoardPage.trelloCardPage.ReturnChecklistCompletionPercentage();
-            Assert.assertEquals(percentage, "100%");
+            String percentage = Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.ReturnChecklistCompletionPercentage();
+            Verify.That(percentage).Equals("100%");
             Info("Checklist complete");
 
         Step("Delete card in modal");
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
     }
 
     @Test
@@ -201,31 +200,31 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameDone = "Done";
 
         Step("Go to Trello Page");
-            pages.GoToURL(trelloURL);
+            Pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
-            pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
+            Pages.TrelloSignInPage.LogIntoAccountOnMainPage(email, password);
 
         Step("Verify RT SDET board is open");
-            pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
             Info("On SDET Board");
 
         Step(String.format("Add '%s' card to list '%s'", cardTitle, listNameWorking));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameWorking, cardTitle);
+            Pages.TrelloSignInPage.trelloBoardPage.AddCardToList(listNameWorking, cardTitle);
 
         Step("Verify the card was created by opening it");
-            pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameWorking);
+            Pages.TrelloSignInPage.trelloBoardPage.OpenCard(cardTitle, listNameWorking);
 
         Step(String.format("Click on 'in list Working' at the header and move to list '%s'", listNameDone));
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.MoveCardToListUsingInList(listNameDone);
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.MoveCardToListUsingInList(listNameDone);
 
         Step(String.format("Verify card is in list '%s'", listNameDone));
-            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameDone);
+            SeleniumControl card = Pages.TrelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameDone);
             card.IsVisible(5);
             Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameDone));
 
         Step("Delete card in modal");
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
     }
 
     @Test
@@ -236,24 +235,24 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameTodo = "To Do";
 
         Step("Go to Trello Page");
-            pages.GoToURL(trelloURL);
+            Pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
-            pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
+            Pages.TrelloSignInPage.LogIntoAccountOnMainPage(email, password);
 
         Step("Verify RT SDET board is open");
-            pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
             Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
+            Pages.TrelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
 
         Step("Verify card was made by deleting it");
-            pages.trelloSignInPage.trelloBoardPage.DeleteCard(cardTitle, listNameTodo);
+            Pages.TrelloSignInPage.trelloBoardPage.DeleteCard(cardTitle, listNameTodo);
 
         Step("Verify card is no longer in list");
             boolean noCards = false;
-            SeleniumControl cards = pages.trelloSignInPage.trelloBoardPage.ReturnCardsInList(listNameTodo);
+            SeleniumControl cards = Pages.TrelloSignInPage.trelloBoardPage.ReturnCardsInList(listNameTodo);
 
             try {
                 // Look for children in the list
@@ -269,7 +268,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             } else {
                 // If code hits here, the list has children and the card was not properly deleted
                 Info(String.format("FAILED: There is a card in '%s'", listNameTodo));
-                Assert.fail();
+                Verify.ThrowFailure();
             }
 
         Step("Verify card was not archived only and properly deleted");
@@ -277,16 +276,16 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
              * check archive. Try/catch is to take proper steps to correctly check archive regardless of this bug.*/
             try
             {
-                pages.trelloSignInPage.trelloBoardPage.MoreInMenuOption().IsVisible(5);
+                Pages.TrelloSignInPage.trelloBoardPage.MoreInMenuOption().IsVisible(5);
 
             } catch(Exception e) {
                 Info("Open Menu");
-                pages.trelloSignInPage.trelloBoardPage.MenuButton().Click(5);
+                Pages.TrelloSignInPage.trelloBoardPage.MenuButton().Click(5);
             }
 
-            pages.trelloSignInPage.trelloBoardPage.MoreInMenuOption().Click(5);
-            pages.trelloSignInPage.trelloBoardPage.ArchivedItemsOption().Click(5);
-            pages.trelloSignInPage.trelloBoardPage.NoArchivedCards().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.MoreInMenuOption().Click(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ArchivedItemsOption().Click(5);
+            Pages.TrelloSignInPage.trelloBoardPage.NoArchivedCards().IsVisible(5);
             Info("No cards archived");
     }
 
@@ -298,25 +297,25 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameTodo = "To Do";
 
         Step("Go to Trello Page");
-            pages.GoToURL(trelloURL);
+            Pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
-            pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
+            Pages.TrelloSignInPage.LogIntoAccountOnMainPage(email, password);
 
         Step("Verify RT SDET board is open");
-            pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
             Info("On SDET Board");
 
         Step(String.format("Add a new card titled '%s' to list '%s'", cardTitle, listNameTodo));
-            pages.trelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
+            Pages.TrelloSignInPage.trelloBoardPage.AddCardToList(listNameTodo, cardTitle);
 
         Step("Verify card was made by deleting it");
-            pages.trelloSignInPage.trelloBoardPage.OpenCard(cardTitle,listNameTodo);
-            pages.trelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
+            Pages.TrelloSignInPage.trelloBoardPage.OpenCard(cardTitle,listNameTodo);
+            Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
 
             Step("Verify card is no longer in list");
             boolean noCards = false;
-            SeleniumControl cards = pages.trelloSignInPage.trelloBoardPage.ReturnCardsInList(listNameTodo);
+            SeleniumControl cards = Pages.TrelloSignInPage.trelloBoardPage.ReturnCardsInList(listNameTodo);
 
             try {
                 // Look for children in the list
@@ -332,7 +331,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             } else {
                 // If code hits here, the list has children and the card was not properly deleted
                 Info(String.format("FAILED: There is a card in '%s'", listNameTodo));
-                Assert.fail();
+                Verify.ThrowFailure();
             }
 
         Step("Verify card was not archived only and properly deleted");
@@ -340,16 +339,16 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
              * check archive. Try/catch is to take proper steps to correctly check archive regardless of this bug.*/
             try
             {
-                pages.trelloSignInPage.trelloBoardPage.MoreInMenuOption().IsVisible(5);
+                Pages.TrelloSignInPage.trelloBoardPage.MoreInMenuOption().IsVisible(5);
 
             } catch(Exception e) {
                 Info("Open Menu");
-                pages.trelloSignInPage.trelloBoardPage.MenuButton().Click(5);
+                Pages.TrelloSignInPage.trelloBoardPage.MenuButton().Click(5);
             }
 
-            pages.trelloSignInPage.trelloBoardPage.MoreInMenuOption().Click(5);
-            pages.trelloSignInPage.trelloBoardPage.ArchivedItemsOption().Click(5);
-            pages.trelloSignInPage.trelloBoardPage.NoArchivedCards().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.MoreInMenuOption().Click(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ArchivedItemsOption().Click(5);
+            Pages.TrelloSignInPage.trelloBoardPage.NoArchivedCards().IsVisible(5);
             Info("No cards archived");
     }
 
@@ -361,24 +360,24 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         String listNameTodo = "To Do";
 
         Step("Go to Trello Page");
-            pages.GoToURL(trelloURL);
+            Pages.GoToURL(trelloURL);
 
         Step("Log into Trello");
-            pages.trelloSignInPage.LogIntoAccountOnMainPage(email, password);
+            Pages.TrelloSignInPage.LogIntoAccountOnMainPage(email, password);
 
         Step("Verify RT SDET board is open");
-            pages.trelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
+            Pages.TrelloSignInPage.trelloBoardPage.ReturnSDETBoardPage().IsVisible(5);
             Info("On SDET Board");
 
         Step("Add card using List actions dropdown");
-            pages.trelloSignInPage.trelloBoardPage.DropDownActionsAddCard(cardTitle, listNameTodo);
+            Pages.TrelloSignInPage.trelloBoardPage.DropDownActionsAddCard(cardTitle, listNameTodo);
 
         Step("Verify card was made");
-            SeleniumControl card = pages.trelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameTodo);
+            SeleniumControl card = Pages.TrelloSignInPage.trelloBoardPage.ReturnCardInList(cardTitle, listNameTodo);
             card.IsVisible(5);
             Info(String.format("Card '%s' is in list '%s'", cardTitle, listNameTodo));
 
         Step("Delete card");
-            pages.trelloSignInPage.trelloBoardPage.DeleteCard(cardTitle, listNameTodo);
+            Pages.TrelloSignInPage.trelloBoardPage.DeleteCard(cardTitle, listNameTodo);
     }
 }

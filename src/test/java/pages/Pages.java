@@ -4,25 +4,25 @@ import autoFramework.UIBase;
 
 public class Pages extends UIBase {
 
-    public PodiumBubble podiumBubble;
-    public PodiumModal podiumModal;
+    public PodiumBubble PodiumBubble;
+    public PodiumModal PodiumModal;
 
-    public PodiumTermsOfServicePage podiumTermsOfService;
+    public PodiumTermsOfServicePage PodiumTermsOfService;
 
-    public TrelloSignInPage trelloSignInPage;
+    public TrelloSignInPage TrelloSignInPage;
 
-    public InvoiceCloudPage invoiceCloudPage;
+    public InvoiceCloudPage InvoiceCloudPage;
 
-    public ElementalSeleniumPage elementalSeleniumPage;
+    public ElementalSeleniumPage ElementalSeleniumPage;
 
 
     public Pages()
     {
-        podiumBubble = new PodiumBubble();
-        podiumModal = new PodiumModal();
-        podiumTermsOfService = new PodiumTermsOfServicePage();
-        trelloSignInPage = new TrelloSignInPage();
-        invoiceCloudPage = new InvoiceCloudPage();
-        elementalSeleniumPage = new ElementalSeleniumPage();
+        PodiumBubble = new PodiumBubble();
+        PodiumModal = new PodiumModal();
+        PodiumTermsOfService = new PodiumTermsOfServicePage();
+        TrelloSignInPage = new TrelloSignInPage();
+        InvoiceCloudPage = new InvoiceCloudPage();
+        ElementalSeleniumPage = new ElementalSeleniumPage();
     }
 }

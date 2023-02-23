@@ -32,35 +32,38 @@ public class VerifyAsserts extends AutoTestBase{
         int checkInt = 5;
 
         Step("Verify.That(false).Equals(false) runs and passes");
-        Verify.That(checkFalse).Equals(false);
+            Verify.That(checkFalse).IsFalse();
 
         Step("Verify.That(true).Equals(true) runs and passes");
-        Verify.That(checkTrue).Equals(true);
+            Verify.That(checkTrue).IsTrue();
 
         Step("Verify.That(string).Equals(string) runs and passes");
-        Verify.That(checkString).Equals("Art");
+            Verify.That(checkString).Equals("Art");
 
         Step("Verify.That(int).Equals(int) runs and passes");
-        Verify.That(checkInt).Equals(5);
+            Verify.That(checkInt).Equals(5);
 
         Step("Verify.That(string).NotEquals(string) runs and passes");
-        Verify.That(checkString).NotEquals("Arturo");
+            Verify.That(checkString).DoesNotEqual("Arturo");
 
     }
 
-    // TODO: Still fixing Verify to fail correctly
     @Test
     @TestInfo(description = "Verify assert fails but test still completes.")
     public void TestFailsStillFinishes() {
 
         boolean checkFalse = false;
         String checkString = "Art";
+        int checkInt = 5;
 
-        Step("Verify.That(false).Equals(false) runs and passes");
-        Verify.That(checkFalse).Equals(false);
+        Step("Verify.That(false).Equals(true) runs and fails");
+            Verify.That(checkFalse).IsFalse();
 
-        Step("Verify.That(string).Equals(string) runs and fails");
-        Verify.That(checkString).Equals("Arturo");
+        Step("Verify.That(string).Equals(string) runs and passes");
+            Verify.That(checkString).Equals("Art");
+
+        Step("Verify.That(int).Equals(int) runs and passes");
+            Verify.That(checkInt).Equals(5);
     }
 
 

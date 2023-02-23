@@ -5,7 +5,6 @@ import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
@@ -88,7 +87,7 @@ public class OppFiTestSuite extends AutoTestBase {
             Offer response;
 
             try {
-                response =  apis.offersApi.PostOffers(offer, resource, apiKey);
+                response =  APIs.offersApi.PostOffers(offer, resource, apiKey);
             }
             catch (Exception e)
             {
@@ -96,8 +95,7 @@ public class OppFiTestSuite extends AutoTestBase {
             }
 
         Step("Verify loan was accepted.");
-            Assert.assertTrue(response.getAccepted());
-            Info("Loan was accepted");
+            Verify.That(response.getAccepted()).IsTrue();
 
     }
 
@@ -162,7 +160,7 @@ public class OppFiTestSuite extends AutoTestBase {
             Offer response;
 
             try {
-                response =  apis.offersApi.PostOffers(offer, resource, apiKey);
+                response =  APIs.offersApi.PostOffers(offer, resource, apiKey);
             }
             catch (Exception e)
             {
@@ -170,8 +168,7 @@ public class OppFiTestSuite extends AutoTestBase {
             }
 
         Step("Verify loan was not accepted.");
-            Assert.assertFalse(response.getAccepted());
-            Info("Confirmed response was not accepted");
+            Verify.That(response.getAccepted()).IsFalse();
     }
 
     @Test()
@@ -208,7 +205,7 @@ public class OppFiTestSuite extends AutoTestBase {
             int response;
 
             try {
-                response =  apis.offersApi.PostOffersInt(badSampleRequest, resource, apiKey);
+                response =  APIs.offersApi.PostOffersInt(badSampleRequest, resource, apiKey);
             }
             catch (Exception e)
             {
@@ -216,8 +213,7 @@ public class OppFiTestSuite extends AutoTestBase {
             }
 
         Step("Verify bad data was returned: status code 500.");
-            Assert.assertEquals(response, 500);
-            Info("Confirmed returned status code is 500");
+            Verify.That(response).Equals(500);
 
     }
 

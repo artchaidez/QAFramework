@@ -1,94 +1,120 @@
 package autoFramework;
 
-/** fluent interface */
+import org.testng.Assert;
+import org.testng.ITestResult;
+
+import java.util.HashMap;
+import java.util.Map;
+import org.testng.Reporter;
+import java.util.List;
+import java.util.ArrayList;
+
+/** A fluent interface to improve readability and log asserts. */
 public class Verify extends AutoLogger {
 
-    private NewAssert newAssert;
-
-    // TODO: likely only need one private var per type
-    private boolean boolVar1;
-    private boolean boolVar2;
-
-    private String stringVar1;
-    private String stringVar2;
-
-    private int intVar1;
-    private int intVar2;
-
-    public Verify() {
-        newAssert = new NewAssert();
-    }
+    private boolean thatBoolVar;
+    private String thatStringVar;
+    private int thatIntVar;
+    private static Map<ITestResult, List> verificationFailuresMap = new HashMap<>();
 
     public Verify That(boolean boolVar)
     {
-        boolVar1 = boolVar;
+        thatBoolVar = boolVar;
         return this;
     }
 
     public Verify That(String stringVar)
     {
-        stringVar1 = stringVar;
+        thatStringVar = stringVar;
         return this;
     }
 
     public Verify That(int intVar)
     {
-        intVar1 = intVar;
+        thatIntVar = intVar;
         return this;
     }
 
-    public Verify Equals(boolean boolVar)
+    public void IsTrue()
     {
-        boolVar2 = boolVar;
-        Info(String.format("Observed: %s, Expected: %s", boolVar1, boolVar2));
-        newAssert.assertEquals(boolVar1, boolVar2);
-        return this;
+        Info(String.format("Observed: %s, Expected: %s", thatBoolVar, true));
+
+        try {
+            Assert.assertEquals(thatBoolVar, true);
+        } catch (Throwable e) {
+            addVerificationFailure(e);
+        }
     }
 
-    public Verify Equals(String stringVar)
+    public void IsFalse()
     {
-        stringVar2 = stringVar;
-        Info(String.format("Observed: %s, Expected: %s", stringVar1, stringVar2));
-        newAssert.assertEquals(stringVar1, stringVar2);
-        return this;
+        Info(String.format("Observed: %s, Expected: %s", thatBoolVar, false));
+
+        try {
+            Assert.assertEquals(thatBoolVar, false);
+        } catch (Throwable e) {
+            addVerificationFailure(e);
+        }
     }
 
-    // NOTE: void works fine. Needs to be changed to Verify after creating WithDescription()
+    public void Equals(String stringVar)
+    {
+        Info(String.format("Observed: %s, Expected: %s", thatStringVar, stringVar));
+
+        try {
+            Assert.assertEquals(thatStringVar, stringVar);
+        } catch (Throwable e)
+        {
+            addVerificationFailure(e);
+        }
+    }
+
     public void Equals(int intVar)
     {
-        intVar2 = intVar;
-        Info(String.format("Observed: %s, Expected: %s", intVar1, intVar2));
-        newAssert.assertEquals(intVar1, intVar2);
+        Info(String.format("Observed: %s, Expected: %s", thatIntVar, intVar));
+
+        try {
+            Assert.assertEquals(thatIntVar, intVar);
+        } catch (Throwable e)
+        {
+            addVerificationFailure(e);
+        }
     }
 
-    public Verify NotEquals(String stringVar)
+    public Verify DoesNotEqual(String stringVar)
     {
-        stringVar2 = stringVar;
-        Info(String.format("SHOULD NOT BE EQUAL: Observed: %s, Expected: %s", stringVar1, stringVar2));
-        newAssert.assertNotEquals(stringVar1, stringVar2);
+        Info(String.format("SHOULD NOT BE EQUAL: Observed: %s, Expected: %s", thatStringVar, stringVar));
+
+        try {
+            Assert.assertNotEquals(thatStringVar, stringVar);
+        } catch (Throwable e)
+        {
+            addVerificationFailure(e);
+        }
         return this;
     }
 
-
-    // TODO: Log additional description. Will refactor asserts out of Equals() methods.
-    public Verify WithDescription(String message)
+    /** Use method within a try catch. Will fail the test in BaseInvokedMethodListener */
+    public void ThrowFailure()
     {
-        Info(message);
-        return this;
+        try {
+            Assert.assertTrue(false);
+        } catch (Throwable e)
+        {
+            addVerificationFailure(e);
+        }
     }
 
-    protected void assertAll(){
-        newAssert.assertAll();
-    }
-    // TODO: should not be public; currently debugging
-    public void clearAsserts() {
-        newAssert.clearAsserts();
+    public static List getVerificationFailures() {
+        List verificationFailures = verificationFailuresMap.get(Reporter.getCurrentTestResult());
+        return verificationFailures == null ? new ArrayList() : verificationFailures;
     }
 
-    // TODO: should not be public; currently debugging
-    public int getErrors()
-    {
-        return newAssert.getErrors();
+    private static void addVerificationFailure(Throwable e) {
+        List verificationFailures = getVerificationFailures();
+        verificationFailuresMap.put(Reporter.getCurrentTestResult(), verificationFailures);
+        verificationFailures.add(e);
     }
+
 
 }

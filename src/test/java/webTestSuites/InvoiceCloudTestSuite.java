@@ -4,7 +4,6 @@ import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
-import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -18,13 +17,13 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
     @BeforeMethod
     public void TestSetUp()
     {
-        pages.InitWebDriver();
+        Pages.InitWebDriver();
     }
 
     @AfterMethod
     public void TestTearDown()
     {
-        pages.Quit();
+        Pages.Quit();
     }
 
     @Test()
@@ -34,16 +33,16 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
         int addFiveElements = 5;
 
         Step("Go to Heroku URL");
-            pages.GoToURL(herokuURL);
+            Pages.GoToURL(herokuURL);
 
         Step(String.format("Click on 'Add Element' %d times", addFiveElements));
             for (int steps = 0; steps < addFiveElements; steps++) {
-                pages.invoiceCloudPage.AddElement();
+                Pages.InvoiceCloudPage.AddElement();
             }
 
         Step(String.format("Confirm total delete buttons on page are %d", addFiveElements));
-            int totalDeleteBtns = pages.invoiceCloudPage.TotalDeleteButtons();
-            Assert.assertEquals(addFiveElements, totalDeleteBtns);
+            int totalDeleteBtns = Pages.InvoiceCloudPage.TotalDeleteButtons();
+            Verify.That(addFiveElements).Equals(totalDeleteBtns);
             Info(String.format("Confirmed total delete buttons are %d", addFiveElements));
 
     }
@@ -56,25 +55,25 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
         int fourElements = 4;
 
         Step("Go to Heroku URL");
-            pages.GoToURL(herokuURL);
+            Pages.GoToURL(herokuURL);
 
         Step(String.format("Click on 'Add Element' %d times", addFiveElements));
             for (int steps = 0; steps < addFiveElements; steps++) {
-                pages.invoiceCloudPage.AddElement();
+                Pages.InvoiceCloudPage.AddElement();
             }
 
         Step(String.format("Confirm total delete buttons on page are %d", addFiveElements));
-            int totalDeleteBtns = pages.invoiceCloudPage.TotalDeleteButtons();
-            Assert.assertEquals(addFiveElements, totalDeleteBtns);
+            int totalDeleteBtns = Pages.InvoiceCloudPage.TotalDeleteButtons();
+            Verify.That(addFiveElements).Equals(totalDeleteBtns);
             Info(String.format("Confirmed total delete buttons are %d", addFiveElements));
 
         Step("Delete one element");
-            pages.invoiceCloudPage.DeleteButton();
+            Pages.InvoiceCloudPage.DeleteButton();
             Info("Deleted one element on the page");
 
         Step(String.format("Confirm there are now %d delete buttons", fourElements));
-            totalDeleteBtns =  pages.invoiceCloudPage.TotalDeleteButtons();
-            Assert.assertEquals(fourElements, totalDeleteBtns);
+            totalDeleteBtns =  Pages.InvoiceCloudPage.TotalDeleteButtons();
+            Verify.That(fourElements).Equals(totalDeleteBtns);
             Info(String.format("Confirmed total delete buttons are %d", fourElements));
     }
 
@@ -83,16 +82,16 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
     public void TestClickElementalSelenium() throws Exception
     {
         Step("Go to Heroku URL");
-            pages.GoToURL(herokuURL);
+            Pages.GoToURL(herokuURL);
 
         Step("Click on Elemental Selenium link");
-            pages.invoiceCloudPage.ClickOnElementalSelenium();
+            Pages.InvoiceCloudPage.ClickOnElementalSelenium();
 
         Step("Switch to Elemental Selenium page");
-            pages.switchToNewlyOpenTab();
+            Pages.switchToNewlyOpenTab();
 
         Step("Confirm Elemental Selenium tab is opened by finding Sauce labs link");
-            pages.elementalSeleniumPage.SauceLabs().IsVisible(5);
+            Pages.ElementalSeleniumPage.SauceLabs().IsVisible(5);
             Info("Confirmed on Elemental Selenium page as Sauce Labs link is visible");
     }
 }

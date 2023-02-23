@@ -1,22 +1,20 @@
 package autoFramework;
 
 import apis.Apis;
-import org.testng.ITestContext;
-import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import pages.Pages;
 
 public class AutoTestBase extends AutoLogger {
 
-    protected Apis apis;
-    protected Pages pages;
+    protected Apis APIs;
+    protected Pages Pages;
     protected Verify Verify;
 
     public AutoTestBase()
     {
-        apis = new Apis();
-        pages = new Pages();
+        APIs = new Apis();
+        Pages = new Pages();
         Verify = new Verify();
     }
 

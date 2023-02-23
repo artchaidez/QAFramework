@@ -62,7 +62,7 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
     /** Called within TestFailure(). Will only be called for web tests, not API tests. */
     private void TakeScreenshot()
     {
-        TakesScreenshot screenshot = (TakesScreenshot) pages.getWebDriver();
+        TakesScreenshot screenshot = (TakesScreenshot) Pages.getWebDriver();
         File srcFile = screenshot.getScreenshotAs(OutputType.FILE);
 
         String destFileString = "./failedTests/" + packageClassName + "/" + getTestEndDate() + testName + ".png";
