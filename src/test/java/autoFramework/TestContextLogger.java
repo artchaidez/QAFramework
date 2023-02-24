@@ -25,7 +25,7 @@ public class TestContextLogger  {
     /** Formats and logs error message.*/
     public void Error(String message)
     {
-        System.out.println(FormatTimeStampMessage("ERROR", message));
+        System.out.println(FormatTimeStampMessage("ERROR", "  " +message));
     }
 
     /** Formats and logs warning message.*/

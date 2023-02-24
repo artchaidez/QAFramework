@@ -15,6 +15,7 @@ public class Verify extends AutoLogger {
     private boolean thatBoolVar;
     private String thatStringVar;
     private int thatIntVar;
+    // Needs to be static
     private static Map<ITestResult, List> verificationFailuresMap = new HashMap<>();
 
     public Verify That(boolean boolVar)
@@ -37,70 +38,71 @@ public class Verify extends AutoLogger {
 
     public void IsTrue()
     {
-        Info(String.format("Observed: %s, Expected: %s", thatBoolVar, true));
-
         try {
-            Assert.assertEquals(thatBoolVar, true);
+            Assert.assertTrue(thatBoolVar);
+            Info(String.format("Observed: %s, Expected: %s", thatBoolVar, true));
         } catch (Throwable e) {
+            Error(String.format("Observed: %s, Expected: %s", thatBoolVar, true));
             addVerificationFailure(e);
         }
     }
 
     public void IsFalse()
     {
-        Info(String.format("Observed: %s, Expected: %s", thatBoolVar, false));
-
         try {
-            Assert.assertEquals(thatBoolVar, false);
+            Assert.assertFalse(thatBoolVar);
+            Info(String.format("Observed: %s, Expected: %s", thatBoolVar, false));
         } catch (Throwable e) {
+            Error(String.format("Observed: %s, Expected: %s", thatBoolVar, false));
             addVerificationFailure(e);
         }
     }
 
     public void Equals(String stringVar)
     {
-        Info(String.format("Observed: %s, Expected: %s", thatStringVar, stringVar));
-
         try {
             Assert.assertEquals(thatStringVar, stringVar);
+            Info(String.format("Observed: %s, Expected: %s", thatStringVar, stringVar));
+
         } catch (Throwable e)
         {
+            Error(String.format("Observed: %s, Expected: %s", thatStringVar, stringVar));
             addVerificationFailure(e);
         }
     }
 
     public void Equals(int intVar)
     {
-        Info(String.format("Observed: %s, Expected: %s", thatIntVar, intVar));
-
         try {
             Assert.assertEquals(thatIntVar, intVar);
+            Info(String.format("Observed: %s, Expected: %s", thatIntVar, intVar));
         } catch (Throwable e)
         {
+            Error(String.format("Observed: %s, Expected: %s", thatIntVar, intVar));
             addVerificationFailure(e);
         }
     }
 
-    public Verify DoesNotEqual(String stringVar)
+    public void DoesNotEqual(String stringVar)
     {
-        Info(String.format("SHOULD NOT BE EQUAL: Observed: %s, Expected: %s", thatStringVar, stringVar));
-
         try {
             Assert.assertNotEquals(thatStringVar, stringVar);
+            Info(String.format("SHOULD NOT BE EQUAL: Observed: %s, Expected: %s", thatStringVar, stringVar));
         } catch (Throwable e)
         {
             addVerificationFailure(e);
+            Error(String.format("SHOULD NOT BE EQUAL: Observed: %s, Expected: %s", thatStringVar, stringVar));
         }
-        return this;
     }
 
     /** Use method within a try catch. Will fail the test in BaseInvokedMethodListener */
     public void ThrowFailure()
     {
         try {
-            Assert.assertTrue(false);
+            Assert.fail();
         } catch (Throwable e)
         {
+            Error("Thrown failure");
             addVerificationFailure(e);
         }
     }

@@ -31,10 +31,10 @@ public class VerifyAsserts extends AutoTestBase{
         String checkString = "Art";
         int checkInt = 5;
 
-        Step("Verify.That(false).Equals(false) runs and passes");
+        Step("Verify.That(false).IsFalse() runs and passes");
             Verify.That(checkFalse).IsFalse();
 
-        Step("Verify.That(true).Equals(true) runs and passes");
+        Step("Verify.That(true).IsTrue() runs and passes");
             Verify.That(checkTrue).IsTrue();
 
         Step("Verify.That(string).Equals(string) runs and passes");
@@ -43,7 +43,7 @@ public class VerifyAsserts extends AutoTestBase{
         Step("Verify.That(int).Equals(int) runs and passes");
             Verify.That(checkInt).Equals(5);
 
-        Step("Verify.That(string).NotEquals(string) runs and passes");
+        Step("Verify.That(string).DoesNotEqual(string) runs and passes");
             Verify.That(checkString).DoesNotEqual("Arturo");
 
     }
@@ -56,14 +56,32 @@ public class VerifyAsserts extends AutoTestBase{
         String checkString = "Art";
         int checkInt = 5;
 
-        Step("Verify.That(false).Equals(true) runs and fails");
-            Verify.That(checkFalse).IsFalse();
+        Step("Verify.That(false).IsTrue() runs and fails");
+            Verify.That(checkFalse).IsTrue();
 
         Step("Verify.That(string).Equals(string) runs and passes");
             Verify.That(checkString).Equals("Art");
 
         Step("Verify.That(int).Equals(int) runs and passes");
             Verify.That(checkInt).Equals(5);
+    }
+
+    @Test
+    @TestInfo(description = "Verify assert shows two failures")
+    public void TestTwoFailures() {
+
+        boolean checkFalse = false;
+        String checkString = "Art";
+        int checkInt = 5;
+
+        Step("Verify.That(false).IsTrue() runs and fails");
+        Verify.That(checkFalse).IsTrue();
+
+        Step("Verify.That(string).Equals(string) runs and passes");
+        Verify.That(checkString).Equals("Art");
+
+        Step("Verify.That(int).Equals(int) runs and fails");
+        Verify.That(checkInt).Equals(6);
     }
 
 
