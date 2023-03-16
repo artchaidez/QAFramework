@@ -38,6 +38,7 @@ public class WebDriverFactory extends AutoLogger{
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
+        options.addArguments("--remote-allow-origins=*");
         rwd = new ChromeDriver(options);
     }
 

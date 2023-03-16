@@ -8,8 +8,23 @@ import org.testng.internal.Utils;
 import java.util.List;
 
 public class BaseInvokedMethodListener extends AutoTestBase implements IInvokedMethodListener {
+
+    String testName;
+    String packageClassName;
+
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
+
+        testName = testResult.getMethod().getMethodName();
+        packageClassName = testResult.getMethod().getRealClass().getCanonicalName();
+
+        if (method.isTestMethod()) {
+            try {
+                StartTest(testName, packageClassName);
+            } catch (ClassNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @Override

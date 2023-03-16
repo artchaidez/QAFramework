@@ -22,12 +22,6 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
         testName = result.getMethod().getMethodName();
         packageClassName = result.getMethod().getRealClass().getCanonicalName();
 
-        try {
-            StartTest(testName, packageClassName);
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-
     }
 
     @Override
