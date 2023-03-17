@@ -174,7 +174,8 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("Clicked on 'Terms of Service'");
     }
 
-    @Test ()
+    // TODO: Create new test; should test clicking on Return button correctly
+    @Test (enabled = false, description = "This test was to show there was a bug on site and is now fixed.")
     @TestInfo(description = "Test proving there is a bug with the return arrow in the message modal.")
     public void TestReturnButtonDoesNotWork() throws Exception
     {

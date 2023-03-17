@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test with no environment variables">
+    <test verbose="2" preserve-order="false" name="No environment variable tests" parallel="classes" thread-count="8">
+        <classes>
+            <class name="webTestSuites.PodiumTestSuite">
+            </class>
+            <class name="webTestSuites.InvoiceCloudTestSuite">
+            </class>
+        </classes>
+    </test>
+</suite>
