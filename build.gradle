@@ -26,9 +26,19 @@ dependencies {
     implementation 'io.github.bonigarcia:webdrivermanager:5.3.1'
 }
 
+def suite1 = project.hasProperty("suite1")
+def suite2 = project.hasProperty("suite2")
+
 test {
     useTestNG{
-        suites "allTests.xml"
+
+        if(suite1) {
+            suites "allTests.xml"
+        }
+
+        if(suite2) {
+            suites "noEnvVarsTests.xml"
+        }
     }
 
     // This is for ./gradlew cleanTest test
