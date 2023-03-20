@@ -48,7 +48,7 @@ public class VerifyAsserts extends AutoTestBase{
 
     }
 
-    @Test
+    @Test (enabled = false, description = "Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify assert fails but test still completes.")
     public void TestFailsStillFinishes() {
 
@@ -66,7 +66,7 @@ public class VerifyAsserts extends AutoTestBase{
             Verify.That(checkInt).Equals(5);
     }
 
-    @Test
+    @Test (enabled = false, description = "Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify assert shows two failures")
     public void TestTwoFailures() {
 
