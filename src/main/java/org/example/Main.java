@@ -6,6 +6,6 @@ package org.example;
 // TODO: Docker Image (needs to be done on mac)
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello world!");
+        System.out.println("Printing Docker Container from an Image!");
     }
 }
