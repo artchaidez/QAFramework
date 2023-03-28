@@ -114,7 +114,7 @@ public class TrelloBoardPage extends UIBase {
     /** Click on dropdown actions button on the top right of the list (if list exists) and add card. */
     public void DropDownActionsAddCard(String cardTitle, String listName) throws Exception
     {
-        String xpath = String.format("//*[text()='%s']/parent::div//*[@class='list-header-extras-menu dark-hover js-open-list-menu icon-sm icon-overflow-menu-horizontal']", listName);
+        String xpath = String.format("//*[text()='%s']/parent::div//*[@class='list-header-extras-menu js-open-list-menu icon-sm icon-overflow-menu-horizontal']", listName);
         SeleniumControl dropDownListBtn = new SeleniumControl(By.xpath(xpath));
         dropDownListBtn.Click(5);
 

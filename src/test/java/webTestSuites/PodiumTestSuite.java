@@ -174,7 +174,6 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("Clicked on 'Terms of Service'");
     }
 
-    // TODO: Create new test; should test clicking on Return button correctly
     @Test (enabled = false, description = "This test was to show there was a bug on site and is now fixed.")
     @TestInfo(description = "Test proving there is a bug with the return arrow in the message modal.")
     public void TestReturnButtonDoesNotWork() throws Exception
@@ -209,6 +208,37 @@ public class PodiumTestSuite extends AutoTestBase {
             String messageIndicator = Pages.PodiumModal.MessageInputIndicator();
             Verify.That(messageIndicator).DoesNotEqual(emptyMessageIndicator);
             Info("Message has text input");
+    }
+
+    @Test
+    @TestInfo(description = "Test the return arrow in the message modal.")
+    public void TestReturnButtonDoesWork() throws Exception
+    {
+        String message = "There is a bug with the return arrow on the message widget!";
+
+        Step("Go to Podium Website");
+            Pages.GoToURL(podiumURL);
+
+        Step("Go immediately to Podium modal");
+            Pages.PodiumBubble.JumpToPodiumModal();
+
+        Step("Verify on Podium modal");
+            Pages.PodiumModal.LocationSearchBar().IsVisible(5);
+            Info("Podium modal open");
+
+        Step("Click on first location in location list");
+            Pages.PodiumModal.SelectFirstLocation();
+
+        Step("Verify on message modal");
+            Pages.PodiumModal.NameTextInput().IsVisible(5);
+            Info("Within message modal as name text input was found.");
+
+        Step("Click on return arrow");
+            Pages.PodiumModal.ClickOnReturnArrowBtn();
+
+        Step("Verify on 'Select Location' modal by checking the location searchbar is visible");
+            Pages.PodiumModal.LocationSearchBar().IsVisible(5);
+            Info("Searchbar is visible");
     }
 
     @Test ()

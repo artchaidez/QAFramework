@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloBoardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +75,7 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.RyanSpecialtyTestSuite">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
       <module name="QAFramework.main" />
@@ -88,23 +89,48 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="QAFramework [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="test" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite.TestReturnButtonDoesWork" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestReturnButtonDoesWork&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -128,7 +154,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestCreateNewCardInTodo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -141,7 +167,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestCreateNewCardInTodo&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -151,7 +177,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="VerifyAsserts.TestFailsStillFinishes" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite.TestDropDownAddCardOption" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -164,30 +190,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;unitTests.VerifyAsserts.TestFailsStillFinishes&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="VerifyAsserts.TestTwoFailures" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;unitTests.VerifyAsserts.TestTwoFailures&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDropDownAddCardOption&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -242,20 +245,20 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.QAFramework" />
-      <item itemvalue="Gradle.QAFramework [test]" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
-      <item itemvalue="Gradle.VerifyAsserts.TestFailsStillFinishes" />
-      <item itemvalue="Gradle.VerifyAsserts.TestTwoFailures" />
+      <item itemvalue="Gradle.PodiumTestSuite" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/noEnvVarsTests.xml" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestCreateNewCardInTodo" />
-        <item itemvalue="Gradle.QAFramework [test]" />
-        <item itemvalue="Gradle.VerifyAsserts.TestTwoFailures" />
-        <item itemvalue="Gradle.VerifyAsserts.TestFailsStillFinishes" />
       </list>
     </recent_temporary>
   </component>
@@ -293,16 +296,6 @@
           <url>file://$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java</url>
           <line>61</line>
           <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java</url>
-          <line>200</line>
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java</url>
-          <line>203</line>
-          <option name="timeStamp" value="111" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
