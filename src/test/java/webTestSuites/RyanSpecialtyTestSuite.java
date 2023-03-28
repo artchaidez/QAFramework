@@ -11,6 +11,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import webTestFramework.SeleniumControl;
 
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
@@ -20,8 +21,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
     private String trelloURL = "https://trello.com/b/0QEdvItb/rt-sdet";
     @BeforeMethod
-    public void TestSetUp()
-    {
+    public void TestSetUp() throws MalformedURLException {
         email = System.getenv("trelloEmail");
         password = System.getenv("trelloPassword");
         Pages.InitWebDriver();

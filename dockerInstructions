@@ -1,0 +1,28 @@
+Selenium hub steps
+https://github.com/seleniumhq-community/docker-seleniarm
+
+docker network create grid
+    to remove this grid-> docker network rm grid
+
+Need to use experimental Seleniarm Docker images on M1
+Download correct images: https://hub.docker.com/u/seleniarm
+docker pull seleniarm/hub
+docker pull seleniarm/node-chromium
+
+docker run -d -p 4442-4444:4442-4444 --net grid --name seleniarm-hub seleniarm/hub:latest
+docker run -d --net grid -e SE_EVENT_BUS_HOST=seleniarm-hub \
+       --shm-size="2g" \
+       -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+       -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+       seleniarm/node-chromium:latest
+
+Needed to run on Jenkins maybe? Keep for now
+docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub:4.8.1-20230306
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
+       --shm-size="2g" \
+       -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+       -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+       selenium/node-chrome:4.8.1-20230306
+
+Removes the grid network:
+docker network rm grid

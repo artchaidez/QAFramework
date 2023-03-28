@@ -9,14 +9,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.net.MalformedURLException;
+
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class InvoiceCloudTestSuite extends AutoTestBase {
 
     private String herokuURL = "https://the-internet.herokuapp.com/add_remove_elements/";
 
     @BeforeMethod
-    public void TestSetUp()
-    {
+    public void TestSetUp() throws MalformedURLException {
         Pages.InitWebDriver();
     }
 
