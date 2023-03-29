@@ -30,6 +30,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
     @AfterMethod
     public void TestTearDown()
     {
+        // TODO: archive and delete all cards before closing
         Pages.Quit();
     }
 

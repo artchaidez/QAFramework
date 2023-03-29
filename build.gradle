@@ -28,6 +28,7 @@ dependencies {
 
 test {
     useTestNG{
+        suites 'allTests.xml'
     }
 
     // This is for ./gradlew cleanTest test
