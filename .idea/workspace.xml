@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SetUpSeleniumGridM1.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SetupSeleniumGridJenkins.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dockerAllTestsng.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start_dockergrid.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stop_dockergrid.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/allTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerInstructions" beforeDir="false" afterPath="$PROJECT_DIR$/dockerInstructions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" afterDir="false" />
-    </list>
+    <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,18 +70,7 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SetUpDockerGrid">
-    <configuration name="stop_dockergrid" type="BatchConfigurationType" factoryName="Batch" temporary="true">
-      <module name="QAFramework" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="stop_dockergrid.bat" />
-      <option name="PARAMETERS" value="" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.QAFramework [test]">
     <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -114,6 +90,27 @@
         <option name="vmOptions" />
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="QAFramework [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -219,10 +216,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Batch.stop_dockergrid" />
       <item itemvalue="Docker.SetupSeleniumGridJenkins.yml: Compose Deployment" />
       <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       <item itemvalue="Gradle.QAFramework" />
+      <item itemvalue="Gradle.QAFramework [test]" />
       <item itemvalue="Gradle.SetUpDockerGrid" />
       <item itemvalue="Gradle.InvoiceCloudTestSuite" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
@@ -230,11 +227,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.QAFramework [test]" />
         <item itemvalue="Gradle.SetUpDockerGrid" />
         <item itemvalue="Docker.SetupSeleniumGridJenkins.yml: Compose Deployment" />
         <item itemvalue="Gradle.InvoiceCloudTestSuite" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Batch.stop_dockergrid" />
       </list>
     </recent_temporary>
   </component>
