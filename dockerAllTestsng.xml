@@ -3,6 +3,8 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="All QAFramework Tests" parallel="classes" thread-count="8">
         <classes>
+            <class name="dockerTests.SetupDockerGrid">
+            </class>
             <class name="apiTestSuites.OppFiTestSuite">
             </class>
             <class name="webTestSuites.PodiumTestSuite">

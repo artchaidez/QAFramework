@@ -41,7 +41,7 @@ public class WebDriverFactory extends AutoLogger{
         options.addArguments("--remote-allow-origins=*");
         // TODO: Looking into a better way to handle running locally or on grid
         try {
-            rwd = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), options);
+            rwd = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), options);
         } catch (Throwable e) {
             rwd = new ChromeDriver(options);
         }

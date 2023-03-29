@@ -24,5 +24,22 @@ docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
        -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
        selenium/node-chrome:4.8.1-20230306
 
+Runs ons ==> http://localhost:4444/wd/hub
+
 Removes the grid network:
 docker network rm grid
+
+file name ==> run docker-compose.yml
+docker compose up
+    docker compose down
+    *** runs on ==> http://localhost:4445/wd/hub
+
+file name ==> SetupSeleniumGridM1.yml
+    docker compose -f SetupSeleniumGridM1.yml up
+    docker compose -f SetupSeleniumGridM1.yml down
+    *** runs on ==> http://localhost:4445/wd/hub
+
+file name ==> SetupSeleniumGridJenkins.yml
+    docker compose -f SetupSeleniumGridJenkins.yml up
+    docker compose -f SetupSeleniumGridJenkins.yml down
+    *** runs on ==> http://localhost:4445/wd/hub

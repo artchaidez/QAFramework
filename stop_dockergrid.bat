@@ -1,0 +1,1 @@
+docker compose -f SetupSeleniumGridJenkins.yml down
