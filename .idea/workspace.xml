@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="" />
+    <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SetupSeleniumGridJenkins.yml" beforeDir="false" afterPath="$PROJECT_DIR$/SetupSeleniumGridJenkins.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/allTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockerAllTestsng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dockerAllTestsng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockerInstructions" beforeDir="false" afterPath="$PROJECT_DIR$/dockerInstructions" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,7 +76,7 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.QAFramework [test]">
+  <component name="RunManager" selected="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml">
     <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -228,8 +234,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.QAFramework [test]" />
-        <item itemvalue="Gradle.SetUpDockerGrid" />
         <item itemvalue="Docker.SetupSeleniumGridJenkins.yml: Compose Deployment" />
+        <item itemvalue="Gradle.SetUpDockerGrid" />
         <item itemvalue="Gradle.InvoiceCloudTestSuite" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
       </list>

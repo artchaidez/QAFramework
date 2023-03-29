@@ -2,7 +2,7 @@ version: "4"
 services:
   HubService:
     image: selenium/hub
-    container_name: selenium-hub1
+    container_name: selenium-hub-pc
     ports:
       - "4445:4444"
       - "4442:4442"
@@ -16,7 +16,7 @@ services:
       - "5900"
       - "7900"
     environment:
-      - SE_EVENT_BUS_HOST=selenium-hub1
+      - SE_EVENT_BUS_HOST=selenium-hub-pc
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_SESSIONS=3
