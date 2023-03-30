@@ -27,11 +27,12 @@ dependencies {
 }
 
 test {
+    // TODO: use different testng depending on local machine or jenkins?
     useTestNG{
         suites 'dockerAllTestsng.xml'
     }
 
     // This is for ./gradlew cleanTest test
-    // TODO: run in command line
+    // TODO: run in command line- use this for Jenkins parallel test?
     //maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }

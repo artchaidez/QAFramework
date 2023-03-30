@@ -2,7 +2,7 @@ version: "4"
 services:
   HubService:
     image: seleniarm/hub
-    container_name: seleniarm-hub1
+    container_name: seleniarm-hub
     ports:
       - "4445:4444"
       - "4442:4442"
@@ -10,13 +10,13 @@ services:
 
   ChromeService1:
     image: seleniarm/node-chromium
-    container_name: seleniarm-node1
+    container_name: seleniarm-node
     shm_size: "2gb"
     ports:
       - "5900"
       - "7900"
     environment:
-      - SE_EVENT_BUS_HOST=seleniarm-hub1
+      - SE_EVENT_BUS_HOST=seleniarm-hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
       - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
       - SE_NODE_MAX_SESSIONS=3
