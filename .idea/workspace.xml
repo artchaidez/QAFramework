@@ -9,8 +9,10 @@
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SetUpSeleniumGridM1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/SetUpSeleniumGridM1.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SetupSeleniumGridJenkins.yml" beforeDir="false" afterPath="$PROJECT_DIR$/SetupSeleniumGridJenkins.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/allTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockerAllTestsng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dockerAllTestsng.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dockerInstructions" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" afterDir="false" />

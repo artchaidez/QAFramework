@@ -9,8 +9,6 @@
             </class>
             <class name="webTestSuites.PodiumTestSuite">
             </class>
-            <class name="webTestSuites.RyanSpecialtyTestSuite">
-            </class>
             <class name="webTestSuites.InvoiceCloudTestSuite">
             </class>
         </classes>
