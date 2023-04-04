@@ -2,15 +2,20 @@ package dockerTests;
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Ignore;
 
 import java.io.IOException;
 
 public class SetUpDockerGrid {
 
+    // TODO: Figure out how to make these commands on Jenkins
+    // Runs on machine by default so this needs to be removed
+    /**
     @BeforeTest
     void StartDockerGrid() throws IOException, InterruptedException {
         // cmd /c opens command prompt
         Runtime.getRuntime().exec("cmd /c start start_dockergrid.bat");
+        // Does not sleep on machine
         Thread.sleep(15000);
     }
 
@@ -21,5 +26,6 @@ public class SetUpDockerGrid {
 
         Runtime.getRuntime().exec("taskkill /f /im cmd.exe"); // closes command prompt
     }
+    */
 
 }

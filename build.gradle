@@ -30,7 +30,6 @@ test {
     // command line: ./gradlew cleanTest test
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1\
     // with no suites runs perfectly
-    // with xml; runs 5 times?
     useTestNG{
     }
 

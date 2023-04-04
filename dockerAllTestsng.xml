@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- TODO: Delete after confirming cleanTest Test works on Jenkins -->
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="All QAFramework Tests" parallel="classes" thread-count="8">
+    <test name="All QAFramework Tests">
         <classes>
-            <class name="dockerTests.SetUpDockerGrid">
-            </class>
-            <class name="apiTestSuites.OppFiTestSuite">
-            </class>
-            <class name="webTestSuites.PodiumTestSuite">
-            </class>
-            <class name="webTestSuites.InvoiceCloudTestSuite">
-            </class>
+            <class name="dockerTests.SetUpDockerGrid" />
         </classes>
     </test>
 </suite>

@@ -7,14 +7,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
+@Ignore("Only exists to test Selenium Grid")
 public class SeleniumTestOne extends AutoTestBase {
 
-    @Test
     @TestInfo(description = "Test google.com opens and types into searchbar. " +
             "Thread.sleep() added to see execution.")
     public void TestGoogle() throws MalformedURLException, InterruptedException {

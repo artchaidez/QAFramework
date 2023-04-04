@@ -7,10 +7,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.net.URL;
 
+@Ignore("Only exists to test Selenium Grid")
 public class SeleniumTestTwo extends AutoTestBase {
 
     @Test()

@@ -7,9 +7,10 @@
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/noEnvVarsTests.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockerAllTestsng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dockerAllTestsng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
