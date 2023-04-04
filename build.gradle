@@ -27,12 +27,17 @@ dependencies {
 }
 
 test {
-    // TODO: use different testng depending on local machine or jenkins?
+    // command line: ./gradlew cleanTest test
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1\
+    // with no suites runs perfectly
+    // with xml; runs 5 times?
     useTestNG{
-        suites 'dockerAllTestsng.xml'
     }
 
-    // This is for ./gradlew cleanTest test
-    // TODO: run in command line- use this for Jenkins parallel test?
-    //maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    testLogging {
+        exceptionFormat "full"
+        events "started", "skipped", "passed", "failed"
+        //showStandardStreams true // shows all logging, in parallel this is a mess
+    }
+
 }

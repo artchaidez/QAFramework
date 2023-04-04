@@ -5,15 +5,12 @@ import autoFramework.TestInfo;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
 import org.openqa.selenium.By;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import webTestFramework.SeleniumControl;
 
 import java.net.MalformedURLException;
 import java.util.ArrayList;
-
+@Ignore("Board was closed.")
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class RyanSpecialtyTestSuite extends AutoTestBase {
     private String email = null;
@@ -33,7 +30,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
         Pages.Quit();
     }
 
-    @Test()
     @TestInfo(description = "Scenario 1: Create a card in the To Do list")
     public void TestCreateNewCardInTodo() throws Exception
     {
@@ -69,7 +65,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
     }
 
-    @Test
     @TestInfo(description = "Scenario 2: Create a card in the To Do list and move it into the Working list")
     public void TestMoveCardIntoWorkingColumn() throws Exception
     {
@@ -106,7 +101,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
     }
 
-    @Test
     @TestInfo(description = "Scenario 3: Create a card and add a checklist with two items in it")
     public void TestAddCheckListWithItems() throws Exception
     {
@@ -148,7 +142,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
     }
 
-    @Test
     @TestInfo(description = "Scenario 4: Create a card with a checklist, complete the checklist, " +
             "and verify the checklist was completed")
     public void TestCompleteToDoItemsChecklist() throws Exception
@@ -191,7 +184,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
     }
 
-    @Test
     @TestInfo(description = "Scenario 5: Create a card in Working list and move it into the Done list")
     public void TestMoveCardIntoDoneColumn() throws Exception
     {
@@ -227,7 +219,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Pages.TrelloSignInPage.trelloBoardPage.trelloCardPage.DeleteCard();
     }
 
-    @Test
     @TestInfo(description = "Testing card can be deleted within card")
     public void TestDeleteCardInCard() throws Exception
     {
@@ -289,7 +280,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("No cards archived");
     }
 
-    @Test
     @TestInfo(description = "Verify card can be deleted on board")
     public void TestDeleteCardOnBoard() throws Exception
     {
@@ -352,7 +342,6 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
             Info("No cards archived");
     }
 
-    @Test
     @TestInfo(description = "Provide a second way to add a card to a list")
     public void TestDropDownAddCardOption() throws Exception
     {

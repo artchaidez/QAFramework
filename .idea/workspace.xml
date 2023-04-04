@@ -6,16 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SetUpSeleniumGridM1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/SetUpSeleniumGridM1.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SetupSeleniumGridJenkins.yml" beforeDir="false" afterPath="$PROJECT_DIR$/SetupSeleniumGridJenkins.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/allTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/allTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerAllTestsng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dockerAllTestsng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerInstructions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/noEnvVarsTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,8 +76,8 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.SetUpSeleniumGridM1.yml: Compose Deployment">
-    <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.QAFramework [test]">
+    <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -96,7 +90,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.InvoiceCloudTestSuite&quot;" />
+            <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite.TestReturnButtonDoesWork" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestReturnButtonDoesWork&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -146,7 +163,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="SetUpDockerGrid" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RyanSpecialtyTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -159,7 +176,30 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;dockerTests.SetUpDockerGrid&quot;" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="RyanSpecialtyTestSuite.TestDropDownAddCardOption" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDropDownAddCardOption&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -211,39 +251,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SetUpSeleniumGridM1.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="sourceFilePath" value="SetUpSeleniumGridM1.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
+    <configuration name="allTestsng TestKind:Suite" type="TestNG">
+      <shortenClasspath name="NONE" />
+      <useClassPathOnly />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/allTestsng.xml" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="GROUP_NAME" value="" />
+      <option name="TEST_OBJECT" value="SUITE" />
+      <option name="PARAMETERS" value="" />
+      <option name="OUTPUT_DIRECTORY" value="" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" value="" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="SetupSeleniumGridJenkins.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
         <settings>
-          <option name="sourceFilePath" value="SetupSeleniumGridJenkins.yml" />
+          <option name="sourceFilePath" value="Dockerfile" />
         </settings>
       </deployment>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Docker.SetUpSeleniumGridM1.yml: Compose Deployment" />
-      <item itemvalue="Docker.SetupSeleniumGridJenkins.yml: Compose Deployment" />
+      <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
       <item itemvalue="Gradle.QAFramework [test]" />
-      <item itemvalue="Gradle.SetUpDockerGrid" />
-      <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+      <item itemvalue="Gradle.PodiumTestSuite" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
+      <item itemvalue="TestNG.allTestsng TestKind:Suite" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/noEnvVarsTests.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.SetUpSeleniumGridM1.yml: Compose Deployment" />
         <item itemvalue="Gradle.QAFramework [test]" />
-        <item itemvalue="Docker.SetupSeleniumGridJenkins.yml: Compose Deployment" />
-        <item itemvalue="Gradle.SetUpDockerGrid" />
-        <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
+        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
       </list>
     </recent_temporary>
   </component>
