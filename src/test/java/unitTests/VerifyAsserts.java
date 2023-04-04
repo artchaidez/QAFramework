@@ -4,10 +4,7 @@ import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class VerifyAsserts extends AutoTestBase{
@@ -48,7 +45,7 @@ public class VerifyAsserts extends AutoTestBase{
 
     }
 
-    @Test (enabled = false, description = "Test exists to show Verify works as intended.")
+    @Ignore("Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify assert fails but test still completes.")
     public void TestFailsStillFinishes() {
 
@@ -66,7 +63,7 @@ public class VerifyAsserts extends AutoTestBase{
             Verify.That(checkInt).Equals(5);
     }
 
-    @Test (enabled = false, description = "Test exists to show Verify works as intended.")
+    @Ignore("Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify assert shows two failures")
     public void TestTwoFailures() {
 
