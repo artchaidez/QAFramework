@@ -31,7 +31,7 @@ public class PodiumModal extends UIBase {
 
     private final SeleniumControl locationSearchBar = new SeleniumControl(By.xpath("//*[@name='Search Locations']"));
 
-    private final SeleniumControl messageCharCount = new SeleniumControl(By.xpath("//*[contains(@stroke, '#3074dc')]"));
+    private final SeleniumControl messageCharCount = new SeleniumControl(By.xpath("//*[@class='message-char-count']"));
 
     private final SeleniumControl clearLocationSearchBar = new SeleniumControl(By.xpath("//*[@class='SearchInput__Reset']"));
 
@@ -86,11 +86,11 @@ public class PodiumModal extends UIBase {
         messageTextInput.SetText(data, Max_Retries, escape);
     }
 
-    /** Returns web element that is an open circle. This open circle provides feedback on how many
-     * characters are inputted into 'Message' text box. Must be on 'Send message' modal.*/
+    /** Returns web element of total character count. By default, an empty message will be 0 / 300
+     * and will count the total characters in the message. Must be on 'Send message' modal.*/
     public String MessageInputIndicator()
     {
-        return messageCharCount.getAttribute("d").replaceAll("[path()\"]", "");
+        return messageCharCount.getText();
     }
 
     /** Returns web element 'Send' button. Will only be clickable when 'Name', 'Mobile Number',
