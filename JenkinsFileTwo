@@ -7,7 +7,7 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Build Selenium Grid') {
+        stage('Start up Selenium Grid') {
              steps {
                 bat 'docker compose -f SetupSeleniumGridJenkins.yml up'
              }
@@ -17,7 +17,7 @@ pipeline {
                 bat './gradlew cleanTest test'
             }
         }
-        stage('Gradle Build') {
+        stage('Shut down Selenium Grid') {
             steps {
                 bat 'docker compose -f SetupSeleniumGridJenkins.yml down'
             }
