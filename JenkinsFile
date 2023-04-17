@@ -7,7 +7,7 @@ pipeline {
                 bat 'docker compose -f SetupSeleniumGridJenkins.yml up -d'
              }
         }
-        stage('Gradle Build') {
+        stage('Run Tests') {
             steps {
                 bat './gradlew cleanTest test'
             }

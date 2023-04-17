@@ -6,7 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JenkinsFileTwo" beforeDir="false" afterPath="$PROJECT_DIR$/JenkinsFileTwo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JenkinsFileTwo" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/JenkinsFile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/allTests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestOne.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestTwo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/start_dockergrid.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stop_dockergrid.bat" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
