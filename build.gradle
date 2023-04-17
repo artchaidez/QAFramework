@@ -27,9 +27,8 @@ dependencies {
 }
 
 test {
-    // command line: ./gradlew cleanTest test
+    // run in command line: ./gradlew cleanTest test
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1\
-    // with no suites runs perfectly
     useTestNG{
     }
 

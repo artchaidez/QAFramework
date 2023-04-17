@@ -5,6 +5,7 @@ pipeline {
         stage('Start up Selenium Grid') {
              steps {
                 bat 'docker compose -f SetupSeleniumGridJenkins.yml up -d'
+                sleep(time: 20, unit: "SECONDS")
              }
         }
         stage('Run Tests') {
