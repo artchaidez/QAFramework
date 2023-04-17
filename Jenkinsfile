@@ -7,12 +7,10 @@ pipeline {
                 echo 'Hello World'
             }
         }
-    }
-    stages {
-            stage('Gradle Build') {
-                steps {
-                    bat './gradlew cleanTest test'
-                }
+        stage('Gradle Build') {
+            steps {
+                bat './gradlew cleanTest test'
             }
         }
+    }
 }
