@@ -8,4 +8,11 @@ pipeline {
             }
         }
     }
+    stages {
+            stage('Gradle Build') {
+                steps {
+                    bat './gradlew cleanTest test'
+                }
+            }
+        }
 }
