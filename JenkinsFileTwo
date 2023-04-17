@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('Build Selenium Grid') {
+             steps {
+                bat 'docker compose -f SetupSeleniumGridJenkins.yml up'
+             }
+        }
+        stage('Gradle Build') {
+            steps {
+                bat './gradlew cleanTest test'
+            }
+        }
+        stage('Gradle Build') {
+            steps {
+                bat 'docker compose -f SetupSeleniumGridJenkins.yml down'
+            }
+        }
+    }
+}
