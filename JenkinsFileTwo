@@ -2,14 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
         stage('Start up Selenium Grid') {
              steps {
-                bat 'docker compose -f SetupSeleniumGridJenkins.yml up'
+                bat 'docker compose -f SetupSeleniumGridJenkins.yml up -d'
              }
         }
         stage('Gradle Build') {
@@ -17,10 +12,10 @@ pipeline {
                 bat './gradlew cleanTest test'
             }
         }
-        stage('Shut down Selenium Grid') {
-            steps {
-                bat 'docker compose -f SetupSeleniumGridJenkins.yml down'
-            }
+    }
+    post {
+        always {
+            bat 'docker compose -f SetupSeleniumGridJenkins.yml down'
         }
     }
 }
