@@ -2,11 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Remove docker container') {
-            steps {
-                bat 'docker rm -f selenium-hub'
-            }
-        }
         stage('Start up Selenium Grid') {
              steps {
                 bat 'docker compose -f SetupSeleniumGridJenkins.yml up -d'
@@ -21,6 +16,8 @@ pipeline {
     post {
         always {
             bat 'docker compose -f SetupSeleniumGridJenkins.yml down'
+            bat 'docker rm -f selenium-hub'
+            bat 'docker rm -f selenium-node-chrome'
         }
     }
 }
