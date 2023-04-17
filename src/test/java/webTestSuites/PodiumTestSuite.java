@@ -99,11 +99,12 @@ public class PodiumTestSuite extends AutoTestBase {
 
     @Test ()
     @TestInfo(description = "Test input data in all 3 fields of message modal", level = "Smoke")
-    public void TestInputMessageData() throws Exception
+    public void  TestInputMessageData() throws Exception
     {
         String name = "Art";
-            String telephone = "7777777777";
-            String message = "Hello QA Tester";
+        String telephone = "7777777777";
+        String message = "Hello QA Tester";
+        String correctMessageIndicator = message.length() + " / 300";
 
         Step("Go to Podium Website");
             Pages.GoToURL(podiumURL);
@@ -135,11 +136,10 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Input message in message text input");
             Pages.PodiumModal.SetMessageInput(message, 10, null);
 
-        Step("Verify message has input");
-            String emptyMessageIndicator = "M 50 0 A 50 50 0 0 1 50 0";
+        Step(String.format("Verify message has input of %s", correctMessageIndicator));
             String messageIndicator = Pages.PodiumModal.MessageInputIndicator();
-            Verify.That(messageIndicator).DoesNotEqual(emptyMessageIndicator);
-            Info("Message has text input");
+            Verify.That(messageIndicator).Equals(correctMessageIndicator);
+            Info("Message has correct text input");
 
         Step("Verify all inputs have data");
             Pages.PodiumModal.SendButton().IsVisible(5);
