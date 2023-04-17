@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dockerAllTestsng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dockerAllTestsng.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SeleniumTestTwo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dockerTests/SetUpDockerGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,6 +88,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite.TestInputMessageData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestInputMessageData&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -187,29 +206,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RyanSpecialtyTestSuite.TestDropDownAddCardOption" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite.TestDropDownAddCardOption&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" type="TestNG">
       <shortenClasspath name="NONE" />
       <useClassPathOnly />
@@ -284,11 +280,11 @@
     <list>
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
       <item itemvalue="Gradle.QAFramework [test]" />
       <item itemvalue="Gradle.PodiumTestSuite" />
       <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
       <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
       <item itemvalue="TestNG.allTestsng TestKind:Suite" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/noEnvVarsTests.xml" />
@@ -296,10 +292,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.QAFramework [test]" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
         <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
         <item itemvalue="Gradle.PodiumTestSuite" />
         <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite.TestDropDownAddCardOption" />
       </list>
     </recent_temporary>
   </component>
