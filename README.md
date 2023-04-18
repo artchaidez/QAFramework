@@ -31,9 +31,8 @@ docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub-pc
 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 -e SE_NODE_MAX_SESSIONS=3 
 -e SE_NODE_MAX_SESSIONS=3 selenium/node-chrome
 
-Terminal commands for yml (Could also run yml on IntelliJ): \
-*** Called qaframework, container is called selenium-hub \
 file name ==> SetupSeleniumGridJenkins.yml \
+*** Called qaframework, container is called selenium-hub \
 docker compose -f SetupSeleniumGridJenkins.yml up \
 docker compose -f SetupSeleniumGridJenkins.yml down
 
