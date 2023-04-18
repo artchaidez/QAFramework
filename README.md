@@ -12,7 +12,7 @@ JDK: Amazon Corretto 17.0.5 (Windows) \
 Gradle DSL: Groovy 
 
 # Instructions to run tests on Selenium Grid
-Once containers are on Docker Desktop, they can be started from there \
+Once containers are on Docker Desktop, they can be started from there 
 
 Grid commands: \
 add grid ==> docker network create grid \
