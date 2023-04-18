@@ -11,7 +11,21 @@ JDK: Amazon Corretto 17.0.5 (Windows) \
      Eclipse Temurin 17.0.4 (Mac) \
 Gradle DSL: Groovy 
 
-To run all tests in parallel, while in root directory: ``` ./gradlew cleanTest test ```
+### Options to run all tests in parallel: 
+In IntelliJ, run build.gradle (preferred way as Logger will cleanly show all steps, organized by test suites and their tests) \
+While in root directory: ``` ./gradlew cleanTest test ```
+
+### Features:
+- Page Object Model to store web elements.
+- JSON objects with getters and setters for cleaner API calls.
+- Wrappers (SeleniumControl) for Selenium for improved UI testing.
+- Run all tests in parallel based on local machine's thread count.
+- Tests can be run in Jenkins using Docker to set up Selenium Grid using Jenkins Pipeline (see below).
+- Custom logger (AutoLogger) for improved readabilty and keep track of test steps.
+- Wrappers for Testng Asserts (Verify) that do not throw an exception immediately when an assertion fails. Therefore, all steps and assertions in the automated test will execute before failing the test.
+- Overide listeners (IInvokedMethodListener, TestListener) to screenshot failed web tests, log test information at the start of test, and fail test.
+- Custom annotation (TestInfo) to provide more information about a test, such as description and if a test is smoke/ regression.
+- Class (AutoTestBase) that creates API, UI, and assert objects that is extended by all test suites. This class also extends the custom logger to be used in tests.
 
 # Instructions to run tests on Selenium Grid
 Grid must first be created and correct images pulled. From here, use `docker run`, `docker compose`, or run yml file.
@@ -28,7 +42,7 @@ Remove grid (if needed):
 docker network rm grid
 ```
 
-## [Run on Windows/ Jenkins](https://github.com/SeleniumHQ/docker-selenium) 
+### [Run on Windows/ Jenkins](https://github.com/SeleniumHQ/docker-selenium) 
 Pull correct images: 
 ```
 docker pull selenium/hub
