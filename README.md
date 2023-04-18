@@ -12,13 +12,15 @@ JDK: Amazon Corretto 17.0.5 (Windows) \
 Gradle DSL: Groovy 
 
 # Instructions to run tests on Selenium Grid
-NOTE: Once containers are on Docker Desktop, they can be started from there \
-***** Run on Windows/ Jenkins ***** \
-https://github.com/SeleniumHQ/docker-selenium
+Once containers are on Docker Desktop, they can be started from there \
 
 Grid commands: \
 add grid ==> docker network create grid \
 remove grid ==> docker network rm grid 
+
+***** Run on Windows/ Jenkins ***** \
+https://github.com/SeleniumHQ/docker-selenium
+
 
 Runs on ==> http://localhost:4445/wd/hub
 
