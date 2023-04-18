@@ -18,12 +18,12 @@ While in root directory: ``` ./gradlew cleanTest test ```
 ### Features:
 - Page Object Model to store web elements.
 - JSON objects with getters and setters for cleaner API calls.
-- Wrappers (SeleniumControl) for Selenium for improved UI testing.
+- Wrappers for Selenium for improved UI testing.
 - Run all tests in parallel based on local machine's thread count.
 - Tests can be run in Jenkins using Docker to set up Selenium Grid using Jenkins Pipeline (see below).
-- Custom logger (AutoLogger) for improved readabilty and keep track of test steps.
-- Wrappers for Testng Asserts (Verify) that do not throw an exception immediately when an assertion fails. Therefore, all steps and assertions in the automated test will execute before failing the test.
-- Overide listeners (IInvokedMethodListener, TestListener) to screenshot failed web tests, log test information at the start of test, and fail test.
+- Custom logger (AutoLogger) for improved readability and track of test steps.
+- Wrapper class for Testng asserts (Verify) that do not throw an exception immediately when an assertion fails. Therefore, all steps and assertions in the automated test will execute before failing the test. Also improves readability.
+- Overide listeners (BaseInvokedMethodListener, BaseTestListener) to screenshot failed web tests, log test information at the start of test, and fail test.
 - Custom annotation (TestInfo) to provide more information about a test, such as description and if a test is smoke/ regression.
 - Class (AutoTestBase) that creates API, UI, and assert objects that is extended by all test suites. This class also extends the custom logger to be used in tests.
 
@@ -69,7 +69,7 @@ docker compose -f SetupSeleniumGridJenkins.yml up
 docker compose -f SetupSeleniumGridJenkins.yml down
 ```
 
-## [Run on M1 Mac](https://github.com/seleniumhq-community/docker-seleniarm#experimental-mult-arch-aarch64armhfamd64-images)
+### [Run on M1 Mac](https://github.com/seleniumhq-community/docker-seleniarm#experimental-mult-arch-aarch64armhfamd64-images)
 
 Need to use experimental Seleniarm Docker images on M1 \
 Pull correct images: https://hub.docker.com/u/seleniarm 
