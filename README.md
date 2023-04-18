@@ -15,6 +15,8 @@ Gradle DSL: Groovy
 Grid must first be created and correct images pulled. From here, use `docker run`, `docker compose`, or run yml file.
 Can be run on Docker Desktop as well.
 
+Runs on ==> http://localhost:4445/wd/hub
+
 Add grid: 
 ```
 docker network create grid
@@ -24,10 +26,7 @@ Remove grid (if needed):
 docker network rm grid
 ```
 
-Runs on ==> http://localhost:4445/wd/hub
-
-### Run on Windows/ Jenkins
-https://github.com/SeleniumHQ/docker-selenium \
+### [Run on Windows/ Jenkins](https://github.com/SeleniumHQ/docker-selenium) 
 Pull correct images: 
 ```
 docker pull selenium/hub
@@ -54,8 +53,7 @@ docker compose -f SetupSeleniumGridJenkins.yml up
 docker compose -f SetupSeleniumGridJenkins.yml down
 ```
 
-### Run on M1 Mac
-https://github.com/seleniumhq-community/docker-seleniarm#experimental-mult-arch-aarch64armhfamd64-images
+### [Run on M1 Mac](https://github.com/seleniumhq-community/docker-seleniarm#experimental-mult-arch-aarch64armhfamd64-images)
 
 Need to use experimental Seleniarm Docker images on M1 \
 Pull correct images: https://hub.docker.com/u/seleniarm 
