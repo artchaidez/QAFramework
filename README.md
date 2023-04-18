@@ -11,6 +11,8 @@ JDK: Amazon Corretto 17.0.5 (Windows) \
      Eclipse Temurin 17.0.4 (Mac) \
 Gradle DSL: Groovy 
 
+To run all tests in parallel, while in root directory: ``` ./gradlew cleanTest test ```
+
 # Instructions to run tests on Selenium Grid
 Grid must first be created and correct images pulled. From here, use `docker run`, `docker compose`, or run yml file.
 Can be run on Docker Desktop as well.
@@ -26,7 +28,7 @@ Remove grid (if needed):
 docker network rm grid
 ```
 
-### [Run on Windows/ Jenkins](https://github.com/SeleniumHQ/docker-selenium) 
+## [Run on Windows/ Jenkins](https://github.com/SeleniumHQ/docker-selenium) 
 Pull correct images: 
 ```
 docker pull selenium/hub
@@ -53,7 +55,7 @@ docker compose -f SetupSeleniumGridJenkins.yml up
 docker compose -f SetupSeleniumGridJenkins.yml down
 ```
 
-### [Run on M1 Mac](https://github.com/seleniumhq-community/docker-seleniarm#experimental-mult-arch-aarch64armhfamd64-images)
+## [Run on M1 Mac](https://github.com/seleniumhq-community/docker-seleniarm#experimental-mult-arch-aarch64armhfamd64-images)
 
 Need to use experimental Seleniarm Docker images on M1 \
 Pull correct images: https://hub.docker.com/u/seleniarm 
