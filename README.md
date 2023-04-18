@@ -12,47 +12,75 @@ JDK: Amazon Corretto 17.0.5 (Windows) \
 Gradle DSL: Groovy 
 
 # Instructions to run tests on Selenium Grid
-Once containers are on Docker Desktop, they can be started from there 
+Grid must first be created and correct images pulled. From here, use `docker run`, `docker compose`, or run yml file.
+Can be run on Docker Desktop as well.
 
-Grid commands: \
-add grid ==> docker network create grid \
-remove grid ==> docker network rm grid 
-
-***** Run on Windows/ Jenkins ***** \
-https://github.com/SeleniumHQ/docker-selenium
-
+Add grid: 
+```
+docker network create grid
+``` 
+Remove grid (if needed): 
+```
+docker network rm grid
+```
 
 Runs on ==> http://localhost:4445/wd/hub
 
-Terminal commands: \
-docker run -d -p 4445:4444 --net grid --name selenium-hub-pc selenium/hub \
+### Run on Windows/ Jenkins
+https://github.com/SeleniumHQ/docker-selenium \
+Pull correct images: 
+```
+docker pull selenium/hub
+``` 
+```
+docker pull selenium/node-chrome
+```
+
+Docker run: 
+```
+docker run -d -p 4445:4444 --net grid --name selenium-hub-pc selenium/hub
+``` 
+```
 docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub-pc 
 --shm-size="2g" -e SE_EVENT_BUS_PUBLISH_PORT=4442 
 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 -e SE_NODE_MAX_SESSIONS=3 
 -e SE_NODE_MAX_SESSIONS=3 selenium/node-chrome
-
-file name ==> SetupSeleniumGridJenkins.yml \
-*** Called qaframework, container is called selenium-hub \
-docker compose -f SetupSeleniumGridJenkins.yml up \
+```
+Could also run yml files directly or use docker compose:
+```
+docker compose -f SetupSeleniumGridJenkins.yml up
+```
+```
 docker compose -f SetupSeleniumGridJenkins.yml down
+```
 
-
-***** Run on M1 Mac ***** \
+### Run on M1 Mac
 https://github.com/seleniumhq-community/docker-seleniarm#experimental-mult-arch-aarch64armhfamd64-images
 
 Need to use experimental Seleniarm Docker images on M1 \
-Download correct images: https://hub.docker.com/u/seleniarm \
-docker pull seleniarm/hub \
+Pull correct images: https://hub.docker.com/u/seleniarm 
+```
+docker pull seleniarm/hub
+```
+```
 docker pull seleniarm/node-chromium
+```
 
-Terminal commands: \
-docker run -d -p 4445:4444 --net grid --name seleniarm-hub-m1 seleniarm/hub:latest \
+Docker run: 
+```
+docker run -d -p 4445:4444 --net grid --name seleniarm-hub-m1 seleniarm/hub:latest
+```
+```
 docker run -d --net grid -e SE_EVENT_BUS_HOST=seleniarm-hub-m1 
 --shm-size="2g" -e SE_EVENT_BUS_PUBLISH_PORT=4442 
 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 -e SE_NODE_MAX_SESSIONS=3 
 -e SE_NODE_MAX_SESSIONS=3 seleniarm/node-chromium:latest
+```
 
-file name ==> SetupSeleniumGridM1.yml \
-*** Called qaframework, container is called seleniarm-hub \
-docker compose -f SetupSeleniumGridM1.yml up \
+Could also run yml files directly or use docker compose:
+```
+docker compose -f SetupSeleniumGridM1.yml up
+```
+```
 docker compose -f SetupSeleniumGridM1.yml down
+```
