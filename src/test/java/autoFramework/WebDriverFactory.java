@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ThreadGuard;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Objects;
 
 public class WebDriverFactory extends AutoLogger{
@@ -18,8 +20,7 @@ public class WebDriverFactory extends AutoLogger{
 
     }
 
-    public ThreadLocal<WebDriver> CreateSeleniumDriver()
-    {
+    public ThreadLocal<WebDriver> CreateSeleniumDriver() throws MalformedURLException {
         CreateWebDriver();
         _WebDriver.set(ThreadGuard.protect(Objects.requireNonNull(rwd)));
         _WebDriver.get().manage().window().maximize();
@@ -33,13 +34,17 @@ public class WebDriverFactory extends AutoLogger{
         return _WebDriver;
     }
 
-    public void CreateWebDriver()
-    {
+    public void CreateWebDriver() throws MalformedURLException {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--incognito");
         options.addArguments("--remote-allow-origins=*");
-        rwd = new ChromeDriver(options);
+        // TODO: Looking into a better way to handle running locally or on grid
+        try {
+            rwd = new RemoteWebDriver(new URL("http://localhost:4445/wd/hub"), options);
+        } catch (Throwable e) {
+            rwd = new ChromeDriver(options);
+        }
     }
 
 

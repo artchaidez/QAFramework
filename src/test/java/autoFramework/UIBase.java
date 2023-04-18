@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import webTestFramework.SeleniumControl;
 
+import java.net.MalformedURLException;
 import java.text.MessageFormat;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -29,8 +30,7 @@ public class UIBase extends AutoLogger {
     }
 
     /** Initiate selenium webDriver. */
-    public void InitWebDriver()
-    {
+    public void InitWebDriver() throws MalformedURLException {
         webDriver = webDriverFactory.CreateSeleniumDriver();
         setWebDriver(webDriver);
     }

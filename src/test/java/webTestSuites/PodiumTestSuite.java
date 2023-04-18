@@ -9,13 +9,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.net.MalformedURLException;
+
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class PodiumTestSuite extends AutoTestBase {
 
     private String podiumURL = "https://demo.podium.tools/qa-webchat-lorw/";
     @BeforeMethod
-    public void TestSetUp()
-    {
+    public void TestSetUp() throws MalformedURLException {
         Pages.InitWebDriver();
     }
 

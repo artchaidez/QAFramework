@@ -27,17 +27,14 @@ dependencies {
 }
 
 test {
-    // command line: ./gradlew cleanTest test
-    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1\
-    // with no suites runs perfectly
-    // with xml; runs 5 times?
+    // run in command line: ./gradlew cleanTest test
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
     useTestNG{
     }
 
     testLogging {
         exceptionFormat "full"
         events "started", "skipped", "passed", "failed"
-        //showStandardStreams true // shows all logging, in parallel this is a mess
     }
 
 }

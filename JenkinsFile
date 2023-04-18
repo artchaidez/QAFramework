@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Start up Selenium Grid') {
+             steps {
+                bat 'docker compose -f SetupSeleniumGridJenkins.yml up -d'
+             }
+        }
+        stage('Run Tests') {
+            steps {
+                bat './gradlew cleanTest test'
+            }
+        }
+    }
+    post {
+        always {
+            bat 'docker compose -f SetupSeleniumGridJenkins.yml down'
+            bat 'docker rm -f selenium-hub'
+            bat 'docker rm -f selenium-node-chrome'
+        }
+    }
+}
