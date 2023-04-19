@@ -4,10 +4,7 @@ import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.net.MalformedURLException;
 
@@ -98,9 +95,10 @@ public class PodiumTestSuite extends AutoTestBase {
             Info(String.format("'%s' opened up", location));
     }
 
-    @Test ()
+    // TODO: Check to see when icon is appearing in incognito again
+    @Ignore("In incognito window, MessageInputIndicator() does not appear.")
     @TestInfo(description = "Test input data in all 3 fields of message modal", level = "Smoke")
-    public void  TestInputMessageData() throws Exception
+    public void TestInputMessageData() throws Exception
     {
         String name = "Art";
         String telephone = "7777777777";

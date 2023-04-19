@@ -24,16 +24,6 @@ public class AutoLogger {
     private List<Timespan> timeTakenList = new ArrayList<>() {
     };
 
-    // TODO: Works for suites; not in parallel
-    /*public AutoLogger()
-    {
-        TestContextLogger testContextLoggerObj = new TestContextLogger();
-        testContextLogger.set(Objects.requireNonNull(testContextLoggerObj));
-
-        TestExecutionContext testExecutionContextObj = new TestExecutionContext();
-        testExecutionContext.set(Objects.requireNonNull(testExecutionContextObj));
-    }*/
-
     public String GetCurrentTestName()
     {
         return testName;

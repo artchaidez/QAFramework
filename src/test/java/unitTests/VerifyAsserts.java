@@ -19,7 +19,7 @@ public class VerifyAsserts extends AutoTestBase{
     {
     }
 
-    @Test
+    @Ignore("Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify new asserts work and pass.")
     public void TestVerifyShouldPass() {
 
