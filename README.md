@@ -21,7 +21,7 @@ While in root directory: ``` ./gradlew cleanTest test ```
 - Wrappers for Selenium for improved UI testing.
 - Run all tests in parallel based on local machine's thread count.
 - Tests can be run in Jenkins using Docker to set up Selenium Grid using Jenkins Pipeline (see below).
-- Custom logger (AutoLogger) for improved readability and track of test steps.
+- Custom logger (AutoLogger) for improved readability and track test steps.
 - Wrapper class for Testng asserts (Verify) that do not throw an exception immediately when an assertion fails. Therefore, all steps and assertions in the automated test will execute before failing the test. Also improves readability.
 - Overide listeners (BaseInvokedMethodListener, BaseTestListener) to screenshot failed web tests, log test information at the start of test, and fail test.
 - Custom annotation (TestInfo) to provide more information about a test, such as description and if a test is smoke/ regression.
