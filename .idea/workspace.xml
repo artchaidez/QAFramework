@@ -6,12 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/TestExecutionContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/TestExecutionContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/TestInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/TestInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +75,30 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PodiumTestSuite.TestInputMessageData">
+  <component name="RunManager" selected="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists">
+    <configuration name="OppFiTestSuite.OffersApiAcceptedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;apiTestSuites.OppFiTestSuite.OffersApiAcceptedTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -125,7 +145,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestReturnButtonDoesWork" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PodiumTestSuite.TestScoreboardOremLocationExists" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -138,7 +158,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestReturnButtonDoesWork&quot;" />
+            <option value="&quot;webTestSuites.PodiumTestSuite.TestScoreboardOremLocationExists&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -184,29 +204,6 @@
         <option name="vmOptions" />
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="RyanSpecialtyTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.RyanSpecialtyTestSuite&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -285,22 +282,22 @@
     <list>
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
+      <item itemvalue="Gradle.OppFiTestSuite.OffersApiAcceptedTest" />
+      <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
       <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
       <item itemvalue="Gradle.QAFramework [test]" />
       <item itemvalue="Gradle.PodiumTestSuite" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
-      <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
       <item itemvalue="TestNG.allTestsng TestKind:Suite" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/noEnvVarsTests.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
         <item itemvalue="Gradle.QAFramework [test]" />
-        <item itemvalue="Gradle.RyanSpecialtyTestSuite" />
+        <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
+        <item itemvalue="Gradle.OppFiTestSuite.OffersApiAcceptedTest" />
         <item itemvalue="Gradle.PodiumTestSuite" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
       </list>
     </recent_temporary>
   </component>
@@ -336,8 +333,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java</url>
-          <line>138</line>
+          <line>139</line>
           <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/ApiBase.java</url>
+          <line>19</line>
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
