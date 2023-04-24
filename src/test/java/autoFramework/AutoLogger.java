@@ -1,7 +1,8 @@
 package autoFramework;
 
+import io.restassured.response.Response;
 import jdk.jfr.Timespan;
-import java.net.http.HttpResponse;
+
 import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -133,12 +134,13 @@ public class AutoLogger {
     }
 
     /** Used in Post to Log API info */
-    public void apiLog(HttpResponse<String> response, String requestBody)
+    public void apiLog(Response response, String requestBody, String resource, String requestMethod)
     {
-        Info(response.request().method() + ": " + response.uri());
+        // Response does not contain request method or uri; passed in as args
+        Info(requestMethod + ": " + resource);
         Info("REQUEST BODY: " +  requestBody);
         Info("STATUS CODE: " + response.statusCode());
-        Info("RESPONSE BODY: " + response.body());
+        Info("RESPONSE BODY: " + response.asString());
     }
 
     /** Resets int stepNumber after test method finishes. */

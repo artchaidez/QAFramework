@@ -1,11 +1,9 @@
 package autoFramework;
 
 import com.google.gson.Gson;
+import io.restassured.response.Response;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+import static io.restassured.RestAssured.given;
 
 
 public class ApiBase extends AutoLogger {
@@ -13,31 +11,33 @@ public class ApiBase extends AutoLogger {
     Gson gson = new Gson();
 
     /** Returns the class of a response body. Needs a wrapper method to determine which class is returned. */
-    public HttpResponse<String> Post(Object parms, String resource, String apiKey) throws Exception {
+    public Response Post(Object parms, String resource, String apiKey) throws Exception {
 
-        HttpResponse<String> response = null;
+        Response response = null;
 
         String jsonRequest = gson.toJson(parms);
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(resource))
-                .header("x-api-key", apiKey)
-                .POST(HttpRequest.BodyPublishers.ofString(jsonRequest))
-                .build();
+        try {
+            response =
+                    given()
+                        .contentType("application/json")
+                        .body(jsonRequest)
+                        .header("x-api-key", apiKey)
+                    .when()
+                        .post(resource)
+                    .then()
+                        .statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
+                        .extract()
+                        .response();
 
-        HttpClient httpClient = HttpClient.newHttpClient();
-
-        try
-        {
-            response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
         }
         catch (Exception e)
         {
-            // TODO: How to test this?
+            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
             handleStatusCode(response.statusCode());
         }
 
-        apiLog(response, jsonRequest);
+        apiLog(response, jsonRequest, resource, "POST");
 
         return response;
     }
@@ -45,21 +45,22 @@ public class ApiBase extends AutoLogger {
     /** Returns the int of a status code. NOTE: Created for OppFi assessment*/
     public int PostInt(String parms, String resource, String apiKey) throws Exception {
 
-        int response;
+        int response = 0;
 
         String jsonRequest = gson.toJson(parms);
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(resource))
-                .header("x-api-key", apiKey)
-                .POST(HttpRequest.BodyPublishers.ofString(jsonRequest))
-                .build();
+        try {
+            response =
+                    given()
+                            .contentType("application/json")
+                            .body(jsonRequest)
+                            .header("x-api-key", apiKey)
+                    .when()
+                            .post(resource)
+                    .then()
+                            .extract()
+                            .response().statusCode();
 
-        HttpClient httpClient = HttpClient.newHttpClient();
-
-        try
-        {
-            response = httpClient.send(request, HttpResponse.BodyHandlers.ofString()).statusCode();
         }
         catch (Exception e)
         {
