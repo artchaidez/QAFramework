@@ -7,7 +7,7 @@ import listeners.BaseTestListener;
 import org.testng.annotations.*;
 
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
-public class VerifyAsserts extends AutoTestBase{
+public class VerifyTestSuite extends AutoTestBase{
 
     @BeforeMethod
     public void TestSetUp()

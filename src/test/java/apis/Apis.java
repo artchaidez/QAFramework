@@ -6,10 +6,12 @@ import autoFramework.AutoLogger;
 public class Apis extends AutoLogger {
 
     public OffersApi offersApi;
+    public RegresApi regresApi;
 
     public Apis()
     {
         offersApi = new OffersApi();
+        regresApi = new RegresApi();
     }
 
 }

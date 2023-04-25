@@ -42,6 +42,29 @@ public class ApiBase extends AutoLogger {
         return response;
     }
 
+    public Response Get(String resource) throws Exception
+    {
+        Response response = null;
+
+        try {
+            response =
+                    given()
+                    .when()
+                            .get(resource)
+                    .then()
+                            .extract()
+                            .response();
+        } catch (Exception e)
+        {
+            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
+            handleStatusCode(response.statusCode());
+        }
+
+        apiLog(response, resource, "GET");
+
+        return response;
+    }
+
     /** Returns the int of a status code. NOTE: Created for OppFi assessment*/
     public int PostInt(String parms, String resource, String apiKey) throws Exception {
 

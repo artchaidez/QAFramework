@@ -133,12 +133,21 @@ public class AutoLogger {
         stepNumber++;
     }
 
-    /** Used in Post to Log API info */
+    /** Used in Post() to log API info */
     public void apiLog(Response response, String requestBody, String resource, String requestMethod)
     {
         // Response does not contain request method or uri; passed in as args
         Info(requestMethod + ": " + resource);
         Info("REQUEST BODY: " +  requestBody);
+        Info("STATUS CODE: " + response.statusCode());
+        Info("RESPONSE BODY: " + response.asString());
+    }
+
+    /** Used in Get() to log API info*/
+    public void apiLog(Response response, String resource, String requestMethod)
+    {
+        // Response does not contain request method or uri; passed in as args
+        Info(requestMethod + ": " + resource);
         Info("STATUS CODE: " + response.statusCode());
         Info("RESPONSE BODY: " + response.asString());
     }
