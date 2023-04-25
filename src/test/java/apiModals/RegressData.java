@@ -1,5 +1,7 @@
 package apiModals;
 
+import com.google.gson.annotations.SerializedName;
+
 public class RegressData {
 
     // var names must match json key spelling
@@ -7,11 +9,11 @@ public class RegressData {
 
     private String email;
 
-    // must be snake case to get/set
-    private String first_name;
+    @SerializedName("first_name")
+    private String firstName;
 
-    // must be snake case to get/set
-    private String last_name;
+    @SerializedName("last_name")
+    private String lastName;
 
     private String avatar;
 
@@ -26,17 +28,16 @@ public class RegressData {
     }
 
     public String getFirstName() {
-        return first_name;
+        return firstName;
     }
 
     public String getLastName() {
-        return last_name;
+        return lastName;
     }
 
     public String getAvatar() {
         return avatar;
     }
-
 
     // Setter methods
 
@@ -48,12 +49,12 @@ public class RegressData {
         this.email = email;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = this.first_name;
+    public void setFirstName(String firstName) {
+        this.firstName = this.firstName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setAvatar(String avatar) {

@@ -1,19 +1,21 @@
 package unitTests;
 
-import apiModals.Regres;
+import apiModals.RegresListUsers;
+import apiModals.RegresSingleUser;
+import apiModals.RegresUser;
 import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
-import autoFramework.Verify;
-import com.google.gson.Gson;
-import io.restassured.response.Response;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
-import org.testng.annotations.*;
-
-import static io.restassured.RestAssured.given;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class APITestSuite extends AutoTestBase{
+
+    String id;
 
     @BeforeMethod
     public void TestSetUp()
@@ -29,18 +31,18 @@ public class APITestSuite extends AutoTestBase{
     @TestInfo(description = "Verify GET call returns a single user")
     public void TestGetSingleUser() throws Exception {
 
-        String resource = "https://reqres.in/api/users/2";
-        int id = 2;
-        String email = "janet.weaver@reqres.in";
-        String firstName ="Janet";
-        String lastName = "Weaver";
-        String avatar = "https://reqres.in/img/faces/2-image.jpg";
+        String resource = "https://reqres.in/api/users/9";
+        int id = 9;
+        String email = "tobias.funke@reqres.in";
+        String firstName ="Tobias";
+        String lastName = "Funke";
+        String avatar = "https://reqres.in/img/faces/9-image.jpg";
 
-        Step("Make a GET call");
-            Regres response;
+        Step("Make a GET call for a single user");
+            RegresSingleUser response;
 
             try {
-                response = APIs.regresApi.GetRegres(resource);
+                response = APIs.regresApi.GetSingleRegres(resource);
             }catch (Exception e)
             {
                 throw new Exception("Exception hit", e);
@@ -61,12 +63,11 @@ public class APITestSuite extends AutoTestBase{
         Step(String.format("Verify avatar is %s", avatar));
             Verify.That(response.getAvatar()).Equals(avatar);
 
-
     }
 
     @Test
     @TestInfo(description = "Verify GET call returns users on page 2")
-    public void TestGetUsers() throws Exception {
+    public void TestGetListUsers() throws Exception {
 
         String resource = "https://reqres.in/api/users?page=2";
         int pageNumber = 2;
@@ -81,11 +82,11 @@ public class APITestSuite extends AutoTestBase{
         String supportURL = "https://reqres.in/#support-heading";
         String supportText = "To keep ReqRes free, contributions towards server costs are appreciated!";
 
-        Step("Make a GET call");
-            Regres response;
+        Step("Make a GET call for a list of users");
+            RegresListUsers response;
 
             try {
-                response = APIs.regresApi.GetRegres(resource);
+                response = APIs.regresApi.GetListRegres(resource);
             }catch (Exception e)
             {
                 throw new Exception("Exception hit", e);
@@ -102,7 +103,7 @@ public class APITestSuite extends AutoTestBase{
 
         Step(String.format("Verify total pages is %s", totalPages));
             Verify.That(response.getTotalPages()).Equals(totalPages);
-/*
+
         Step(String.format("Verify id %s exists", dataID));
             Verify.That(response.getDataID(dataID)).Equals(dataID);
 
@@ -117,7 +118,7 @@ public class APITestSuite extends AutoTestBase{
 
         Step(String.format("Verify avatar %s exists", dataAvatar));
             Verify.That(response.getDataAvatar(dataAvatar)).Equals(dataAvatar);
-*/
+
         Step(String.format("Verify support url is %s", supportURL));
             Verify.That(response.getSupport().getUrl()).Equals(supportURL);
 
@@ -125,47 +126,86 @@ public class APITestSuite extends AutoTestBase{
             Verify.That(response.getSupport().getText()).Equals(supportText);
     }
 
-    @Test
-    @TestInfo(description = "Verify Post works.")
-    public void TestPostRequest()
-    {
-        String resource = "https://regres.in/api/users";
+    @Test(priority = 1)
+    @TestInfo(description = "Verify POST works.")
+    public void TestPostRequest() throws Exception {
 
-        // returns 201?
-        /**
-         * {
-         *     "name": "morpheus",
-         *     "job": "leader"
-         * }*/
+        String resource = "https://reqres.in/api/users";
+        String name = "morpheus";
+        String job = "leader";
 
+        Step("Set up ReqresUser and the body");
+            RegresUser request = new RegresUser();
+            request.setName(name);
+            request.setJob(job);
+
+        Step("Make a GET call");
+            RegresUser response;
+
+            try {
+                response = APIs.regresApi.PostRegres(request, resource);
+            }catch (Exception e)
+            {
+                throw new Exception("Exception hit", e);
+            }
+
+        Step(String.format("Verify name is %s", name));
+            Verify.That(response.getName()).Equals(name);
+
+        Step(String.format("Verify job is %s", job));
+            Verify.That(response.getJob()).Equals(job);
+
+        Step("Save new user id");
+            id = response.getId();
+            Info(String.format("Id is %s", id));
     }
 
-    @Test
-    @TestInfo(description = "Verify Update user works")
-    public void TestUpdateRequest()
-    {
-        String resource = "https://regres.in/api/users/2";
+    @Test(priority = 2, dependsOnMethods = {"TestPostRequest"})
+    @TestInfo(description = "Verify PUT works")
+    public void TestUpdateRequest() throws Exception {
 
-        // change
-        /**
-         * {
-         *     "name": "morpheus",
-         *     "job": "zion resident"
-         * }*/
+        // Use id that was created in TestPostRequest()
+        String resource = "https://reqres.in/api/users/" + id;
+        String name = "morpheus";
+        String job = "follower";
+
+        Step("Set up ReqresUser and the body");
+            RegresUser request = new RegresUser();
+            request.setName(name);
+            request.setJob(job);
+
+        Step("Make a PUT call to update user");
+            RegresUser response;
+
+            try {
+                response = APIs.regresApi.PutRegres(request, resource);
+            }catch (Exception e)
+            {
+                throw new Exception("Exception hit", e);
+            }
+
+        Info(String.format("Id is %s", id));
+
+        Step(String.format("Verify job is %s", job));
+            Verify.That(response.getJob()).Equals(job);
+
+        Step(String.format("Verify name is %s", name));
+            Verify.That(response.getName()).Equals(name);
     }
 
-    @Test
+    @Test(priority = 3, dependsOnMethods = {"TestPostRequest"})
     @TestInfo(description = "Verify Delete works")
     public void TestDeleteRequest()
     {
-        String resource = "https://regres.in/api/users/userid";
+        String resource = "https://reqres.in/api/users/" + id;
 
-        // should return 401
-        /**
-         * {
-         *     "name": "morpheus",
-         *     "job": "zion resident"
-         * }*/
+        Step(String.format("Delete %s", resource));
+
+            try {
+                APIs.regresApi.DeleteRegres(resource);
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
     }
 
 }

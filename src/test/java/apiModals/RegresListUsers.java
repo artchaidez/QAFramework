@@ -1,16 +1,21 @@
 package apiModals;
 
-public class Regres {
+import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
+
+public class RegresListUsers {
 
     // var names must match json key spelling
     private int page;
-    private int per_page;
+    @SerializedName("per_page")
+    private int perPage;
     private int total;
-    private int total_pages;
+    @SerializedName("total_pages")
+    private int totalPages;
 
-    // TODO: properly handle single/ list of users in GET call
-    //ArrayList < RegressData > data = new ArrayList<>();
-    RegressData data;
+    List< RegressData > data;
+    //RegressData data;
     RegresSupport support;
 
     // Getter Methods
@@ -20,7 +25,7 @@ public class Regres {
     }
 
     public int getPerPage() {
-        return per_page;
+        return perPage;
     }
 
     public int getTotal() {
@@ -28,40 +33,11 @@ public class Regres {
     }
 
     public int getTotalPages() {
-        return total_pages;
+        return totalPages;
     }
 
-    /** Get user's id*/
-    public int getID()
-    {
-        return data.getId();
-    }
-
-    public String getEmail()
-    {
-        return data.getEmail();
-    }
-
-    /** Get user's first name*/
-    public String getFirstName()
-    {
-        return data.getFirstName();
-    }
-
-    /** Get user's id*/
-    public String getLastName()
-    {
-        return data.getLastName();
-    }
-
-    /** Get user's avatar*/
-    public String getAvatar()
-    {
-        return data.getAvatar();
-    }
-/**
     // TODO: handle not found
-    /** Get user's ID from list of users
+    /** Get user's ID from list of users */
     public int getDataID(int id) {
         for (RegressData key: data) {
             if (id == key.getId()) {
@@ -72,7 +48,7 @@ public class Regres {
     }
 
     // TODO: handle not found
-    /** Get user's email from list of users
+    /** Get user's email from list of users */
     public String getDataEmail(String email) {
         for (RegressData key: data) {
             if (email.equals(key.getEmail())) {
@@ -83,7 +59,7 @@ public class Regres {
     }
 
     // TODO: handle not found
-    /** Get user's first name from list of users
+    /** Get user's first name from list of users */
     public String getDataFirstName(String firstName) {
         for (RegressData key: data) {
             if (firstName.equals(key.getFirstName())) {
@@ -94,7 +70,7 @@ public class Regres {
     }
 
     // TODO: handle not found
-    /** Get user's last name from list of users
+    /** Get user's last name from list of users */
     public String getDataLastName(String lastName) {
         for (RegressData key: data) {
             if (lastName.equals(key.getLastName())) {
@@ -105,7 +81,7 @@ public class Regres {
     }
 
     // TODO: handle not found
-    /** Get user's avatar from list of users
+    /** Get user's avatar from list of users */
     public String getDataAvatar(String avatar) {
         for (RegressData key: data) {
             if (avatar.equals(key.getAvatar())) {
@@ -114,7 +90,7 @@ public class Regres {
         }
         return "";
     }
-*/
+
     public RegresSupport getSupport() {
         return support;
     }
@@ -125,16 +101,16 @@ public class Regres {
         this.page = page;
     }
 
-    public void setPerPage(int per_page) {
-        this.per_page = per_page;
+    public void setPerPage(int perPage) {
+        this.perPage = perPage;
     }
 
     public void setTotal(int total) {
         this.total = total;
     }
 
-    public void setTotalPages(int total_pages) {
-        this.total_pages = total_pages;
+    public void setTotalPages(int totalPages) {
+        this.totalPages = totalPages;
     }
 
     public void setSupport(RegresSupport regresSupportObject) {

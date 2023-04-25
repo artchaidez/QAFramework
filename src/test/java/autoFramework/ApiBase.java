@@ -5,12 +5,34 @@ import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-
 public class ApiBase extends AutoLogger {
 
     Gson gson = new Gson();
 
-    /** Returns the class of a response body. Needs a wrapper method to determine which class is returned. */
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    public Response Get(String resource) throws Exception
+    {
+        Response response = null;
+
+        try {
+            response =
+                    given()
+                    .when()
+                            .get(resource)
+                    .then()
+                            .extract()
+                            .response();
+        } catch (Exception e) {
+            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
+            handleStatusCode(response.statusCode());
+        }
+
+        apiLog(response, resource, "GET");
+
+        return response;
+    }
+
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
     public Response Post(Object parms, String resource, String apiKey) throws Exception {
 
         Response response = null;
@@ -26,13 +48,10 @@ public class ApiBase extends AutoLogger {
                     .when()
                         .post(resource)
                     .then()
-                        .statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
+                        //.statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
                         .extract()
                         .response();
-
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
             handleStatusCode(response.statusCode());
         }
@@ -42,28 +61,85 @@ public class ApiBase extends AutoLogger {
         return response;
     }
 
-    public Response Get(String resource) throws Exception
-    {
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    public Response Post(Object parms, String resource) throws Exception {
+
+        Response response = null;
+
+        String jsonRequest = gson.toJson(parms);
+
+        try {
+            response =
+                    given()
+                            .contentType("application/json")
+                            .body(jsonRequest)
+                    .when()
+                            .post(resource)
+                    .then()
+                            //.statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
+                            .extract()
+                            .response();
+        } catch (Exception e) {
+            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
+            handleStatusCode(response.statusCode());
+        }
+
+        apiLog(response, jsonRequest, resource, "POST");
+
+        return response;
+    }
+
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    public Response Put(Object parms, String resource) throws Exception {
+
+        Response response = null;
+
+        String jsonRequest = gson.toJson(parms);
+
+        try {
+            response =
+                    given()
+                            .contentType("application/json")
+                            .body(jsonRequest)
+                    .when()
+                            .put(resource)
+                    .then()
+                            //.statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
+                            .extract()
+                            .response();
+        } catch (Exception e) {
+            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
+            handleStatusCode(response.statusCode());
+        }
+
+        apiLog(response, resource, "PUT");
+
+        return response;
+    }
+
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    public void Delete(String resource) throws Exception {
+
         Response response = null;
 
         try {
             response =
                     given()
+
                     .when()
-                            .get(resource)
+                            .delete(resource)
                     .then()
+                            //.statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
                             .extract()
                             .response();
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
             handleStatusCode(response.statusCode());
         }
 
-        apiLog(response, resource, "GET");
-
-        return response;
+        apiLog(response, resource, "DELETE");
     }
+
 
     /** Returns the int of a status code. NOTE: Created for OppFi assessment*/
     public int PostInt(String parms, String resource, String apiKey) throws Exception {
@@ -84,9 +160,7 @@ public class ApiBase extends AutoLogger {
                             .extract()
                             .response().statusCode();
 
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             Info("Something went wrong with the POST.");
             throw new Exception("Caught Exception", e);
         }
