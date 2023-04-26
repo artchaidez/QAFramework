@@ -62,7 +62,6 @@ public class APITestSuite extends AutoTestBase{
 
         Step(String.format("Verify avatar is %s", avatar));
             Verify.That(response.getAvatar()).Equals(avatar);
-
     }
 
     @Test
@@ -139,7 +138,7 @@ public class APITestSuite extends AutoTestBase{
             request.setName(name);
             request.setJob(job);
 
-        Step("Make a GET call");
+        Step("Make a POST call");
             RegresUser response;
 
             try {

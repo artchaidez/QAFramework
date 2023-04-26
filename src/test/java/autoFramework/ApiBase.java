@@ -23,7 +23,6 @@ public class ApiBase extends AutoLogger {
                             .extract()
                             .response();
         } catch (Exception e) {
-            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
             handleStatusCode(response.statusCode());
         }
 
@@ -48,11 +47,9 @@ public class ApiBase extends AutoLogger {
                     .when()
                         .post(resource)
                     .then()
-                        //.statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
                         .extract()
                         .response();
         } catch (Exception e) {
-            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
             handleStatusCode(response.statusCode());
         }
 
@@ -76,11 +73,9 @@ public class ApiBase extends AutoLogger {
                     .when()
                             .post(resource)
                     .then()
-                            //.statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
                             .extract()
                             .response();
         } catch (Exception e) {
-            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
             handleStatusCode(response.statusCode());
         }
 
@@ -104,15 +99,13 @@ public class ApiBase extends AutoLogger {
                     .when()
                             .put(resource)
                     .then()
-                            //.statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
                             .extract()
                             .response();
         } catch (Exception e) {
-            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
             handleStatusCode(response.statusCode());
         }
 
-        apiLog(response, resource, "PUT");
+        apiLog(response, jsonRequest, resource, "PUT");
 
         return response;
     }
@@ -129,11 +122,9 @@ public class ApiBase extends AutoLogger {
                     .when()
                             .delete(resource)
                     .then()
-                            //.statusCode(200) // TODO: Handles exception; try/catch and handleStatusCode(int statusCode) could be removed
                             .extract()
                             .response();
         } catch (Exception e) {
-            // TODO: handleStatusCode(int statusCode) could be removed, or this method should be reworked
             handleStatusCode(response.statusCode());
         }
 

@@ -8,7 +8,6 @@ public class PersonalInfo {
     private String mobilePhone;
     private String homePhone;
 
-
     // Getter Methods
 
     public String getFirstName() {

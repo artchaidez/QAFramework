@@ -11,7 +11,7 @@ public class RegresSingleUser
     private int total;
     @SerializedName("total_pages")
     private int totalPages;
-    RegressData  data;
+    RegressData data;
     RegresSupport support;
 
     // Getter Methods

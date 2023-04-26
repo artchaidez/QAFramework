@@ -5,12 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresSingleUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/Regres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresListUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/BankInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/BankInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/EmploymentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/EmploymentInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/IncomeInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/IncomeInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/Offer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/PersonalInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/PersonalInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/RegresListUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresListUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/RegresSingleUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresSingleUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/RegressData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegressData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apis/RegresApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apis/RegresApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ApiBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ApiBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/APITestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/APITestSuite.java" afterDir="false" />
     </list>
@@ -79,7 +83,7 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.APITestSuite">
+  <component name="RunManager" selected="Gradle.QAFramework [test]">
     <configuration name="APITestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -126,52 +130,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="APITestSuite.TestGetUsers" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;unitTests.APITestSuite.TestGetUsers&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="APITestSuite.TestPostRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;unitTests.APITestSuite.TestPostRequest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="APITestSuite.TestUpdateRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -191,6 +149,50 @@
         <option name="vmOptions" />
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="OppFiTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;apiTestSuites.OppFiTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="QAFramework [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -288,10 +290,10 @@
     <list>
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
+      <item itemvalue="Gradle.OppFiTestSuite" />
+      <item itemvalue="Gradle.QAFramework [test]" />
       <item itemvalue="Gradle.APITestSuite" />
       <item itemvalue="Gradle.APITestSuite.TestGetSingleUser" />
-      <item itemvalue="Gradle.APITestSuite.TestGetUsers" />
-      <item itemvalue="Gradle.APITestSuite.TestPostRequest" />
       <item itemvalue="Gradle.APITestSuite.TestUpdateRequest" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
       <item itemvalue="TestNG.allTestsng TestKind:Suite" />
@@ -299,11 +301,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.QAFramework [test]" />
         <item itemvalue="Gradle.APITestSuite" />
+        <item itemvalue="Gradle.OppFiTestSuite" />
         <item itemvalue="Gradle.APITestSuite.TestGetSingleUser" />
         <item itemvalue="Gradle.APITestSuite.TestUpdateRequest" />
-        <item itemvalue="Gradle.APITestSuite.TestPostRequest" />
-        <item itemvalue="Gradle.APITestSuite.TestGetUsers" />
       </list>
     </recent_temporary>
   </component>

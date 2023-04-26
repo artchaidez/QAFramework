@@ -7,7 +7,6 @@ public class IncomeInfo {
     private String lastPayrollDate;
     private String nextPayrollDate = null;
 
-
     // Getter Methods
 
     public String getIncomeType() {
@@ -51,6 +50,5 @@ public class IncomeInfo {
     public void setNextPayrollDate(String nextPayrollDate) {
         this.nextPayrollDate = nextPayrollDate;
     }
-
 
 }

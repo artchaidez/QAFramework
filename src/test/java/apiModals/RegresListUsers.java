@@ -13,9 +13,7 @@ public class RegresListUsers {
     private int total;
     @SerializedName("total_pages")
     private int totalPages;
-
     List< RegressData > data;
-    //RegressData data;
     RegresSupport support;
 
     // Getter Methods
@@ -36,7 +34,6 @@ public class RegresListUsers {
         return totalPages;
     }
 
-    // TODO: handle not found
     /** Get user's ID from list of users */
     public int getDataID(int id) {
         for (RegressData key: data) {
@@ -47,7 +44,6 @@ public class RegresListUsers {
         return -1;
     }
 
-    // TODO: handle not found
     /** Get user's email from list of users */
     public String getDataEmail(String email) {
         for (RegressData key: data) {
@@ -55,10 +51,9 @@ public class RegresListUsers {
                 return key.getEmail();
             }
         }
-        return "";
+        return "NOT FOUND";
     }
 
-    // TODO: handle not found
     /** Get user's first name from list of users */
     public String getDataFirstName(String firstName) {
         for (RegressData key: data) {
@@ -66,10 +61,9 @@ public class RegresListUsers {
                 return key.getFirstName();
             }
         }
-        return "";
+        return "NOT FOUND";
     }
 
-    // TODO: handle not found
     /** Get user's last name from list of users */
     public String getDataLastName(String lastName) {
         for (RegressData key: data) {
@@ -77,10 +71,9 @@ public class RegresListUsers {
                 return key.getLastName();
             }
         }
-        return "";
+        return "NOT FOUND";
     }
 
-    // TODO: handle not found
     /** Get user's avatar from list of users */
     public String getDataAvatar(String avatar) {
         for (RegressData key: data) {
@@ -88,7 +81,7 @@ public class RegresListUsers {
                 return key.getAvatar();
             }
         }
-        return "";
+        return "NOT FOUND";
     }
 
     public RegresSupport getSupport() {

@@ -1,5 +1,7 @@
 package apiModals;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Offer {
     private boolean isProduction;
     private String language;
@@ -19,8 +21,8 @@ public class Offer {
     Request Request;
     private boolean accepted;
     private float partnerId;
-    private String reference_id;
-    //private float code;
+    @SerializedName("reference_id")
+    private String referenceId;
     private String status;
     private String apiVersion;
 
@@ -154,13 +156,9 @@ public class Offer {
         return partnerId;
     }
 
-    public String getReference_id() {
-        return reference_id;
+    public String getReferenceId() {
+        return referenceId;
     }
-
-    /*public float getCode() {
-        return code;
-    }*/
 
     public String getStatus() {
         return status;
@@ -184,13 +182,9 @@ public class Offer {
         this.partnerId = partnerId;
     }
 
-    public void setReference_id(String reference_id) {
-        this.reference_id = reference_id;
+    public void setReferenceId(String referenceId) {
+        this.referenceId = referenceId;
     }
-
-    /*public void setCode(float code) {
-        this.code = code;
-    }*/
 
     public void setStatus(String status) {
         this.status = status;

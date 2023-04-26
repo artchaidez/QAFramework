@@ -4,7 +4,6 @@ public class EmploymentInfo {
     private String employerName;
     private String hireDate;
 
-
     // Getter Methods
 
     public String getEmployerName() {
