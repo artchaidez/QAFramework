@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+/** Modal for API GET call for a list of users.
+ * https://reqres.in/ */
 public class RegresListUsers {
 
     // var names must match json key spelling

@@ -2,6 +2,8 @@ package apiModals;
 
 import com.google.gson.annotations.SerializedName;
 
+/** Modal for API GET call for a single user.
+ * https://reqres.in/ */
 public class RegresSingleUser
 {
     // var names must match json key spelling

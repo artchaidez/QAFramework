@@ -28,7 +28,7 @@ public class APITestSuite extends AutoTestBase{
     }
 
     @Test
-    @TestInfo(description = "Verify GET call returns a single user")
+    @TestInfo(description = "Verify GET call returns a single user.")
     public void TestGetSingleUser() throws Exception {
 
         String resource = "https://reqres.in/api/users/9";
@@ -65,7 +65,7 @@ public class APITestSuite extends AutoTestBase{
     }
 
     @Test
-    @TestInfo(description = "Verify GET call returns users on page 2")
+    @TestInfo(description = "Verify GET call returns users on page 2.")
     public void TestGetListUsers() throws Exception {
 
         String resource = "https://reqres.in/api/users?page=2";
@@ -103,19 +103,19 @@ public class APITestSuite extends AutoTestBase{
         Step(String.format("Verify total pages is %s", totalPages));
             Verify.That(response.getTotalPages()).Equals(totalPages);
 
-        Step(String.format("Verify id %s exists", dataID));
+        Step(String.format("Verify id is %s", dataID));
             Verify.That(response.getDataID(dataID)).Equals(dataID);
 
-        Step(String.format("Verify email %s exist", dataEmail));
+        Step(String.format("Verify email is %s", dataEmail));
             Verify.That(response.getDataEmail(dataEmail)).Equals(dataEmail);
 
-        Step(String.format("Verify first name %s exists", dataFirstName));
+        Step(String.format("Verify first name is %s", dataFirstName));
             Verify.That(response.getDataFirstName(dataFirstName)).Equals(dataFirstName);
 
-        Step(String.format("Verify last name %s exists", dataLastName));
+        Step(String.format("Verify last name is %s", dataLastName));
             Verify.That(response.getDataLastName(dataLastName)).Equals(dataLastName);
 
-        Step(String.format("Verify avatar %s exists", dataAvatar));
+        Step(String.format("Verify avatar is %s", dataAvatar));
             Verify.That(response.getDataAvatar(dataAvatar)).Equals(dataAvatar);
 
         Step(String.format("Verify support url is %s", supportURL));
@@ -160,7 +160,7 @@ public class APITestSuite extends AutoTestBase{
     }
 
     @Test(priority = 2, dependsOnMethods = {"TestPostRequest"})
-    @TestInfo(description = "Verify PUT works")
+    @TestInfo(description = "Verify PUT works.")
     public void TestUpdateRequest() throws Exception {
 
         // Use id that was created in TestPostRequest()
@@ -193,7 +193,7 @@ public class APITestSuite extends AutoTestBase{
     }
 
     @Test(priority = 3, dependsOnMethods = {"TestPostRequest"})
-    @TestInfo(description = "Verify Delete works")
+    @TestInfo(description = "Verify Delete works.")
     public void TestDeleteRequest()
     {
         String resource = "https://reqres.in/api/users/" + id;

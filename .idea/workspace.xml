@@ -6,15 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/BankInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/BankInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/EmploymentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/EmploymentInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/IncomeInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/IncomeInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/Offer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/Offer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/PersonalInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/PersonalInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/RegresListUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresListUsers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/RegresSingleUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresSingleUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/RegressData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegressData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/Request.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ApiBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ApiBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/APITestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/APITestSuite.java" afterDir="false" />
     </list>

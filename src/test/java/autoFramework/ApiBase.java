@@ -110,7 +110,7 @@ public class ApiBase extends AutoLogger {
         return response;
     }
 
-    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    /** API Delete call. Needs a wrapper method. */
     public void Delete(String resource) throws Exception {
 
         Response response = null;
