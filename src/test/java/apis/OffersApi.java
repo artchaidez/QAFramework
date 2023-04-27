@@ -3,12 +3,11 @@ package apis;
 import apiModals.Offer;
 import autoFramework.ApiBase;
 import com.google.gson.Gson;
-
-import java.net.http.HttpResponse;
+import io.restassured.response.Response;
 
 public class OffersApi extends ApiBase {
     Gson gson = new Gson();
-    HttpResponse<String> response = null;
+    Response response = null;
 
     /** Wrapper method for the post call that returns the class Offer*/
     public Offer PostOffers(Offer offerRequest, String resource, String apiKey) throws Exception {
@@ -21,7 +20,7 @@ public class OffersApi extends ApiBase {
             throw new Exception("Caught Exception", e);
         }
 
-        return gson.fromJson(response.body(), Offer.class);
+        return gson.fromJson(response.asString(), Offer.class);
     }
 
     /** Wrapper method for the post call that returns the int of a status code.

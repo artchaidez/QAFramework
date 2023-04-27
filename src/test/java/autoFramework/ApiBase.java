@@ -1,68 +1,157 @@
 package autoFramework;
 
 import com.google.gson.Gson;
+import io.restassured.response.Response;
 
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-
+import static io.restassured.RestAssured.given;
 
 public class ApiBase extends AutoLogger {
 
     Gson gson = new Gson();
 
-    /** Returns the class of a response body. Needs a wrapper method to determine which class is returned. */
-    public HttpResponse<String> Post(Object parms, String resource, String apiKey) throws Exception {
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    public Response Get(String resource) throws Exception
+    {
+        Response response = null;
 
-        HttpResponse<String> response = null;
-
-        String jsonRequest = gson.toJson(parms);
-
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(resource))
-                .header("x-api-key", apiKey)
-                .POST(HttpRequest.BodyPublishers.ofString(jsonRequest))
-                .build();
-
-        HttpClient httpClient = HttpClient.newHttpClient();
-
-        try
-        {
-            response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-        }
-        catch (Exception e)
-        {
-            // TODO: How to test this?
+        try {
+            response =
+                    given()
+                    .when()
+                            .get(resource)
+                    .then()
+                            .extract()
+                            .response();
+        } catch (Exception e) {
             handleStatusCode(response.statusCode());
         }
 
-        apiLog(response, jsonRequest);
+        apiLog(response, resource, "GET");
 
         return response;
     }
 
-    /** Returns the int of a status code. NOTE: Created for OppFi assessment*/
-    public int PostInt(String parms, String resource, String apiKey) throws Exception {
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    public Response Post(Object parms, String resource, String apiKey) throws Exception {
 
-        int response;
+        Response response = null;
 
         String jsonRequest = gson.toJson(parms);
 
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(new URI(resource))
-                .header("x-api-key", apiKey)
-                .POST(HttpRequest.BodyPublishers.ofString(jsonRequest))
-                .build();
-
-        HttpClient httpClient = HttpClient.newHttpClient();
-
-        try
-        {
-            response = httpClient.send(request, HttpResponse.BodyHandlers.ofString()).statusCode();
+        try {
+            response =
+                    given()
+                        .contentType("application/json")
+                        .body(jsonRequest)
+                        .header("x-api-key", apiKey)
+                    .when()
+                        .post(resource)
+                    .then()
+                        .extract()
+                        .response();
+        } catch (Exception e) {
+            handleStatusCode(response.statusCode());
         }
-        catch (Exception e)
-        {
+
+        apiLog(response, jsonRequest, resource, "POST");
+
+        return response;
+    }
+
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    public Response Post(Object parms, String resource) throws Exception {
+
+        Response response = null;
+
+        String jsonRequest = gson.toJson(parms);
+
+        try {
+            response =
+                    given()
+                            .contentType("application/json")
+                            .body(jsonRequest)
+                    .when()
+                            .post(resource)
+                    .then()
+                            .extract()
+                            .response();
+        } catch (Exception e) {
+            handleStatusCode(response.statusCode());
+        }
+
+        apiLog(response, jsonRequest, resource, "POST");
+
+        return response;
+    }
+
+    /** Returns Response. Needs a wrapper method to determine which class is returned. */
+    public Response Put(Object parms, String resource) throws Exception {
+
+        Response response = null;
+
+        String jsonRequest = gson.toJson(parms);
+
+        try {
+            response =
+                    given()
+                            .contentType("application/json")
+                            .body(jsonRequest)
+                    .when()
+                            .put(resource)
+                    .then()
+                            .extract()
+                            .response();
+        } catch (Exception e) {
+            handleStatusCode(response.statusCode());
+        }
+
+        apiLog(response, jsonRequest, resource, "PUT");
+
+        return response;
+    }
+
+    /** API Delete call. Needs a wrapper method. */
+    public void Delete(String resource) throws Exception {
+
+        Response response = null;
+
+        try {
+            response =
+                    given()
+
+                    .when()
+                            .delete(resource)
+                    .then()
+                            .extract()
+                            .response();
+        } catch (Exception e) {
+            handleStatusCode(response.statusCode());
+        }
+
+        apiLog(response, resource, "DELETE");
+    }
+
+
+    /** Returns the int of a status code. NOTE: Created for OppFi assessment*/
+    public int PostInt(String parms, String resource, String apiKey) throws Exception {
+
+        int response = 0;
+
+        String jsonRequest = gson.toJson(parms);
+
+        try {
+            response =
+                    given()
+                            .contentType("application/json")
+                            .body(jsonRequest)
+                            .header("x-api-key", apiKey)
+                    .when()
+                            .post(resource)
+                    .then()
+                            .extract()
+                            .response().statusCode();
+
+        } catch (Exception e) {
             Info("Something went wrong with the POST.");
             throw new Exception("Caught Exception", e);
         }

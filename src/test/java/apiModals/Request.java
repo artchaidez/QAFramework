@@ -16,7 +16,6 @@ public class Request {
     EmploymentInfo EmploymentInfoObject;
     BankInfo BankInfoObject;
 
-
     // Getter Methods
 
     public String getEmail() {

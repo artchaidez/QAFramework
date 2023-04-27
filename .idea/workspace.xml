@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyAsserts.java" afterDir="false" />
+
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/RegresListUsers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresListUsers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apiModals/RegresSingleUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiModals/RegresSingleUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ApiBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ApiBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/APITestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/APITestSuite.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +78,9 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists">
-    <configuration name="OppFiTestSuite.OffersApiAcceptedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.QAFramework [test]">
+    <configuration name="APITestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -89,7 +93,8 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;apiTestSuites.OppFiTestSuite.OffersApiAcceptedTest&quot;" />
+            <option value="&quot;unitTests.APITestSuite&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -99,7 +104,8 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="APITestSuite.TestGetSingleUser" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -112,7 +118,8 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
+            <option value="&quot;unitTests.APITestSuite.TestGetSingleUser&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -122,7 +129,8 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestInputMessageData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="APITestSuite.TestUpdateRequest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -135,7 +143,8 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestInputMessageData&quot;" />
+            <option value="&quot;unitTests.APITestSuite.TestUpdateRequest&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -145,7 +154,8 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestScoreboardOremLocationExists" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="OppFiTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -158,7 +168,8 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestScoreboardOremLocationExists&quot;" />
+            <option value="&quot;apiTestSuites.OppFiTestSuite&quot;" />
+
           </list>
         </option>
         <option name="vmOptions" />
@@ -282,22 +293,24 @@
     <list>
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
-      <item itemvalue="Gradle.OppFiTestSuite.OffersApiAcceptedTest" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
+      <item itemvalue="Gradle.OppFiTestSuite" />
       <item itemvalue="Gradle.QAFramework [test]" />
-      <item itemvalue="Gradle.PodiumTestSuite" />
+      <item itemvalue="Gradle.APITestSuite" />
+      <item itemvalue="Gradle.APITestSuite.TestGetSingleUser" />
+      <item itemvalue="Gradle.APITestSuite.TestUpdateRequest" />
+
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
       <item itemvalue="TestNG.allTestsng TestKind:Suite" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/noEnvVarsTests.xml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.PodiumTestSuite.TestScoreboardOremLocationExists" />
         <item itemvalue="Gradle.QAFramework [test]" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
-        <item itemvalue="Gradle.OppFiTestSuite.OffersApiAcceptedTest" />
-        <item itemvalue="Gradle.PodiumTestSuite" />
+        <item itemvalue="Gradle.APITestSuite" />
+        <item itemvalue="Gradle.OppFiTestSuite" />
+        <item itemvalue="Gradle.APITestSuite.TestGetSingleUser" />
+        <item itemvalue="Gradle.APITestSuite.TestUpdateRequest" />
+
       </list>
     </recent_temporary>
   </component>
@@ -327,25 +340,28 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java</url>
           <line>139</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/ApiBase.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="107" />
+          <url>file://$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="115" />
+
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="apiModals.Regres" memberName="total_pages" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="GradleRunConfiguration">
         <watch expression="testContextLogger" language="JAVA" />
+        <watch expression="((RestAssuredResponseImpl)responseRestAssured).logRepository" custom="io.restassured.internal.RestAssuredResponseImpl" />
+        <watch expression="regres.support" />
       </configuration>
     </watches-manager>
   </component>

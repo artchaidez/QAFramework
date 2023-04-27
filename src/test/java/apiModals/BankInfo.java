@@ -7,7 +7,6 @@ public class BankInfo {
     private float accountType;
     private float accountLength;
 
-
     // Getter Methods
 
     public String getBankName() {
