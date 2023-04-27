@@ -12,86 +12,94 @@ import java.util.ArrayList;
 /** A fluent interface to improve readability and log asserts. */
 public class Verify extends AutoLogger {
 
-    private boolean thatBoolVar;
-    private String thatStringVar;
-    private int thatIntVar;
+    private boolean actualBoolVar;
+    private String actualStringVar;
+    private int actualIntVar;
     // Needs to be static
     private static Map<ITestResult, List> verificationFailuresMap = new HashMap<>();
 
+    /** Argument should be actual bool variable that is being tested. */
     public Verify That(boolean boolVar)
     {
-        thatBoolVar = boolVar;
+        actualBoolVar = boolVar;
         return this;
     }
 
+    /** Argument should be actual string variable that is being tested. */
     public Verify That(String stringVar)
     {
-        thatStringVar = stringVar;
+        actualStringVar = stringVar;
         return this;
     }
 
+    /** Argument should be actual int variable that is being tested. */
     public Verify That(int intVar)
     {
-        thatIntVar = intVar;
+        actualIntVar = intVar;
         return this;
     }
 
+    /** Verify actual bool variable being tested is True. */
     public void IsTrue()
     {
         try {
-            Assert.assertTrue(thatBoolVar);
-            Info(String.format("Observed: %s, Expected: %s", thatBoolVar, true));
+            Assert.assertTrue(actualBoolVar);
+            Pass("True");
         } catch (Throwable e) {
-            Error(String.format("Observed: %s, Expected: %s", thatBoolVar, true));
+            FailCompare(e);
             addVerificationFailure(e);
         }
     }
 
+    /** Verify actual bool variable being tested is False. */
     public void IsFalse()
     {
         try {
-            Assert.assertFalse(thatBoolVar);
-            Info(String.format("Observed: %s, Expected: %s", thatBoolVar, false));
+            Assert.assertFalse(actualBoolVar);
+            Pass("False");
         } catch (Throwable e) {
-            Error(String.format("Observed: %s, Expected: %s", thatBoolVar, false));
+            FailCompare(e);
             addVerificationFailure(e);
         }
     }
 
-    public void Equals(String stringVar)
+    /** Argument should be expected string variable.*/
+    public void Equals(String expectedStringVar)
     {
         try {
-            Assert.assertEquals(thatStringVar, stringVar);
-            Info(String.format("Observed: %s, Expected: %s", thatStringVar, stringVar));
-
+            Assert.assertEquals(actualStringVar, expectedStringVar);
+            Pass(expectedStringVar);
         } catch (Throwable e)
         {
-            Error(String.format("Observed: %s, Expected: %s", thatStringVar, stringVar));
+            FailCompare(e);
             addVerificationFailure(e);
         }
     }
 
-    public void Equals(int intVar)
+    /** Argument should be expected int variable.*/
+    public void Equals(int expectedIntVar)
     {
         try {
-            Assert.assertEquals(thatIntVar, intVar);
-            Info(String.format("Observed: %s, Expected: %s", thatIntVar, intVar));
+            Assert.assertEquals(actualIntVar, expectedIntVar);
+            Pass(String.valueOf(expectedIntVar));
         } catch (Throwable e)
         {
-            Error(String.format("Observed: %s, Expected: %s", thatIntVar, intVar));
+            FailCompare(e);
             addVerificationFailure(e);
         }
     }
 
-    public void DoesNotEqual(String stringVar)
+    //TODO: This compares Objects, not Strings
+    /** Argument should be expected string variable. */
+    public void DoesNotEqual(String expectedStringVar)
     {
         try {
-            Assert.assertNotEquals(thatStringVar, stringVar);
-            Info(String.format("SHOULD NOT BE EQUAL: Observed: %s, Expected: %s", thatStringVar, stringVar));
+            Assert.assertNotEquals(actualStringVar, expectedStringVar);
+            Pass(" does not equal ", actualStringVar, expectedStringVar);
         } catch (Throwable e)
         {
+            FailCompare(actualStringVar, expectedStringVar);
             addVerificationFailure(e);
-            Error(String.format("SHOULD NOT BE EQUAL: Observed: %s, Expected: %s", thatStringVar, stringVar));
         }
     }
 

@@ -1,7 +1,7 @@
 package org.example;
 
-// TODO: Convert existing HTTPClient code to RestAssured; build API testing on RestAssured
-// TODO: Rework how Verify logs pass/fail
+// TODO: Rework how Verify DoesNotEqual()
+// TODO: Rework Step() AutoLogger to no longer use String.format(); cleaner to read code and understand
 // TODO: Docker Image to run testsuites
 // TODO: CI/CD pipeline- Jira, Azure/AWS
 // TODO: FileLogger

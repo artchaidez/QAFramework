@@ -95,8 +95,8 @@ public class PodiumTestSuite extends AutoTestBase {
             Info(String.format("'%s' opened up", location));
     }
 
-    // TODO: Check to see when icon is appearing in incognito again
-    @Ignore("In incognito window, MessageInputIndicator() does not appear.")
+    // TODO: Icon switched back to circle indicator
+    @Test(enabled = false, description = "Icon changed from 'num/ 300' back to circle indicator.")
     @TestInfo(description = "Test input data in all 3 fields of message modal", level = "Smoke")
     public void TestInputMessageData() throws Exception
     {

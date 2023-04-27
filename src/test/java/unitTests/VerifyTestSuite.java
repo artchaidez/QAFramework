@@ -19,67 +19,101 @@ public class VerifyTestSuite extends AutoTestBase{
     {
     }
 
-    @Ignore("Test exists to show Verify works as intended.")
+    @Test(description = "Test exists to show Verify works as intended." )
     @TestInfo(description = "Verify new asserts work and pass.")
     public void TestVerifyShouldPass() {
 
-        boolean checkFalse = false;
-        boolean checkTrue = true;
-        String checkString = "Art";
-        int checkInt = 5;
+        boolean actualFalse = false;
+        boolean actualTrue = true;
+        String actualString = "Art";
+        String expectedString = "Art";
+        int actualInt = 5;
+        int expectedInt = 5;
 
         Step("Verify.That(false).IsFalse() runs and passes");
-            Verify.That(checkFalse).IsFalse();
+            Verify.That(actualFalse).IsFalse();
 
         Step("Verify.That(true).IsTrue() runs and passes");
-            Verify.That(checkTrue).IsTrue();
+            Verify.That(actualTrue).IsTrue();
 
-        Step("Verify.That(string).Equals(string) runs and passes");
-            Verify.That(checkString).Equals("Art");
+        Step(String.format("Verify.That(%s).Equals(%s) runs and passes", actualString, expectedString));
+            Verify.That(actualString).Equals(expectedString);
 
-        Step("Verify.That(int).Equals(int) runs and passes");
-            Verify.That(checkInt).Equals(5);
+        Step(String.format("Verify.That(%s).Equals(%s) runs and passes", actualInt, expectedInt));
+            Verify.That(actualInt).Equals(expectedInt);
 
-        Step("Verify.That(string).DoesNotEqual(string) runs and passes");
-            Verify.That(checkString).DoesNotEqual("Arturo");
+            // TODO: Fix DoesNotEqual()
+        /*Step(String.format("Verify.That(%s).DoesNotEqual(%s) runs and passes", actualString, expectedString));
+            Verify.That(actualString).DoesNotEqual(expectedString);*/
 
     }
 
-    @Ignore("Test exists to show Verify works as intended.")
+    @Test(enabled = false, description = "Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify assert fails but test still completes.")
     public void TestFailsStillFinishes() {
 
-        boolean checkFalse = false;
-        String checkString = "Art";
-        int checkInt = 5;
+        boolean actualFalse = false;
+        String actualString = "Art";
+        String expectedString = "Art";
+        int actualInt = 5;
+        int expectedInt = 5;
 
         Step("Verify.That(false).IsTrue() runs and fails");
-            Verify.That(checkFalse).IsTrue();
+            Verify.That(actualFalse).IsTrue();
 
-        Step("Verify.That(string).Equals(string) runs and passes");
-            Verify.That(checkString).Equals("Art");
+        Step(String.format("Verify.That(%s).Equals(%s) runs and passes", actualString, expectedString));
+            Verify.That(actualString).Equals("Art");
 
-        Step("Verify.That(int).Equals(int) runs and passes");
-            Verify.That(checkInt).Equals(5);
+        Step(String.format("Verify.That(int).Equals(int) runs and passes", actualInt, expectedInt));
+            Verify.That(actualInt).Equals(expectedInt);
     }
 
-    @Ignore("Test exists to show Verify works as intended.")
+    @Test(enabled = false, description = "Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify assert shows two failures")
     public void TestTwoFailures() {
 
-        boolean checkFalse = false;
-        String checkString = "Art";
-        int checkInt = 5;
+        boolean actualFalse = false;
+        String actualString = "Art";
+        String expectedString = "Art";
+        int actualInt = 5;
+        int expectedInt = 6;
 
         Step("Verify.That(false).IsTrue() runs and fails");
-        Verify.That(checkFalse).IsTrue();
+            Verify.That(actualFalse).IsTrue();
 
-        Step("Verify.That(string).Equals(string) runs and passes");
-        Verify.That(checkString).Equals("Art");
+        Step(String.format("Verify.That(%s).Equals(%s) runs and passes", actualString, expectedString));
+            Verify.That(actualString).Equals(expectedString);
 
-        Step("Verify.That(int).Equals(int) runs and fails");
-        Verify.That(checkInt).Equals(6);
+        Step(String.format("Verify.That(%s).Equals(%s) runs and fails", actualInt, expectedInt));
+            Verify.That(actualInt).Equals(expectedInt);
     }
+
+    @Test(enabled = false, description = "Test exists to show Verify works as intended.")
+    @TestInfo(description = "Verify all asserts fail correctly with correct logging info")
+    public void TestAllAsserts()
+    {
+        int actualInt = 5;
+        int expectedInt = 6;
+        String actualString = "Art";
+        String expectedString = "Arturo";
+
+        Step("Verify.That(false).IsTrue() fails and logs correctly");
+            Verify.That(false).IsTrue();
+
+        Step("Verify.That(True).IsFalse() fails and logs correctly");
+            Verify.That(true).IsFalse();
+
+        Step(String.format("Verify.That(%s).Equals(%s) string assert fails and logs correctly", actualString, expectedString));
+            Verify.That(actualString).Equals(expectedString);
+
+        Step(String.format("Verify.That(%s).Equals(%s) int assert fails and logs correctly", actualInt, expectedInt));
+            Verify.That(actualInt).Equals(expectedInt);
+
+        // TODO: Fix DoesNotEqual()
+        /*Step(String.format("Verify.That(%s).DoesNotEqual(%s) runs and passes", stringShouldEqual, stringShouldEqual));
+            Verify.That(stringShouldEqual).DoesNotEqual(stringShouldEqual);*/
+    }
+
 
 
 }

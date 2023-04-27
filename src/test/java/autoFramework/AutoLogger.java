@@ -71,58 +71,38 @@ public class AutoLogger {
         testContextLogger.Pass("   (PASS)   Got : " + message);
     }
 
-    public void Pass(String message, String actualValue, Boolean includedGot)
+    /** To be used in Verify DoesNotEqual() method. */
+    public void Pass(String message, String actualValue, String expectedValue)
     {
-        if(includedGot == null)
-            includedGot = true;
-
-        String got = includedGot ? "Got: " : "";
-        String defaultMessage = "   (PASS)  " + got + actualValue;
+        String defaultMessage = "   (PASS)  " + actualValue + message + expectedValue;
 
         testContextLogger.Pass(defaultMessage);
     }
 
-    public void FailCompare(String message, Exception ex)
+
+    public void FailCompare(Throwable ex)
     {
-        StringBuilder exceptionMessage = new StringBuilder(ex.getMessage());
-        String splitOnTerm = "";
-        String eMessage = "";
+        // eMessage will always be "expected [exp] but found [got]"
+        String eMessage = ex.getMessage();
 
-        int idx = exceptionMessage.lastIndexOf(("With configuration:\n - User declared types and members"));
-        if (idx >= 0)
-            eMessage = exceptionMessage.deleteCharAt(idx).toString();
+        String[] splitMessage = eMessage.split("\\[");
+        // expected answer in "expected [exp] but found [got]"
+        String expected = splitMessage[1].split("\\]")[0];
 
-        try
-        {
-            List<String> options = new ArrayList<>() {
-            };
-            options.add("actual");
-            options.add("subject");
-            options.add("Object");
+        // actual answer in "expected [exp] but found [got]"
+        String actual = splitMessage[2].split("\\]")[0];
 
-            for (String option : options)
-            {
-                splitOnTerm = MessageFormat.format("Expected {0} to be ", option);
+        testContextLogger.Fail("   (FAIL) Actual: " + actual);
+        testContextLogger.Fail("          Expected: " + expected);
+    }
 
-                if(eMessage.contains(splitOnTerm))
-                {
-                    break;
-                }
-
-                String exp = eMessage.split(splitOnTerm)[1];
-                exp = exp.split(", but found")[0];
-
-                String got = eMessage.split(splitOnTerm)[1];
-                got = got.split(", but found")[1].trim();
-
-                testContextLogger.Fail("   (FAIL) Got: " + got);
-                testContextLogger.Info("          Exp: " + exp);
-
-            }
-        } catch(Exception e)
-        {
-            testContextLogger.Fail(eMessage);
-        }
+    /** Used in Verify DoesNotEqual(). This method will properly log failure as
+     * Assert.assertNotEquals() throws null and not
+     * "expected [exp] but found [got]". */
+    public void FailCompare(String actualString, String expectedString)
+    {
+        testContextLogger.Fail("   (FAIL) Actual: " + actualString);
+        testContextLogger.Fail("          Expected: " + expectedString);
     }
 
     /** Log what is currently being done by the code. Increments int stepNumber.*/
