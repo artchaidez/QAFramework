@@ -95,14 +95,17 @@ public class PodiumTestSuite extends AutoTestBase {
             Info(String.format("'%s' opened up", location));
     }
 
-    // TODO: Icon switched back to circle indicator
-    @Test(enabled = false, description = "Icon changed from 'num/ 300' back to circle indicator.")
+    @Test(enabled = false, description = "Bug exists where message text indicator is either " +
+            "'0/ 300' or circle indicator. There is no consistency which indicator appears.")
     @TestInfo(description = "Test input data in all 3 fields of message modal", level = "Smoke")
     public void TestInputMessageData() throws Exception
     {
         String name = "Art";
         String telephone = "7777777777";
         String message = "Hello QA Tester";
+        // String used for circle indicator
+        String emptyMessageIndicator = "M 50 0 A 50 50 0 0 1 50 0";
+        // String used for '0/300' indicator
         String correctMessageIndicator = message.length() + " / 300";
 
         Step("Go to Podium Website");
@@ -173,11 +176,16 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("Clicked on 'Terms of Service'");
     }
 
-    @Test (enabled = false, description = "This test was to show there was a bug on site and is now fixed.")
+    @Test (enabled = false, description = "This test was to show there was a bug on site and is now fixed. " +
+            "There is no consistency which indicator appears. ")
     @TestInfo(description = "Test proving there is a bug with the return arrow in the message modal.")
     public void TestReturnButtonDoesNotWork() throws Exception
     {
-        String message = "There is a bug with the return arrow on the message widget!";
+        String message = "Hello QA Tester";
+        // String used for circle indicator
+        String emptyMessageIndicator = "M 50 0 A 50 50 0 0 1 50 0";
+        // String used for '0/300' indicator
+        String correctMessageIndicator = message.length() + " / 300";
 
         Step("Go to Podium Website");
             Pages.GoToURL(podiumURL);
@@ -202,11 +210,10 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Verify message modal is still open by inputting text into message input");
             Pages.PodiumModal.SetMessageInput(message, 10, null);
 
-        Step("Verify text was inputted into message input");
-            String emptyMessageIndicator = "M 50 0 A 50 50 0 0 1 50 0";
+        Step(String.format("Verify message has input of %s", correctMessageIndicator));
             String messageIndicator = Pages.PodiumModal.MessageInputIndicator();
-            Verify.That(messageIndicator).DoesNotEqual(emptyMessageIndicator);
-            Info("Message has text input");
+            Verify.That(messageIndicator).Equals(correctMessageIndicator);
+            Info("Message has correct text input");
     }
 
     @Test

@@ -96,15 +96,6 @@ public class AutoLogger {
         testContextLogger.Fail("          Expected: " + expected);
     }
 
-    /** Used in Verify DoesNotEqual(). This method will properly log failure as
-     * Assert.assertNotEquals() throws null and not
-     * "expected [exp] but found [got]". */
-    public void FailCompare(String actualString, String expectedString)
-    {
-        testContextLogger.Fail("   (FAIL) Actual: " + actualString);
-        testContextLogger.Fail("          Expected: " + expectedString);
-    }
-
     /** Log what is currently being done by the code. Increments int stepNumber.*/
     public void Step(String message)
     {

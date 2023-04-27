@@ -27,6 +27,7 @@ public class VerifyTestSuite extends AutoTestBase{
         boolean actualTrue = true;
         String actualString = "Art";
         String expectedString = "Art";
+        String notEqualString = "Arturo";
         int actualInt = 5;
         int expectedInt = 5;
 
@@ -41,10 +42,6 @@ public class VerifyTestSuite extends AutoTestBase{
 
         Step(String.format("Verify.That(%s).Equals(%s) runs and passes", actualInt, expectedInt));
             Verify.That(actualInt).Equals(expectedInt);
-
-            // TODO: Fix DoesNotEqual()
-        /*Step(String.format("Verify.That(%s).DoesNotEqual(%s) runs and passes", actualString, expectedString));
-            Verify.That(actualString).DoesNotEqual(expectedString);*/
 
     }
 
@@ -109,9 +106,6 @@ public class VerifyTestSuite extends AutoTestBase{
         Step(String.format("Verify.That(%s).Equals(%s) int assert fails and logs correctly", actualInt, expectedInt));
             Verify.That(actualInt).Equals(expectedInt);
 
-        // TODO: Fix DoesNotEqual()
-        /*Step(String.format("Verify.That(%s).DoesNotEqual(%s) runs and passes", stringShouldEqual, stringShouldEqual));
-            Verify.That(stringShouldEqual).DoesNotEqual(stringShouldEqual);*/
     }
 
 

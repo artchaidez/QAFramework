@@ -1,5 +1,6 @@
 package autoFramework;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.testng.Assert;
 import org.testng.ITestResult;
 
@@ -85,20 +86,6 @@ public class Verify extends AutoLogger {
         } catch (Throwable e)
         {
             FailCompare(e);
-            addVerificationFailure(e);
-        }
-    }
-
-    //TODO: This compares Objects, not Strings
-    /** Argument should be expected string variable. */
-    public void DoesNotEqual(String expectedStringVar)
-    {
-        try {
-            Assert.assertNotEquals(actualStringVar, expectedStringVar);
-            Pass(" does not equal ", actualStringVar, expectedStringVar);
-        } catch (Throwable e)
-        {
-            FailCompare(actualStringVar, expectedStringVar);
             addVerificationFailure(e);
         }
     }
