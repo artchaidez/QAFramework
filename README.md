@@ -16,14 +16,15 @@ In IntelliJ, run build.gradle (preferred way as Logger will cleanly show all ste
 While in root directory: ``` ./gradlew cleanTest test ```
 
 ### Features:
-- Page Object Model to store web elements.
+- Page Object Model to store and reuse web elements.
 - JSON objects with getters and setters for cleaner API calls.
 - Wrappers for Selenium for improved UI testing.
+- Wrappers for RestAssured for reusable API testing.
 - Run all tests in parallel based on local machine's thread count.
 - Tests can be run in Jenkins using Docker to set up Selenium Grid using Jenkins Pipeline (see below).
 - Custom logger (AutoLogger) for improved readability and track test steps.
-- Wrapper class for Testng asserts (Verify) that do not throw an exception immediately when an assertion fails. Therefore, all steps and assertions in the automated test will execute before failing the test. Also improves readability.
-- Overide listeners (BaseInvokedMethodListener, BaseTestListener) to screenshot failed web tests, log test information at the start of test, and fail test.
+- Wrapper class for Testng asserts (Verify) that do not throw an exception immediately when an assertion fails. Therefore, all steps and assertions in the automated test will execute before failing the test. Also improves readability on passed/ failed asserts.
+- Override Testng listeners (BaseInvokedMethodListener, BaseTestListener) to screenshot failed web tests, log test information at the start of test, and fail test.
 - Custom annotation (TestInfo) to provide more information about a test, such as description and if a test is smoke/ regression.
 - Class (AutoTestBase) that creates API, UI, and assert objects that is extended by all test suites. This class also extends the custom logger to be used in tests.
 

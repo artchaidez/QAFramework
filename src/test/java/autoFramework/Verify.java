@@ -1,14 +1,13 @@
 package autoFramework;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.testng.Assert;
 import org.testng.ITestResult;
-
-import java.util.HashMap;
-import java.util.Map;
 import org.testng.Reporter;
-import java.util.List;
+
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /** A fluent interface to improve readability and log asserts. */
 public class Verify extends AutoLogger {

@@ -2,7 +2,6 @@ package pages;
 
 import autoFramework.UIBase;
 import org.openqa.selenium.By;
-import org.testng.Assert;
 import webTestFramework.SeleniumControl;
 
 public class PodiumModal extends UIBase {

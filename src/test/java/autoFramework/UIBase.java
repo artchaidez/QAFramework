@@ -30,7 +30,7 @@ public class UIBase extends AutoLogger {
     }
 
     /** Initiate selenium webDriver. */
-    public void InitWebDriver() throws MalformedURLException {
+    public void InitWebDriver() {
         webDriver = webDriverFactory.CreateSeleniumDriver();
         setWebDriver(webDriver);
     }

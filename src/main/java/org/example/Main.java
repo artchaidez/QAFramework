@@ -1,7 +1,7 @@
 package org.example;
 
-// TODO: Rework how Verify DoesNotEqual()
 // TODO: Rework Step() AutoLogger to no longer use String.format(); cleaner to read code and understand
+// TODO: Fix bug where multiple failures is logged twice (single failure does not have this bug)
 // TODO: Docker Image to run testsuites
 // TODO: CI/CD pipeline- Jira, Azure/AWS
 // TODO: FileLogger

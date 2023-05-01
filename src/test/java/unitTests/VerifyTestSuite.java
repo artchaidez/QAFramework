@@ -27,7 +27,6 @@ public class VerifyTestSuite extends AutoTestBase{
         boolean actualTrue = true;
         String actualString = "Art";
         String expectedString = "Art";
-        String notEqualString = "Arturo";
         int actualInt = 5;
         int expectedInt = 5;
 

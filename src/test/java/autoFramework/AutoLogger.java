@@ -3,7 +3,6 @@ package autoFramework;
 import io.restassured.response.Response;
 import jdk.jfr.Timespan;
 
-import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,15 +70,6 @@ public class AutoLogger {
         testContextLogger.Pass("   (PASS)   Got : " + message);
     }
 
-    /** To be used in Verify DoesNotEqual() method. */
-    public void Pass(String message, String actualValue, String expectedValue)
-    {
-        String defaultMessage = "   (PASS)  " + actualValue + message + expectedValue;
-
-        testContextLogger.Pass(defaultMessage);
-    }
-
-
     public void FailCompare(Throwable ex)
     {
         // eMessage will always be "expected [exp] but found [got]"
@@ -104,7 +94,7 @@ public class AutoLogger {
         stepNumber++;
     }
 
-    /** Used in Post() to log API info */
+    /** Used in Post() and Put() to log API info */
     public void apiLog(Response response, String requestBody, String resource, String requestMethod)
     {
         // Response does not contain request method or uri; passed in as args
@@ -114,7 +104,7 @@ public class AutoLogger {
         Info("RESPONSE BODY: " + response.asString());
     }
 
-    /** Used in Get() to log API info*/
+    /** Used in Get() ands Delete() to log API info*/
     public void apiLog(Response response, String resource, String requestMethod)
     {
         // Response does not contain request method or uri; passed in as args
