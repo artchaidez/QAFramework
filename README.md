@@ -18,10 +18,8 @@ While in root directory: ``` ./gradlew cleanTest test ```
 ### Features:
 - Page Object Model to store and reuse web elements.
 - JSON objects with getters and setters for cleaner API calls.
-- Wrappers for Selenium for improved UI testing.
-- Wrappers for RestAssured for reusable API testing.
 - Run all tests in parallel based on local machine's thread count.
-- Tests can be run in Jenkins using Docker to set up Selenium Grid using Jenkins Pipeline (see below).
+- Tests can be run in Jenkins using Docker to set up Selenium Grid using Jenkins Pipeline.
 - Custom logger (AutoLogger) for improved readability and track test steps.
 - Wrapper class for Testng asserts (Verify) that do not throw an exception immediately when an assertion fails. Therefore, all steps and assertions in the automated test will execute before failing the test. Also improves readability on passed/ failed asserts.
 - Override Testng listeners (BaseInvokedMethodListener, BaseTestListener) to screenshot failed web tests, log test information at the start of test, and fail test.
@@ -52,7 +50,14 @@ docker pull selenium/hub
 docker pull selenium/node-chrome
 ```
 
-Docker run: 
+Run yml files directly or use docker compose:
+```
+docker compose -f SetupSeleniumGridJenkins.yml up
+```
+```
+docker compose -f SetupSeleniumGridJenkins.yml down
+```
+Docker run (another option instead of using docker compose): 
 ```
 docker run -d -p 4445:4444 --net grid --name selenium-hub-pc selenium/hub
 ``` 
@@ -62,13 +67,7 @@ docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub-pc
 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 -e SE_NODE_MAX_SESSIONS=3 
 -e SE_NODE_MAX_SESSIONS=3 selenium/node-chrome
 ```
-Could also run yml files directly or use docker compose:
-```
-docker compose -f SetupSeleniumGridJenkins.yml up
-```
-```
-docker compose -f SetupSeleniumGridJenkins.yml down
-```
+
 
 ### [Run on M1 Mac](https://github.com/seleniumhq-community/docker-seleniarm#experimental-mult-arch-aarch64armhfamd64-images)
 
@@ -81,7 +80,15 @@ docker pull seleniarm/hub
 docker pull seleniarm/node-chromium
 ```
 
-Docker run: 
+Run yml files directly or use docker compose:
+```
+docker compose -f SetupSeleniumGridM1.yml up
+```
+```
+docker compose -f SetupSeleniumGridM1.yml down
+```
+
+Docker run (another option instead of using docker compose): 
 ```
 docker run -d -p 4445:4444 --net grid --name seleniarm-hub-m1 seleniarm/hub:latest
 ```
@@ -90,12 +97,4 @@ docker run -d --net grid -e SE_EVENT_BUS_HOST=seleniarm-hub-m1
 --shm-size="2g" -e SE_EVENT_BUS_PUBLISH_PORT=4442 
 -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 -e SE_NODE_MAX_SESSIONS=3 
 -e SE_NODE_MAX_SESSIONS=3 seleniarm/node-chromium:latest
-```
-
-Could also run yml files directly or use docker compose:
-```
-docker compose -f SetupSeleniumGridM1.yml up
-```
-```
-docker compose -f SetupSeleniumGridM1.yml down
 ```
