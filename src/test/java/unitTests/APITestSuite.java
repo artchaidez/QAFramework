@@ -12,6 +12,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.text.MessageFormat;
+
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class APITestSuite extends AutoTestBase{
 
@@ -48,19 +50,19 @@ public class APITestSuite extends AutoTestBase{
                 throw new Exception("Exception hit", e);
             }
 
-        Step(String.format("Verify id is %s", id));
+        Step("Verify id is {0}", String.valueOf(id));
             Verify.That(response.getID()).Equals(id);
 
-        Step(String.format("Verify email is %s", email));
+        Step("Verify email is {0}", email);
             Verify.That(response.getEmail()).Equals(email);
 
-        Step(String.format("Verify first name is %s", firstName));
+        Step("Verify first name is {0}", firstName);
             Verify.That(response.getFirstName()).Equals(firstName);
 
-        Step(String.format("Verify last name is %s", lastName));
+        Step("Verify last name is {0}", lastName);
             Verify.That(response.getLastName()).Equals(lastName);
 
-        Step(String.format("Verify avatar is %s", avatar));
+        Step("Verify avatar is {0}", avatar);
             Verify.That(response.getAvatar()).Equals(avatar);
     }
 
@@ -91,37 +93,37 @@ public class APITestSuite extends AutoTestBase{
                 throw new Exception("Exception hit", e);
             }
 
-        Step(String.format("Verify page number is %s", pageNumber));
+        Step("Verify page number is {0}", String.valueOf(pageNumber));
             Verify.That(response.getPage()).Equals(pageNumber);
 
-        Step(String.format("Verify per page is %s", perPage));
+        Step("Verify per page is {0}", String.valueOf(perPage));
             Verify.That(response.getPerPage()).Equals(perPage);
 
-        Step(String.format("Verify total is %s", total));
+        Step("Verify total is {0}", String.valueOf(total));
             Verify.That(response.getTotal()).Equals(total);
 
-        Step(String.format("Verify total pages is %s", totalPages));
+        Step("Verify total pages is {0}", String.valueOf(totalPages));
             Verify.That(response.getTotalPages()).Equals(totalPages);
 
-        Step(String.format("Verify id is %s", dataID));
+        Step("Verify id is {0}", String.valueOf(dataID));
             Verify.That(response.getDataID(dataID)).Equals(dataID);
 
-        Step(String.format("Verify email is %s", dataEmail));
+        Step("Verify email is {0}", dataEmail);
             Verify.That(response.getDataEmail(dataEmail)).Equals(dataEmail);
 
-        Step(String.format("Verify first name is %s", dataFirstName));
+        Step("Verify first name is {0}", dataFirstName);
             Verify.That(response.getDataFirstName(dataFirstName)).Equals(dataFirstName);
 
-        Step(String.format("Verify last name is %s", dataLastName));
+        Step("Verify last name is {0}", dataLastName);
             Verify.That(response.getDataLastName(dataLastName)).Equals(dataLastName);
 
-        Step(String.format("Verify avatar is %s", dataAvatar));
+        Step("Verify avatar is {0}", dataAvatar);
             Verify.That(response.getDataAvatar(dataAvatar)).Equals(dataAvatar);
 
-        Step(String.format("Verify support url is %s", supportURL));
+        Step("Verify support url is {0}", supportURL);
             Verify.That(response.getSupport().getUrl()).Equals(supportURL);
 
-        Step("Verify that support text matches");
+        Step("Verify that the support text matches");
             Verify.That(response.getSupport().getText()).Equals(supportText);
     }
 
@@ -148,15 +150,15 @@ public class APITestSuite extends AutoTestBase{
                 throw new Exception("Exception hit", e);
             }
 
-        Step(String.format("Verify name is %s", name));
+        Step("Verify name is {0}", name);
             Verify.That(response.getName()).Equals(name);
 
-        Step(String.format("Verify job is %s", job));
+        Step("Verify job is {0}", job);
             Verify.That(response.getJob()).Equals(job);
 
         Step("Save new user id");
             id = response.getId();
-            Info(String.format("Id is %s", id));
+            Info(MessageFormat.format("Id is {0}", id));
     }
 
     @Test(priority = 2, dependsOnMethods = {"TestPostRequest"})
@@ -183,12 +185,12 @@ public class APITestSuite extends AutoTestBase{
                 throw new Exception("Exception hit", e);
             }
 
-        Info(String.format("Id is %s", id));
+        Info(MessageFormat.format("Id is {0}", id));
 
-        Step(String.format("Verify job is %s", job));
+        Step("Verify job is {0}", job);
             Verify.That(response.getJob()).Equals(job);
 
-        Step(String.format("Verify name is %s", name));
+        Step("Verify name is {0}", name);
             Verify.That(response.getName()).Equals(name);
     }
 
@@ -198,13 +200,15 @@ public class APITestSuite extends AutoTestBase{
     {
         String resource = "https://reqres.in/api/users/" + id;
 
-        Step(String.format("Delete %s", resource));
+        Step(MessageFormat.format("Delete {0}", resource));
 
             try {
                 APIs.regresApi.DeleteRegres(resource);
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
+
+            Info(MessageFormat.format("Deleted user: {0}", id ));
     }
 
 }

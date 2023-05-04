@@ -4,13 +4,12 @@ import autoFramework.UIBase;
 import org.openqa.selenium.By;
 import webTestFramework.SeleniumControl;
 
-public class PodiumBubble extends UIBase {
-
+public class PodiumBubble extends UIBase
+{
     // Objects are private final
     private final SeleniumControl podiumBubble = new SeleniumControl(By.id("podium-bubble"));
 
     private final SeleniumControl podiumBtn = new SeleniumControl(By.className("ContactBubble__Bubble"));
-
 
     // Methods are public
     /** Switch to podium-bubble iframe.*/

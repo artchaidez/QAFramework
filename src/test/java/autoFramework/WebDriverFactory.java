@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ThreadGuard;
 
 import java.net.URL;
+import java.util.Collections;
 import java.util.Objects;
 
 public class WebDriverFactory extends AutoLogger{

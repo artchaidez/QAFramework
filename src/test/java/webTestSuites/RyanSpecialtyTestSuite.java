@@ -5,10 +5,12 @@ import autoFramework.TestInfo;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
 import org.openqa.selenium.By;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
+import org.testng.annotations.Listeners;
 import webTestFramework.SeleniumControl;
 
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 @Ignore("Board was closed.")
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
@@ -18,7 +20,7 @@ public class RyanSpecialtyTestSuite extends AutoTestBase {
 
     private String trelloURL = "https://trello.com/b/0QEdvItb/rt-sdet";
     @BeforeMethod
-    public void TestSetUp() throws MalformedURLException {
+    public void TestSetUp() {
         email = System.getenv("trelloEmail");
         password = System.getenv("trelloPassword");
         Pages.InitWebDriver();

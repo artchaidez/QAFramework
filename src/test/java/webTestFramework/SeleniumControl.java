@@ -106,16 +106,16 @@ public class SeleniumControl extends UIBase {
         return element;
     }
 
-    public String SetText(String text, int Max_Retries, Boolean escape) throws Exception {
-        if (Max_Retries == 0)
-            Max_Retries = 5;
+    public String SetText(String text, int maxRetries, Boolean escape) throws Exception {
+        if (maxRetries == 0)
+            maxRetries = 5;
         if (escape == null)
             escape = false;
 
         boolean textEntered = false;
         Exception innerException = null;
 
-        while(Max_Retries > 0)
+        while(maxRetries > 0)
         {
             WebElement element = FindElement(5);
 
@@ -156,7 +156,7 @@ public class SeleniumControl extends UIBase {
             }
 
             Thread.sleep(1000L);
-            Max_Retries--;
+            maxRetries--;
         }
 
         if (!textEntered)
@@ -172,17 +172,17 @@ public class SeleniumControl extends UIBase {
         this.WebElement.sendKeys(keysToSend);
     }
 
-    public void Click(int Max_Retries) throws Exception
+    public void Click(int maxRetries) throws Exception
     {
-        if (Max_Retries == 0)
-            Max_Retries = 5;
+        if (maxRetries == 0)
+            maxRetries = 5;
 
         boolean clickable = false;
         Exception innerException = null;
 
-        while (Max_Retries > 0)
+        while (maxRetries > 0)
         {
-            Max_Retries--;
+            maxRetries--;
 
             Info("[Click] " + this.FormatControlName());
 

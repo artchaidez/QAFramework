@@ -17,11 +17,10 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
     String packageClassName;
 
     @Override
-    public void onTestStart(ITestResult result) {
-
+    public void onTestStart(ITestResult result)
+    {
         testName = result.getMethod().getMethodName();
         packageClassName = result.getMethod().getRealClass().getCanonicalName();
-
     }
 
     @Override

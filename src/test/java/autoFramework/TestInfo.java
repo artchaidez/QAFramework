@@ -10,7 +10,6 @@ import java.lang.annotation.Target;
 @Target(value = {ElementType.METHOD})
 public @interface TestInfo {
     String description() default "";
-
     String level() default "Regression";
     String categories() default "";
 }

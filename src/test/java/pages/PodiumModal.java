@@ -7,7 +7,6 @@ import webTestFramework.SeleniumControl;
 public class PodiumModal extends UIBase {
 
     // Objects are private final
-
     private final SeleniumControl firstLocation = new SeleniumControl(By.xpath("//*[@class = 'LocationContainer StaggerFadeIn3 LocationContainer--desktop']"));
 
     private final SeleniumControl nameTextInput = new SeleniumControl(By.xpath("//*[@id= 'Name']"));

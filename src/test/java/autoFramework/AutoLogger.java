@@ -3,6 +3,7 @@ package autoFramework;
 import io.restassured.response.Response;
 import jdk.jfr.Timespan;
 
+import java.text.MessageFormat;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -94,6 +95,17 @@ public class AutoLogger {
         stepNumber++;
     }
 
+    /** Log what the actual value should be. Increments int stepNumber.
+     * @param message String accepts argument position {0} using Message.format()
+     * @param actual String of actual value */
+    public void Step(String message, String actual)
+    {
+        message = MessageFormat.format(message, actual);
+        testContextLogger.Step(message,stepNumber);
+
+        stepNumber++;
+    }
+
     /** Used in Post() and Put() to log API info */
     public void apiLog(Response response, String requestBody, String resource, String requestMethod)
     {
@@ -125,7 +137,7 @@ public class AutoLogger {
         //ToDo figure out how to ignore test
     }
 
-    /** Logs testExecutionContext to provide information at the tart of the test. */
+    /** Logs testExecutionContext to provide information at the start of the test. */
     public void StartTest(String testName, String packageClassName) throws ClassNotFoundException {
 
         testExecutionContext.getTestInfoContext(testName, packageClassName);

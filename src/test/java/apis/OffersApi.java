@@ -9,7 +9,10 @@ public class OffersApi extends ApiBase {
     Gson gson = new Gson();
     Response response = null;
 
-    /** Wrapper method for the post call that returns the class Offer*/
+    /** Wrapper method for the post call that returns the class Offer
+     * @param offerRequest Offer object that will be converted to json
+     * @param resource URI
+     * @param apiKey apiKey needed for URI*/
     public Offer PostOffers(Offer offerRequest, String resource, String apiKey) throws Exception {
 
         try {

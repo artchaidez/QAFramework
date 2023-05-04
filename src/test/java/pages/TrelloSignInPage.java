@@ -37,9 +37,8 @@ public class TrelloSignInPage extends UIBase {
 
             }
         }
+
         logInMainPageBtn.Click(5);
-        // for loop, look for element. If it is there, break and click on it
-        // try catch is within loop
     }
 
     public void SetEmailText(String email) throws Exception

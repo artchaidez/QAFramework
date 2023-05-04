@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.net.MalformedURLException;
+import java.text.MessageFormat;
 
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class InvoiceCloudTestSuite extends AutoTestBase {
@@ -17,7 +17,7 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
     private String herokuURL = "https://the-internet.herokuapp.com/add_remove_elements/";
 
     @BeforeMethod
-    public void TestSetUp() throws MalformedURLException {
+    public void TestSetUp() {
         Pages.InitWebDriver();
     }
 
@@ -36,16 +36,14 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
         Step("Go to Heroku URL");
             Pages.GoToURL(herokuURL);
 
-        Step(String.format("Click on 'Add Element' %d times", addFiveElements));
+        Step("Click on 'Add Element' {0} times", String.valueOf(addFiveElements));
             for (int steps = 0; steps < addFiveElements; steps++) {
                 Pages.InvoiceCloudPage.AddElement();
             }
 
-        Step(String.format("Confirm total delete buttons on page are %d", addFiveElements));
+        Step("Confirm total delete buttons on page are {0}", String.valueOf(addFiveElements));
             int totalDeleteBtns = Pages.InvoiceCloudPage.TotalDeleteButtons();
             Verify.That(addFiveElements).Equals(totalDeleteBtns);
-            Info(String.format("Confirmed total delete buttons are %d", addFiveElements));
-
     }
 
     @Test()
@@ -58,24 +56,22 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
         Step("Go to Heroku URL");
             Pages.GoToURL(herokuURL);
 
-        Step(String.format("Click on 'Add Element' %d times", addFiveElements));
+        Step("Click on 'Add Element' {0} times", String.valueOf(addFiveElements));
             for (int steps = 0; steps < addFiveElements; steps++) {
                 Pages.InvoiceCloudPage.AddElement();
             }
 
-        Step(String.format("Confirm total delete buttons on page are %d", addFiveElements));
+        Step("Confirm total delete buttons on page are {0}", String.valueOf(addFiveElements));
             int totalDeleteBtns = Pages.InvoiceCloudPage.TotalDeleteButtons();
             Verify.That(addFiveElements).Equals(totalDeleteBtns);
-            Info(String.format("Confirmed total delete buttons are %d", addFiveElements));
 
         Step("Delete one element");
             Pages.InvoiceCloudPage.DeleteButton();
             Info("Deleted one element on the page");
 
-        Step(String.format("Confirm there are now %d delete buttons", fourElements));
+        Step("Confirm there are now {0} delete buttons", String.valueOf(fourElements));
             totalDeleteBtns =  Pages.InvoiceCloudPage.TotalDeleteButtons();
             Verify.That(fourElements).Equals(totalDeleteBtns);
-            Info(String.format("Confirmed total delete buttons are %d", fourElements));
     }
 
     @Test()
@@ -93,6 +89,5 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
 
         Step("Confirm Elemental Selenium tab is opened by finding Sauce labs link");
             Pages.ElementalSeleniumPage.SauceLabs().IsVisible(5);
-            Info("Confirmed on Elemental Selenium page as Sauce Labs link is visible");
     }
 }
