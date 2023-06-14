@@ -6,11 +6,11 @@ import webTestFramework.SeleniumControl;
 
 public class ElementalSeleniumPage extends UIBase {
 
-    private final SeleniumControl sauceLabsLink = new SeleniumControl(By.xpath("//*[text()='Sauce Labs']"));
+    private final SeleniumControl ElementalSeleniumLink = new SeleniumControl(By.xpath("//*[@alt='Elemental Selenium Logo']"));
 
-    /** Returns element for Sauce Labs link. */
-    public SeleniumControl SauceLabs()
+    /** Returns element for Elemental Selenium link. */
+    public SeleniumControl ElementalSelenium()
     {
-        return sauceLabsLink;
+        return ElementalSeleniumLink;
     }
 }

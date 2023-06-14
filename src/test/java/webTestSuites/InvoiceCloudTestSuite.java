@@ -9,8 +9,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.text.MessageFormat;
-
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class InvoiceCloudTestSuite extends AutoTestBase {
 
@@ -87,7 +85,7 @@ public class InvoiceCloudTestSuite extends AutoTestBase {
         Step("Switch to Elemental Selenium page");
             Pages.switchToNewlyOpenTab();
 
-        Step("Confirm Elemental Selenium tab is opened by finding Sauce labs link");
-            Pages.ElementalSeleniumPage.SauceLabs().IsVisible(5);
+        Step("Confirm Elemental Selenium tab is opened by finding Elemental Selenium link");
+            Pages.ElementalSeleniumPage.ElementalSelenium().IsVisible(5);
     }
 }
