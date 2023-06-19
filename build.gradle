@@ -23,6 +23,8 @@ dependencies {
     implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
     // https://github.com/bonigarcia/webdrivermanager
     implementation 'io.github.bonigarcia:webdrivermanager:5.3.2'
+    // https://mvnrepository.com/artifact/com.aventstack/extentreports
+    implementation group: 'com.aventstack', name: 'extentreports', version: '5.0.9'
 
     // added only for to not have warning appear: https://www.slf4j.org/codes.html#ignoredBindings
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple

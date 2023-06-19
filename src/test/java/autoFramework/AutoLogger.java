@@ -1,5 +1,6 @@
 package autoFramework;
 
+import com.aventstack.extentreports.ExtentTest;
 import io.restassured.response.Response;
 import jdk.jfr.Timespan;
 
@@ -158,6 +159,11 @@ public class AutoLogger {
         {
             Info(message);
         }
+    }
+
+    // TODO: figure out way to get level and description to log on extent report
+    public String GetTestLevel(){
+        return testExecutionContext.getLevel();
     }
 
     /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format. */
