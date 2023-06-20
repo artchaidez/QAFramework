@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentReportManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseExecutionListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/listeners/BaseTestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseTestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/testReport.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +78,7 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.InvoiceCloudTestSuite">
+  <component name="RunManager" selected="Gradle.QAFramework [test]">
     <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -122,29 +125,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="InvoiceCloudTestSuite.TestClickElementalSelenium" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestClickElementalSelenium&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="InvoiceCloudTestSuite.TestDeleteElement" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -159,6 +139,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestDeleteElement&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -283,8 +286,8 @@
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
       <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+      <item itemvalue="Gradle.PodiumTestSuite" />
       <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
-      <item itemvalue="Gradle.InvoiceCloudTestSuite.TestClickElementalSelenium" />
       <item itemvalue="Gradle.InvoiceCloudTestSuite.TestDeleteElement" />
       <item itemvalue="Gradle.QAFramework [test]" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
@@ -293,11 +296,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.QAFramework [test]" />
         <item itemvalue="Gradle.InvoiceCloudTestSuite" />
         <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
         <item itemvalue="Gradle.InvoiceCloudTestSuite.TestDeleteElement" />
-        <item itemvalue="Gradle.QAFramework [test]" />
-        <item itemvalue="Gradle.InvoiceCloudTestSuite.TestClickElementalSelenium" />
+        <item itemvalue="Gradle.PodiumTestSuite" />
       </list>
     </recent_temporary>
   </component>

@@ -1,10 +1,11 @@
 package listeners;
 
 import autoFramework.AutoTestBase;
+import autoFramework.ExtentFactory;
+import autoFramework.ExtentReportManager;
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -19,8 +20,8 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
 
     String testName;
     String packageClassName;
-    private static ExtentReports extent = new ExtentReports();
-    private ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "testReport.html");
+    protected static ExtentReports report;
+    protected static ExtentTest test;
     String screenshotsDir = "./failedTests/" + packageClassName + "/" + getTestEndDate() + testName + ".png";
 
     @Override
@@ -29,36 +30,36 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
         // TODO: Extent report test names should be formatted "packageName.testName"
         testName = result.getMethod().getMethodName();
         packageClassName = result.getMethod().getRealClass().getCanonicalName();
+
+        test = report.createTest(testName);
+        ExtentFactory.getInstance().setExtent(test);
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        extent.attachReporter(reporter);
-        extent.createTest(testName)
-                .log(Status.PASS, "Test passed");
-        extent.flush();
+        ExtentFactory.getInstance().getExtent().log(Status.PASS, "Test Case: " + testName + " passed.");
+        ExtentFactory.getInstance().removeExtentObject();
     }
 
     @Override
     public void onTestFailure(ITestResult result)
     {
-        if (packageClassName.contains("webTestSuites")) { TakeScreenshot();}
+        if (packageClassName.contains("webTestSuites")) {
+            TakeScreenshot();
+            ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: " + testName + " failed.")
+                    .addScreenCaptureFromPath(screenshotsDir);
+        }
+        else {
+            ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: " + testName + " failed.");
+        }
 
-        // TODO: Log step number
-        // Attach reporter to Extent Report
-        extent.attachReporter(reporter);
-        // Added failed test info
-        extent.createTest(testName)
-                .log(Status.FAIL, result.getThrowable())
-                .addScreenCaptureFromPath(screenshotsDir);
-                //.fail(MediaEntityBuilder.createScreenCaptureFromPath(screenshotsDir).build()); // attaches screenshot to failed step
-
-        extent.flush(); // creates report
+        ExtentFactory.getInstance().removeExtentObject();
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-
+        ExtentFactory.getInstance().getExtent().log(Status.SKIP, "Test Case: "+result.getMethod().getMethodName()+ " is skipped.");
+        ExtentFactory.getInstance().removeExtentObject();
     }
 
     @Override
@@ -68,13 +69,17 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        reporter.config().setTheme(Theme.DARK);
-        reporter.config().setDocumentTitle("Extent Report");
-        reporter.config().setReportName("My tests");
+        // TODO: creating new Report for every suite. Should be done in ExecutionListener.onExecutionStart()
+        try {
+            report = ExtentReportManager.getInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onFinish(ITestContext context) {
+        report.flush();
     }
 
     /** Called within TestFailure(). Will only be called for web tests, not API tests. */

@@ -1,6 +1,5 @@
 package autoFramework;
 
-import com.aventstack.extentreports.ExtentTest;
 import io.restassured.response.Response;
 import jdk.jfr.Timespan;
 
