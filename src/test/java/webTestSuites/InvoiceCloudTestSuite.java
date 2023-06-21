@@ -2,14 +2,13 @@ package webTestSuites;
 
 import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
-import listeners.BaseInvokedMethodListener;
-import listeners.BaseTestListener;
+import listeners.BaseListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-@Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
+@Listeners(BaseListener.class)
 public class InvoiceCloudTestSuite extends AutoTestBase {
 
     private String herokuURL = "https://the-internet.herokuapp.com/add_remove_elements/";

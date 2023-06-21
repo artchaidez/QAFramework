@@ -6,10 +6,9 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.File;
 
-//TODO: needs to be thread safe?
 public class ExtentReportManager {
 
-    protected static ExtentReports extent;
+    static ExtentReports extent;
 
     public static ExtentReports SetUpExtentReporter()
     {

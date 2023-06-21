@@ -5,8 +5,7 @@ import apiModals.RegresSingleUser;
 import apiModals.RegresUser;
 import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
-import listeners.BaseInvokedMethodListener;
-import listeners.BaseTestListener;
+import listeners.BaseListener;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
@@ -14,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.text.MessageFormat;
 
-@Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
+@Listeners(BaseListener.class)
 public class APITestSuite extends AutoTestBase{
 
     String id;
