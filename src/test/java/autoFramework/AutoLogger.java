@@ -168,7 +168,10 @@ public class AutoLogger {
         //messages.add("     Test categories:  " + testExecutionContext.getCategories());
         messages.add("==========================================================================");
 
+        // set test level to be categorized by Extent Report
+        ExtentFactory.getInstance().SetLevel(testExecutionContext.getLevel());
 
+        // Log test info
         for(String message : messages)
         {
             SetUpInfo(message);

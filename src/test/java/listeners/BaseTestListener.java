@@ -38,16 +38,17 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
         packageNames = packageClassName.split("\\.");
 
         test = report.createTest(packageNames[1] + "." + testName);
-        ExtentFactory.getInstance().setExtent(test);
+        ExtentFactory.getInstance().SetExtent(test);
     }
 
     @Override
     public void onTestSuccess(ITestResult result)
     {
         Markup message = MarkupHelper.createLabel(testName + " passed.", ExtentColor.GREEN);
-        ExtentFactory.getInstance().getExtent().log(Status.PASS, message)
-                .assignCategory(packageNames[1]);
-        ExtentFactory.getInstance().removeExtentObject();
+        ExtentFactory.getInstance().GetExtent().log(Status.PASS, message)
+                .assignCategory(packageNames[1])
+                .assignCategory(ExtentFactory.getInstance().GetLevel());
+        ExtentFactory.getInstance().RemoveExtentObject();
     }
 
     @Override
@@ -55,23 +56,27 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
     {
         if (packageClassName.contains("webTestSuites")) {
             TakeScreenshot();
-            ExtentFactory.getInstance().getExtent().log(Status.FAIL, result.getThrowable())
+            ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
                     .addScreenCaptureFromPath(screenshotsDir)
-                    .assignCategory(packageNames[1]);
+                    .assignCategory(packageNames[1])
+                .assignCategory(ExtentFactory.getInstance().GetLevel());
         }
         else {
-            ExtentFactory.getInstance().getExtent().log(Status.FAIL, result.getThrowable())
-                    .assignCategory(packageNames[1]);
+            ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
+                    .assignCategory(packageNames[1])
+                    .assignCategory(ExtentFactory.getInstance().GetLevel());;
         }
 
-        ExtentFactory.getInstance().removeExtentObject();
+        ExtentFactory.getInstance().RemoveExtentObject();
     }
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ExtentFactory.getInstance().getExtent().log(Status.SKIP, result.getMethod().getMethodName()+ " skipped.")
-                .assignCategory(packageNames[1]);
-        ExtentFactory.getInstance().removeExtentObject();
+        ExtentFactory.getInstance().GetExtent().log(Status.SKIP, result.getMethod().getMethodName()+ " skipped.")
+                .assignCategory(packageNames[1])
+                .assignCategory(ExtentFactory.getInstance().GetLevel());;
+        ExtentFactory.getInstance().RemoveExtentObject();
+
     }
 
     @Override

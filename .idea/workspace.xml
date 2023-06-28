@@ -6,16 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/apiTestSuites/OppFiTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apiTestSuites/OppFiTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/BaseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/listeners/BaseTestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseTestListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/APITestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/APITestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/VerifyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyTestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/RyanSpecialtyTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/testReport.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
