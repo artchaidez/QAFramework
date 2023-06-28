@@ -45,11 +45,11 @@ public class UIBase extends AutoLogger {
     public void Quit()
     {
         getWebDriver().quit();
-        Info("");
-        Info("*****************************************************");
-        Info("*** Quit WebDriver ***");
-        Info("*****************************************************");
-        Info("");
+        SetUpInfo("");
+        SetUpInfo("*****************************************************");
+        SetUpInfo("*** Quit WebDriver ***");
+        SetUpInfo("*****************************************************");
+        SetUpInfo("");
     }
 
     public void setWebDriver(ThreadLocal<WebDriver> webDriver)

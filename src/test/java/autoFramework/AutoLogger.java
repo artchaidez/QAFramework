@@ -46,8 +46,16 @@ public class AutoLogger {
         testContextLogger.Debug(message);
     }
 
-    /** Log info */
+    /** Log test info */
     public void Info(String message)
+    {
+        testContextLogger.Info(message);
+        ExtentFactory.getInstance().Info(message);
+    }
+
+    /** Log setup, teardown, or API info. NOTE: Logging this info for tests
+     * either will fail test or clutter Extent report */
+    public void SetUpInfo(String message)
     {
         testContextLogger.Info(message);
     }
@@ -68,7 +76,9 @@ public class AutoLogger {
 
     public void Pass(String message)
     {
-        testContextLogger.Pass("   (PASS)   Got : " + message);
+        message = "   (PASS)   Got : " + message;
+        testContextLogger.Pass(message);
+        ExtentFactory.getInstance().Pass(message);
     }
 
     public void FailCompare(Throwable ex)
@@ -77,20 +87,22 @@ public class AutoLogger {
         String eMessage = ex.getMessage();
 
         String[] splitMessage = eMessage.split("\\[");
-        // expected answer in "expected [exp] but found [got]"
-        String expected = splitMessage[1].split("\\]")[0];
+        // this is the expected answer in "expected [exp] but found [got]"
+        String expected = "          Expected: "  + splitMessage[1].split("\\]")[0];
 
-        // actual answer in "expected [exp] but found [got]"
-        String actual = splitMessage[2].split("\\]")[0];
+        // this is the actual answer in "expected [exp] but found [got]"
+        String actual = "Actual: " + splitMessage[2].split("\\]")[0];
 
-        testContextLogger.Fail("   (FAIL) Actual: " + actual);
-        testContextLogger.Fail("          Expected: " + expected);
+        testContextLogger.Fail("   (FAIL) " + actual);
+        testContextLogger.Fail(expected);
+        ExtentFactory.getInstance().Fail(actual, expected);
     }
 
     /** Log what is currently being done by the code. Increments int stepNumber.*/
     public void Step(String message)
     {
         testContextLogger.Step(message,stepNumber);
+        ExtentFactory.getInstance().Log(message, stepNumber);
 
         stepNumber++;
     }
@@ -102,6 +114,7 @@ public class AutoLogger {
     {
         message = MessageFormat.format(message, actual);
         testContextLogger.Step(message,stepNumber);
+        ExtentFactory.getInstance().Log(message, stepNumber);
 
         stepNumber++;
     }
@@ -110,19 +123,21 @@ public class AutoLogger {
     public void apiLog(Response response, String requestBody, String resource, String requestMethod)
     {
         // Response does not contain request method or uri; passed in as args
-        Info(requestMethod + ": " + resource);
-        Info("REQUEST BODY: " +  requestBody);
-        Info("STATUS CODE: " + response.statusCode());
-        Info("RESPONSE BODY: " + response.asString());
+        SetUpInfo(requestMethod + ": " + resource);
+        SetUpInfo("REQUEST BODY: " +  requestBody);
+        SetUpInfo("STATUS CODE: " + response.statusCode());
+        SetUpInfo("RESPONSE BODY: " + response.asString());
+        ExtentFactory.getInstance().ApiLog(response, requestBody, resource, requestMethod);
     }
 
     /** Used in Get() ands Delete() to log API info*/
     public void apiLog(Response response, String resource, String requestMethod)
     {
         // Response does not contain request method or uri; passed in as args
-        Info(requestMethod + ": " + resource);
-        Info("STATUS CODE: " + response.statusCode());
-        Info("RESPONSE BODY: " + response.asString());
+        SetUpInfo(requestMethod + ": " + resource);
+        SetUpInfo("STATUS CODE: " + response.statusCode());
+        SetUpInfo("RESPONSE BODY: " + response.asString());
+        ExtentFactory.getInstance().ApiLog(response, resource, requestMethod);
     }
 
     /** Resets int stepNumber after test method finishes. */
@@ -156,13 +171,8 @@ public class AutoLogger {
 
         for(String message : messages)
         {
-            Info(message);
+            SetUpInfo(message);
         }
-    }
-
-    // TODO: figure out way to get level and description to log on extent report
-    public String GetTestLevel(){
-        return testExecutionContext.getLevel();
     }
 
     /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format. */

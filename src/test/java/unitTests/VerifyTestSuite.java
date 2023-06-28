@@ -88,7 +88,7 @@ public class VerifyTestSuite extends AutoTestBase{
 
     @Test(enabled = false, description = "Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify all asserts fail correctly with correct logging info")
-    public void TestAllAsserts()
+    public void TestAllAssertsFail()
     {
         int actualInt = 5;
         int expectedInt = 6;

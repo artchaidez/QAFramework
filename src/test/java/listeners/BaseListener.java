@@ -140,6 +140,17 @@ public class BaseListener extends AutoTestBase implements ITestListener, IInvoke
     public void onFinish(ITestContext context) {
     }
 
+    // IExecutionListener methods
+    @Override
+    public void onExecutionStart() {
+        report = ExtentReportManager.SetUpExtentReporter();
+    }
+
+    @Override
+    public void onExecutionFinish() {
+        report.flush();
+    }
+
     // TODO: This should be its own method, then used from extended class
     /** Called within TestFailure(). Will only be called for web tests, not API tests. */
     private void TakeScreenshot()
@@ -155,22 +166,5 @@ public class BaseListener extends AutoTestBase implements ITestListener, IInvoke
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    // IExecutionListener methods
-    @Override
-    public void onExecutionStart() {
-        try {
-            // FIXME: Using debugger all tests show in extent report. Running normal does not work
-            // Thread.sleep does not work
-            report = ExtentReportManager.SetUpExtentReporter();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
-    public void onExecutionFinish() {
-        report.flush();
     }
 }
