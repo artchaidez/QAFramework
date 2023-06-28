@@ -102,7 +102,7 @@ public class AutoLogger {
     public void Step(String message)
     {
         testContextLogger.Step(message,stepNumber);
-        ExtentFactory.getInstance().Log(message, stepNumber);
+        ExtentFactory.getInstance().LogStep(message, stepNumber);
 
         stepNumber++;
     }
@@ -114,7 +114,7 @@ public class AutoLogger {
     {
         message = MessageFormat.format(message, actual);
         testContextLogger.Step(message,stepNumber);
-        ExtentFactory.getInstance().Log(message, stepNumber);
+        ExtentFactory.getInstance().LogStep(message, stepNumber);
 
         stepNumber++;
     }

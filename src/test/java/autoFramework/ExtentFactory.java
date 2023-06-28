@@ -2,9 +2,13 @@ package autoFramework;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import io.restassured.response.Response;
 
 // FIXME: Does not run in parallel. However, parallel works in debugger
+// IExecutionListener does not resolve issue
 public class ExtentFactory {
     //Singleton design Pattern
     //private constructor so that no one else can create object of this class
@@ -17,7 +21,6 @@ public class ExtentFactory {
     public static ExtentFactory getInstance() {
         return instance;
     }
-
 
     //factory design pattern --> define separate factory methods for creating objects and create objects by calling that methods
     ThreadLocal<ExtentTest> extent = new ThreadLocal<>();
@@ -34,9 +37,9 @@ public class ExtentFactory {
         extent.remove();
     }
 
-    public void Log(String message, int stepNumber) {
-        message = "Step " + stepNumber + " - " + message;
-        ExtentFactory.getInstance().getExtent().log(Status.INFO, message);
+    public void LogStep(String message, int stepNumber) {
+        Markup markUp = MarkupHelper.createLabel("Step " + stepNumber + " - " + message, ExtentColor.BLUE);
+        ExtentFactory.getInstance().getExtent().log(Status.INFO, markUp);
     }
 
     /** Used in Post() and Put() to log API info */
@@ -58,7 +61,6 @@ public class ExtentFactory {
         ExtentFactory.getInstance().getExtent().log(Status.INFO, message);
     }
 
-    // TODO: Figure out way SeleniumControl Info logging to be in one Status.Info log
     public void Info(String message){
         ExtentFactory.getInstance().getExtent().log(Status.INFO, message);
     }

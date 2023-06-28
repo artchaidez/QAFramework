@@ -6,6 +6,9 @@ import autoFramework.ExtentReportManager;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -22,22 +25,28 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
     String packageClassName;
     protected static ExtentReports report;
     protected static ExtentTest test;
+    // TODO: Properly format when packageNames is used. This should be in new class with getters/ setters
+    String[] packageNames;
     String screenshotsDir = "./failedTests/" + packageClassName + "/" + getTestEndDate() + testName + ".png";
 
     @Override
     public void onTestStart(ITestResult result)
     {
-        // TODO: Extent report test names should be formatted "packageName.testName"
         testName = result.getMethod().getMethodName();
         packageClassName = result.getMethod().getRealClass().getCanonicalName();
 
-        test = report.createTest(testName);
+        packageNames = packageClassName.split("\\.");
+
+        test = report.createTest(packageNames[1] + "." + testName);
         ExtentFactory.getInstance().setExtent(test);
     }
 
     @Override
-    public void onTestSuccess(ITestResult result) {
-        ExtentFactory.getInstance().getExtent().log(Status.PASS, "Test Case: " + testName + " passed.");
+    public void onTestSuccess(ITestResult result)
+    {
+        Markup message = MarkupHelper.createLabel(testName + " passed.", ExtentColor.GREEN);
+        ExtentFactory.getInstance().getExtent().log(Status.PASS, message)
+                .assignCategory(packageNames[1]);
         ExtentFactory.getInstance().removeExtentObject();
     }
 
@@ -46,11 +55,13 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
     {
         if (packageClassName.contains("webTestSuites")) {
             TakeScreenshot();
-            ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: " + testName + " failed.")
-                    .addScreenCaptureFromPath(screenshotsDir);
+            ExtentFactory.getInstance().getExtent().log(Status.FAIL, result.getThrowable())
+                    .addScreenCaptureFromPath(screenshotsDir)
+                    .assignCategory(packageNames[1]);
         }
         else {
-            ExtentFactory.getInstance().getExtent().log(Status.FAIL, "Test Case: " + testName + " failed.");
+            ExtentFactory.getInstance().getExtent().log(Status.FAIL, result.getThrowable())
+                    .assignCategory(packageNames[1]);
         }
 
         ExtentFactory.getInstance().removeExtentObject();
@@ -58,7 +69,8 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        ExtentFactory.getInstance().getExtent().log(Status.SKIP, "Test Case: "+result.getMethod().getMethodName()+ " is skipped.");
+        ExtentFactory.getInstance().getExtent().log(Status.SKIP, result.getMethod().getMethodName()+ " skipped.")
+                .assignCategory(packageNames[1]);
         ExtentFactory.getInstance().removeExtentObject();
     }
 
@@ -69,12 +81,7 @@ public class BaseTestListener extends AutoTestBase implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {
-        // TODO: creating new Report for every suite. Should be done in ExecutionListener.onExecutionStart()
-        try {
-            report = ExtentReportManager.getInstance();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        report = ExtentReportManager.SetUpExtentReporter();
     }
 
     @Override
