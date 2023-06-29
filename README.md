@@ -25,6 +25,7 @@ While in root directory: ``` ./gradlew cleanTest test ```
 - Override Testng listeners (BaseInvokedMethodListener, BaseTestListener) to screenshot failed web tests, log test information at the start of test, and fail test.
 - Custom annotation (TestInfo) to provide more information about a test, such as description and if a test is smoke/ regression.
 - Class (AutoTestBase) that creates API, UI, and assert objects that is extended by all test suites. This class also extends the custom logger to be used in tests.
+- ExtentReport with clear logging and screenshots of failed web tests
 
 # Instructions to run tests on Selenium Grid
 Grid must first be created and correct images pulled. From here, use `docker run`, `docker compose`, or run yml file.
