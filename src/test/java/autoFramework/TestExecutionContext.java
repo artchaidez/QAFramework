@@ -2,16 +2,14 @@ package autoFramework;
 
 import java.lang.reflect.Method;
 
-public class TestExecutionContext {
-
+public class TestExecutionContext
+{
     private TestInfo context;
-
     private String className;
-
     private String packageName;
 
     /** Uses annotation TestInfo to gather info to be logged at the start of every test method. */
-    public void getTestInfoContext(String testName, String packageClassName) throws ClassNotFoundException {
+    public void GetTestInfoContext(String testName, String packageClassName) throws ClassNotFoundException {
 
         Class<?> testClass = Class.forName(packageClassName);
         Method[] methods = testClass.getMethods();

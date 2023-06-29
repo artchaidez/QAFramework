@@ -77,8 +77,10 @@ public class ExtentFactory
         ExtentFactory.getInstance().GetExtent().log(Status.FAIL, message);
     }
 
+    // TODO: this should be done elsewhere
     public void SetLevel(String level){ testLevel = level;}
-
+    
+    // TODO: this should be done elsewhere
     public String GetLevel() {return testLevel;}
 
 }

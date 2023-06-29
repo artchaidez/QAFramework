@@ -1,26 +1,24 @@
 package listeners;
 
-import autoFramework.AutoTestBase;
+import autoFramework.ListenerBase;
 import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 import org.testng.internal.Utils;
+
 import java.util.List;
 
-public class BaseInvokedMethodListener extends AutoTestBase implements IInvokedMethodListener {
-
-    String testName;
-    String packageClassName;
-
+public class BaseInvokedMethodListener extends ListenerBase implements IInvokedMethodListener
+{
     @Override
-    public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
-
-        testName = testResult.getMethod().getMethodName();
-        packageClassName = testResult.getMethod().getRealClass().getCanonicalName();
+    public void beforeInvocation(IInvokedMethod method, ITestResult testResult)
+    {
+        SetTestName(testResult.getMethod().getMethodName());
+        SetPackageClassName(testResult.getMethod().getRealClass().getCanonicalName());
 
         if (method.isTestMethod()) {
             try {
-                StartTest(testName, packageClassName);
+                LogStartTestInfo(GetTestName(), GetPackageClassName());
             } catch (ClassNotFoundException e) {
                 throw new RuntimeException(e);
             }

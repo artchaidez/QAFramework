@@ -141,7 +141,7 @@ public class AutoLogger {
     }
 
     /** Resets int stepNumber after test method finishes. */
-    public void ResetSteps()
+    protected void ResetSteps()
     {
         stepNumber = 1;
     }
@@ -153,9 +153,9 @@ public class AutoLogger {
     }
 
     /** Logs testExecutionContext to provide information at the start of the test. */
-    public void StartTest(String testName, String packageClassName) throws ClassNotFoundException {
+    public void LogStartTestInfo(String testName, String packageClassName) throws ClassNotFoundException {
 
-        testExecutionContext.getTestInfoContext(testName, packageClassName);
+        testExecutionContext.GetTestInfoContext(testName, packageClassName);
 
         List<String> messages = new ArrayList<>();
         messages.add("");
@@ -179,7 +179,7 @@ public class AutoLogger {
     }
 
     /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format. */
-    public String getTestEndDate()
+    public String GetTestEndDate()
     {
         // toLocaleDate.toString() --> yyyy-mm-dd
         String formattedDate = testEndDate.toLocalDate().toString();
