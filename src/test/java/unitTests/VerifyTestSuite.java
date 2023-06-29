@@ -4,7 +4,10 @@ import autoFramework.AutoTestBase;
 import autoFramework.TestInfo;
 import listeners.BaseInvokedMethodListener;
 import listeners.BaseTestListener;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 
 @Listeners({BaseTestListener.class, BaseInvokedMethodListener.class})
 public class VerifyTestSuite extends AutoTestBase{
@@ -86,7 +89,7 @@ public class VerifyTestSuite extends AutoTestBase{
 
     @Test(enabled = false, description = "Test exists to show Verify works as intended.")
     @TestInfo(description = "Verify all asserts fail correctly with correct logging info")
-    public void TestAllAsserts()
+    public void TestAllAssertsFail()
     {
         int actualInt = 5;
         int expectedInt = 6;

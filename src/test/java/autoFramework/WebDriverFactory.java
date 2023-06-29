@@ -8,7 +8,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ThreadGuard;
 
 import java.net.URL;
-import java.util.Collections;
 import java.util.Objects;
 
 public class WebDriverFactory extends AutoLogger{
@@ -26,10 +25,10 @@ public class WebDriverFactory extends AutoLogger{
         _WebDriver.get().manage().window().maximize();
         _WebDriver.get().manage().deleteAllCookies();
 
-        Info("");
-        Info("*****************************************************");
-        Info("*** Created WebDriver ***");
-        Info("*****************************************************");
+        SetUpInfo("");
+        SetUpInfo("*****************************************************");
+        SetUpInfo("*** Created WebDriver ***");
+        SetUpInfo("*****************************************************");
 
         return _WebDriver;
     }
