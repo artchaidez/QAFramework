@@ -19,7 +19,7 @@ public class ExtentReportManager {
 
         reporter.config().setTheme(Theme.DARK);
         reporter.config().setDocumentTitle("Extent Report");
-        reporter.config().setReportName("My tests");
+        reporter.config().setReportName("QA Framework");
 
         return extent;
     }

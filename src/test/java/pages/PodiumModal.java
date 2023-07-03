@@ -29,7 +29,7 @@ public class PodiumModal extends UIBase {
 
     private final SeleniumControl locationSearchBar = new SeleniumControl(By.xpath("//*[@name='Search Locations']"));
 
-    // There is no consistency which indicator appears. //*[contains(@stroke, '#3074dc')] is the circle indicator
+    // //*[contains(@stroke, '#3074dc')] is the circle indicator
     private final SeleniumControl messageCharCount = new SeleniumControl(By.xpath("//*[@class='message-char-count']"));
 
     private final SeleniumControl clearLocationSearchBar = new SeleniumControl(By.xpath("//*[@class='SearchInput__Reset']"));
@@ -85,13 +85,13 @@ public class PodiumModal extends UIBase {
         messageTextInput.SetText(data, Max_Retries, escape);
     }
 
-    /** NOTE: Used in test where bug shows indicator '0/300' or circle indicator. Cannot be tested properly as
-     * there is no consistency which indicator appears.
-     * Returns web element of total character count. By default, an empty message will be 0 / 300
+    /** Returns web element of total character count. By default, an empty message will be 0 / 300
      * and will count the total characters in the message. Must be on 'Send message' modal.*/
     public String MessageInputIndicator()
     {
+        // String indicator
         return messageCharCount.getText();
+        // Circle indicator
         // return messageCharCount.getAttribute("d").replaceAll("[path()\"]", "");
     }
 

@@ -97,8 +97,7 @@ public class PodiumTestSuite extends AutoTestBase {
             Verify.That(returnedLocation).Equals(location);
     }
 
-    @Test(enabled = false, description = "Bug exists where message text indicator is either " +
-            "'0/ 300' or circle indicator. There is no consistency which indicator appears.")
+    @Test()
     @TestInfo(description = "Test input data in all 3 fields of message modal", level = "Smoke")
     public void TestInputMessageData() throws Exception
     {
@@ -106,7 +105,7 @@ public class PodiumTestSuite extends AutoTestBase {
         String telephone = "7777777777";
         String message = "Hello QA Tester";
         // String used for circle indicator
-        String emptyMessageIndicator = "M 50 0 A 50 50 0 0 1 50 0";
+        //String emptyMessageIndicator = "M 50 0 A 50 50 0 0 1 50 0";
         // String used for '0/300' indicator
         String correctMessageIndicator = message.length() + " / 300";
 
@@ -177,14 +176,13 @@ public class PodiumTestSuite extends AutoTestBase {
             Info("Clicked on 'Terms of Service'");
     }
 
-    @Test (enabled = false, description = "This test was to show there was a bug on site and is now fixed. " +
-            "There is no consistency which indicator appears. ")
+    @Test (enabled = false, description = "Bug fixed.")
     @TestInfo(description = "Test proving there is a bug with the return arrow in the message modal.")
     public void TestReturnButtonDoesNotWork() throws Exception
     {
         String message = "Hello QA Tester";
         // String used for circle indicator
-        String emptyMessageIndicator = "M 50 0 A 50 50 0 0 1 50 0";
+        // String emptyMessageIndicator = "M 50 0 A 50 50 0 0 1 50 0";
         // String used for '0/300' indicator
         String correctMessageIndicator = message.length() + " / 300";
 

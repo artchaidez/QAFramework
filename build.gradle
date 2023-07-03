@@ -26,7 +26,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.aventstack/extentreports
     implementation group: 'com.aventstack', name: 'extentreports', version: '5.0.9'
 
-    // added only for to not have warning appear: https://www.slf4j.org/codes.html#ignoredBindings
+    // added for this warning: https://www.slf4j.org/codes.html#ignoredBindings
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
     testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '2.0.7'
 
