@@ -3,8 +3,8 @@ package listeners;
 import autoFramework.ExtentFactory;
 import autoFramework.ExtentReportManager;
 import autoFramework.ListenerBase;
+import autoFramework.ThreadLocalExtentTest;
 import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
@@ -15,8 +15,7 @@ import org.testng.ITestResult;
 
 public class BaseTestListener extends ListenerBase implements ITestListener
 {
-    protected static ExtentReports report;
-    protected static ExtentTest test;
+    static ExtentReports report;
 
     @Override
     public void onTestStart(ITestResult result)
@@ -25,8 +24,7 @@ public class BaseTestListener extends ListenerBase implements ITestListener
         SetPackageClassName(result.getMethod().getRealClass().getCanonicalName());
         SetScreenShotDir();
 
-        test = report.createTest(GetClassTestName());
-        ExtentFactory.getInstance().SetExtent(test);
+        ThreadLocalExtentTest.SetTest(report.createTest(GetClassTestName()));
     }
 
     @Override
@@ -36,7 +34,7 @@ public class BaseTestListener extends ListenerBase implements ITestListener
         ExtentFactory.getInstance().GetExtent().log(Status.PASS, message)
                 .assignCategory(GetClassName())
                 .assignCategory(ExtentFactory.getInstance().GetLevel());
-        ExtentFactory.getInstance().RemoveExtentObject();
+        //ExtentFactory.getInstance().RemoveExtentObject();
     }
 
     @Override
@@ -52,10 +50,10 @@ public class BaseTestListener extends ListenerBase implements ITestListener
         else {
             ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
                     .assignCategory(GetClassName())
-                    .assignCategory(ExtentFactory.getInstance().GetLevel());;
+                    .assignCategory(ExtentFactory.getInstance().GetLevel());
         }
 
-        ExtentFactory.getInstance().RemoveExtentObject();
+        //ExtentFactory.getInstance().RemoveExtentObject();
     }
 
     @Override
@@ -64,7 +62,7 @@ public class BaseTestListener extends ListenerBase implements ITestListener
         ExtentFactory.getInstance().GetExtent().log(Status.SKIP, result.getMethod().getMethodName()+ " skipped.")
                 .assignCategory(GetClassName())
                 .assignCategory(ExtentFactory.getInstance().GetLevel());;
-        ExtentFactory.getInstance().RemoveExtentObject();
+        //ExtentFactory.getInstance().RemoveExtentObject();
     }
 
     @Override
@@ -74,7 +72,7 @@ public class BaseTestListener extends ListenerBase implements ITestListener
 
     @Override
     public void onStart(ITestContext context) {
-        report = ExtentReportManager.SetUpExtentReporter();
+        report = ExtentReportManager.GetInstance();
     }
 
     @Override

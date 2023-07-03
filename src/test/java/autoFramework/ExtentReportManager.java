@@ -10,7 +10,7 @@ public class ExtentReportManager {
 
     static ExtentReports extent;
 
-    public static ExtentReports SetUpExtentReporter()
+    private static ExtentReports SetUpExtentReporter()
     {
         ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "testReport.html");
 
@@ -24,7 +24,7 @@ public class ExtentReportManager {
         return extent;
     }
 
-    public static ExtentReports getInstance() {
+    public static ExtentReports GetInstance() {
         if(extent == null) {
             SetUpExtentReporter();
         }

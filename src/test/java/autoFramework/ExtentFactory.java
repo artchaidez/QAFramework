@@ -9,6 +9,7 @@ import io.restassured.response.Response;
 
 // FIXME: Does not run in parallel. However, parallel works in debugger
 // IExecutionListener does not resolve issue
+// TODO: Create instance as another class (ExtentReportManager?, or as Logger?), move methods with it.
 public class ExtentFactory
 {
     private String testLevel;
@@ -24,19 +25,18 @@ public class ExtentFactory
         return instance;
     }
 
-    //factory design pattern --> define separate factory methods for creating objects and create objects by calling that methods
-    ThreadLocal<ExtentTest> extent = new ThreadLocal<>();
-
     public ExtentTest GetExtent() {
-        return extent.get();
+        return ThreadLocalExtentTest.GetTest();
     }
 
+    // Not needed but keep just in case
     public void SetExtent(ExtentTest extentTestObject) {
-        extent.set(extentTestObject);
+        ThreadLocalExtentTest.SetTest(extentTestObject);
     }
 
+    // Not needed but keep just in case. Does not seem to effect thread tests
     public void RemoveExtentObject() {
-        extent.remove();
+        ThreadLocalExtentTest.RemoveTest();
     }
 
     public void LogStep(String message, int stepNumber)
@@ -79,7 +79,7 @@ public class ExtentFactory
 
     // TODO: this should be done elsewhere
     public void SetLevel(String level){ testLevel = level;}
-    
+
     // TODO: this should be done elsewhere
     public String GetLevel() {return testLevel;}
 
