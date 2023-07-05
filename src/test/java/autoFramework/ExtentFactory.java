@@ -17,6 +17,24 @@ public class ExtentFactory
 
     }
 
+    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal();
+
+    public ExtentTest GetExtentTest()
+    {
+        return extentTest.get();
+    }
+
+    public void SetExtentTest(ExtentTest extentTestObject)
+    {
+        extentTest.set(extentTestObject);
+    }
+
+    public void RemoveExtentObject()
+    {
+        extentTest.remove();
+    }
+
+
     // TODO: this should be done elsewhere
     public void SetLevel(String level){ testLevel = level;}
 

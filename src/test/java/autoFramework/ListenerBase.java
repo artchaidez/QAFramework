@@ -16,7 +16,7 @@ public class ListenerBase extends AutoLogger
     private static String packageName;
     private static String className;
     private static String screenshotDir;
-    private final ExtentFactory extentFactory = new ExtentFactory();
+    private static final ExtentFactory extentFactory = new ExtentFactory();
 
     private final ExtentReportManager extentReportManager = new ExtentReportManager();
 
@@ -30,17 +30,15 @@ public class ListenerBase extends AutoLogger
     }
 
     public static ExtentTest GetExtentTest() {
-        return ThreadLocalExtentTest.GetTest();
+        return extentFactory.GetExtentTest();
     }
 
-
-    // Not needed but keep just in case
     public void SetExtentTest(ExtentTest extentTestObject) {
-        ThreadLocalExtentTest.SetTest(extentTestObject);
+        extentFactory.SetExtentTest(extentTestObject);
     }
 
     public void RemoveExtentTest() {
-        ThreadLocalExtentTest.RemoveTest();
+        extentFactory.RemoveExtentObject();
     }
 
     // Getter methods

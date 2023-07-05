@@ -1,7 +1,6 @@
 package listeners;
 
 import autoFramework.ListenerBase;
-import autoFramework.ThreadLocalExtentTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -22,7 +21,7 @@ public class BaseTestListener extends ListenerBase implements ITestListener
         SetPackageClassName(result.getMethod().getRealClass().getCanonicalName());
         SetScreenShotDir();
 
-        ThreadLocalExtentTest.SetTest(report.createTest(GetClassTestName()));
+        SetExtentTest(report.createTest(GetClassTestName()));
     }
 
     @Override
@@ -38,7 +37,8 @@ public class BaseTestListener extends ListenerBase implements ITestListener
     {
         if (GetPackageName().contains("webTestSuites")) {
             TakeScreenshot();
-            GetExtentTest().log(Status.FAIL, result.getThrowable());
+            GetExtentTest().log(Status.FAIL, result.getThrowable())
+                    .addScreenCaptureFromPath(GetScreenShotDir());
             /*ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
                     .addScreenCaptureFromPath(GetScreenShotDir())
                     .assignCategory(GetClassName())
