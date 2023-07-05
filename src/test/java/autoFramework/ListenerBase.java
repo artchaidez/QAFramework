@@ -3,11 +3,12 @@ package autoFramework;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import pages.Pages;
 
 import java.io.File;
 import java.io.IOException;
 
-public class ListenerBase extends AutoTestBase
+public class ListenerBase extends AutoLogger
 {
     private static String testName;
     private static String packageName;
