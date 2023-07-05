@@ -6,14 +6,12 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.File;
 
-public class ExtentReportManager
-{
-    public ExtentReportManager() {}
+public class ExtentReportManager {
+
     static ExtentReports extent;
 
-    private ExtentReports SetUpExtentReporter()
+    private static ExtentReports SetUpExtentReporter()
     {
-
         ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "testReport.html");
 
         extent = new ExtentReports();
@@ -26,7 +24,7 @@ public class ExtentReportManager
         return extent;
     }
 
-    public ExtentReports GetInstance() {
+    public static ExtentReports GetInstance() {
         if(extent == null) {
             SetUpExtentReporter();
         }

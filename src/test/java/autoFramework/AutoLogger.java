@@ -50,7 +50,7 @@ public class AutoLogger {
     public void Info(String message)
     {
         testContextLogger.Info(message);
-        //ExtentFactory.getInstance().Info(message);
+        ExtentFactory.getInstance().Info(message);
     }
 
     /** Log setup, teardown, or API info. NOTE: Logging this info for tests
@@ -78,7 +78,7 @@ public class AutoLogger {
     {
         message = "   (PASS)   Got : " + message;
         testContextLogger.Pass(message);
-        //ExtentFactory.getInstance().Pass(message);
+        ExtentFactory.getInstance().Pass(message);
     }
 
     public void FailCompare(Throwable ex)
@@ -95,14 +95,14 @@ public class AutoLogger {
 
         testContextLogger.Fail("   (FAIL) " + actual);
         testContextLogger.Fail(expected);
-        //ExtentFactory.getInstance().Fail(actual, expected);
+        ExtentFactory.getInstance().Fail(actual, expected);
     }
 
     /** Log what is currently being done by the code. Increments int stepNumber.*/
     public void Step(String message)
     {
         testContextLogger.Step(message,stepNumber);
-        //ExtentFactory.getInstance().LogStep(message, stepNumber);
+        ExtentFactory.getInstance().LogStep(message, stepNumber);
 
         stepNumber++;
     }
@@ -114,7 +114,7 @@ public class AutoLogger {
     {
         message = MessageFormat.format(message, actual);
         testContextLogger.Step(message,stepNumber);
-        //ExtentFactory.getInstance().LogStep(message, stepNumber);
+        ExtentFactory.getInstance().LogStep(message, stepNumber);
 
         stepNumber++;
     }
@@ -127,7 +127,7 @@ public class AutoLogger {
         SetUpInfo("REQUEST BODY: " +  requestBody);
         SetUpInfo("STATUS CODE: " + response.statusCode());
         SetUpInfo("RESPONSE BODY: " + response.asString());
-        //ExtentFactory.getInstance().ApiLog(response, requestBody, resource, requestMethod);
+        ExtentFactory.getInstance().ApiLog(response, requestBody, resource, requestMethod);
     }
 
     /** Used in Get() ands Delete() to log API info*/
@@ -137,7 +137,7 @@ public class AutoLogger {
         SetUpInfo(requestMethod + ": " + resource);
         SetUpInfo("STATUS CODE: " + response.statusCode());
         SetUpInfo("RESPONSE BODY: " + response.asString());
-        //ExtentFactory.getInstance().ApiLog(response, resource, requestMethod);
+        ExtentFactory.getInstance().ApiLog(response, resource, requestMethod);
     }
 
     /** Resets int stepNumber after test method finishes. */
@@ -169,7 +169,7 @@ public class AutoLogger {
         messages.add("==========================================================================");
 
         // set test level to be categorized by Extent Report
-        //ExtentFactory.getInstance().SetLevel(testExecutionContext.getLevel());
+        ExtentFactory.getInstance().SetLevel(testExecutionContext.getLevel());
 
         // Log test info
         for(String message : messages)

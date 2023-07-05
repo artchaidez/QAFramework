@@ -1,5 +1,7 @@
 package listeners;
 
+import autoFramework.ExtentFactory;
+import autoFramework.ExtentReportManager;
 import autoFramework.ListenerBase;
 import autoFramework.ThreadLocalExtentTest;
 import com.aventstack.extentreports.ExtentReports;
@@ -29,11 +31,9 @@ public class BaseTestListener extends ListenerBase implements ITestListener
     public void onTestSuccess(ITestResult result)
     {
         Markup message = MarkupHelper.createLabel(GetTestName() + " passed.", ExtentColor.GREEN);
-        GetExtent().log(Status.PASS, message)
-                .assignCategory(GetClassName());
-        /*ExtentFactory.getInstance().GetExtent().log(Status.PASS, message)
+        ExtentFactory.getInstance().GetExtent().log(Status.PASS, message)
                 .assignCategory(GetClassName())
-                .assignCategory(ExtentFactory.getInstance().GetLevel());*/
+                .assignCategory(ExtentFactory.getInstance().GetLevel());
         //ExtentFactory.getInstance().RemoveExtentObject();
     }
 
@@ -42,18 +42,15 @@ public class BaseTestListener extends ListenerBase implements ITestListener
     {
         if (GetPackageName().contains("webTestSuites")) {
             TakeScreenshot();
-            GetExtent().log(Status.FAIL, result.getThrowable())
-                    .assignCategory(GetScreenShotDir());
-            /*ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
+            ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
                     .addScreenCaptureFromPath(GetScreenShotDir())
                     .assignCategory(GetClassName())
-                .assignCategory(ExtentFactory.getInstance().GetLevel());*/
+                .assignCategory(ExtentFactory.getInstance().GetLevel());
         }
         else {
-            GetExtent().log(Status.FAIL, result.getThrowable());
-            /*ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
+            ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
                     .assignCategory(GetClassName())
-                    .assignCategory(ExtentFactory.getInstance().GetLevel());*/
+                    .assignCategory(ExtentFactory.getInstance().GetLevel());
         }
 
         //ExtentFactory.getInstance().RemoveExtentObject();
@@ -62,7 +59,9 @@ public class BaseTestListener extends ListenerBase implements ITestListener
     @Override
     public void onTestSkipped(ITestResult result)
     {
-        GetExtent().log(Status.SKIP, GetTestName() + " skipped.");
+        ExtentFactory.getInstance().GetExtent().log(Status.SKIP, result.getMethod().getMethodName()+ " skipped.")
+                .assignCategory(GetClassName())
+                .assignCategory(ExtentFactory.getInstance().GetLevel());;
         //ExtentFactory.getInstance().RemoveExtentObject();
     }
 
@@ -73,7 +72,7 @@ public class BaseTestListener extends ListenerBase implements ITestListener
 
     @Override
     public void onStart(ITestContext context) {
-        report = SetUpExtentReporter();
+        report = ExtentReportManager.GetInstance();
     }
 
     @Override
