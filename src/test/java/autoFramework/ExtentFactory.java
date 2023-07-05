@@ -13,39 +13,18 @@ import io.restassured.response.Response;
 public class ExtentFactory
 {
     private String testLevel;
-    //Singleton design Pattern
-    //private constructor so that no one else can create object of this class
-    private ExtentFactory() {
+    public ExtentFactory() {
 
     }
 
-    private static ExtentFactory instance  = new ExtentFactory();
-
-    public static ExtentFactory getInstance() {
-        return instance;
-    }
-
-    public ExtentTest GetExtent() {
-        return ThreadLocalExtentTest.GetTest();
-    }
-
-    // Not needed but keep just in case
-    public void SetExtent(ExtentTest extentTestObject) {
-        ThreadLocalExtentTest.SetTest(extentTestObject);
-    }
-
-    // Not needed but keep just in case. Does not seem to effect thread tests
-    public void RemoveExtentObject() {
-        ThreadLocalExtentTest.RemoveTest();
-    }
-
+/*
     public void LogStep(String message, int stepNumber)
     {
         Markup markUp = MarkupHelper.createLabel("Step " + stepNumber + " - " + message, ExtentColor.BLUE);
         ExtentFactory.getInstance().GetExtent().log(Status.INFO, markUp);
     }
 
-    /** Used in Post() and Put() to log API info */
+    *//** Used in Post() and Put() to log API info *//*
     public void ApiLog(Response response, String requestBody, String resource, String requestMethod)
     {
         String message = requestMethod + ": " + resource + "<br />";
@@ -55,7 +34,7 @@ public class ExtentFactory
         ExtentFactory.getInstance().GetExtent().log(Status.INFO, message);
     }
 
-    /** Used in Get() ands Delete() to log API info*/
+    *//** Used in Get() ands Delete() to log API info*//*
     public void ApiLog(Response response, String resource, String requestMethod)
     {
         String message = requestMethod + ": " + resource + "<br />";
@@ -75,7 +54,7 @@ public class ExtentFactory
     public void Fail(String actual, String expected) {
         String message = actual + "<br />" + expected;
         ExtentFactory.getInstance().GetExtent().log(Status.FAIL, message);
-    }
+    }*/
 
     // TODO: this should be done elsewhere
     public void SetLevel(String level){ testLevel = level;}
