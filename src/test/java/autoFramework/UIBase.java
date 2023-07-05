@@ -57,7 +57,7 @@ public class UIBase extends AutoLogger {
         UIBase.webDriver = webDriver;
     }
 
-    public WebDriver getWebDriver()
+    public static WebDriver getWebDriver()
     {
         return Objects.requireNonNull(webDriver.get());
     }
