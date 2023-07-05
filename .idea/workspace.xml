@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
+    <list default="true" id="a2b39580-ecb2-42b9-bd45-66cd26a94a3d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ListenerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ListenerBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/testReport.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +77,8 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.QAFramework [test]">
-    <configuration name="InvoiceCloudTestSuite.TestAddElements" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.InvoiceCloudTestSuite">
+    <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -89,7 +91,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;webTestSuites.InvoiceCloudTestSuite.TestAddElements&quot;" />
+            <option value="&quot;webTestSuites.InvoiceCloudTestSuite&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -282,7 +284,7 @@
     <list>
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
-      <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
+      <item itemvalue="Gradle.InvoiceCloudTestSuite" />
       <item itemvalue="Gradle.PodiumTestSuite" />
       <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
       <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesNotWork" />
@@ -293,11 +295,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.InvoiceCloudTestSuite" />
         <item itemvalue="Gradle.QAFramework [test]" />
         <item itemvalue="Gradle.PodiumTestSuite" />
         <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesNotWork" />
         <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
-        <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
       </list>
     </recent_temporary>
   </component>

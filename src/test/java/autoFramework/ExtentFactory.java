@@ -17,45 +17,6 @@ public class ExtentFactory
 
     }
 
-/*
-    public void LogStep(String message, int stepNumber)
-    {
-        Markup markUp = MarkupHelper.createLabel("Step " + stepNumber + " - " + message, ExtentColor.BLUE);
-        ExtentFactory.getInstance().GetExtent().log(Status.INFO, markUp);
-    }
-
-    *//** Used in Post() and Put() to log API info *//*
-    public void ApiLog(Response response, String requestBody, String resource, String requestMethod)
-    {
-        String message = requestMethod + ": " + resource + "<br />";
-        message = message + "REQUEST BODY: " +  requestBody + "<br />";
-        message = message + "STATUS CODE: " + response.statusCode() + "<br />";
-        message = message + "RESPONSE BODY: " + response.asString() + "<br />";
-        ExtentFactory.getInstance().GetExtent().log(Status.INFO, message);
-    }
-
-    *//** Used in Get() ands Delete() to log API info*//*
-    public void ApiLog(Response response, String resource, String requestMethod)
-    {
-        String message = requestMethod + ": " + resource + "<br />";
-        message = message + "STATUS CODE: " + response.statusCode() + "<br />";
-        message = message + "RESPONSE BODY: " + response.asString() + "<br />";
-        ExtentFactory.getInstance().GetExtent().log(Status.INFO, message);
-    }
-
-    public void Info(String message){
-        ExtentFactory.getInstance().GetExtent().log(Status.INFO, message);
-    }
-
-    public void Pass(String message){
-        ExtentFactory.getInstance().GetExtent().log(Status.PASS, message);
-    }
-
-    public void Fail(String actual, String expected) {
-        String message = actual + "<br />" + expected;
-        ExtentFactory.getInstance().GetExtent().log(Status.FAIL, message);
-    }*/
-
     // TODO: this should be done elsewhere
     public void SetLevel(String level){ testLevel = level;}
 

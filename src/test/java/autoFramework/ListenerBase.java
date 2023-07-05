@@ -29,7 +29,7 @@ public class ListenerBase extends AutoLogger
         return extentFactory;
     }
 
-    public ExtentTest GetExtentTest() {
+    public static ExtentTest GetExtentTest() {
         return ThreadLocalExtentTest.GetTest();
     }
 
