@@ -1,5 +1,7 @@
 package autoFramework;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -13,6 +15,23 @@ public class ListenerBase extends AutoTestBase
     private static String packageName;
     private static String className;
     private static String screenshotDir;
+    private final ExtentFactory extentFactory  = new ExtentFactory();
+    private final ExtentReportManager extentReportManager = new ExtentReportManager();
+
+    // TODO: May be needed
+    public ExtentFactory getInstance() {
+        return extentFactory;
+    }
+
+    public ExtentTest GetExtent() {
+        return ThreadLocalExtentTest.GetTest();
+    }
+
+    public ExtentReports SetUpExtentReporter()
+    {
+        return extentReportManager.GetInstance();
+    }
+
 
     // Getter methods
     public String GetTestName() { return testName; }
