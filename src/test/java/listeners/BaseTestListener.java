@@ -28,7 +28,9 @@ public class BaseTestListener extends ListenerBase implements ITestListener
     public void onTestSuccess(ITestResult result)
     {
         Markup message = MarkupHelper.createLabel(GetTestName() + " passed.", ExtentColor.GREEN);
-        GetExtentTest().log(Status.PASS, message);
+        GetExtentTest().log(Status.PASS, message)
+                .assignCategory(GetClassName())
+                .assignCategory(GetTestLevel());
         RemoveExtentTest();
     }
 
@@ -38,31 +40,25 @@ public class BaseTestListener extends ListenerBase implements ITestListener
         if (GetPackageName().contains("webTestSuites")) {
             TakeScreenshot();
             GetExtentTest().log(Status.FAIL, result.getThrowable())
-                    .addScreenCaptureFromPath(GetScreenShotDir());
-            /*ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
                     .addScreenCaptureFromPath(GetScreenShotDir())
                     .assignCategory(GetClassName())
-                .assignCategory(ExtentFactory.getInstance().GetLevel());*/
+                    .assignCategory(GetTestLevel());
         }
         else {
-            GetExtentTest().log(Status.FAIL, result.getThrowable());
-            /*ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
+            GetExtentTest().log(Status.FAIL, result.getThrowable())
                     .assignCategory(GetClassName())
-                    .assignCategory(ExtentFactory.getInstance().GetLevel());*/
+                    .assignCategory(GetTestLevel());
         }
-
         RemoveExtentTest();
     }
 
     @Override
     public void onTestSkipped(ITestResult result)
     {
-        GetExtentTest().log(Status.SKIP, GetTestName() + " skipped");
-        RemoveExtentTest();
-        /*ExtentFactory.getInstance().GetExtent().log(Status.SKIP, result.getMethod().getMethodName()+ " skipped.")
+        GetExtentTest().log(Status.SKIP, GetTestName() + " skipped")
                 .assignCategory(GetClassName())
-                .assignCategory(ExtentFactory.getInstance().GetLevel());*/
-        //ExtentFactory.getInstance().RemoveExtentObject();
+                .assignCategory(GetTestLevel());
+        RemoveExtentTest();
     }
 
     @Override

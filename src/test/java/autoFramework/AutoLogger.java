@@ -21,6 +21,7 @@ public class AutoLogger {
     private String suiteName;
 
     private String testName;
+    private static String testLevel;
 
     private List<Timespan> timeTakenList = new ArrayList<>() {
     };
@@ -54,7 +55,7 @@ public class AutoLogger {
     }
 
     /** Log setup, teardown, or API info. NOTE: Logging this info for tests
-     * either will fail test or clutter Extent report */
+     * will either fail test or clutter Extent report */
     public void SetUpInfo(String message)
     {
         testContextLogger.Info(message);
@@ -169,13 +170,18 @@ public class AutoLogger {
         messages.add("==========================================================================");
 
         // set test level to be categorized by Extent Report
-        //ExtentFactory.getInstance().SetLevel(testExecutionContext.getLevel());
+        testLevel = testExecutionContext.getLevel();
 
         // Log test info
         for(String message : messages)
         {
             SetUpInfo(message);
         }
+    }
+
+    protected static String GetTestLevel()
+    {
+        return testLevel;
     }
 
     /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format. */

@@ -9,10 +9,8 @@ import io.restassured.response.Response;
 
 // FIXME: Does not run in parallel. However, parallel works in debugger
 // IExecutionListener does not resolve issue
-// TODO: Create instance as another class (ExtentReportManager?, or as Logger?), move methods with it.
 public class ExtentFactory
 {
-    private String testLevel;
     public ExtentFactory() {
 
     }
@@ -33,12 +31,5 @@ public class ExtentFactory
     {
         extentTest.remove();
     }
-
-
-    // TODO: this should be done elsewhere
-    public void SetLevel(String level){ testLevel = level;}
-
-    // TODO: this should be done elsewhere
-    public String GetLevel() {return testLevel;}
 
 }

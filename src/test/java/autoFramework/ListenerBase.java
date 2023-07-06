@@ -10,47 +10,31 @@ import pages.Pages;
 import java.io.File;
 import java.io.IOException;
 
+/** Extended by listener classes. */
 public class ListenerBase extends AutoLogger
 {
+    // TODO: should move these Strings and getter/ setters to AutoLogger
     private static String testName;
     private static String packageName;
     private static String className;
     private static String screenshotDir;
     private static final ExtentFactory extentFactory = new ExtentFactory();
-
     private final ExtentReportManager extentReportManager = new ExtentReportManager();
 
-    public ExtentReports SetUpExtentReporter() {
-        return extentReportManager.GetInstance();
-    }
-
-    // TODO: Keep, may not be needed
-    public ExtentFactory GetExtentFactory() {
-        return extentFactory;
-    }
-
-    public static ExtentTest GetExtentTest() {
-        return extentFactory.GetExtentTest();
-    }
-
-    public void SetExtentTest(ExtentTest extentTestObject) {
-        extentFactory.SetExtentTest(extentTestObject);
-    }
-
-    public void RemoveExtentTest() {
-        extentFactory.RemoveExtentObject();
-    }
-
-    // Getter methods
+    // Getter methods for Strings
     public String GetTestName() { return testName; }
+
     public String GetPackageName() { return packageName; }
+
     public String GetClassName() { return className; }
+
     /** Returns packageName.className */
     public String GetPackageClassName() { return packageName + "." + className; }
+
     /** Returns className.testName */
     public String GetClassTestName() { return className + "." + testName; }
 
-    // Setter methods
+    // Setter methods for Strings
     public void SetTestName(String name) { testName = name; }
 
     /** Splits PackageName.ClassName and sets them.
@@ -68,6 +52,32 @@ public class ListenerBase extends AutoLogger
         className = split[1];
     }
 
+    // Methods for Extent Report
+    /** Set up ExtentReport and ExtentSparkReporter. */
+    public ExtentReports SetUpExtentReporter() {
+        return extentReportManager.GetInstance();
+    }
+
+    // TODO: Keep, may not be needed
+    public ExtentFactory GetExtentFactory() {
+        return extentFactory;
+    }
+
+    public static ExtentTest GetExtentTest() {
+        return extentFactory.GetExtentTest();
+    }
+
+    /** Set up ExtentTest at the start of test*/
+    public void SetExtentTest(ExtentTest extentTestObject) {
+        extentFactory.SetExtentTest(extentTestObject);
+    }
+
+    /** Removes ExtentTest from thread. */
+    public void RemoveExtentTest() {
+        extentFactory.RemoveExtentObject();
+    }
+
+    // Screenshot methods
     // TODO: Screenshot first failure, last failure, all failures?
     /** Should only be called for web tests, not API tests. */
     protected void TakeScreenshot()
