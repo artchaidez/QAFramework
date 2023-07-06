@@ -14,10 +14,9 @@ public class BaseInvokedMethodListener extends ListenerBase implements IInvokedM
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult)
     {
-        SetTestName(testResult.getMethod().getMethodName());
-        SetPackageClassName(testResult.getMethod().getRealClass().getCanonicalName());
-
         if (method.isTestMethod()) {
+            SetTestName(testResult.getMethod().getMethodName());
+            SetPackageClassName(testResult.getMethod().getRealClass().getCanonicalName());
             try {
                 LogStartTestInfo(GetTestName(), GetPackageClassName());
             } catch (ClassNotFoundException e) {

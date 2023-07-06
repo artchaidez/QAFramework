@@ -12,24 +12,14 @@ import io.restassured.response.Response;
 public class ExtentFactory
 {
     public ExtentFactory() {
-
     }
 
     private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal();
 
-    public ExtentTest GetExtentTest()
-    {
-        return extentTest.get();
-    }
+    public ExtentTest GetExtentTest() { return extentTest.get(); }
 
-    public void SetExtentTest(ExtentTest extentTestObject)
-    {
-        extentTest.set(extentTestObject);
-    }
+    public void SetExtentTest(ExtentTest extentTestObject) { extentTest.set(extentTestObject); }
 
-    public void RemoveExtentObject()
-    {
-        extentTest.remove();
-    }
+    public void RemoveExtentObject() { extentTest.remove();}
 
 }

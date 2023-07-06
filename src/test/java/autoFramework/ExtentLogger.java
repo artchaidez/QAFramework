@@ -6,8 +6,8 @@ import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import io.restassured.response.Response;
 
-public class ExtentLogger {
-
+public class ExtentLogger
+{
     /** Formats and logs step message. */
     public void LogStep(String message, int stepNumber)
     {
@@ -35,18 +35,21 @@ public class ExtentLogger {
     }
 
     /** Formats and logs info message. */
-    public void Info(String message){
+    public void Info(String message)
+    {
         ListenerBase.GetExtentTest().log(Status.INFO, message);
     }
 
     /** Formats and logs passed step message.*/
-    public void PassStep(String message){
+    public void PassStep(String message)
+    {
         Markup label = MarkupHelper.createLabel(message, ExtentColor.GREEN);
         ListenerBase.GetExtentTest().log(Status.PASS, label);
     }
 
     /** Formats and logs failed message. */
-    public void Fail(String actual, String expected) {
+    public void Fail(String actual, String expected)
+    {
         String message = actual + "<br />" + expected;
         ListenerBase.GetExtentTest().log(Status.FAIL, message);
     }

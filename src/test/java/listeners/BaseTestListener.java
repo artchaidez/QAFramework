@@ -63,17 +63,12 @@ public class BaseTestListener extends ListenerBase implements ITestListener
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
     }
 
     @Override
-    public void onStart(ITestContext context) {
-        report = SetUpExtentReporter();
-    }
+    public void onStart(ITestContext context) { report = SetUpExtentReporter(); }
 
     @Override
-    public void onFinish(ITestContext context) {
-        report.flush();
-    }
+    public void onFinish(ITestContext context) { report.flush(); }
 
 }

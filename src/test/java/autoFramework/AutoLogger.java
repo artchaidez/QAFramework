@@ -8,28 +8,16 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AutoLogger {
-
-    private final TestContextLogger testContextLogger = new TestContextLogger();
-    private final TestExecutionContext testExecutionContext = new TestExecutionContext();
-    private final ExtentLogger extentLogger = new ExtentLogger();
+public class AutoLogger
+{
     // Needs to be static for Listeners
     private static int stepNumber = 1;
-
+    private final TestContextLogger testContextLogger = new TestContextLogger();
+    private final ExtentLogger extentLogger = new ExtentLogger();
     private LocalDateTime testStartDate = LocalDateTime.now();
     private LocalDateTime testEndDate = LocalDateTime.now();
-    private String suiteName;
-
-    private String testName;
-    private static String testLevel;
-
     private List<Timespan> timeTakenList = new ArrayList<>() {
     };
-
-    public String GetCurrentTestName()
-    {
-        return testName;
-    }
 
     public boolean IsCurrentTestPassed()
     {
@@ -56,10 +44,7 @@ public class AutoLogger {
 
     /** Log setup, teardown, or API info. NOTE: Logging this info for tests
      * will either fail test or clutter Extent report */
-    public void SetUpInfo(String message)
-    {
-        testContextLogger.Info(message);
-    }
+    public void SetUpInfo(String message) { testContextLogger.Info(message); }
 
     /** Log error */
     public void Error(String message)
@@ -142,46 +127,12 @@ public class AutoLogger {
     }
 
     /** Resets int stepNumber after test method finishes. */
-    protected void ResetSteps()
-    {
-        stepNumber = 1;
-    }
+    protected void ResetSteps() { stepNumber = 1; }
 
     public void IgnoreTest(String message)
     {
         Warning(message);
         //ToDo figure out how to ignore test
-    }
-
-    /** Logs testExecutionContext to provide information at the start of the test. */
-    public void LogStartTestInfo(String testName, String packageClassName) throws ClassNotFoundException {
-
-        testExecutionContext.GetTestInfoContext(testName, packageClassName);
-
-        List<String> messages = new ArrayList<>();
-        messages.add("");
-        messages.add("==========================================================================");
-        messages.add("     Starting test  : " + testName);
-        messages.add("     Test package   : " + testExecutionContext.getPackageName());
-        messages.add("     Test class     : " + testExecutionContext.getClassName());
-        messages.add("     Description    : " + testExecutionContext.getDescription());
-        messages.add("     Test level     : " + testExecutionContext.getLevel());
-        //messages.add("     Test categories:  " + testExecutionContext.getCategories());
-        messages.add("==========================================================================");
-
-        // set test level to be categorized by Extent Report
-        testLevel = testExecutionContext.getLevel();
-
-        // Log test info
-        for(String message : messages)
-        {
-            SetUpInfo(message);
-        }
-    }
-
-    protected static String GetTestLevel()
-    {
-        return testLevel;
     }
 
     /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format. */
