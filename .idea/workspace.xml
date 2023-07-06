@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="">
+    <list default="true" id="a2b39580-ecb2-42b9-bd45-66cd26a94a3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ListenerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ListenerBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/UIBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/testReport.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +76,30 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.QAFramework [test]">
+  <component name="RunManager" selected="Gradle.PodiumTestSuite">
+    <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;webTestSuites.InvoiceCloudTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="InvoiceCloudTestSuite.TestAddElements" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -99,6 +123,29 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="OppFiTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;apiTestSuites.OppFiTestSuite&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="PodiumTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -113,52 +160,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;webTestSuites.PodiumTestSuite&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="PodiumTestSuite.TestInputMessageData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestInputMessageData&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="PodiumTestSuite.TestReturnButtonDoesNotWork" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestReturnButtonDoesNotWork&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -282,10 +283,10 @@
     <list>
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
+      <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+      <item itemvalue="Gradle.OppFiTestSuite" />
       <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
       <item itemvalue="Gradle.PodiumTestSuite" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesNotWork" />
       <item itemvalue="Gradle.QAFramework [test]" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
       <item itemvalue="TestNG.allTestsng TestKind:Suite" />
@@ -293,11 +294,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.QAFramework [test]" />
         <item itemvalue="Gradle.PodiumTestSuite" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesNotWork" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
+        <item itemvalue="Gradle.OppFiTestSuite" />
+        <item itemvalue="Gradle.InvoiceCloudTestSuite" />
         <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
+        <item itemvalue="Gradle.QAFramework [test]" />
       </list>
     </recent_temporary>
   </component>

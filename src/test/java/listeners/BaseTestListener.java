@@ -1,9 +1,6 @@
 package listeners;
 
-import autoFramework.ExtentFactory;
-import autoFramework.ExtentReportManager;
 import autoFramework.ListenerBase;
-import autoFramework.ThreadLocalExtentTest;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
@@ -24,17 +21,17 @@ public class BaseTestListener extends ListenerBase implements ITestListener
         SetPackageClassName(result.getMethod().getRealClass().getCanonicalName());
         SetScreenShotDir();
 
-        ThreadLocalExtentTest.SetTest(report.createTest(GetClassTestName()));
+        SetExtentTest(report.createTest(GetClassTestName()));
     }
 
     @Override
     public void onTestSuccess(ITestResult result)
     {
         Markup message = MarkupHelper.createLabel(GetTestName() + " passed.", ExtentColor.GREEN);
-        ExtentFactory.getInstance().GetExtent().log(Status.PASS, message)
+        GetExtentTest().log(Status.PASS, message)
                 .assignCategory(GetClassName())
-                .assignCategory(ExtentFactory.getInstance().GetLevel());
-        //ExtentFactory.getInstance().RemoveExtentObject();
+                .assignCategory(GetTestLevel());
+        RemoveExtentTest();
     }
 
     @Override
@@ -42,42 +39,36 @@ public class BaseTestListener extends ListenerBase implements ITestListener
     {
         if (GetPackageName().contains("webTestSuites")) {
             TakeScreenshot();
-            ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
+            GetExtentTest().log(Status.FAIL, result.getThrowable())
                     .addScreenCaptureFromPath(GetScreenShotDir())
                     .assignCategory(GetClassName())
-                .assignCategory(ExtentFactory.getInstance().GetLevel());
+                    .assignCategory(GetTestLevel());
         }
         else {
-            ExtentFactory.getInstance().GetExtent().log(Status.FAIL, result.getThrowable())
+            GetExtentTest().log(Status.FAIL, result.getThrowable())
                     .assignCategory(GetClassName())
-                    .assignCategory(ExtentFactory.getInstance().GetLevel());
+                    .assignCategory(GetTestLevel());
         }
-
-        //ExtentFactory.getInstance().RemoveExtentObject();
+        RemoveExtentTest();
     }
 
     @Override
     public void onTestSkipped(ITestResult result)
     {
-        ExtentFactory.getInstance().GetExtent().log(Status.SKIP, result.getMethod().getMethodName()+ " skipped.")
+        GetExtentTest().log(Status.SKIP, GetTestName() + " skipped")
                 .assignCategory(GetClassName())
-                .assignCategory(ExtentFactory.getInstance().GetLevel());;
-        //ExtentFactory.getInstance().RemoveExtentObject();
+                .assignCategory(GetTestLevel());
+        RemoveExtentTest();
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-
     }
 
     @Override
-    public void onStart(ITestContext context) {
-        report = ExtentReportManager.GetInstance();
-    }
+    public void onStart(ITestContext context) { report = SetUpExtentReporter(); }
 
     @Override
-    public void onFinish(ITestContext context) {
-        report.flush();
-    }
+    public void onFinish(ITestContext context) { report.flush(); }
 
 }

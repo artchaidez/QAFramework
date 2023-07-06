@@ -8,9 +8,10 @@ import java.io.File;
 
 public class ExtentReportManager {
 
-    static ExtentReports extent;
+    public ExtentReportManager() {}
+    ExtentReports extent;
 
-    private static ExtentReports SetUpExtentReporter()
+    private ExtentReports SetUpExtentReporter()
     {
         ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "testReport.html");
 
@@ -24,7 +25,7 @@ public class ExtentReportManager {
         return extent;
     }
 
-    public static ExtentReports GetInstance() {
+    public ExtentReports GetInstance() {
         if(extent == null) {
             SetUpExtentReporter();
         }

@@ -8,27 +8,16 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AutoLogger {
-
-    private final TestContextLogger testContextLogger = new TestContextLogger();
-    private final TestExecutionContext testExecutionContext = new TestExecutionContext();
-
+public class AutoLogger
+{
     // Needs to be static for Listeners
     private static int stepNumber = 1;
-
+    private final TestContextLogger testContextLogger = new TestContextLogger();
+    private final ExtentLogger extentLogger = new ExtentLogger();
     private LocalDateTime testStartDate = LocalDateTime.now();
     private LocalDateTime testEndDate = LocalDateTime.now();
-    private String suiteName;
-
-    private String testName;
-
     private List<Timespan> timeTakenList = new ArrayList<>() {
     };
-
-    public String GetCurrentTestName()
-    {
-        return testName;
-    }
 
     public boolean IsCurrentTestPassed()
     {
@@ -50,15 +39,12 @@ public class AutoLogger {
     public void Info(String message)
     {
         testContextLogger.Info(message);
-        ExtentFactory.getInstance().Info(message);
+        extentLogger.Info(message);
     }
 
     /** Log setup, teardown, or API info. NOTE: Logging this info for tests
-     * either will fail test or clutter Extent report */
-    public void SetUpInfo(String message)
-    {
-        testContextLogger.Info(message);
-    }
+     * will either fail test or clutter Extent report */
+    public void SetUpInfo(String message) { testContextLogger.Info(message); }
 
     /** Log error */
     public void Error(String message)
@@ -78,7 +64,7 @@ public class AutoLogger {
     {
         message = "   (PASS)   Got : " + message;
         testContextLogger.Pass(message);
-        ExtentFactory.getInstance().Pass(message);
+        extentLogger.PassStep(message);
     }
 
     public void FailCompare(Throwable ex)
@@ -95,14 +81,14 @@ public class AutoLogger {
 
         testContextLogger.Fail("   (FAIL) " + actual);
         testContextLogger.Fail(expected);
-        ExtentFactory.getInstance().Fail(actual, expected);
+        extentLogger.Fail(actual, expected);
     }
 
     /** Log what is currently being done by the code. Increments int stepNumber.*/
     public void Step(String message)
     {
         testContextLogger.Step(message,stepNumber);
-        ExtentFactory.getInstance().LogStep(message, stepNumber);
+        extentLogger.LogStep(message, stepNumber);
 
         stepNumber++;
     }
@@ -114,7 +100,7 @@ public class AutoLogger {
     {
         message = MessageFormat.format(message, actual);
         testContextLogger.Step(message,stepNumber);
-        ExtentFactory.getInstance().LogStep(message, stepNumber);
+        extentLogger.LogStep(message, stepNumber);
 
         stepNumber++;
     }
@@ -127,7 +113,7 @@ public class AutoLogger {
         SetUpInfo("REQUEST BODY: " +  requestBody);
         SetUpInfo("STATUS CODE: " + response.statusCode());
         SetUpInfo("RESPONSE BODY: " + response.asString());
-        ExtentFactory.getInstance().ApiLog(response, requestBody, resource, requestMethod);
+        extentLogger.ApiLog(response, requestBody, resource, requestMethod);
     }
 
     /** Used in Get() ands Delete() to log API info*/
@@ -137,45 +123,16 @@ public class AutoLogger {
         SetUpInfo(requestMethod + ": " + resource);
         SetUpInfo("STATUS CODE: " + response.statusCode());
         SetUpInfo("RESPONSE BODY: " + response.asString());
-        ExtentFactory.getInstance().ApiLog(response, resource, requestMethod);
+        extentLogger.ApiLog(response, resource, requestMethod);
     }
 
     /** Resets int stepNumber after test method finishes. */
-    protected void ResetSteps()
-    {
-        stepNumber = 1;
-    }
+    protected void ResetSteps() { stepNumber = 1; }
 
     public void IgnoreTest(String message)
     {
         Warning(message);
         //ToDo figure out how to ignore test
-    }
-
-    /** Logs testExecutionContext to provide information at the start of the test. */
-    public void LogStartTestInfo(String testName, String packageClassName) throws ClassNotFoundException {
-
-        testExecutionContext.GetTestInfoContext(testName, packageClassName);
-
-        List<String> messages = new ArrayList<>();
-        messages.add("");
-        messages.add("==========================================================================");
-        messages.add("     Starting test  : " + testName);
-        messages.add("     Test package   : " + testExecutionContext.getPackageName());
-        messages.add("     Test class     : " + testExecutionContext.getClassName());
-        messages.add("     Description    : " + testExecutionContext.getDescription());
-        messages.add("     Test level     : " + testExecutionContext.getLevel());
-        //messages.add("     Test categories:  " + testExecutionContext.getCategories());
-        messages.add("==========================================================================");
-
-        // set test level to be categorized by Extent Report
-        ExtentFactory.getInstance().SetLevel(testExecutionContext.getLevel());
-
-        // Log test info
-        for(String message : messages)
-        {
-            SetUpInfo(message);
-        }
     }
 
     /** Returns date format of: yyyy-mm-dd_hh-mm. Hours (hh) will be in 24-hour format. */
