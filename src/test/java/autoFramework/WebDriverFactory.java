@@ -14,7 +14,7 @@ public class WebDriverFactory extends AutoLogger{
 
     protected static ThreadLocal<WebDriver> _WebDriver = new ThreadLocal<>();
     protected static RemoteWebDriver rwd;
-    public WebDriverFactory()
+    WebDriverFactory()
     {
 
     }

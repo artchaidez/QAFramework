@@ -5,29 +5,25 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import java.io.File;
+import java.util.Objects;
 
 public class ExtentReportManager {
 
-    public ExtentReportManager() {}
-    ExtentReports extent;
+    ExtentReportManager() {}
+    static ExtentReports extent;
 
-    private ExtentReports SetUpExtentReporter()
+    /** Set up ExtentReport if it is null, or return existing extent. */
+    public static ExtentReports SetUpExtentReporter()
     {
-        ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "testReport.html");
+        if (Objects.isNull(extent)) {
+            ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "testReport.html");
 
-        extent = new ExtentReports();
-        extent.attachReporter(reporter);
+            extent = new ExtentReports();
+            extent.attachReporter(reporter);
 
-        reporter.config().setTheme(Theme.DARK);
-        reporter.config().setDocumentTitle("Extent Report");
-        reporter.config().setReportName("QA Framework");
-
-        return extent;
-    }
-
-    public ExtentReports GetInstance() {
-        if(extent == null) {
-            SetUpExtentReporter();
+            reporter.config().setTheme(Theme.DARK);
+            reporter.config().setDocumentTitle("Extent Report");
+            reporter.config().setReportName("QA Framework");
         }
         return extent;
     }

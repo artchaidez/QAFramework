@@ -21,7 +21,7 @@ public class ListenerBase extends AutoLogger
     private static String screenshotDir;
     private static String testLevel;
     private static final ExtentFactory extentFactory = new ExtentFactory();
-    private final ExtentReportManager extentReportManager = new ExtentReportManager();
+    private static final ExtentReportManager extentReportManager = new ExtentReportManager();
     private final TestExecutionContext testExecutionContext = new TestExecutionContext();
 
     // Getter methods for Strings
@@ -54,7 +54,7 @@ public class ListenerBase extends AutoLogger
 
     // Methods for Extent Report
     /** Set up ExtentReport and ExtentSparkReporter. */
-    public ExtentReports SetUpExtentReporter() { return extentReportManager.GetInstance(); }
+    public ExtentReports SetUpExtentReporter() { return extentReportManager.SetUpExtentReporter(); }
 
     // TODO: Keep, may not be needed
     public ExtentFactory GetExtentFactory() { return extentFactory; }

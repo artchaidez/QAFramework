@@ -11,15 +11,15 @@ import io.restassured.response.Response;
 // IExecutionListener does not resolve issue
 public class ExtentFactory
 {
-    public ExtentFactory() {
+    ExtentFactory() {
     }
 
     private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal();
 
-    public ExtentTest GetExtentTest() { return extentTest.get(); }
+    public static ExtentTest GetExtentTest() { return extentTest.get(); }
 
-    public void SetExtentTest(ExtentTest extentTestObject) { extentTest.set(extentTestObject); }
+    public static void SetExtentTest(ExtentTest extentTestObject) { extentTest.set(extentTestObject); }
 
-    public void RemoveExtentObject() { extentTest.remove();}
+    public static void RemoveExtentObject() { extentTest.remove();}
 
 }

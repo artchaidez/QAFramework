@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a2b39580-ecb2-42b9-bd45-66cd26a94a3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/AutoLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentReportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentReportManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ListenerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ListenerBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/WebDriverFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/testReport.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,7 +77,7 @@
       <recent name="UnitTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.PodiumTestSuite">
+  <component name="RunManager" selected="Gradle.QAFramework [test]">
     <configuration name="InvoiceCloudTestSuite" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -294,11 +295,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.QAFramework [test]" />
         <item itemvalue="Gradle.PodiumTestSuite" />
         <item itemvalue="Gradle.OppFiTestSuite" />
         <item itemvalue="Gradle.InvoiceCloudTestSuite" />
         <item itemvalue="Gradle.InvoiceCloudTestSuite.TestAddElements" />
-        <item itemvalue="Gradle.QAFramework [test]" />
       </list>
     </recent_temporary>
   </component>
