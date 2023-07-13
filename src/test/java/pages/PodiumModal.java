@@ -39,7 +39,6 @@ public class PodiumModal extends UIBase {
     public void SelectFirstLocation() throws Exception
     {
         firstLocation.Click(5);
-        Info("Selected first location in modal");
     }
 
     /** Returns name of first location on list.  Must be on 'Select Location' modal.*/
@@ -106,14 +105,12 @@ public class PodiumModal extends UIBase {
     public void ClickOnTermsButton() throws Exception
     {
         subjectTermsLink.Click(5);
-        Info("Clicked on 'use is subject to terms'");
     }
 
     /** Click on arrow on message modal to return to location list modal. Must be on 'Send message' modal. */
     public void ClickOnReturnArrowBtn() throws Exception
     {
         returnArrowBtn.Click(5);
-        Info("Clicked on return arrow button");
     }
 
     /** Returns the name of the location, if modal is open to send a message. Must be on 'Send message' modal. */

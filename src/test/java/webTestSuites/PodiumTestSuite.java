@@ -31,7 +31,6 @@ public class PodiumTestSuite extends AutoTestBase {
 
         Step("Verify on site by finding podium bubble");
             Pages.PodiumBubble.PodiumBubble().IsVisible(5);
-            Info("Found Podium bubble");
 
         Step("Switch to Podium bubble iframe");
             Pages.PodiumBubble.GoToPodiumBubbleFrame();
@@ -42,9 +41,8 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Switch to Podium modal iframe");
             Pages.PodiumBubble.GoToPodiumModalFrame();
 
-        Step("Verify on Podium Modal by locating search bar");
+        Step("Verify on Podium Modal by clicking search bar");
             Pages.PodiumModal.LocationSearchBar().Click(5);
-            Info("Podium modal is visible");
     }
 
     @Test ()
@@ -57,16 +55,14 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Go immediately to Podium modal");
             Pages.PodiumBubble.JumpToPodiumModal();
 
-        Step("Verify on Podium modal");
-            Pages.PodiumModal.LocationSearchBar().IsVisible(5);
-            Info("Podium modal is open");
+        Step("Verify on Podium modal by clicking searchbar");
+            Pages.PodiumModal.LocationSearchBar().Click(5);
 
         Step("Click on first location in location list");
             Pages.PodiumModal.SelectFirstLocation();
 
-        Step("Verify on message modal");
-            Pages.PodiumModal.NameTextInput().IsVisible(5);
-            Info("Within message modal as name text input was found.");
+        Step("Verify on message modal by clicking name text input");
+            Pages.PodiumModal.NameTextInput().Click(5);
     }
 
     @Test ()
@@ -81,11 +77,7 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Go immediately to Podium modal");
             Pages.PodiumBubble.JumpToPodiumModal();
 
-        Step("Verify {0} is visible in location list", location);
-            Pages.PodiumModal.FindByLocation(location).IsVisible(5);
-            Info(MessageFormat.format("{0} is in the modal", location));
-
-        Step("Click on {0}", location);
+        Step("Click on {0} in location list", location);
             Pages.PodiumModal.FindByLocation(location).Click(5);
 
         Step("Verify {0} opened up", location);
@@ -111,9 +103,8 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Go immediately to Podium modal");
             Pages.PodiumBubble.JumpToPodiumModal();
 
-        Step("Verify on Podium modal");
-            Pages.PodiumModal.LocationSearchBar().IsVisible(5);
-            Info("Podium modal open");
+        Step("Verify on Podium modal clicking searchbar");
+            Pages.PodiumModal.LocationSearchBar().Click(5);
 
         Step("Click on first location in location list");
             Pages.PodiumModal.SelectFirstLocation();
@@ -121,16 +112,14 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Input name in Name text input");
             Pages.PodiumModal.SetTextInNameInput(name, 10, null);
 
-        Step("Verify text was put into name input");
+        Step("Verify text was put into name input by finding visible checkmark");
             Pages.PodiumModal.NameCheckmark().IsVisible(5);
-            Info("Message has text input");
 
         Step("Input phone number into mobile phone text input");
             Pages.PodiumModal.SetMobileNumberInput(telephone, 10, null);
 
-        Step("Verify phone number was put into input");
+        Step("Verify phone number was put into input by finding visible checkmark");
             Pages.PodiumModal.MobileNumberCheckmark().IsVisible(5);
-            Info("Mobile number has text input");
 
         Step("Input message in message text input");
             Pages.PodiumModal.SetMessageInput(message, 10, null);
@@ -139,9 +128,8 @@ public class PodiumTestSuite extends AutoTestBase {
             String messageIndicator = Pages.PodiumModal.MessageInputIndicator();
             Verify.That(messageIndicator).Equals(correctMessageIndicator);
 
-        Step("Verify all inputs have data");
+        Step("Verify all inputs have data by finding valid send button");
             Pages.PodiumModal.SendButton().IsVisible(5);
-            Info("All inputs filled out and send button is valid");
     }
 
     @Test ()
@@ -154,9 +142,8 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Go immediately to Podium modal");
             Pages.PodiumBubble.JumpToPodiumModal();
 
-        Step("Verify on Podium modal");
-            Pages.PodiumModal.LocationSearchBar().IsVisible(5);
-            Info("Podium modal open");
+        Step("Verify on Podium modal by clicking searchbar");
+            Pages.PodiumModal.LocationSearchBar().Click(5);
 
         Step("Click on first location to open the message modal");
             Pages.PodiumModal.SelectFirstLocation();
@@ -169,7 +156,6 @@ public class PodiumTestSuite extends AutoTestBase {
 
         Step("Verify on Terms and Service page by clicking on 'Terms of Service'");
             Pages.PodiumTermsOfService.TermsOfService().Click(5);
-            Info("Clicked on 'Terms of Service'");
     }
 
     @Test (enabled = false, description = "Bug fixed.")
@@ -220,23 +206,20 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Go immediately to Podium modal");
             Pages.PodiumBubble.JumpToPodiumModal();
 
-        Step("Verify on Podium modal");
-            Pages.PodiumModal.LocationSearchBar().IsVisible(5);
-            Info("Podium modal open");
+        Step("Verify on Podium modal by clicking on searchbar");
+            Pages.PodiumModal.LocationSearchBar().Click(5);
 
         Step("Click on first location in location list");
             Pages.PodiumModal.SelectFirstLocation();
 
-        Step("Verify on message modal");
-            Pages.PodiumModal.NameTextInput().IsVisible(5);
-            Info("Within message modal as name text input was found.");
+        Step("Verify on message modal by clicking on name text input");
+            Pages.PodiumModal.NameTextInput().Click(5);
 
         Step("Click on return arrow");
             Pages.PodiumModal.ClickOnReturnArrowBtn();
 
-        Step("Verify on 'Select Location' modal by checking the location searchbar is visible");
-            Pages.PodiumModal.LocationSearchBar().IsVisible(5);
-            Info("Searchbar is visible");
+        Step("Verify on 'Select Location' modal by clicking on searchbar");
+            Pages.PodiumModal.LocationSearchBar().Click(5);
     }
 
     @Test ()
@@ -256,9 +239,8 @@ public class PodiumTestSuite extends AutoTestBase {
         Step("Go immediately to Podium modal");
             Pages.PodiumBubble.JumpToPodiumModal();
 
-        Step("Verify on Podium modal");
-            Pages.PodiumModal.LocationSearchBar().IsVisible(5);
-            Info("Podium modal open");
+        Step("Verify on Podium modal by clicking on searchbar");
+            Pages.PodiumModal.LocationSearchBar().Click(5);
 
         Step("Input ZIP code {0} into searchbar", bountifulZIP);
             Pages.PodiumModal.SetLocationSearchBarText(bountifulZIP);
