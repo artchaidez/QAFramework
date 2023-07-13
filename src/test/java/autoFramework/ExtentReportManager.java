@@ -28,4 +28,9 @@ public class ExtentReportManager {
         return extent;
     }
 
+    public static void Flush()
+    {
+        extent.flush();
+    }
+
 }

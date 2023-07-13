@@ -35,7 +35,11 @@ dependencies {
 test {
     // run in command line: ./gradlew cleanTest test
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+    // https://docs.gradle.org/current/userguide/java_testing.html#sec:debugging_java_tests
+    // TODO: try 'Debugging when running tests' to get ExtentReport to work
     useTestNG{
+        listeners << 'listeners.BaseInvokedMethodListener'
+        listeners << 'listeners.BaseTestListener'
     }
 
     testLogging {

@@ -1,7 +1,6 @@
 package listeners;
 
 import autoFramework.ListenerBase;
-import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
@@ -12,7 +11,6 @@ import org.testng.ITestResult;
 
 public class BaseTestListener extends ListenerBase implements ITestListener
 {
-    static ExtentReports report;
 
     @Override
     public void onTestStart(ITestResult result)
@@ -21,7 +19,7 @@ public class BaseTestListener extends ListenerBase implements ITestListener
         SetPackageClassName(result.getMethod().getRealClass().getCanonicalName());
         SetScreenShotDir();
 
-        SetExtentTest(report.createTest(GetClassTestName()));
+        SetExtentTest(GetExtentReport().createTest(GetClassTestName()));
     }
 
     @Override
@@ -66,9 +64,9 @@ public class BaseTestListener extends ListenerBase implements ITestListener
     }
 
     @Override
-    public void onStart(ITestContext context) { report = SetUpExtentReporter(); }
+    public void onStart(ITestContext context) { SetUpExtentReporter(); }
 
     @Override
-    public void onFinish(ITestContext context) { report.flush(); }
+    public void onFinish(ITestContext context) { FlushExtentReport(); }
 
 }

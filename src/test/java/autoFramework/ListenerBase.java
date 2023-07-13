@@ -54,10 +54,16 @@ public class ListenerBase extends AutoLogger
 
     // Methods for Extent Report
     /** Set up ExtentReport and ExtentSparkReporter. */
-    public ExtentReports SetUpExtentReporter() { return extentReportManager.SetUpExtentReporter(); }
+    public static ExtentReports SetUpExtentReporter() { return extentReportManager.SetUpExtentReporter(); }
 
     // TODO: Keep, may not be needed
     public ExtentFactory GetExtentFactory() { return extentFactory; }
+
+    public static ExtentReports GetExtentReport() {
+        return SetUpExtentReporter();
+    }
+
+    public static void FlushExtentReport() { extentReportManager.Flush(); }
 
     public static ExtentTest GetExtentTest() { return extentFactory.GetExtentTest(); }
 
