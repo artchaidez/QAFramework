@@ -38,7 +38,7 @@ public class RegresApi extends ApiBase {
     }
 
     /** Wrapper method for the POST call that returns class RegresUser
-     * @param regresRequest RegresUser obhect that will be converted to json
+     * @param regresRequest RegresUser object that will be converted to json
      * @param resource URI */
     public RegresUser PostRegres(RegresUser regresRequest, String resource) throws Exception
     {

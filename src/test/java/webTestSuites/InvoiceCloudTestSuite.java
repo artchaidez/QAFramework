@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 public class InvoiceCloudTestSuite extends AutoTestBase {
 
-    private String herokuURL = "https://the-internet.herokuapp.com/add_remove_elements/";
+    private final String herokuURL = "https://the-internet.herokuapp.com/add_remove_elements/";
 
     @BeforeMethod
     public void TestSetUp() {

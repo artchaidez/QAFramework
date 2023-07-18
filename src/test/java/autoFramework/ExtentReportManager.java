@@ -10,10 +10,10 @@ import java.util.Objects;
 public class ExtentReportManager {
 
     ExtentReportManager() {}
-    static ExtentReports extent;
+    protected static ExtentReports extent;
 
     /** Set up ExtentReport if it is null, or return existing extent. */
-    public static ExtentReports SetUpExtentReporter()
+    public ExtentReports SetUpExtentReporter()
     {
         if (Objects.isNull(extent)) {
             ExtentSparkReporter reporter = new ExtentSparkReporter(System.getProperty("user.dir") + File.separator + "testReport.html");
@@ -28,7 +28,7 @@ public class ExtentReportManager {
         return extent;
     }
 
-    public static void Flush()
+    public void Flush()
     {
         extent.flush();
     }

@@ -30,6 +30,7 @@ public class BaseInvokedMethodListener extends ListenerBase implements IInvokedM
     {
         ResetSteps();
 
+        // FIXME: Clean up into a method
         if (method.isTestMethod()) {
 
             List verificationFailures = Verify.getVerificationFailures();

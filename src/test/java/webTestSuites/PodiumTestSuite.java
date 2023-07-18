@@ -6,11 +6,9 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.text.MessageFormat;
-
 public class PodiumTestSuite extends AutoTestBase {
 
-    private String podiumURL = "https://demo.podium.tools/qa-webchat-lorw/";
+    private final String podiumURL = "https://demo.podium.tools/qa-webchat-lorw/";
     @BeforeMethod
     public void TestSetUp() {
         Pages.InitWebDriver();

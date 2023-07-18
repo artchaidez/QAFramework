@@ -93,9 +93,8 @@ public class TrelloCardPage extends UIBase {
 
         addCheckListBtn.Click(5);
 
-        for (int i = 0; i < checkListItems.size(); i++)
-        {
-            addItemToChecklistText.SetText(checkListItems.get(i), 5, false);
+        for (String checkListItem : checkListItems) {
+            addItemToChecklistText.SetText(checkListItem, 5, false);
             addItemToCheckListText.Click(5);
         }
         Info(String.format("Checklist '%s' created", checklistTitle));
@@ -104,8 +103,8 @@ public class TrelloCardPage extends UIBase {
     /** Within a card, complete the checklist found in the card. */
     public void CompleteCheckList(ArrayList<String> checkListItems) throws Exception
     {
-        for (int i = 0; i < checkListItems.size(); i++) {
-            String xpath = String.format("//*[text()='%s']/ancestor::div[@class= 'checklist-item no-assignee no-due']//*[@data-testid='checklist-item-checkbox']", checkListItems.get(i));
+        for (String checkListItem : checkListItems) {
+            String xpath = String.format("//*[text()='%s']/ancestor::div[@class= 'checklist-item no-assignee no-due']//*[@data-testid='checklist-item-checkbox']", checkListItem);
             SeleniumControl checkList = new SeleniumControl(By.xpath(xpath));
             checkList.Click(5);
             Sleep(1);

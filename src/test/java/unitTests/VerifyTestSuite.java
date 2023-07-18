@@ -59,7 +59,7 @@ public class VerifyTestSuite extends AutoTestBase{
         Step(String.format("Verify.That(%s).Equals(%s) runs and passes", actualString, expectedString));
             Verify.That(actualString).Equals("Art");
 
-        Step(String.format("Verify.That(int).Equals(int) runs and passes", actualInt, expectedInt));
+        Step(String.format("Verify.That(%s).Equals(%s) runs and passes", actualInt, expectedInt));
             Verify.That(actualInt).Equals(expectedInt);
     }
 

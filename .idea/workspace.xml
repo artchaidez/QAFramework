@@ -6,7 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a2b39580-ecb2-42b9-bd45-66cd26a94a3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/PodiumModal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/apis/RegresApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apis/RegresApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentReportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentReportManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ListenerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ListenerBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/listeners/BaseInvokedMethodListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/InvoiceCloudPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/InvoiceCloudPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/VerifyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyTestSuite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/testReport.html" afterDir="false" />
     </list>
@@ -122,29 +130,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PodiumTestSuite.TestInputMessageData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;webTestSuites.PodiumTestSuite.TestInputMessageData&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="PodiumTestSuite.TestLocationSearchBar" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -187,6 +172,27 @@
         <option name="vmOptions" />
       </ExternalSystemSettings>
       <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="QAFramework [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
@@ -285,10 +291,10 @@
       <item itemvalue="Docker.Dockerfile" />
       <item itemvalue="Gradle.QAFramework" />
       <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
-      <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
       <item itemvalue="Gradle.PodiumTestSuite.TestLocationSearchBar" />
       <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
       <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+      <item itemvalue="Gradle.QAFramework [test]" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/allTests.xml" />
       <item itemvalue="TestNG.allTestsng TestKind:Suite" />
       <item itemvalue="TestNG.C:/Users/artch/IdeaProjects/QAFramework/noEnvVarsTests.xml" />
@@ -296,17 +302,17 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.InvoiceCloudTestSuite" />
+        <item itemvalue="Gradle.QAFramework [test]" />
         <item itemvalue="Gradle.PodiumTestSuite.TestClickSubjectTerms" />
         <item itemvalue="Gradle.PodiumTestSuite.TestLocationSearchBar" />
         <item itemvalue="Gradle.PodiumTestSuite.TestReturnButtonDoesWork" />
-        <item itemvalue="Gradle.PodiumTestSuite.TestInputMessageData" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="914d3150-6a39-41fb-9036-1bf9e1fb6f0b" name="Changes" comment="" />
+      <changelist id="a2b39580-ecb2-42b9-bd45-66cd26a94a3d" name="Changes" comment="" />
       <created>1670605649343</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -326,15 +332,6 @@
     </option>
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java</url>
-          <line>131</line>
-          <option name="timeStamp" value="184" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="apiModals.Regres" memberName="total_pages" />
