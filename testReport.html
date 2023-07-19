@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">QA Framework</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jul 18, 2023 11:16:53 AM</span></a>
+<a href="#"><span class="badge badge-primary">Jul 19, 2023 12:11:25 PM</span></a>
 </li>
 </ul>
 </div>
@@ -79,7 +79,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">Regression</a><a class="dropdown-item" href="#">InvoiceCloudTestSuite</a>
+<a class="dropdown-item" href="#">Smoke</a><a class="dropdown-item" href="#">OppFiTestSuite</a><a class="dropdown-item" href="#">Regression</a><a class="dropdown-item" href="#">PodiumTestSuite</a>
 </ul>
 </li>
 </ul>
@@ -87,12 +87,12 @@
       <ul class="test-list-item">
         <li class="test-item"  status="pass" test-id="1"
           author=""
-          tag="InvoiceCloudTestSuite Regression"
+          tag="Regression OppFiTestSuite"
           device="">
           <div class="test-detail">
-            <p class="name">InvoiceCloudTestSuite.TestAddElements</p>
+            <p class="name">OppFiTestSuite.OffersApiAcceptedTest</p>
             <p class="text-sm">
-              <span>11:16:54 AM</span> / <span>00:00:00:891</span>
+              <span>12:11:25 PM</span> / <span>00:00:01:432</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -100,16 +100,16 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">InvoiceCloudTestSuite.TestAddElements</h5>
-<span class='badge badge-success'>07.18.2023 11:16:54 AM</span>
-<span class='badge badge-danger'>07.18.2023 11:16:55 AM</span>
-<span class='badge badge-default'>00:00:00:891</span>
+<h5 class="test-status text-pass">OppFiTestSuite.OffersApiAcceptedTest</h5>
+<span class='badge badge-success'>07.19.2023 12:11:25 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:27 PM</span>
+<span class='badge badge-default'>00:00:01:432</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">InvoiceCloudTestSuite</span>
-<span class="badge badge-pill badge-default">Regression</span></div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">OppFiTestSuite</span></div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
@@ -117,79 +117,58 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:54 AM</td>
+        <td>12:11:25 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 1 - Go to Heroku URL</span>
+          <span class='badge white-text blue'>Step 1 - Set up API classes for the request body</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:55 AM</td>
+        <td>12:11:25 PM</td>
         <td>
-          Navigating to https://the-internet.herokuapp.com/add_remove_elements/
+          <span class='badge white-text blue'>Step 2 - Set up Offer API Request Body.</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:55 AM</td>
+        <td>12:11:25 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 2 - Click on Add Element 5 times</span>
+          Offer for Jennifer Smith created
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:55 AM</td>
+        <td>12:11:25 PM</td>
         <td>
-          [Click] By.xpath ---> Add Element
+          <span class='badge white-text blue'>Step 3 - Make a post call.</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:55 AM</td>
+        <td>12:11:27 PM</td>
         <td>
-          [Click] By.xpath ---> Add Element
+          POST: https://partner-test.opploans.com/api/lde/v4/offer<br />REQUEST BODY: {"isProduction":false,"language":"en","currency":"USD","campaignId":"11-50-newhope","socialSecurityNumber":"123456780","leadOfferId":"20160912-21EC2020-3AEA-4069-A2DD-08002B30309D","email":"test_customer@gmail.com","stateCode":"FL","grossMonthlyIncome":100000.0,"personalInfo":{"firstName":"Jennifer","lastName":"Smith","dateOfBirth":"19451009","address":{"streetAddress":"123 Main Street","city":"Miami","zip":"33125","countryCode":"US"},"mobilePhone":"3224340098","homePhone":"4523452232"},"bankInfo":{"bankName":"Chase","abaRoutingNumber":"123456789","accountNumber":"012345789","accountType":1.0,"accountLength":6.0},"incomeInfo":{"incomeType":"Employment","payrollType":"DirectDeposit","payrollFrequency":1.0,"lastPayrollDate":"20160915"},"employmentInfo":{"employerName":"ToysRUs","hireDate":"20110516"},"requestedLoanAmount":1500.0,"accepted":false,"partnerId":0.0}<br />STATUS CODE: 200<br />RESPONSE BODY: {"request":{"email":"test_customer@gmail.com","incomeInfo":{"incomeType":"Employment","payrollType":"DirectDeposit","payrollFrequency":1.0,"lastPayrollDate":"20160915"},"campaignId":"11-50-newhope","requestedLoanAmount":1500.0,"accepted":false,"grossMonthlyIncome":100000.0,"leadOfferId":"20160912-21EC2020-3AEA-4069-A2DD-08002B30309D","socialSecurityNumber":"123456780","isProduction":false,"personalInfo":{"firstName":"Jennifer","lastName":"Smith","dateOfBirth":"19451009","address":{"streetAddress":"123 Main Street","city":"Miami","zip":"33125","countryCode":"US"},"mobilePhone":"3224340098","homePhone":"4523452232"},"currency":"USD","language":"en","stateCode":"FL","employmentInfo":{"employerName":"ToysRUs","hireDate":"20110516"},"partnerId":0.0,"bankInfo":{"bankName":"Chase","abaRoutingNumber":"123456789","accountNumber":"012345789","accountType":1.0,"accountLength":6.0}},"accepted":true,"partnerId":8675309,"reference_id":"5c1c8fa8-b567-4f68-9881-dbf6254916cf","code":201,"status":"APPROVED","apiVersion":"4.8","offers":[{"description":"Because you deserve more than a payday loan!","amount":4000,"representativeAPR":159.99,"offerRefID":"f52498ec-996b-4613-aca9-4c58440f668b","interestRate":160,"productName":"feb","term":10,"currency":"USD","monthlyPayment":747,"url":"https://secure.demo.opploans.com/ptr/8675309/lead/f52498ec-996b-4613-aca9-4c58440f668b"}]}<br />
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:55 AM</td>
+        <td>12:11:27 PM</td>
         <td>
-          [Click] By.xpath ---> Add Element
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:55 AM</td>
-        <td>
-          [Click] By.xpath ---> Add Element
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:55 AM</td>
-        <td>
-          [Click] By.xpath ---> Add Element
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:55 AM</td>
-        <td>
-          <span class='badge white-text blue'>Step 3 - Confirm total delete buttons on page are 5</span>
+          <span class='badge white-text blue'>Step 4 - Verify loan was accepted.</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:16:55 AM</td>
+        <td>12:11:27 PM</td>
         <td>
-          <span class='badge white-text green'>   (PASS)   Got : 5</span>
+          <span class='badge white-text green'>   (PASS)   Got : True</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:16:55 AM</td>
+        <td>12:11:27 PM</td>
         <td>
-          <span class='badge white-text green'>TestAddElements passed.</span>
+          <span class='badge white-text green'>OffersApiAcceptedTest passed.</span>
         </td>
       </tr>
   </tbody>
@@ -199,12 +178,12 @@
         </li>
         <li class="test-item"  status="pass" test-id="2"
           author=""
-          tag="InvoiceCloudTestSuite Regression"
+          tag="Regression OppFiTestSuite"
           device="">
           <div class="test-detail">
-            <p class="name">InvoiceCloudTestSuite.TestClickElementalSelenium</p>
+            <p class="name">OppFiTestSuite.OffersApiCallGetsBadDataTest</p>
             <p class="text-sm">
-              <span>11:16:56 AM</span> / <span>00:00:01:207</span>
+              <span>12:11:27 PM</span> / <span>00:00:00:232</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -212,16 +191,16 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">InvoiceCloudTestSuite.TestClickElementalSelenium</h5>
-<span class='badge badge-success'>07.18.2023 11:16:56 AM</span>
-<span class='badge badge-danger'>07.18.2023 11:16:57 AM</span>
-<span class='badge badge-default'>00:00:01:207</span>
+<h5 class="test-status text-pass">OppFiTestSuite.OffersApiCallGetsBadDataTest</h5>
+<span class='badge badge-success'>07.19.2023 12:11:27 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:27 PM</span>
+<span class='badge badge-default'>00:00:00:232</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">InvoiceCloudTestSuite</span>
-<span class="badge badge-pill badge-default">Regression</span></div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Regression</span>
+<span class="badge badge-pill badge-default">OppFiTestSuite</span></div>
 </div>
 </div><div class="detail-body mt-4">
 <table class="table table-sm">
@@ -229,58 +208,37 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:56 AM</td>
+        <td>12:11:27 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 1 - Go to Heroku URL</span>
+          <span class='badge white-text blue'>Step 1 - Set up bad API Request Body.</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:56 AM</td>
+        <td>12:11:27 PM</td>
         <td>
-          Navigating to https://the-internet.herokuapp.com/add_remove_elements/
+          <span class='badge white-text blue'>Step 2 - Make a post call.</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:56 AM</td>
+        <td>12:11:27 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 2 - Click on Elemental Selenium link</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:56 AM</td>
-        <td>
-          [Click] By.xpath ---> Elemental Selenium
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:57 AM</td>
-        <td>
-          <span class='badge white-text blue'>Step 3 - Switch to Elemental Selenium page</span>
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:57 AM</td>
-        <td>
-          Switched to newest tab: Elemental Selenium | Elemental Selenium
-        </td>
-      </tr>
-      <tr class="event-row">
-        <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:57 AM</td>
-        <td>
-          <span class='badge white-text blue'>Step 4 - Confirm Elemental Selenium tab is opened by finding Elemental Selenium link</span>
+          <span class='badge white-text blue'>Step 3 - Verify bad data was returned: status code 500.</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:16:57 AM</td>
+        <td>12:11:27 PM</td>
         <td>
-          <span class='badge white-text green'>TestClickElementalSelenium passed.</span>
+          <span class='badge white-text green'>   (PASS)   Got : 500</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text green'>OffersApiCallGetsBadDataTest passed.</span>
         </td>
       </tr>
   </tbody>
@@ -290,12 +248,12 @@
         </li>
         <li class="test-item"  status="pass" test-id="3"
           author=""
-          tag="InvoiceCloudTestSuite Regression"
+          tag="PodiumTestSuite Smoke"
           device="">
           <div class="test-detail">
-            <p class="name">InvoiceCloudTestSuite.TestDeleteElement</p>
+            <p class="name">OppFiTestSuite.OffersApiGetsDeclinedTest</p>
             <p class="text-sm">
-              <span>11:16:58 AM</span> / <span>00:00:01:612</span>
+              <span>12:11:27 PM</span> / <span>00:00:00:227</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -303,15 +261,321 @@
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">InvoiceCloudTestSuite.TestDeleteElement</h5>
-<span class='badge badge-success'>07.18.2023 11:16:58 AM</span>
-<span class='badge badge-danger'>07.18.2023 11:17:00 AM</span>
-<span class='badge badge-default'>00:00:01:612</span>
+<h5 class="test-status text-pass">OppFiTestSuite.OffersApiGetsDeclinedTest</h5>
+<span class='badge badge-success'>07.19.2023 12:11:27 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:27 PM</span>
+<span class='badge badge-default'>00:00:00:227</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
 </div>
-<div class="m-t-15"><span class="badge badge-pill badge-default">InvoiceCloudTestSuite</span>
+<div class="m-t-15"><span class="badge badge-pill badge-default">PodiumTestSuite</span>
+<span class="badge badge-pill badge-default">Smoke</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Set up API classes for the request body</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 2 - Set up Offer API Request Body.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          Offer for Jennifer Smith created
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 3 - Make a post call.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          POST: https://partner-test.opploans.com/api/lde/v4/offer<br />REQUEST BODY: {"isProduction":false,"language":"en","currency":"USD","campaignId":"11-50-newhope","socialSecurityNumber":"123450000","leadOfferId":"20160912-21EC2020-3AEA-4069-A2DD-08002B30309D","email":"test_customer@gmail.com","stateCode":"FL","grossMonthlyIncome":100000.0,"personalInfo":{"firstName":"Jennifer","lastName":"Smith","dateOfBirth":"19451009","address":{"streetAddress":"123 Main Street","city":"Miami","zip":"33125","countryCode":"US"},"mobilePhone":"3224340098","homePhone":"4523452232"},"bankInfo":{"bankName":"Chase","abaRoutingNumber":"123456789","accountNumber":"012345789","accountType":1.0,"accountLength":6.0},"incomeInfo":{"incomeType":"Employment","payrollType":"DirectDeposit","payrollFrequency":1.0,"lastPayrollDate":"20160915"},"employmentInfo":{"employerName":"ToysRUs","hireDate":"20110516"},"requestedLoanAmount":1500.0,"accepted":false,"partnerId":0.0}<br />STATUS CODE: 200<br />RESPONSE BODY: {"request":{"email":"test_customer@gmail.com","incomeInfo":{"incomeType":"Employment","payrollType":"DirectDeposit","payrollFrequency":1.0,"lastPayrollDate":"20160915"},"campaignId":"11-50-newhope","requestedLoanAmount":1500.0,"accepted":false,"grossMonthlyIncome":100000.0,"leadOfferId":"20160912-21EC2020-3AEA-4069-A2DD-08002B30309D","socialSecurityNumber":"123450000","isProduction":false,"personalInfo":{"firstName":"Jennifer","lastName":"Smith","dateOfBirth":"19451009","address":{"streetAddress":"123 Main Street","city":"Miami","zip":"33125","countryCode":"US"},"mobilePhone":"3224340098","homePhone":"4523452232"},"currency":"USD","language":"en","stateCode":"FL","employmentInfo":{"employerName":"ToysRUs","hireDate":"20110516"},"partnerId":0.0,"bankInfo":{"bankName":"Chase","abaRoutingNumber":"123456789","accountNumber":"012345789","accountType":1.0,"accountLength":6.0}},"accepted":false,"partnerId":8675309,"reference_id":"b31638f8-10ed-4b91-8ced-e16564f9663b","code":315,"status":"DECLINED","apiVersion":"4.8","offers":[]}<br />
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 2 - Verify loan was not accepted.</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text green'>   (PASS)   Got : False</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text green'>TestClickPodiumButton passed.</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">InvoiceCloudTestSuite.TestAddElements</p>
+            <p class="text-sm">
+              <span>12:11:27 PM</span> / <span>00:00:01:166</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">InvoiceCloudTestSuite.TestAddElements</h5>
+<span class='badge badge-success'>07.19.2023 12:11:27 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:28 PM</span>
+<span class='badge badge-default'>00:00:01:166</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Go to Heroku URL</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:28 PM</td>
+        <td>
+          Navigating to https://the-internet.herokuapp.com/add_remove_elements/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:28 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Click on Add Element 5 times</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:28 PM</td>
+        <td>
+          [Click] By.xpath ---> Add Element
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag="PodiumTestSuite Smoke"
+          device="">
+          <div class="test-detail">
+            <p class="name">PodiumTestSuite.TestClickPodiumButton</p>
+            <p class="text-sm">
+              <span>12:11:27 PM</span> / <span>00:00:03:479</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PodiumTestSuite.TestClickPodiumButton</h5>
+<span class='badge badge-success'>07.19.2023 12:11:27 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:30 PM</span>
+<span class='badge badge-default'>00:00:03:479</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">PodiumTestSuite</span>
+<span class="badge badge-pill badge-default">Smoke</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:27 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Go to Podium Demo Website</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          Navigating to https://demo.podium.tools/qa-webchat-lorw/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 2 - Verify on site by finding podium bubble</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 3 - Switch to Podium bubble iframe</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          Switched to iFrame: podium-bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          Currently within Podium bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 4 - Click on Podium Bubble</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          [Click] By.className --->  ContactBubble__Bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          Clicked on Podium button
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 5 - Switch to Podium modal iframe</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          Switched to iFrame: podium-modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          Currently within Podium modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 6 - Verify on Podium Modal by clicking search bar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          [Click] By.xpath ---> Search Locations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:30 PM</td>
+        <td>
+          <span class='badge white-text green'>TestClickPodiumButton passed.</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag="PodiumTestSuite Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">PodiumTestSuite.TestClickSubjectTerms</p>
+            <p class="text-sm">
+              <span>12:11:31 PM</span> / <span>00:00:04:322</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PodiumTestSuite.TestClickSubjectTerms</h5>
+<span class='badge badge-success'>07.19.2023 12:11:31 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:36 PM</span>
+<span class='badge badge-default'>00:00:04:322</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">PodiumTestSuite</span>
 <span class="badge badge-pill badge-default">Regression</span></div>
 </div>
 </div><div class="detail-body mt-4">
@@ -320,114 +584,1143 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:58 AM</td>
+        <td>12:11:31 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 1 - Go to Heroku URL</span>
+          <span class='badge white-text blue'>Step 1 - Go to Podium Website</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:33 PM</td>
         <td>
-          Navigating to https://the-internet.herokuapp.com/add_remove_elements/
+          Navigating to https://demo.podium.tools/qa-webchat-lorw/
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:33 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 2 - Click on Add Element 5 times</span>
+          <span class='badge white-text blue'>Step 2 - Go immediately to Podium modal</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:33 PM</td>
         <td>
-          [Click] By.xpath ---> Add Element
+          Switched to main iFrame
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:33 PM</td>
         <td>
-          [Click] By.xpath ---> Add Element
+          Switched to iFrame: podium-bubble
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:33 PM</td>
         <td>
-          [Click] By.xpath ---> Add Element
+          Currently within Podium bubble
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:33 PM</td>
         <td>
-          [Click] By.xpath ---> Add Element
+          [Click] By.className --->  ContactBubble__Bubble
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:33 PM</td>
         <td>
-          [Click] By.xpath ---> Add Element
+          Switched to main iFrame
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:33 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 3 - Confirm total delete buttons on page are 5</span>
+          Switched to iFrame: podium-modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:33 PM</td>
+        <td>
+          Currently within Podium modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:33 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 3 - Verify on Podium modal by clicking searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:33 PM</td>
+        <td>
+          [Click] By.xpath ---> Search Locations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:33 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 4 - Click on first location to open the message modal</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:33 PM</td>
+        <td>
+          [Click] By.xpath ---> LocationContainer StaggerFadeIn3 LocationContainer--desktop
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:33 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 5 - Click on 'use is subject to terms'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:33 PM</td>
+        <td>
+          [Click] By.xpath ---> Use is subject to terms.
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:33 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 6 - Switch to Terms and Service page</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:35 PM</td>
+        <td>
+          Switched to newest tab: Podium Legal Center
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:35 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 7 - Verify on Terms and Service page by clicking on 'Terms of Service'</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:35 PM</td>
+        <td>
+          [Click] By.xpath ---> Terms of Service
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:36 PM</td>
         <td>
-          <span class='badge white-text green'>   (PASS)   Got : 5</span>
+          <span class='badge white-text green'>TestClickSubjectTerms passed.</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag="PodiumTestSuite Smoke"
+          device="">
+          <div class="test-detail">
+            <p class="name">PodiumTestSuite.TestInputMessageData</p>
+            <p class="text-sm">
+              <span>12:11:36 PM</span> / <span>00:00:03:363</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PodiumTestSuite.TestInputMessageData</h5>
+<span class='badge badge-success'>07.19.2023 12:11:36 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:40 PM</span>
+<span class='badge badge-default'>00:00:03:363</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">PodiumTestSuite</span>
+<span class="badge badge-pill badge-default">Smoke</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:36 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Go to Podium Website</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:38 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 4 - Delete one element</span>
+          Navigating to https://demo.podium.tools/qa-webchat-lorw/
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:16:59 AM</td>
+        <td>12:11:38 PM</td>
         <td>
-          [Click] By.xpath ---> added-manually
+          <span class='badge white-text blue'>Step 2 - Go immediately to Podium modal</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:17:00 AM</td>
+        <td>12:11:38 PM</td>
         <td>
-          Deleted one element on the page
+          Switched to main iFrame
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>11:17:00 AM</td>
+        <td>12:11:38 PM</td>
         <td>
-          <span class='badge white-text blue'>Step 5 - Confirm there are now 4 delete buttons</span>
+          Switched to iFrame: podium-bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          Currently within Podium bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          [Click] By.className --->  ContactBubble__Bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          Switched to iFrame: podium-modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          Currently within Podium modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 3 - Verify on Podium modal clicking searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          [Click] By.xpath ---> Search Locations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 4 - Click on first location in location list</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:38 PM</td>
+        <td>
+          [Click] By.xpath ---> LocationContainer StaggerFadeIn3 LocationContainer--desktop
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:39 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 5 - Input name in Name text input</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:39 PM</td>
+        <td>
+          [SetText] By.xpath ---> Name ---> 'Art'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:39 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 6 - Verify text was put into name input by finding visible checkmark</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:39 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 7 - Input phone number into mobile phone text input</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:39 PM</td>
+        <td>
+          [SetText] By.xpath ---> Mobile Phone ---> '7777777777'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:39 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 8 - Verify phone number was put into input by finding visible checkmark</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:39 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 9 - Input message in message text input</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:39 PM</td>
+        <td>
+          [SetText] By.xpath ---> Message ---> 'Hello QA Tester'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:40 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 10 - Verify message has input of 15 / 300</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:17:00 AM</td>
+        <td>12:11:40 PM</td>
         <td>
-          <span class='badge white-text green'>   (PASS)   Got : 4</span>
+          <span class='badge white-text green'>   (PASS)   Got : 15 / 300</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:40 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 11 - Verify all inputs have data by finding valid send button</span>
         </td>
       </tr>
       <tr class="event-row">
         <td><span class="badge log pass-bg">Pass</span></td>
-        <td>11:17:00 AM</td>
+        <td>12:11:40 PM</td>
         <td>
-          <span class='badge white-text green'>TestDeleteElement passed.</span>
+          <span class='badge white-text green'>TestInputMessageData passed.</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag="PodiumTestSuite Smoke"
+          device="">
+          <div class="test-detail">
+            <p class="name">PodiumTestSuite.TestLocationSearchBar</p>
+            <p class="text-sm">
+              <span>12:11:41 PM</span> / <span>00:00:08:280</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PodiumTestSuite.TestLocationSearchBar</h5>
+<span class='badge badge-success'>07.19.2023 12:11:41 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:49 PM</span>
+<span class='badge badge-default'>00:00:08:280</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">PodiumTestSuite</span>
+<span class="badge badge-pill badge-default">Smoke</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:41 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Go to Podium Website</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          Navigating to https://demo.podium.tools/qa-webchat-lorw/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 2 - Go immediately to Podium modal</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          Switched to iFrame: podium-bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          Currently within Podium bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          [Click] By.className --->  ContactBubble__Bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          Switched to iFrame: podium-modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          Currently within Podium modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 3 - Verify on Podium modal by clicking on searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:42 PM</td>
+        <td>
+          [Click] By.xpath ---> Search Locations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:43 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 4 - Input ZIP code 84043 into searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:43 PM</td>
+        <td>
+          [Click] By.xpath ---> SearchInput__Reset
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:43 PM</td>
+        <td>
+          [SetText] By.xpath ---> Search Locations ---> '84043'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:44 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 5 - Verify first location in list is 84043 ZIP code</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:44 PM</td>
+        <td>
+          <span class='badge white-text green'>   (PASS)   Got : True</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:44 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 6 - Input Bountiful into searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:44 PM</td>
+        <td>
+          [Click] By.xpath ---> SearchInput__Reset
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:44 PM</td>
+        <td>
+          [SetText] By.xpath ---> Search Locations ---> 'Bountiful'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:45 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 7 - Verify first location in list is Bountiful</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:45 PM</td>
+        <td>
+          <span class='badge white-text green'>   (PASS)   Got : True</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:45 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 8 - Input building number 1402 into searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:45 PM</td>
+        <td>
+          [Click] By.xpath ---> SearchInput__Reset
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:45 PM</td>
+        <td>
+          [SetText] By.xpath ---> Search Locations ---> '1402'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:46 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 9 - Verify first location in list is building number 1402</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:46 PM</td>
+        <td>
+          <span class='badge white-text green'>   (PASS)   Got : True</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:46 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 10 - Input street name E Main St into searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:46 PM</td>
+        <td>
+          [Click] By.xpath ---> SearchInput__Reset
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:47 PM</td>
+        <td>
+          [SetText] By.xpath ---> Search Locations ---> 'E Main St'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:48 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 11 - Verify first location in list is street name E Main St</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:48 PM</td>
+        <td>
+          <span class='badge white-text green'>   (PASS)   Got : True</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:48 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 12 - Input city Lehi into searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:48 PM</td>
+        <td>
+          [Click] By.xpath ---> SearchInput__Reset
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:48 PM</td>
+        <td>
+          [SetText] By.xpath ---> Search Locations ---> 'Lehi'
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:49 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 13 - Verify first location in list is city name Lehi</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:49 PM</td>
+        <td>
+          <span class='badge white-text green'>   (PASS)   Got : True</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:49 PM</td>
+        <td>
+          <span class='badge white-text green'>TestLocationSearchBar passed.</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag="PodiumTestSuite Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">PodiumTestSuite.TestReturnButtonDoesWork</p>
+            <p class="text-sm">
+              <span>12:11:50 PM</span> / <span>00:00:03:029</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PodiumTestSuite.TestReturnButtonDoesWork</h5>
+<span class='badge badge-success'>07.19.2023 12:11:50 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:53 PM</span>
+<span class='badge badge-default'>00:00:03:029</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">PodiumTestSuite</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:50 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Go to Podium Website</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          Navigating to https://demo.podium.tools/qa-webchat-lorw/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 2 - Go immediately to Podium modal</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          Switched to iFrame: podium-bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          Currently within Podium bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          [Click] By.className --->  ContactBubble__Bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          Switched to iFrame: podium-modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          Currently within Podium modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 3 - Verify on Podium modal by clicking on searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:51 PM</td>
+        <td>
+          [Click] By.xpath ---> Search Locations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:52 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 4 - Click on first location in location list</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:52 PM</td>
+        <td>
+          [Click] By.xpath ---> LocationContainer StaggerFadeIn3 LocationContainer--desktop
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:52 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 5 - Verify on message modal by clicking on name text input</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:52 PM</td>
+        <td>
+          [Click] By.xpath ---> Name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:52 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 6 - Click on return arrow</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:52 PM</td>
+        <td>
+          [Click] By.xpath ---> SendSmsPage__ArrowIcon
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:53 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 7 - Verify on 'Select Location' modal by clicking on searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:53 PM</td>
+        <td>
+          [Click] By.xpath ---> Search Locations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:53 PM</td>
+        <td>
+          <span class='badge white-text green'>TestReturnButtonDoesWork passed.</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag="PodiumTestSuite Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">PodiumTestSuite.TestScoreboardOremLocationExists</p>
+            <p class="text-sm">
+              <span>12:11:53 PM</span> / <span>00:00:02:181</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PodiumTestSuite.TestScoreboardOremLocationExists</h5>
+<span class='badge badge-success'>07.19.2023 12:11:53 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:56 PM</span>
+<span class='badge badge-default'>00:00:02:181</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">PodiumTestSuite</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:53 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Go to Podium Website</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          Navigating to https://demo.podium.tools/qa-webchat-lorw/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 2 - Go immediately to Podium modal</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          Switched to iFrame: podium-bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          Currently within Podium bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          [Click] By.className --->  ContactBubble__Bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          Switched to iFrame: podium-modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          Currently within Podium modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 3 - Click on Scoreboard Sports - Orem in location list</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:55 PM</td>
+        <td>
+          [Click] By.xpath ---> Scoreboard Sports - Orem
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:56 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 4 - Verify Scoreboard Sports - Orem opened up</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:56 PM</td>
+        <td>
+          <span class='badge white-text green'>   (PASS)   Got : Scoreboard Sports - Orem</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:56 PM</td>
+        <td>
+          <span class='badge white-text green'>TestScoreboardOremLocationExists passed.</span>
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag="PodiumTestSuite Regression"
+          device="">
+          <div class="test-detail">
+            <p class="name">PodiumTestSuite.TestSelectFirstLocation</p>
+            <p class="text-sm">
+              <span>12:11:56 PM</span> / <span>00:00:02:815</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">PodiumTestSuite.TestSelectFirstLocation</h5>
+<span class='badge badge-success'>07.19.2023 12:11:56 PM</span>
+<span class='badge badge-danger'>07.19.2023 12:11:59 PM</span>
+<span class='badge badge-default'>00:00:02:815</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">PodiumTestSuite</span>
+<span class="badge badge-pill badge-default">Regression</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:56 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 1 - Go to Podium Website</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          Navigating to https://demo.podium.tools/qa-webchat-lorw/
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 2 - Go immediately to Podium modal</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          Switched to iFrame: podium-bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          Currently within Podium bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          [Click] By.className --->  ContactBubble__Bubble
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          Switched to main iFrame
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          Switched to iFrame: podium-modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          Currently within Podium modal
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 3 - Verify on Podium modal by clicking searchbar</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:58 PM</td>
+        <td>
+          [Click] By.xpath ---> Search Locations
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:59 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 4 - Click on first location in location list</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:59 PM</td>
+        <td>
+          [Click] By.xpath ---> LocationContainer StaggerFadeIn3 LocationContainer--desktop
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:59 PM</td>
+        <td>
+          <span class='badge white-text blue'>Step 5 - Verify on message modal by clicking name text input</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>12:11:59 PM</td>
+        <td>
+          [Click] By.xpath ---> Name
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>12:11:59 PM</td>
+        <td>
+          <span class='badge white-text green'>TestSelectFirstLocation passed.</span>
         </td>
       </tr>
   </tbody>
@@ -448,22 +1741,22 @@
 <div class="test-list">
 <div class="test-list-tools">
 <ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">2</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">4</span></a></li></ul>
 </div>
 <div class="test-list-wrapper scrollable">
 <ul class="test-list-item">
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>3</span>
+<span class='badge log pass-bg'>4</span>
 </span>
-<p class="name">Regression</p>
-<p class="duration text-sm">3 tests</p>
+<p class="name">Smoke</p>
+<p class="duration text-sm">4 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>Regression</h4>
-<span status="pass" class='badge log pass-bg'>3 passed</span>
+<h4>Smoke</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -476,23 +1769,30 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:54 AM</td>
+<td>12:11:27 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>InvoiceCloudTestSuite.TestAddElements</a>
+<a href="#" class="linked" test-id='3' id='3'>OppFiTestSuite.OffersApiGetsDeclinedTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:56 AM</td>
+<td>12:11:27 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>InvoiceCloudTestSuite.TestClickElementalSelenium</a>
+<a href="#" class="linked" test-id='5' id='5'>PodiumTestSuite.TestClickPodiumButton</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:58 AM</td>
+<td>12:11:36 PM</td>
 <td>
-<a href="#" class="linked" test-id='3' id='3'>InvoiceCloudTestSuite.TestDeleteElement</a>
+<a href="#" class="linked" test-id='7' id='7'>PodiumTestSuite.TestInputMessageData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>PodiumTestSuite.TestLocationSearchBar</a>
 </td>
 </tr>
 </tbody>
@@ -502,15 +1802,15 @@
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>3</span>
+<span class='badge log pass-bg'>2</span>
 </span>
-<p class="name">InvoiceCloudTestSuite</p>
-<p class="duration text-sm">3 tests</p>
+<p class="name">OppFiTestSuite</p>
+<p class="duration text-sm">2 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>InvoiceCloudTestSuite</h4>
-<span status="pass" class='badge log pass-bg'>3 passed</span>
+<h4>OppFiTestSuite</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -523,23 +1823,166 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:54 AM</td>
+<td>12:11:25 PM</td>
 <td>
-<a href="#" class="linked" test-id='1' id='1'>InvoiceCloudTestSuite.TestAddElements</a>
+<a href="#" class="linked" test-id='1' id='1'>OppFiTestSuite.OffersApiAcceptedTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:56 AM</td>
+<td>12:11:27 PM</td>
 <td>
-<a href="#" class="linked" test-id='2' id='2'>InvoiceCloudTestSuite.TestClickElementalSelenium</a>
+<a href="#" class="linked" test-id='2' id='2'>OppFiTestSuite.OffersApiCallGetsBadDataTest</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>6</span>
+</span>
+<p class="name">Regression</p>
+<p class="duration text-sm">6 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Regression</h4>
+<span status="pass" class='badge log pass-bg'>6 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:25 PM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>OppFiTestSuite.OffersApiAcceptedTest</a>
 </td>
 </tr>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>11:16:58 AM</td>
+<td>12:11:27 PM</td>
 <td>
-<a href="#" class="linked" test-id='3' id='3'>InvoiceCloudTestSuite.TestDeleteElement</a>
+<a href="#" class="linked" test-id='2' id='2'>OppFiTestSuite.OffersApiCallGetsBadDataTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>PodiumTestSuite.TestClickSubjectTerms</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>PodiumTestSuite.TestReturnButtonDoesWork</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>PodiumTestSuite.TestScoreboardOremLocationExists</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>PodiumTestSuite.TestSelectFirstLocation</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>8</span>
+</span>
+<p class="name">PodiumTestSuite</p>
+<p class="duration text-sm">8 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>PodiumTestSuite</h4>
+<span status="pass" class='badge log pass-bg'>8 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>OppFiTestSuite.OffersApiGetsDeclinedTest</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:27 PM</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>PodiumTestSuite.TestClickPodiumButton</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:31 PM</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>PodiumTestSuite.TestClickSubjectTerms</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:36 PM</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>PodiumTestSuite.TestInputMessageData</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:41 PM</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>PodiumTestSuite.TestLocationSearchBar</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:50 PM</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>PodiumTestSuite.TestReturnButtonDoesWork</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:53 PM</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>PodiumTestSuite.TestScoreboardOremLocationExists</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>12:11:56 PM</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>PodiumTestSuite.TestSelectFirstLocation</a>
 </td>
 </tr>
 </tbody>
@@ -559,19 +2002,19 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jul 18, 2023 11:16:53 AM</h3>
+<h3>Jul 19, 2023 12:11:25 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jul 18, 2023 11:17:00 AM</h3>
+<h3>Jul 19, 2023 12:11:59 PM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>3</h3>
+<h3>11</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -594,7 +2037,7 @@
 </div>
 <div class="card-footer">
 <div><small data-tooltip='100%'>
-<b>3</b> tests passed
+<b>11</b> tests passed
 </small>
 </div>
 <div>
@@ -616,10 +2059,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='17%'><b>6</b> events passed</small></div>
+<div><small data-tooltip='11%'><b>20</b> events passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>29</b> others
+<b data-tooltip='%'>160</b> others
 </small>
 </div>
 </div>
@@ -635,7 +2078,7 @@
 </div></div>
 <script>
 var timeline = {
-"InvoiceCloudTestSuite.TestAddElements":0.891,"InvoiceCloudTestSuite.TestClickElementalSelenium":1.207,"InvoiceCloudTestSuite.TestDeleteElement":1.612
+"OppFiTestSuite.OffersApiAcceptedTest":1.432,"OppFiTestSuite.OffersApiCallGetsBadDataTest":0.232,"OppFiTestSuite.OffersApiGetsDeclinedTest":0.227,"InvoiceCloudTestSuite.TestAddElements":1.166,"PodiumTestSuite.TestClickPodiumButton":3.479,"PodiumTestSuite.TestClickSubjectTerms":4.322,"PodiumTestSuite.TestInputMessageData":3.363,"PodiumTestSuite.TestLocationSearchBar":8.28,"PodiumTestSuite.TestReturnButtonDoesWork":3.029,"PodiumTestSuite.TestScoreboardOremLocationExists":2.181,"PodiumTestSuite.TestSelectFirstLocation":2.815
 };
 </script>
 <div class="row">
@@ -645,16 +2088,32 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>Regression</td>
-<td>3</td>
+<td>Smoke</td>
+<td>4</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
 </tr>
 <tr>
-<td>InvoiceCloudTestSuite</td>
-<td>3</td>
+<td>OppFiTestSuite</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Regression</td>
+<td>6</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>PodiumTestSuite</td>
+<td>8</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
@@ -669,7 +2128,7 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
+passParent: 11,
 failParent: 0,
 warningParent: 0,
 skipParent: 0,
@@ -686,11 +2145,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 6,
+passEvents: 20,
 failEvents: 0,
 warningEvents: 0,
 skipEvents: 0,
-infoEvents: 29
+infoEvents: 160
 };
 </script>        </div>
       </div>

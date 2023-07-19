@@ -11,7 +11,6 @@ import org.testng.ITestResult;
 
 public class BaseTestListener extends ListenerBase implements ITestListener
 {
-
     @Override
     public void onTestStart(ITestResult result)
     {
