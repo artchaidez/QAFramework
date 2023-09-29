@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="a2b39580-ecb2-42b9-bd45-66cd26a94a3d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/test/java/apis/RegresApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/apis/RegresApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentReportManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/autoFramework/ExtentReportManager.java" afterDir="false" />
@@ -15,6 +16,9 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/pages/TrelloCardPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/unitTests/VerifyTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/unitTests/VerifyTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/InvoiceCloudTestSuite.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/webTestSuites/PodiumTestSuite.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testReport.html" beforeDir="false" afterPath="$PROJECT_DIR$/testReport.html" afterDir="false" />
     </list>
